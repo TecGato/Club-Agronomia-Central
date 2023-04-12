@@ -27,6 +27,6 @@
 */.babelrc
 # local env files
 */.env*.local
-
+*/.env
 # vercel
 */.vercel
