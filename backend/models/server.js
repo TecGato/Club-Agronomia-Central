@@ -8,6 +8,7 @@ class Server {
     this.usersPath = "/api/usuarios";
     this.authPath = "/api/auth";
     this.testimonialsPath = "/api/testimonials";
+    this.postsPath = "/api/posts";
     // Conectar a la base de datos
 
     // Middlewares
@@ -33,6 +34,7 @@ class Server {
     this.app.use(this.authPath, require("../routes/auth"));
     // this.app.use(this.usersPath, require('../routes/users'));
     this.app.use(this.testimonialsPath, require("../routes/testimonials"));
+    this.app.use(this.postsPath, require("../routes/posts"));
   }
 
   listen() {
