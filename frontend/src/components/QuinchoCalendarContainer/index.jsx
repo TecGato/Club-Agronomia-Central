@@ -1,20 +1,78 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import NavLink from '../NavLink';
+import { QuinchoCalendarDay } from '../QuinchoCalendarDay';
 
-export function QuinchoCalendar(){
+export function QuinchoCalendarContainer(){
+
+    /*
+    EJEMPLO DEL ARRAY
+    "id":1
+    "name": "Desayuno del Grupo Juvenil"
+    "beg_tim":"8:30"
+    "end_time":"11:30"
+    "state": 1
+    "ammount": "$21.500"
+    "Description":"We are going to have fun"
+
+
+
+
+    */
+
+    const eventos=[
+        {
+            "id":1,
+            "name": "Desayuno del Grupo Juvenil",
+            "beg_time":"8:30am",
+            "end_time":"11:30am",
+            "date":"2 mayo",
+            "state": 1,
+            "ammount": "$21.500",
+            "description":"We are going to have fun"
+        },
+
+        {
+            "id":2,
+            "name": "Quince años Familia Henry",
+            "beg_time":"2:15pm",
+            "end_time":"5:15pm",
+            "date":"2 mayo",
+            "state": 3,
+            "ammount": "$21.500",
+            "description":"We are going to have fun"
+            }
+
+    ]
+
+    //const eventos = currentEventos;
 
 return(
 
 
-    <div style={{padding: "20px"}}>
+    <div style={{padding: "30px"}}>
+
+    {eventos.map(evento=>{
+        return <QuinchoCalendarDay
+        id={evento.id}
+        name={evento.name}
+        beg_time={evento.beg_time}
+        end_time={evento.end_time}
+        date={evento.date}
+        state={evento.state}
+        ammount={evento.ammount}
+        description={evento.description}
+        key={evento.id}
+        />
+
+    })}
 
     <h4>Calendario de disponibilidad del Quincho</h4>
 
     <h2 class="ml-2 text-xl font-bold leading-none">Mayo, 2023</h2>
 
     {/* Encabezado del calendario mensual */}
-    <div class="grid grid-cols-7 mt-4">
+    <div class="grid grid-cols-7 mt-4 border-t-4 border-indigo-500" >
                     <div class="pl-1 text-sm">Lunes</div>
                     <div class="pl-1 text-sm">Martes</div>
                     <div class="pl-1 text-sm">Miércoles</div>
