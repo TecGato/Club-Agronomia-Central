@@ -29,9 +29,10 @@ export function QuinchoCalendarContainer(){
             "date":"2 mayo",
             "state": 1,
             "ammount": "$21.500",
+            "email":"client1@ac.com.arg",
+            "phone":"325 256 90 15",
             "description":"We are going to have fun"
         },
-
         {
             "id":2,
             "name": "Quince años Familia Henry",
@@ -40,32 +41,285 @@ export function QuinchoCalendarContainer(){
             "date":"2 mayo",
             "state": 3,
             "ammount": "$21.500",
+            "email":"client2@ac.com.arg",
+            "phone":"325 256 90 15",
             "description":"We are going to have fun"
-            }
+        },
+        {
+            "id":3,
+            "name": "Almuerzo graduación",
+            "beg_time":"12:00m",
+            "end_time":"5:15pm",
+            "date":"4 mayo",
+            "state": 1,
+            "ammount": "$21.500",
+            "email":"client2@ac.com.arg",
+            "phone":"325 256 90 15",
+            "description":"We are going to have fun"
+        },
+        {
+            "id":4,
+            "name": "Feria de las flores",
+            "beg_time":"6:00pm",
+            "end_time":"8:15pm",
+            "date":"13 mayo",
+            "state": 3,
+            "ammount": "$21.500",
+            "email":"client2@ac.com.arg",
+            "phone":"325 256 90 15",
+            "description":"We are going to have fun"
+        },
+        {
+            "id":5,
+            "name": "Feria de las flores",
+            "beg_time":"6:00pm",
+            "end_time":"8:15pm",
+            "date":"6 mayo",
+            "state": 3,
+            "ammount": "$21.500",
+            "email":"client2@ac.com.arg",
+            "phone":"325 256 90 15",
+            "description":"We are going to have fun"
+        },
+        {
+            "id":6,
+            "name": "Feria de las flores",
+            "beg_time":"6:00pm",
+            "end_time":"8:15pm",
+            "date":"17 mayo",
+            "state": 3,
+            "ammount": "$21.500",
+            "email":"client2@ac.com.arg",
+            "phone":"325 256 90 15",
+            "description":"We are going to have fun"
+        },
+        {
+            "id":7,
+            "name": "Feria de las flores",
+            "beg_time":"6:00pm",
+            "end_time":"8:15pm",
+            "date":"17 mayo",
+            "state": 3,
+            "ammount": "$21.500",
+            "email":"client2@ac.com.arg",
+            "phone":"325 256 90 15",
+            "description":"We are going to have fun"
+        },
+        {
+            "id":8,
+            "name": "Feria de las flores",
+            "beg_time":"6:00pm",
+            "end_time":"8:15pm",
+            "date":"4 mayo",
+            "state": 3,
+            "ammount": "$21.500",
+            "email":"client2@ac.com.arg",
+            "phone":"325 256 90 15",
+            "description":"We are going to have fun"
+        },
+        {
+            "id":9,
+            "name": "Feria de las flores",
+            "beg_time":"6:00pm",
+            "end_time":"8:15pm",
+            "date":"17 mayo",
+            "state": 3,
+            "ammount": "$21.500",
+            "email":"client2@ac.com.arg",
+            "phone":"325 256 90 15",
+            "description":"We are going to have fun"
+        },
+        {
+            "id":10,
+            "name": "Feria de las flores",
+            "beg_time":"6:00pm",
+            "end_time":"8:15pm",
+            "date":"17 mayo",
+            "state": 3,
+            "ammount": "$21.500",
+            "email":"client2@ac.com.arg",
+            "phone":"325 256 90 15",
+            "description":"We are going to have fun"
+        },
+        {
+            "id":11,
+            "name": "Feria de las flores",
+            "beg_time":"6:00pm",
+            "end_time":"8:15pm",
+            "date":"17 mayo",
+            "state": 3,
+            "ammount": "$21.500",
+            "email":"client2@ac.com.arg",
+            "phone":"325 256 90 15",
+            "description":"We are going to have fun"
+        },
+        {
+            "id":12,
+            "name": "Feria de las flores",
+            "beg_time":"6:00pm",
+            "end_time":"8:15pm",
+            "date":"4 mayo",
+            "state": 3,
+            "ammount": "$21.500",
+            "email":"client2@ac.com.arg",
+            "phone":"325 256 90 15",
+            "description":"We are going to have fun"
+        },
+        {
+            "id":13,
+            "name": "Feria de las flores",
+            "beg_time":"6:00pm",
+            "end_time":"8:15pm",
+            "date":"17 mayo",
+            "state": 3,
+            "ammount": "$21.500",
+            "email":"client2@ac.com.arg",
+            "phone":"325 256 90 15",
+            "description":"We are going to have fun"
+        }
+
+]
+
+    //const eventos = currentEventos;
+
+
+    const fechas=[
+        {
+            "date":"1 mayo",
+            "eventos":[]
+        },
+        {
+            "date":"2 mayo",
+            "eventos":[1,2]
+        },
+        {
+            "date":"3 mayo",
+            "eventos":[]
+        },
+        {
+            "date":"4 mayo",
+            "eventos":[3,8,12]
+        },
+        {
+            "date":"5 mayo",
+            "eventos":[]
+        },
+        {
+            "date":"6 mayo",
+            "eventos":[5]
+        },
+        {
+            "date":"7 mayo",
+            "eventos":[]
+        },
+        {
+            "date":"8 mayo",
+            "eventos":[]
+        },
+        {
+            "date":"9 mayo",
+            "eventos":[]
+        },
+        {
+            "date":"10 mayo",
+            "eventos":[]
+        },
+        {
+            "date":"11 mayo",
+            "eventos":[]
+        },
+        {
+            "date":"12 mayo",
+            "eventos":[]
+        },
+        {
+            "date": "13 mayo",
+            "eventos":[4]
+        },
+        {
+            "date": "14 mayo",
+            "eventos":[6]
+        },
+        {
+            "date":"15 mayo",
+            "eventos":[]
+        },
+        {
+            "date":"16 mayo",
+            "eventos":[]
+        },
+        {
+            "date":"17 mayo",
+            "eventos":[7]
+        },
+        {
+            "date":"18 mayo",
+            "eventos":[]
+        },
+        {
+            "date":"19 mayo",
+            "eventos":[]
+        },
+        {
+            "date":"20 mayo",
+            "eventos":[]
+        },
+        {
+            "date":"21 mayo",
+            "eventos":[]
+        },
+        {
+            "date":"22 mayo",
+            "eventos":[]
+        },
+        {
+            "date":"23 mayo",
+            "eventos":[]
+        },
+        {
+            "date":"24 mayo",
+            "eventos":[]
+        },
+        {
+            "date":"25 mayo",
+            "eventos":[]
+        },
+        {
+            "date":"26 mayo",
+            "eventos":[]
+        },
+        {
+            "date":"27 mayo",
+            "eventos":[]
+        },
+        {
+            "date":"28 mayo",
+            "eventos":[]
+        },
+        {
+            "date":"29 mayo",
+            "eventos":[]
+        },
+        {
+            "date":"30 mayo",
+            "eventos":[]
+        },
+        {
+            "date":"31 mayo",
+            "eventos":[]
+        },
+
 
     ]
 
-    //const eventos = currentEventos;
+    //const fechas = currentFechas;
 
 return(
 
 
     <div style={{padding: "30px"}}>
 
-    {eventos.map(evento=>{
-        return <QuinchoCalendarDay
-        id={evento.id}
-        name={evento.name}
-        beg_time={evento.beg_time}
-        end_time={evento.end_time}
-        date={evento.date}
-        state={evento.state}
-        ammount={evento.ammount}
-        description={evento.description}
-        key={evento.id}
-        />
 
-    })}
 
     <h4>Calendario de disponibilidad del Quincho</h4>
 
@@ -499,6 +753,22 @@ return(
 
     </div>
 
+    {eventos.map(evento=>{
+        return <QuinchoCalendarDay
+        id={evento.id}
+        name={evento.name}
+        beg_time={evento.beg_time}
+        end_time={evento.end_time}
+        date={evento.date}
+        state={evento.state}
+        ammount={evento.ammount}
+        email={evento.email}
+        phone={evento.phone}
+        description={evento.description}
+        key={evento.id}
+        />
+
+    })}
     {/* Leyenda */}
 
         <h3>Indicadores de la reserva</h3>
