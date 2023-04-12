@@ -4,6 +4,7 @@ import Image from 'next/image';
 import styles from '@/styles/Home.module.css';
 import HomePage from '../components/HomePage';
 import { Navbar } from '@/components';
+import Footer from '@/components/Footer';
 
 // const inter = Inter({ subsets: ['latin'] });
 
@@ -26,6 +27,7 @@ export default function Home() {
                 <Navbar />
                 <HomePage />
             </main>
+            <Footer />
         </>
     );
 }
