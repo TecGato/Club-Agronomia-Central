@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Post = require("../models/Post.js");
 
-mongoose.connect();
+// mongoose.connect();
 
 const getAllPosts = async () => {
   try {
