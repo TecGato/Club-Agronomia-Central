@@ -9,5 +9,5 @@ export default function ItemsContainer() {
             <Item Links={COMPANY} title="COMPANY"/>
             <Item Links={SUPPORT} title="SUPPORT"/>
         </div>
-    )
-}
+    );
+};
