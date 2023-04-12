@@ -3,6 +3,7 @@ import Image from 'next/image';
 // import { Inter } from 'next/font/google';
 import styles from '@/styles/Home.module.css';
 import HomePage from '../components/HomePage';
+import { Navbar } from '@/components';
 import Footer from '@/components/Footer';
 
 // const inter = Inter({ subsets: ['latin'] });
@@ -22,7 +23,8 @@ export default function Home() {
                 />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <main className={styles.main}>
+            <main className="w-full min-h-screen">
+                <Navbar />
                 <HomePage />
             </main>
             <Footer />
