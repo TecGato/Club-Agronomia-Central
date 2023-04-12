@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { useState } from 'react';
+import NavLink from '../NavLink';
 
 export function Navbar() {
     const [openMenu, setOpenMenu] = useState(false);
@@ -16,31 +17,11 @@ export function Navbar() {
             </p>
 
             <ul className="gap-4 hidden lg:flex">
-                <li className="hover:bg-blue-700 px-1 transition-all duration-300 rounded-md">
-                    <Link className="font-bold text-lg" href="/">
-                        INICIO
-                    </Link>
-                </li>
-                <li className="hover:bg-blue-700 px-1 transition-all duration-300 rounded-md">
-                    <Link className="font-bold text-lg" href="/club">
-                        EL CLUB
-                    </Link>
-                </li>
-                <li className="hover:bg-blue-700 px-1 transition-all duration-300 rounded-md">
-                    <Link className="font-bold text-lg" href="/deportes">
-                        DEPORTES
-                    </Link>
-                </li>
-                <li className="hover:bg-blue-700 px-1 transition-all duration-300 rounded-md">
-                    <Link className="font-bold text-lg" href="/historias">
-                        HISTORIAS
-                    </Link>
-                </li>
-                <li className="hover:bg-blue-700 px-1 transition-all duration-300 rounded-md">
-                    <Link className="font-bold text-lg" href="/contacto">
-                        CONTACTANOS
-                    </Link>
-                </li>
+                <NavLink text={'INICIO'} link={'/'} />
+                <NavLink text={'EL CLUB'} link={'/club'} />
+                <NavLink text={'DEPORTES'} link={'/deportes'} />
+                <NavLink text={'HISTORIAS'} link={'/historias'} />
+                <NavLink text={'CONTACTANOS'} link={'/contacto'} />
             </ul>
             <button
                 onClick={handleToggleMenu}
