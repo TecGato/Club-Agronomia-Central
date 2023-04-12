@@ -36,9 +36,17 @@ export default function History() {
             Felice, Staricanelli, Turconi, Gentile, Florentino, Bruneli, Borghi
             y Amore.
           </p>
-          <div className='md:flex bg-gray-200'>
-            <Image src={HistoryPic1} className='rounded-lg max-w-xs max-h-96' />
-            <Image src={HistoryPic2} className='rounded-lg max-w-xs max-h-96' />
+          <div className='md:flex bg-gray-200 md:justify-around'>
+            <Image
+              src={HistoryPic1}
+              alt='PicAlgoHitoria1'
+              className='rounded-lg md:max-w-screen-sm '
+            />
+            <Image
+              src={HistoryPic2}
+              alt='PicAlgoHitoria1'
+              className='rounded-lg md:max-w-screen-sm '
+            />
           </div>
           <h1>La casa propia:</h1>
           <p>
@@ -59,6 +67,78 @@ export default function History() {
             se instalaron las oficinas de secretaria y la biblioteca; de un
             amplio hall en el que funcionaban los juegos de salón, y de una
             habitación larga, donde se hallaban los billares.
+          </p>
+          <h1>Nuevas instalaciones:</h1>
+          <div className='md:flex'>
+            <p>
+              Sobre la edificación se había dispuesto una amplia terraza que
+              utilizaban como buffet en los días calurosos y templados. Sobre
+              tres lotes contiguos fueron habilitadas las canchas de basquet,
+              tennis, pelota y bochas. Las instalaciones propias se completaban
+              con dos amplias pistas de baile, y se proyecta en ese momento una
+              cancha cerrada de pelota, que además serviría como salón de baile.
+              En ese periodo la comisión directiva estaba integrada por el señor
+              Alfonso Rodriguez, a quienes secundaban el secretario Carlos
+              Pozzi, el prosecretario Zamora Casas y el tesorero Osvaldo Borghi.
+            </p>
+            <Image src={HistoryPic3} alt='PicNuevasInst' className='w-96' />
+            <Image src={HistoryPic6} alt='PicNuevasInst2' className='w-96' />
+          </div>
+          <figure>
+            <Image src={HistoryPic7} alt='PicEquipo' className='' />
+            <figcaption>
+              A lo largo de los años en el club se fueron desarrollando
+              distintas disciplinas, entre las que se destacan dos en especial
+              el básquet donde llego a jugar en la liga de capital y el futbol.
+            </figcaption>
+          </figure>
+          <figure>
+            <Image src={HistoryPic8} alt='PicEquipo2' className='' />
+            <figcaption>
+              A lo largo de muchos años el club se caracterizó por festejar los
+              carnavales con distintas murgas de los barrios y sus famosos
+              campeonatos de baile y a la vez torneos de papi futbol, donde se
+              anotan equipos de las cercanías.
+            </figcaption>
+          </figure>
+          <h1>Inicio del Baby Futbol</h1>
+          <div>
+            <p>
+              Luego en el año 1983 se acercaron al club “el turco” Balouz y Jose
+              Rucci, con un proyecto de comenzar el Baby Futbol en el club donde
+              jugarían chicos entre 6 años y 13 años, desde ahí se dio comienzo
+              a lo que al día de hoy se mantiene de forma ininterrumpida 40
+              años.
+            </p>
+            <Image src={HistoryPic9} alt='PicBabyFutbol' />
+          </div>
+          <h1>Obras y Tradiciones:</h1>
+          <div>
+            <figure>
+              <Image src={HistoryPic11} alt='PicObras' />
+              <figcaption>
+                Colecta de un vagon de ropa para los damnificados
+                post-inundación de Santa Fe
+              </figcaption>
+            </figure>
+            <figure>
+              <Image src={HistoryPic13} alt='PicObras' />
+              <figcaption>
+                Tradición del partido de fin de año entre solteros y casados.
+              </figcaption>
+            </figure>
+          </div>
+          <h1>En la Actualidad:</h1>
+          <p>
+            Hoy en día el club se ha desarrollado notablemente, donde además de
+            las actividades de Futbol, también se practican otras actividades
+            como Ajedrez, Touch Ball y Taekwondo, además el club cuenta con un
+            quincho con capacidad para 50 personas, un buffet económico y un
+            Salón de Fiestas con capacidad para 120 personas, todo esto no se
+            podría haber alcanzado sin la constante ayuda de las distintas
+            generaciones que pasaron por nuestro club, siempre ad honorem
+            buscando el crecimiento constante para llegar a hoy en día a ser lo
+            que somos,
           </p>
         </div>
       </div>
