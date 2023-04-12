@@ -45,7 +45,7 @@ const userSchema = new mongoose.Schema({
     },
 });
 // convert _id to uid for better lecture
-userSchema.methos.toJSON = function () {
+userSchema.methods.toJSON = function () {
     const { _id } = this.toObject();
     user.uid = _id;
     return user;
