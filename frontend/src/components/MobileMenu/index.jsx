@@ -2,12 +2,16 @@ import React, { useState } from 'react';
 import NavLink from '../NavLink';
 import { IconMobileMenu } from './icon';
 
-export default function MobileMenu() {
+export default function MobileMenu({ openMenu }) {
     const [clubOpen, setClubOpen] = useState(false);
     const [sportsOpen, setSportsOpen] = useState(false);
 
     return (
-        <section className="w-full h-full absolute bg-white top-0 left-0">
+        <section
+            className={`w-full h-full bg-slate-500 top-0 left-0 fixed transition-all duration-500 [clip-path:circle(0%_at_100%_0%)] ${
+                openMenu && '[clip-path:circle(150%_at_100%_0%)]'
+            }`}
+        >
             <div className="w-full h-full flex flex-col justify-center items-center">
                 <ul className="w-3/4">
                     {/* Link Home */}
