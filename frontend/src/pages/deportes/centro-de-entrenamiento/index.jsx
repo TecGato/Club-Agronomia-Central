@@ -1,10 +1,13 @@
 import React from 'react';
 import Image from 'next/image';
+import { HeaderTitle } from '@/components/HeaderTitle';
 
 
 export default function TrainingCenter() {
+  
   return (
     <div>
+      <HeaderTitle />
       <h1>Atenea Sports</h1>
 
       <h3>Centro de entrenamiento y readaptación deportiva.</h3>
