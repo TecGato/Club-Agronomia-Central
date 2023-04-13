@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Item({ Links, title }) {
     return (
         <ul>
@@ -5,9 +7,9 @@ export default function Item({ Links, title }) {
             {
                 Links.map((link) => (
                     <li key={link.name}>
-                        <a className="text-gray-400 hover:text-teal-400 duration-300 text-sm cursor-pointer leading-6" href={link.link}>
+                        <Link className="text-gray-400 hover:text-teal-400 duration-300 text-sm cursor-pointer leading-6" href={link.link}>
                             {link.name}
-                        </a>
+                        </Link>
                     </li>
                 ))
             }

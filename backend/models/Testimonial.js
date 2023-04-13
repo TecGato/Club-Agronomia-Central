@@ -20,5 +20,6 @@ const testimonialSchema = new mongoose.Schema({
     default: () => Date.now(),
   },
 });
+const Testimonial = model("Testimonial", testimonialSchema)
 
-module.exports = mongoose.model("Testimonial", testimonialSchema);
+module.exports = Testimonial
