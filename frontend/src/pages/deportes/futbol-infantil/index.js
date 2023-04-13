@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function FutInF() {
   return (
-    <div>
+    <div className='max-w-2xl mx-auto'>
       <h1>Baby Futbol</h1>
 
       <img src='https://img.freepik.com/free-vector/cartoon-football-player-collection_23-2149034182.jpg?size=626&ext=jpg' alt='futbol infantil' loading='lazy' />
