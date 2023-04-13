@@ -1,6 +1,7 @@
 const { Router } = require("express");
 const { getPosts, getById } = require("../controllers/posts/getPosts.js");
 const { deletePost } = require("../controllers/posts/deletePosts.js");
+const { updatePost } = require("../controllers/posts/updatePosts.js");
 
 const router = Router();
 
@@ -13,6 +14,8 @@ router.get("/:id", getById);
 ////////////////////////////////////////// POST ROUTES ///////////////////////////////////////////////////////
 
 ////////////////////////////////////////// PUT ROUTES ////////////////////////////////////////////////////////
+
+router.put("/:id", updatePost);
 
 ////////////////////////////////////////// DELETE ROUTES /////////////////////////////////////////////////////
 
