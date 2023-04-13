@@ -1,14 +1,14 @@
 const {
   getAllPosts,
-  getPostByName,
+  getPostByTitle,
   getPostById,
 } = require("../../helpers/posts/posts.js");
 
 const getPosts = async (req, res) => {
-  const { name } = req.query;
+  const { title } = req.query;
   try {
-    if (name) {
-      const post = await getPostByName(name);
+    if (title) {
+      const post = await getPostByTitle(title);
       return res.status(200).json(post);
     } else {
       const allPosts = await getAllPosts();
