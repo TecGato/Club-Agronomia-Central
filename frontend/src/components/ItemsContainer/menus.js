@@ -1,14 +1,15 @@
-export const PRODUCTS = [
-  { name: "Drag And Drop", link: "#" },
-  { name: "Visual Studio X", link: "#" },
-  { name: "Easy Content", link: "#" },
+export const EL_CLUB = [
+  { name: "Comisión Directiva", link: "/club/comision-directiva" },
+  { name: "Historia", link: "/club/historia" },
+  { name: "Instalaciones", link: "/club/instalaciones" },
 ];
-export const RESOURCES = [
-  { name: "Industries and tools", link: "#" },
-  { name: "Use cases", link: "#" },
-  { name: "Blog", link: "#" },
-  { name: "Online evenet", link: "#" },
-  { name: "Nostrud exercitation", link: "#" },
+export const DEPORTES = [
+  { name: "Ajedrez", link: "/deportes/ajedrez" },
+  { name: "Futbol Infantil", link: "/deportes/futbol-infantil" },
+  { name: "Futsal", link: "/deportes/futsal" },
+  { name: "Futsal Femenino", link: "/deportes/futsal-femenino" },
+  { name: "TaeKwonDo", link: "/deportes/taekwondo" },
+  { name: "Centro de Entrenamiento", link: "/deportes/centro-de-entrenamiento" },
 ];
 export const COMPANY = [
   { name: "Diversity & inclusion", link: "#" },
