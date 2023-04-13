@@ -1,4 +1,4 @@
-const { Router, response } = require('express');
+const { Router } = require('express');
 const { check } = require('express-validator');
 
 const { login, register } = require('../controllers/auth');
@@ -8,11 +8,14 @@ const { validateFields } = require('../middlewares/validate-fields');
 const router = Router();
 
 router.post('/login', login);
-router.post('/register', 
+router.post(
+    '/register',
     [
+        check('email', 'The email is not valid').isEmail(),
         check('email').custom(emailExist),
-        validateFields()
-    ]
-    , register);
+        validateFields,
+    ],
+    register
+);
 
 module.exports = router;

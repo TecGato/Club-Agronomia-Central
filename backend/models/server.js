@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const { connectionDB } = require('../database/mongo');
 
 class Server {
     constructor() {
