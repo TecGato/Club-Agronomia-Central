@@ -8,7 +8,7 @@ export default function TrainingCenter() {
   
   return (
     <div>
-      <HeaderTitle images={images} />
+      <HeaderTitle image={images[3].src} title='ATENEA SPORTS' />
       <h1>Atenea Sports</h1>
 
       <h3>Centro de entrenamiento y readaptación deportiva.</h3>
