@@ -17,7 +17,7 @@ const getEvents = async (req, res) => {
 };
 
 const getEventById = async (req, res) => {
-    const { id } = req.query;
+    const { id } = req.params;
 
     try {
         const event = await findEventByID(id);
