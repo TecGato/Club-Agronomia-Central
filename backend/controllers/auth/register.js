@@ -10,7 +10,7 @@ const register = async (req = request, res = response) => {
     const salt = bcryptjs.genSaltSync();
     user.password = bcryptjs.hashSync(password, salt);
     // Save in DB
-    await User.save();
+    await user.save();
 
     return res.status(201).json({
         msg: 'User succesfull registered',
