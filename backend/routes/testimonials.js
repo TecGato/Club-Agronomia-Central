@@ -3,6 +3,9 @@ const {
   getTestimonials,
   getById,
 } = require("../controllers/testimonials/getTestimonials.js");
+const {
+  deleteTestimonial,
+} = require("../controllers/testimonials/deleteTestimonials.js");
 
 const router = Router();
 
@@ -17,5 +20,7 @@ router.get("/:id", getById);
 ////////////////////////////////////////// PUT ROUTES ////////////////////////////////////////////////////////
 
 ////////////////////////////////////////// DELETE ROUTES /////////////////////////////////////////////////////
+
+router.delete("/:id", deleteTestimonial);
 
 module.exports = router;
