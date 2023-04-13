@@ -17,7 +17,7 @@ export default function Instalations() {
         <h1 className="text-center text-3xl font-bold ">Instalaciones</h1>
       </div>
       {/* ---------------------- BUFFET ----------------------- */}
-      <div className="max-w-md  mx-auto bg-white rounded-xl shadow-md overflow-hidden lg:max-w-6xl">
+      <div className="max-w-md  mx-auto bg-white  shadow-md overflow-hidden lg:max-w-6xl">
         <div className="lg:flex">
           <div className="lg:shrink-0">
             <Image
@@ -47,7 +47,7 @@ export default function Instalations() {
         </div>
       </div>
       {/* ---------------------- QUINCHO ----------------------- */}
-      <div className="mt-6 max-w-md  mx-auto bg-blue-100 rounded-xl shadow-md overflow-hidden lg:max-w-6xl">
+      <div className="mt-6 max-w-md  mx-auto bg-blue-100 shadow-md overflow-hidden lg:max-w-6xl">
         <div className="lg:flex">
           <div className="lg:shrink-0">
             <Image
@@ -76,7 +76,7 @@ export default function Instalations() {
         </div>
       </div>
       {/* ---------------------- SALON DE FIESTAS ----------------------- */}
-      <div className="mt-6 max-w-md  mx-auto bg-white rounded-xl shadow-md overflow-hidden lg:max-w-6xl">
+      <div className="mt-6 max-w-md  mx-auto bg-white shadow-md overflow-hidden lg:max-w-6xl">
         <div className="lg:flex">
           <div className="lg:shrink-0">
             <Image
@@ -105,7 +105,7 @@ export default function Instalations() {
         </div>
       </div>
       {/* ---------------------- CANCHAS ----------------------- */}
-      <div className="mt-6 max-w-md  mx-auto bg-blue-100 rounded-xl shadow-md overflow-hidden lg:max-w-6xl">
+      <div className="mt-6 max-w-md  mx-auto bg-blue-100 shadow-md overflow-hidden lg:max-w-6xl">
         <div className="lg:flex">
           <div className="lg:shrink-0">
             <Image
