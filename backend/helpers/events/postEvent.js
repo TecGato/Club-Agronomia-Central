@@ -2,6 +2,7 @@ const Event = require('../../models/Event');
 
 const createEvent = async (
     name,
+    date,
     beg_time,
     end_time,
     state,
@@ -11,6 +12,7 @@ const createEvent = async (
     description
 ) => {
     try {
+        
         // Create event
         const event = new Event({
             name,
