@@ -6,7 +6,7 @@ export default function Quincho() {
   return (
     <div>
 
-      <Navbar />
+      {/* <Navbar /> */}
 
       <QuinchoCalendarContainer />
 

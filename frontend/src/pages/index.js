@@ -3,8 +3,7 @@ import Image from 'next/image';
 // import { Inter } from 'next/font/google';
 
 import HomePage from '../components/HomePage';
-import { Navbar } from '@/components';
-import Footer from '@/components/Footer';
+import { Layout } from '@/components';
 
 // const inter = Inter({ subsets: ['latin'] });
 
