@@ -1,6 +1,5 @@
 const mongoose = require('mongoose')
 
-
 const connectionDB = ()=>{
     const connectionString = `mongodb+srv://henrystudents:henrypf35a@mongo.dau0olv.mongodb.net/test`    
     mongoose.connect(connectionString)
