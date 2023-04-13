@@ -36,7 +36,7 @@ export function Navbar() {
             >
                 <button
                     onClick={handleToggleMenu}
-                    className={`flex absolute z-50 flex-col w-10 h-10 justify-center items-center border-none bg-transparent gap-[0.62rem] lg:hidden`}
+                    className={`flex absolute flex-col w-10 h-10 justify-center items-center border-none bg-transparent gap-[0.62rem] lg:hidden`}
                 >
                     <div
                         className={`w-full h-[5px] bg-black rounded-md transition-all duration-500 origin-left ${
