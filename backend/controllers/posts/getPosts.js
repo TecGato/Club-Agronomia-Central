@@ -23,9 +23,9 @@ const getById = async (req, res) => {
   const { id } = req.params;
   try {
     const post = await getPostById(id);
-    res.status(200).json(post);
+    return res.status(200).json(post);
   } catch (error) {
-    res.status(404).send(error);
+    return res.status(404).send(error);
   }
 };
 
