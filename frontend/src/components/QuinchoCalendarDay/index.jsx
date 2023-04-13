@@ -5,6 +5,14 @@ import NavLink from '../NavLink';
 
 export function QuinchoCalendarDay(props){
 
+
+    const eventstates={
+        1:"gray",
+        2:"yellow",
+        3:"green"
+    }
+
+    // `who $options`
     return(
         <div>
 
@@ -20,7 +28,9 @@ export function QuinchoCalendarDay(props){
                                             return          <>
                                                             <div class="flex flex-col px-1 py-1 overflow-auto">
                                                                 <button class="flex items-center flex-shrink-0 h-5 px-1 text-xs hover:bg-gray-200">
-                                                                    <span class="flex-shrink-0 w-2 h-2 border border-gray-500 rounded-full"></span>
+                                                                    <span class={"flex-shrink-0 w-2 h-2 border border-red-500 bg-red-500 rounded-full"}></span>
+
+
                                                                     <span class="ml-2 font-light leading-none">{detail.beg_time}</span>
                                                                     <span class="ml-2 font-medium leading-none truncate">{detail.name}</span>
                                                                 </button>
