@@ -16,8 +16,17 @@ const getEventsByName = async (name) => {
         console.error(error.message);
     }
 };
+const findEventByID = async (id) => {
+    try {
+        const event = await Event.findById({ name });
+        return event;
+    } catch (error) {
+        console.error(error.message);
+    }
+};
 
 module.exports = {
     getAllEvents,
-    getEventsByName
+    getEventsByName,
+    findEventByID,
 };
