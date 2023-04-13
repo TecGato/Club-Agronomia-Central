@@ -4,11 +4,20 @@ const getAllEvents = async () => {
     try {
         const allEvents = await Event.find();
         return allEvents;
-      } catch (error) {
+    } catch (error) {
         console.error(error.message);
-      }
+    }
+};
+const getEventsByName = async (name) => {
+    try {
+        const allEvents = await Event.find({ name });
+        return allEvents;
+    } catch (error) {
+        console.error(error.message);
+    }
 };
 
 module.exports = {
-    getAllEvents
-}
+    getAllEvents,
+    getEventsByName
+};
