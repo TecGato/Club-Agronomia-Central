@@ -1,8 +1,5 @@
 const mongoose = require("mongoose");
 const {model} = require("mongoose");
-const connectionDB = require('../database/mongo')
-
-connectionDB()
 
 const postSchema = new mongoose.Schema({
   title: {
