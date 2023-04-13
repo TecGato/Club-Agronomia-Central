@@ -1,23 +1,28 @@
 const express = require('express');
 const cors = require('cors');
+const { connectionDB } = require('../database/mongo');
 
 class Server {
     constructor() {
         this.app = express();
-        this.port = process.env.PORT;
-        this.usersPath = '/api/usuarios';
+        this.port = process.env.PORT || 3001;
+        this.usersPath = '/api/users';
         this.authPath = '/api/auth';
-        // Conectar a la base de datos
-
+        this.testimonialsPath = '/api/testimonials';
+        this.postsPath = '/api/posts';
+        this.athletesPath = '/api/athletes';
+        // Connect to Data Base
+        this.connectToDB();
         // Middlewares
         this.middlewares();
-        // Rutas de aplicacion
+        // Routes of App
         this.routes();
     }
 
-    async conectarDB() {
-        await dbConecction();
+    async connectToDB() {
+        await connectionDB();
     }
+
     middlewares() {
         // CORS
         this.app.use(cors());
@@ -31,11 +36,13 @@ class Server {
     routes() {
         this.app.use(this.authPath, require('../routes/auth'));
         // this.app.use(this.usersPath, require('../routes/users'));
+        this.app.use(this.testimonialsPath, require('../routes/testimonials'));
+        this.app.use(this.postsPath, require('../routes/posts'));
     }
 
     listen() {
         this.app.listen(this.port, () => {
-            console.log(`Servidor corriendo en puerto ${this.port}`);
+            console.log(`server runing on port: ${this.port}`);
         });
     }
 }

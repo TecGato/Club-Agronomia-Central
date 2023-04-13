@@ -1,44 +1,139 @@
-import React from 'react'
-
+import React from "react";
+import Image from "next/image";
+import Entrada from "../../../../public/instalaciones-img/Imagen1.jpg";
+// import Cocina from "../../../../public/instalaciones-img/Imagen2.jpg";
+// import Mesas from "../../../../public/instalaciones-img/Imagen3.jpg";
+import Quincho from "../../../../public/instalaciones-img/Imagen4.jpg";
+import Salon from "../../../../public/instalaciones-img/Imagen5.jpg";
+import Salon2 from "../../../../public/instalaciones-img/Imagen6.jpg";
+import Cancha from "../../../../public/instalaciones-img/Imagen7.jpg";
+// import Cancha2 from "../../../../public/instalaciones-img/Imagen8.jpg";
+import { Navbar } from "@/components";
 export default function Instalations() {
   return (
-    <div>
-      <h1 className='text-center text-3xl font-bold '>Instalaciones</h1>
-      <div>
-        <h2>Buffet</h2>
-        <img src='' alt='entrada' />
-        <img src='' alt='cocina' />
-        <img src='' alt='mesas' />
-        <p>
-          BUFFET, ECONOMICO, FAMILIAR CON AMBIENTE CLIMATIZADO.
-          DESAYUNO, ALMUERZO Y CENAS.
-          ABIERTO DE LUNES A SABADOS DE 8:00 AM A 00:00AM
-        </p>
+    <>
+      <Navbar />
+      <div className="my-8">
+        <h1 className="text-center text-3xl font-bold ">Instalaciones</h1>
       </div>
-      <div>
-        <h2>Quincho</h2>
-        <img src='' alt='entrada' />
-        <p>
-        Nuestra sede cuenta con un quincho cerrado con cómodas instalaciones de casi 50 m2, con capacidad para 60 personas sentadas,
-        con 3 parrillas, equipado con mesas y sillas, televisor, freezer, heladeras, cocina industrial, 2 baños para disfrutar de todo
-        tipo de evento de día o de noche.
-        </p>
-        <p>
-        Reuniones en familia - Agasajos - Almuerzos empresariales - Cumpleaños - Casamientos - Bautismos, Comuniones, Bar y Mat Mitzva - Aniversarios - Fiestas de fin de año - Despedidas
-        </p>
-        <p>
-        Te esperamos con todo placer en nuestro quincho, para mostrarte las instalaciones y comentarte nuestra propuesta. Acércate al Club Social y Deportivo Agronomía Central estamos en Bauness 958 CABA puedes llamarnos al 4524-2225 o escribirnos  a clubagronomiacentral@gmail.com
-        </p>
+      {/* ---------------------- BUFFET ----------------------- */}
+      <div className="max-w-md  mx-auto bg-white  shadow-md overflow-hidden lg:max-w-6xl">
+        <div className="lg:flex">
+          <div className="lg:shrink-0">
+            <Image
+              className="h-full lg:w-64"
+              src={Entrada}
+              alt="Modern building architecture"
+            />
+          </div>
+          <div className="p-8">
+            <div className=" text-center tracking-wide text-2xl text-blue-500 font-semibold lg:text-left">
+              BUFFET
+            </div>
+            <p className="block mt-6 text-lg leading-tight font-medium text-black">
+              Económico, Familiar, con ambiente climatizado
+            </p>
+            <p className="mt-6 text-slate-500 text-justify">
+              Si estás buscando un lugar donde disfrutar de deliciosas comidas
+              en un ambiente acogedor y familiar, nuestro buffet es la elección
+              perfecta. Abierto de lunes a sábado de 8 am a 12 am, ofrecemos una
+              amplia variedad de opciones para desayunos, almuerzos y cenas.
+              Además, nuestro espacio está completamente climatizado, lo que lo
+              convierte en el lugar ideal para disfrutar de una comida en
+              cualquier época del año. ¡Te esperamos para que vengas a
+              deleitarte!
+            </p>
+          </div>
+        </div>
       </div>
-      <div>
-        <h2>Salon de Fiestas</h2>
-        <img src='' alt='salon' />
-        <p>
-        Club Agronomía Central un lugar único y distinguido en pleno barrio de Parque Chas.
-        Nuestro salón cuenta con más de 30 años de experiencia ofreciendo calidad y excelencia.
-        Sus cómodas instalaciones de casi 200 m2 que se adaptan, mediante distintas alternativas de equipamiento y decoración, al tipo de evento que usted esté planeando. Ofreciendo una capacidad para 120 personas o 60 personas en la modalidad de medio salón y dispone de acondicionadores de aire que aseguran en todo momento un confortable ambiente. Cuenta con una barra de tragos y está equipado con 2 freezer, heladera, cocina industrial, cabina de disc-jockey, parrilla de luces de colores, mesas y sillas. Para disfrutar de todo tipo de evento de día o de noche.
-        </p>
+      {/* ---------------------- QUINCHO ----------------------- */}
+      <div className="mt-6 max-w-md  mx-auto bg-blue-100 shadow-md overflow-hidden lg:max-w-6xl">
+        <div className="lg:flex">
+          <div className="lg:shrink-0">
+            <Image
+              className="h-full lg:w-64"
+              src={Quincho}
+              alt="Modern building architecture"
+            />
+          </div>
+          <div className="p-8">
+            <div className=" text-center tracking-wide text-2xl text-blue-500 font-semibold lg:text-left">
+              QUINCHO
+            </div>
+            <p className="block mt-6 text-lg leading-tight font-medium text-black">
+              Espacio equipado para eventos diversos.
+            </p>
+            <p className="mt-6 text-slate-500 text-justify">
+              Nuestra cede cuenta con un quincho cerrado de casi 50m2, equipado
+              con 3 parrillas, mesas y sillas, TV, freezer, heladeras y cocina
+              industrial. Perfecto para reuniones familiares, almuerzos
+              empresariales, cumpleaños y mucho más. Ven a conocer nuestras
+              instalaciones en el Club Social y Deportivo Agronomía Central en
+              CABA o contáctanos en clubagronomiacentral@gmail.com o al
+              4524-2225.
+            </p>
+          </div>
+        </div>
       </div>
-    </div>
-  )
+      {/* ---------------------- SALON DE FIESTAS ----------------------- */}
+      <div className="mt-6 max-w-md  mx-auto bg-white shadow-md overflow-hidden lg:max-w-6xl">
+        <div className="lg:flex">
+          <div className="lg:shrink-0">
+            <Image
+              className="h-full w-full lg:w-64"
+              src={Salon}
+              alt="Modern building architecture"
+            />
+          </div>
+          <div className="p-8">
+            <div className=" text-center tracking-wide text-2xl text-blue-500 font-semibold lg:text-left">
+              SALON DE FIESTAS
+            </div>
+            <p className="block mt-6 text-lg leading-tight font-medium text-black">
+              Salón exclusivo para eventos memorables.
+            </p>
+            <p className="mt-6 text-slate-500 text-justify">
+              Celebra tu evento en Agronomía Central. Salón único y distinguido
+              en Parque Chas con más de 30 años de experiencia. Instalaciones
+              adaptables para eventos de hasta 120 personas, equipado con barra
+              de tragos, cocina industrial, cabina de DJ y más. Eventos
+              corporativos, bautismos, cumpleaños, casamientos y más. Visítanos
+              de lunes a viernes de 18 a 20 hs en Bauness 958 CABA. Contáctanos
+              en clubagronomiacentral@gmail.com o al 4524-2225.
+            </p>
+          </div>
+        </div>
+      </div>
+      {/* ---------------------- CANCHAS ----------------------- */}
+      <div className="mt-6 max-w-md  mx-auto bg-blue-100 shadow-md overflow-hidden lg:max-w-6xl">
+        <div className="lg:flex">
+          <div className="lg:shrink-0">
+            <Image
+              className="h-full w-full lg:w-64"
+              src={Cancha}
+              alt="Modern building architecture"
+            />
+          </div>
+          <div className="p-8">
+            <div className=" text-center tracking-wide text-2xl text-blue-500 font-semibold lg:text-left">
+              CANCHAS
+            </div>
+            <p className="block mt-6 text-lg leading-tight font-medium text-black">
+              Canchas en excelente estado listas para disfrutar.
+            </p>
+            <p className="mt-6 text-slate-500 text-justify">
+              En el Club encontrarás dos canchas techadas disponibles para que
+              puedas disfrutar de tu deporte favorito sin preocuparte por las
+              inclemencias del clima. La cancha principal es de fútbol 5,
+              mientras que la auxiliar es más pequeña y se utiliza
+              principalmente para entrenamientos. Además, la cancha auxiliar se
+              encuentra disponible para alquiler junto con el quincho para
+              fiestas infantiles. ¡Ven y disfruta de una experiencia deportiva
+              única en nuestras cómodas instalaciones!
+            </p>
+          </div>
+        </div>
+      </div>
+    </>
+  );
 }
