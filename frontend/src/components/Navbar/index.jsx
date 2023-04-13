@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import MobileMenu from '../MobileMenu';
 import NavLink from '../NavLink';
+import { clubLinks, sportsLinks } from './links';
 
 export function Navbar() {
     const [openMenu, setOpenMenu] = useState(false);
@@ -19,8 +20,12 @@ export function Navbar() {
 
             <ul className="gap-4 hidden lg:flex">
                 <NavLink text={'INICIO'} link={'/'} />
-                <NavLink text={'EL CLUB'} link={'/club'} />
-                <NavLink text={'DEPORTES'} link={'/deportes'} />
+                <NavLink text={'EL CLUB'} link={'/club'} sonLinks={clubLinks} />
+                <NavLink
+                    text={'DEPORTES'}
+                    link={'/deportes'}
+                    sonLinks={sportsLinks}
+                />
                 <NavLink text={'HISTORIAS'} link={'/historias'} />
                 <NavLink text={'CONTACTANOS'} link={'/contacto'} />
             </ul>
