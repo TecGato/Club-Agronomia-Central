@@ -59,11 +59,11 @@ export function QuinchoCalendarContainer(){
         },
         {
             "id":4,
-            "name": "Feria de las flores",
+            "name": "Carnaval local",
             "beg_time":"6:00pm",
             "end_time":"8:15pm",
             "date":"13 mayo",
-            "state": 3,
+            "state": 2,
             "ammount": "$21.500",
             "email":"client2@ac.com.arg",
             "phone":"325 256 90 15",
@@ -71,11 +71,11 @@ export function QuinchoCalendarContainer(){
         },
         {
             "id":5,
-            "name": "Feria de las flores",
+            "name": "Rumba Grupo 6",
             "beg_time":"6:00pm",
             "end_time":"8:15pm",
             "date":"6 mayo",
-            "state": 3,
+            "state": 2,
             "ammount": "$21.500",
             "email":"client2@ac.com.arg",
             "phone":"325 256 90 15",
@@ -83,10 +83,10 @@ export function QuinchoCalendarContainer(){
         },
         {
             "id":6,
-            "name": "Feria de las flores",
-            "beg_time":"6:00pm",
+            "name": "Asado del grupo de futbol",
+            "beg_time":"7:00pm",
             "end_time":"8:15pm",
-            "date":"17 mayo",
+            "date":"14 mayo",
             "state": 3,
             "ammount": "$21.500",
             "email":"client2@ac.com.arg",
@@ -107,7 +107,7 @@ export function QuinchoCalendarContainer(){
         },
         {
             "id":8,
-            "name": "Feria de las flores",
+            "name": "Fiesta de integración Henry",
             "beg_time":"6:00pm",
             "end_time":"8:15pm",
             "date":"4 mayo",
@@ -119,10 +119,10 @@ export function QuinchoCalendarContainer(){
         },
         {
             "id":9,
-            "name": "Feria de las flores",
-            "beg_time":"6:00pm",
+            "name": "Cumpleaños feliz",
+            "beg_time":"7:00pm",
             "end_time":"8:15pm",
-            "date":"17 mayo",
+            "date":"27 mayo",
             "state": 3,
             "ammount": "$21.500",
             "email":"client2@ac.com.arg",
@@ -131,11 +131,11 @@ export function QuinchoCalendarContainer(){
         },
         {
             "id":10,
-            "name": "Feria de las flores",
-            "beg_time":"6:00pm",
+            "name": "Desayuno del grupo Nacional",
+            "beg_time":"8:30am",
             "end_time":"8:15pm",
-            "date":"17 mayo",
-            "state": 3,
+            "date":"28 mayo",
+            "state": 1,
             "ammount": "$21.500",
             "email":"client2@ac.com.arg",
             "phone":"325 256 90 15",
@@ -143,10 +143,10 @@ export function QuinchoCalendarContainer(){
         },
         {
             "id":11,
-            "name": "Feria de las flores",
-            "beg_time":"6:00pm",
+            "name": "Entrega PF",
+            "beg_time":"8:30am",
             "end_time":"8:15pm",
-            "date":"17 mayo",
+            "date":"28 mayo",
             "state": 3,
             "ammount": "$21.500",
             "email":"client2@ac.com.arg",
@@ -155,7 +155,7 @@ export function QuinchoCalendarContainer(){
         },
         {
             "id":12,
-            "name": "Feria de las flores",
+            "name": "Fiesta de las monjitas",
             "beg_time":"6:00pm",
             "end_time":"8:15pm",
             "date":"4 mayo",
@@ -167,10 +167,10 @@ export function QuinchoCalendarContainer(){
         },
         {
             "id":13,
-            "name": "Feria de las flores",
-            "beg_time":"6:00pm",
+            "name": "Entrega Cliente",
+            "beg_time":"6:15pm",
             "end_time":"8:15pm",
-            "date":"17 mayo",
+            "date":"31 mayo",
             "state": 3,
             "ammount": "$21.500",
             "email":"client2@ac.com.arg",
@@ -290,7 +290,7 @@ export function QuinchoCalendarContainer(){
         },
         {
             "date":"27 mayo",
-            "eventos":[]
+            "eventos":[9]
         },
         {
             "date":"28 mayo",
@@ -318,12 +318,24 @@ return(
 
 
     <div style={{padding: "30px"}}>
+     <div class="flex items-center mt-4">
+                    <div class="flex ml-6">
+                        <button>
+                            <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                            </svg>
+                        </button>
+                        <button>
+                            <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </button>
+                    </div>
+                    <h2 class="ml-2 text-xl font-bold leading-none">Mayo, 2023</h2>
+                </div>
 
 
 
-    <h4>Calendario de disponibilidad del Quincho</h4>
-
-    <h2 class="ml-2 text-xl font-bold leading-none">Mayo, 2023</h2>
 
     {/* Encabezado del calendario mensual */}
     <div class="grid grid-cols-7 mt-4 border-t-4 border-indigo-500" >
@@ -753,19 +765,11 @@ return(
 
     </div>
 
-    {eventos.map(evento=>{
+    {fechas.map(fecha=>{
         return <QuinchoCalendarDay
-        id={evento.id}
-        name={evento.name}
-        beg_time={evento.beg_time}
-        end_time={evento.end_time}
-        date={evento.date}
-        state={evento.state}
-        ammount={evento.ammount}
-        email={evento.email}
-        phone={evento.phone}
-        description={evento.description}
-        key={evento.id}
+        key={fecha.date}
+        fechacard={fecha.date}
+        arrayeventos={eventos.filter(fechaE=>fechaE.date===fecha.date)} //le mando al componente dumb los eventos que corresponden a cada fecha
         />
 
     })}

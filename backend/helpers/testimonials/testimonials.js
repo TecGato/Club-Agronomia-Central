@@ -1,6 +1,9 @@
+const mongoose = require("mongoose");
+const Testimonial = require("../../models/Testimonial");
+
 const getAllTestimonials = async () => {
   try {
-    const allTestimonials = await "CREAR MODELO Y CONECTAR";
+    const allTestimonials = await Testimonial.find();
     return allTestimonials;
   } catch (error) {
     console.error(error.message);
@@ -9,7 +12,7 @@ const getAllTestimonials = async () => {
 
 const getTestimonialByName = async (name) => {
   try {
-    const testimonial = await "CREAR MODELO Y CONECTAR";
+    const testimonial = await Testimonial.findOne({ name: name });
     return testimonial;
   } catch (error) {
     console.error(error.message);
@@ -18,7 +21,7 @@ const getTestimonialByName = async (name) => {
 
 const getTestimonialById = async (id) => {
   try {
-    const testimonial = await "CREAR MODELO Y CONECTAR";
+    const testimonial = await Testimonial.findById(id);
     return testimonial;
   } catch (error) {
     console.error(error.message);
