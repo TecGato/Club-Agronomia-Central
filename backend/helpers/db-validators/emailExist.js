@@ -1,12 +1,12 @@
 const User = require('../../models/User');
 
 const emailExist = async (email) => {
-    const existeEmail = await User.findOne({ email });
-    if (existeEmail) {
-        throw new Error(`El correo ya esta registrado`);
+    const existEmail = await User.findOne({ email });
+    if (existEmail) {
+        throw new Error(`The email is already registered`);
     }
 };
 
 module.exports = {
-    emailExist
-}
+    emailExist,
+};
