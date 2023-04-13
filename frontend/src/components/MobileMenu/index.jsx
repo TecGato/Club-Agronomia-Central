@@ -8,7 +8,7 @@ export default function MobileMenu({ openMenu }) {
 
     return (
         <section
-            className={`w-full h-full bg-slate-500 top-0 left-0 fixed transition-all duration-500 [clip-path:circle(0%_at_100%_0%)] ${
+            className={`z-40 w-full h-full bg-slate-500 top-0 left-0 fixed transition-all duration-500 [clip-path:circle(0%_at_100%_0%)] ${
                 openMenu && '[clip-path:circle(150%_at_100%_0%)]'
             }`}
         >
