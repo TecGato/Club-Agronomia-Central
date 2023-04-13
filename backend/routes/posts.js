@@ -1,5 +1,6 @@
 const { Router } = require("express");
 const { getPosts, getById } = require("../controllers/posts/getPosts.js");
+const { deletePost } = require("../controllers/posts/deletePosts.js");
 
 const router = Router();
 
@@ -14,5 +15,7 @@ router.get("/:id", getById);
 ////////////////////////////////////////// PUT ROUTES ////////////////////////////////////////////////////////
 
 ////////////////////////////////////////// DELETE ROUTES /////////////////////////////////////////////////////
+
+router.delete("/:id", deletePost);
 
 module.exports = router;
