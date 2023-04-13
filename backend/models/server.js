@@ -4,11 +4,12 @@ const cors = require("cors");
 class Server {
   constructor() {
     this.app = express();
-    this.port = process.env.PORT;
-    this.usersPath = "/api/usuarios";
+    this.port = process.env.PORT || 3001;
+    this.usersPath = "/api/users";
     this.authPath = "/api/auth";
     this.testimonialsPath = "/api/testimonials";
     this.postsPath = "/api/posts";
+    this.athletesPath = "/api/athletes";
     // Conectar a la base de datos
 
     // Middlewares
@@ -20,6 +21,8 @@ class Server {
   async conectarDB() {
     await dbConecction();
   }
+
+  
   middlewares() {
     // CORS
     this.app.use(cors());
@@ -39,7 +42,7 @@ class Server {
 
   listen() {
     this.app.listen(this.port, () => {
-      console.log(`Servidor corriendo en puerto ${this.port}`);
+      console.log(`server runing on port: ${this.port}`);
     });
   }
 }
