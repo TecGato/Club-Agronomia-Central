@@ -1,15 +1,18 @@
 const { Router } = require("express");
-const getAllPosts = require("../controllers/posts.js");
+const { getPosts, getById } = require("../controllers/posts/getPosts.js");
 
 const router = Router();
 
-router.get("/admin/posts", async (req, res) => {
-  const news = await getAllPosts();
-  try {
-    return res.status(200).json(news);
-  } catch (error) {
-    return res.status(404).send(error);
-  }
-});
+////////////////////////////////////////// GET ROUTES ////////////////////////////////////////////////////////
+
+router.get("/", getPosts);
+
+router.get("/:id", getById);
+
+////////////////////////////////////////// POST ROUTES ///////////////////////////////////////////////////////
+
+////////////////////////////////////////// PUT ROUTES ////////////////////////////////////////////////////////
+
+////////////////////////////////////////// DELETE ROUTES /////////////////////////////////////////////////////
 
 module.exports = router;

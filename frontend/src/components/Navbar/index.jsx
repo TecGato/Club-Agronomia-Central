@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import { useState } from 'react';
+import MobileMenu from '../MobileMenu';
 import NavLink from '../NavLink';
+import { clubLinks, sportsLinks } from './links';
 
 export function Navbar() {
     const [openMenu, setOpenMenu] = useState(false);
@@ -18,34 +20,45 @@ export function Navbar() {
 
             <ul className="gap-4 hidden lg:flex">
                 <NavLink text={'INICIO'} link={'/'} />
-                <NavLink text={'EL CLUB'} link={'/club'} />
-                <NavLink text={'DEPORTES'} link={'/deportes'} />
+                <NavLink text={'EL CLUB'} link={'/club'} sonLinks={clubLinks} />
+                <NavLink
+                    text={'DEPORTES'}
+                    link={'/deportes'}
+                    sonLinks={sportsLinks}
+                />
                 <NavLink text={'HISTORIAS'} link={'/historias'} />
                 <NavLink text={'CONTACTANOS'} link={'/contacto'} />
             </ul>
-            <button
-                onClick={handleToggleMenu}
-                className="flex flex-col w-10 h-10 justify-center items-center border-none bg-transparent gap-[0.62rem] lg:hidden"
+            <div
+                className={`w-10 h-10 relative ${
+                    openMenu ? 'fixed z-50' : 'relative'
+                }`}
             >
-                <div
-                    className={`w-full h-[5px] bg-black rounded-md transition-all duration-500 origin-left ${
-                        openMenu && 'rotate-45'
-                    }
+                <button
+                    onClick={handleToggleMenu}
+                    className={`flex absolute z-50 flex-col w-10 h-10 justify-center items-center border-none bg-transparent gap-[0.62rem] lg:hidden`}
+                >
+                    <div
+                        className={`w-full h-[5px] bg-black rounded-md transition-all duration-500 origin-left ${
+                            openMenu && 'rotate-45'
+                        }
                     `}
-                ></div>
-                <div
-                    className={`w-full h-[5px] bg-black rounded-md transition-all duration-300 origin-left ${
-                        openMenu && 'opacity-0 -translate-x-2'
-                    }
+                    ></div>
+                    <div
+                        className={`w-full h-[5px] bg-black rounded-md transition-all duration-300 origin-left ${
+                            openMenu && 'opacity-0 -translate-x-2'
+                        }
                     `}
-                ></div>
-                <div
-                    className={`w-full h-[5px] bg-black rounded-md transition-all duration-500 origin-left ${
-                        openMenu && '-rotate-45'
-                    }
+                    ></div>
+                    <div
+                        className={`w-full h-[5px] bg-black rounded-md transition-all duration-500 origin-left ${
+                            openMenu && '-rotate-45'
+                        }
                     `}
-                ></div>
-            </button>
+                    ></div>
+                </button>
+            </div>
+            <MobileMenu openMenu={openMenu} />
         </header>
     );
 }
