@@ -1,0 +1,28 @@
+const { Router } = require("express");
+const {
+  getAllSubscribers,
+} = require("../controllers/subscriptions/getSubscriptions");
+const {
+  updateSubscriber,
+} = require("../controllers/subscriptions/updateSubscriptions");
+const {
+  createSubscriber,
+} = require("../controllers/subscriptions/postSubscriptions");
+
+const router = Router();
+
+////////////////////////////////////////// GET ROUTES ////////////////////////////////////////////////////////
+
+router.get("/", getAllSubscribers);
+
+////////////////////////////////////////// POST ROUTES ///////////////////////////////////////////////////////
+
+router.post("/", createSubscriber);
+
+////////////////////////////////////////// PUT ROUTES ////////////////////////////////////////////////////////
+
+router.get("/:id", updateSubscriber);
+
+////////////////////////////////////////// DELETE ROUTES /////////////////////////////////////////////////////
+
+module.exports = router;

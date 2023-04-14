@@ -18,7 +18,7 @@ async function mailer() {
   });
 
   const info = await transporter.sendMail({
-    from: "Club Agrícola <>",
+    from: "Club Agronomía Central <>",
     to: subscribers,
     subject: title,
     html: html,
