@@ -6,7 +6,9 @@ const postEvent = async (req, res) => {
         beg_time,
         end_time,
         state,
+        date,
         ammount,
+        client,
         email,
         phone,
         description,
@@ -14,10 +16,12 @@ const postEvent = async (req, res) => {
     try {
         const eventSaved = await createEvent(
             name,
+            date,
             beg_time,
             end_time,
             state,
             ammount,
+            client,
             email,
             phone,
             description

@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const datesSchema = new mongoose.Schema({
+const dateSchema = new mongoose.Schema({
     date: {
         type: String,
         required: true,
@@ -21,6 +21,6 @@ const datesSchema = new mongoose.Schema({
     },
 });
 
-const Date = mongoose.model('Date', datesSchema);
+const DateEvent = mongoose.model('DateEvent', dateSchema);
 
-module.exports = Date;
+module.exports = DateEvent;
