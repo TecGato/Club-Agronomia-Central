@@ -1,12 +1,11 @@
-import React from 'react';
+import React from 'react'
 import { InfoSlider } from '@/components/InfoSlider';
 import { Layout } from "@/components";
-import { images, info } from './images'
+import { images, info } from './taekwondo';
 
-
-export default function TrainingCenter() {
+export default function Taekwondo() {
   return (
-    <Layout image={images[1].src} title="ATENEA SPORTS">
+    <Layout image={images[4].src} title="TAEKWONDO">
       <InfoSlider images={images} info={info}/>
     </Layout>
   );
