@@ -27,7 +27,7 @@ const createEvent = async (
         });
         // Save in DB
         await event.save();
-
+        // Check if an event already exists on the specified day
         const dateEvent = await DateEvent.findOne({ date });
         if (dateEvent) {
             dateEvent.events = [...dateEvent.events, event._id];
