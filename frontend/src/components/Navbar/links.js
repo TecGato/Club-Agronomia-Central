@@ -11,6 +11,10 @@ export const clubLinks = [
         text: 'INSTALACIONES',
         linkSon: '/club/instalaciones',
     },
+    {
+        text: 'DISPONIBILIDAD DEL QUINCHO',
+        linkSon: '/club/quincho',
+    }
 ];
 
 export const sportsLinks = [

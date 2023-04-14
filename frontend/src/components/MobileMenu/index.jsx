@@ -44,6 +44,10 @@ export default function MobileMenu({ openMenu }) {
                                 text={'INSTALACIONES'}
                                 link={'/club/instalaciones'}
                             />
+                            <NavLink
+                                text={'DISPONIBILIDAD DEL QUINCHO'}
+                                link={'/club/quincho'}
+                            />
                         </div>
                     )}
                     {/* Link Sports */}

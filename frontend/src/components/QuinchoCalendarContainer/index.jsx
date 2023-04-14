@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import NavLink from '../NavLink';
 import { QuinchoCalendarDay } from '../QuinchoCalendarDay';
+import { Layout } from '@/components';
 
 
 
@@ -333,7 +334,7 @@ const [showModal, setShowModal] = useState(false);
 
 
 return(
-
+    <Layout>
 
     <div style={{padding: "30px"}}>
      <div class="flex items-center mt-4">
@@ -496,6 +497,7 @@ return(
 
 
     </div>
+    </Layout>
 );
 
 }
