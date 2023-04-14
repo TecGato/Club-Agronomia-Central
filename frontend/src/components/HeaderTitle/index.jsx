@@ -4,7 +4,7 @@ export function HeaderTitle({ image, title }) {
             <div className="w-full h-full bg-gradient-to-r from-blue-950 to-cyan-500/50 px-4 py-8 sm:py-12 sm:px-6 lg:px-8">
                 <div className="sm:flex sm:items-center sm:justify-between">
                     <div className="text-center sm:text-left">
-                        <h1 className="italic text-slate-100 text-4xl font-bold text-gray-900 sm:text-6xl">
+                        <h1 className="italic text-slate-100 text-4xl font-bold sm:text-6xl">
                             {title}
                         </h1>
                     </div>
