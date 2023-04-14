@@ -19,7 +19,7 @@ export default function SteeringCommittee() {
       <div className="my-16">
         <h1 className="text-center text-3xl font-bold ">Comisión Directiva</h1>
       </div>
-      <div className="lg:grid grid-cols-4 gap-8 mx-20 ">
+      <div className="lg:grid grid-cols-4 gap-8 ">
         {directiva.map(([cargo, nombre, image]) => (
           <div class=" max-w-sm mx-auto bg-white shadow-lg mb-10  ">
             <Image
