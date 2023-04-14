@@ -23,7 +23,7 @@ export function InfoSlider({ images }) {
                     className="mx-auto max-w-[1340px] px-4 py-16 sm:px-6 sm:py-24 lg:mr-0 lg:pl-8 "
                 >
                     <div
-                        className="grid grid-cols-1 gap-y-8 lg:grid-cols-3 lg:items-center lg:gap-x-16"
+                        className="grid grid-cols-1 gap-y-8  sm:grid-cols-2 sm:items-center lg:grid-cols-3 lg:items-center lg:gap-x-16"
                     >
                         <div className="max-w-xl text-center sm:text-left">
                             <h2 className="italic text-3xl font-bold tracking-tight sm:text-4xl">
@@ -38,13 +38,19 @@ export function InfoSlider({ images }) {
                                     <Image src="/instagram-logo.svg" alt="Logo de Instagram" width={30} height={30} />
                                 </a>
                             </p>
+                        </div>
 
-                            <div className="hidden lg:mt-8 lg:flex lg:gap-4">
+                        <div className="-mx-6 lg:col-span-2 lg:mx-0">
+                            <div className="shadow-[10px_10px_0px_#1e3a8a] max-w-[70%] h-[500px] w-full m-auto relative">
+                                <div style={{ backgroundImage: `url(${images[currentIndex].src})` }} className="w-full h-full bg-center bg-cover duration-500">
+                                </div>
+                            </div>
+                            <div className="hidden lg:mt-8 lg:flex justify-center lg:gap-4">
                                 <button
                                     onClick={prevSlide}
                                     className="prev-button rounded-full border border-blue-900 p-3 text-blue-900 hover:bg-blue-900 hover:text-white"
                                 >
-                
+
                                     <svg
                                         className="h-5 w-5 -rotate-180 transform"
                                         fill="none"
@@ -84,22 +90,7 @@ export function InfoSlider({ images }) {
                             </div>
                         </div>
 
-
-
-
-
-
-                        <div className="-mx-6 lg:col-span-2 lg:mx-0">
-                            <div className="shadow-[10px_10px_0px_#1e3a8a] max-w-[70%] h-[500px] w-full m-auto relative">
-                                <div style={{ backgroundImage: `url(${images[currentIndex].src})` }} className="w-full h-full bg-center bg-cover duration-500">
-                                </div>
-                            </div>
-                        </div>
                     </div>
-
-
-
-
 
                     <div className="mt-8 flex justify-center gap-4 lg:hidden">
                         <button
