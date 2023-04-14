@@ -8,6 +8,7 @@ const postEvent = async (req, res) => {
         state,
         date,
         ammount,
+        client,
         email,
         phone,
         description,
@@ -20,6 +21,7 @@ const postEvent = async (req, res) => {
             end_time,
             state,
             ammount,
+            client,
             email,
             phone,
             description

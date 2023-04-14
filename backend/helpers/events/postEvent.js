@@ -8,6 +8,7 @@ const createEvent = async (
     end_time,
     state,
     ammount,
+    client,
     email,
     phone,
     description
@@ -21,6 +22,7 @@ const createEvent = async (
             state,
             date,
             ammount,
+            client,
             email,
             phone,
             description,
