@@ -3,18 +3,12 @@ import React, { useState } from 'react';
 import HistoryPic1 from '../../../../public/HistoryPics/HistoryPic1.jpg';
 import HistoryPic2 from '../../../../public/HistoryPics/HistoryPic2.jpg';
 import HistoryPic3 from '../../../../public/HistoryPics/HistoryPic3.jpg';
-import HistoryPic4 from '../../../../public/HistoryPics/HistoryPic4.jpg';
-import HistoryPic5 from '../../../../public/HistoryPics/HistoryPic5.jpg';
 import HistoryPic6 from '../../../../public/HistoryPics/HistoryPic6.jpg';
 import HistoryPic7 from '../../../../public/HistoryPics/HistoryPic7.jpg';
 import HistoryPic8 from '../../../../public/HistoryPics/HistoryPic8.jpg';
 import HistoryPic9 from '../../../../public/HistoryPics/HistoryPic9.jpg';
-import HistoryPic10 from '../../../../public/HistoryPics/HistoryPic10.jpg';
 import HistoryPic11 from '../../../../public/HistoryPics/HistoryPic11.jpg';
-import HistoryPic12 from '../../../../public/HistoryPics/HistoryPic12.jpg';
 import HistoryPic13 from '../../../../public/HistoryPics/HistoryPic13.jpg';
-import circleSvg from '../../../../public/HistoryPics/circle-svgrepo-com.svg';
-import { Navbar } from '../../../components/Navbar/index.jsx';
 import { Layout } from '@/components';
 
 export default function History() {
