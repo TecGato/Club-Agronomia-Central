@@ -1,5 +1,4 @@
 import React from 'react';
-import Image from 'next/image';
 import { HeaderTitle } from '@/components/HeaderTitle';
 import { InfoSlider } from '@/components/InfoSlider';
 import { Layout } from "@/components";
