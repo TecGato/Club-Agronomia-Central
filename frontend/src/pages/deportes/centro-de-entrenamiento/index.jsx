@@ -11,13 +11,6 @@ export default function TrainingCenter() {
     <div>
       <HeaderTitle image={images[3].src} title='ATENEA SPORTS' />
       <InfoSlider images={images} />
-
-      <em>#EntrenaDistinto #RehabilitateMejor</em>
-      <br />
-
-      <a href='https://instagram.com/ateneasports'>
-        <Image src="/instagram-logo.svg" alt="Logo de Instagram" width={30} height={30} />
-      </a>
     </div>
   );
 };

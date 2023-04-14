@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Image from "next/image";
 
 export function InfoSlider({ images }) {
 
@@ -26,13 +27,16 @@ export function InfoSlider({ images }) {
                     >
                         <div className="max-w-xl text-center sm:text-left">
                             <h2 className="italic text-3xl font-bold tracking-tight sm:text-4xl">
-                                Centro de Entrenamiento y 
-                                <br/>
+                                Centro de Entrenamiento y
+                                <br />
                                 Readaptación Deportiva.
                             </h2>
 
-                            <p className="mt-4 text-gray-500">
-                                Atenea Sports es un espacio dedicado al entrenamiento, la readaptación deportiva y la rehabilitación de lesiones. Desde una concepción integral y funcional de la persona, nuestro objetivo es ayudar a la persona a alcanzar su mejor versión, teniendo en cuenta sus objetivos, posibilidades y necesidades. Cada sesión, cada trabajo y cada ejercicio está pensado por nuestros profesionales para que vivas el deporte, el ejercicio y la actividad física con la misma calidad que lo hacen los profesionales. #EntrenaDistinto #RehabilitateMejor 😀
+                            <p className="mt-7 text-lg text-gray-800">
+                                Atenea Sports es un espacio dedicado al entrenamiento, la readaptación deportiva y la rehabilitación de lesiones. Desde una concepción integral y funcional de la persona, nuestro objetivo es ayudar a la persona a alcanzar su mejor versión, teniendo en cuenta sus objetivos, posibilidades y necesidades. Cada sesión, cada trabajo y cada ejercicio está pensado por nuestros profesionales para que vivas el deporte, el ejercicio y la actividad física con la misma calidad que lo hacen los profesionales. <strong>#EntrenaDistinto #RehabilitateMejor 😀</strong>
+                                <a href='https://instagram.com/ateneasports'>
+                                    <Image src="/instagram-logo.svg" alt="Logo de Instagram" width={30} height={30} />
+                                </a>
                             </p>
 
                             <div className="hidden lg:mt-8 lg:flex lg:gap-4">
@@ -61,7 +65,7 @@ export function InfoSlider({ images }) {
                                     onClick={nextSlide}
                                     className="next-button rounded-full border border-blue-900 p-3 text-blue-900 hover:bg-blue-900 hover:text-white"
                                 >
-                                    <span className="sr-only">Next Slide</span>
+
                                     <svg
                                         className="h-5 w-5"
                                         fill="none"
