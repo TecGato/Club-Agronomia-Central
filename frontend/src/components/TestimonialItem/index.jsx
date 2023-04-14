@@ -1,24 +1,22 @@
 import React from 'react';
 
-export function TestimonialItem({title, text, img}) {
+export function TestimonialItem({ title, text, img }) {
     return (
-        <div class="max-w-sm rounded-lg shadow bg-gray-800 border-gray-700">
+        <div class="max-w-sm shadow-xl bg-gray-100 border border-gray-300 overflow-hidden group transition-all duration-200">
             <a href="#">
                 <img
-                    class="rounded-t-lg"
+                    class="group-hover:scale-110 transition-all duration-200"
                     src={img}
                     alt=""
                 />
             </a>
             <div class="p-5">
                 <a href="#">
-                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-white">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-800">
                         {title}
                     </h5>
                 </a>
-                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                    {text}
-                </p>
+                <p class="mb-3 font-normal text-gray-600">{text}</p>
                 <a
                     href="#"
                     class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
