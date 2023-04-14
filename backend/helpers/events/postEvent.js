@@ -1,4 +1,5 @@
 const Event = require('../../models/Event');
+const DateEvent = require('../../models/DateEvent');
 
 const createEvent = async (
     name,
@@ -12,13 +13,13 @@ const createEvent = async (
     description
 ) => {
     try {
-        
         // Create event
         const event = new Event({
             name,
             beg_time,
             end_time,
             state,
+            date,
             ammount,
             email,
             phone,
@@ -26,6 +27,16 @@ const createEvent = async (
         });
         // Save in DB
         await event.save();
+
+        const dateEvent = await DateEvent.findOne({ date });
+        if (dateEvent) {
+            dateEvent.events = [...dateEvent.events, event._id];
+            await dateEvent.save();
+        } else {
+            const newDate = new DateEvent({ date, events: [event._id] });
+            await newDate.save();
+        }
+
         return event;
     } catch (error) {
         console.error(error.message);
