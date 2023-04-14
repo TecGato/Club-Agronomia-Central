@@ -1,26 +1,87 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Entrada from "../../../../public/instalaciones-img/Imagen1.jpg";
+import Cocina from "../../../../public/instalaciones-img/Imagen2.jpg";
+import Mesas from "../../../../public/instalaciones-img/Imagen3.jpg";
 import Quincho from "../../../../public/instalaciones-img/Imagen4.jpg";
 import Salon from "../../../../public/instalaciones-img/Imagen5.jpg";
 import Cancha from "../../../../public/instalaciones-img/Imagen7.jpg";
+import Cancha2 from "../../../../public/instalaciones-img/Imagen8.jpg";
 import { Layout } from "@/components";
 export default function Instalations() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex2, setCurrentIndex2] = useState(0);
+  const images1 = [Entrada, Cocina, Mesas];
+  const images2 = [Cancha, Cancha2];
+  const prevSlide = () => {
+    const isFirstSlide = currentIndex === 0;
+    const newIndex = isFirstSlide ? images1.length - 1 : currentIndex - 1;
+    setCurrentIndex(newIndex);
+  };
+  const nextSlide = () => {
+    const isLastSlide = currentIndex === images1.length - 1;
+    const newIndex = isLastSlide ? 0 : currentIndex + 1;
+    setCurrentIndex(newIndex);
+  };
+  const prevSlide1 = () => {
+    const isFirstSlide = currentIndex2 === 0;
+    const newIndex = isFirstSlide ? images2.length - 1 : currentIndex2 - 1;
+    setCurrentIndex2(newIndex);
+  };
+  const nextSlide1 = () => {
+    const isLastSlide = currentIndex2 === images2.length - 1;
+    const newIndex = isLastSlide ? 0 : currentIndex2 + 1;
+    setCurrentIndex2(newIndex);
+  };
   return (
-    
-      <Layout>
+    <Layout>
       <div className="my-8">
         <h1 className="text-center text-3xl font-bold ">Instalaciones</h1>
       </div>
       {/* ---------------------- BUFFET ----------------------- */}
-      <div className="max-w-md  mx-auto bg-white  shadow-md overflow-hidden lg:max-w-6xl">
+      <div className="max-w-md  mx-auto bg-white  shadow-md lg:max-w-6xl">
         <div className="lg:flex">
-          <div className="lg:shrink-0">
-            <Image
-              className="h-full lg:w-64"
-              src={Entrada}
-              alt="Modern building architecture"
-            />
+          <div className="relative group">
+            <Image src={images1[currentIndex]} className="h-full"></Image>
+            
+              <button
+                onClick={prevSlide}
+                className="absolute left-1 top-[50%] rounded-full p-1 bg-slate-200 text-white hover:bg-slate-400"
+              >
+                <svg
+                  className="h-5 w-5 -rotate-180 "
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M9 5l7 7-7 7"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                  />
+                </svg>
+              </button>            
+            <button
+              onClick={nextSlide}
+              className=" absolute top-[50%] right-1 rounded-full  p-1 bg-slate-200 text-white hover:bg-slate-400"
+            >
+              <svg
+                className="h-5 w-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M9 5l7 7-7 7"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                />
+              </svg>
+            </button>
           </div>
           <div className="p-8">
             <div className=" text-center tracking-wide text-2xl text-blue-500 font-semibold lg:text-left">
@@ -101,14 +162,48 @@ export default function Instalations() {
         </div>
       </div>
       {/* ---------------------- CANCHAS ----------------------- */}
-      <div className="my-6 max-w-md  mx-auto bg-blue-100 shadow-md overflow-hidden lg:max-w-6xl">
+      <div className="my-6 max-w-md  mx-auto bg-blue-100 shadow-md  lg:max-w-6xl">
         <div className="lg:flex">
-          <div className="lg:shrink-0">
-            <Image
-              className="h-full w-full lg:w-64"
-              src={Cancha}
-              alt="Modern building architecture"
-            />
+        <div className="relative group">
+            <Image src={images2[currentIndex2]} className=" w-[1230px] h-full"></Image>
+              <button
+                onClick={prevSlide1}
+                className="absolute left-1 top-[50%] rounded-full p-1 bg-slate-200 text-white hover:bg-slate-400"
+              >
+                <svg
+                  className="h-5 w-5 -rotate-180 "
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M9 5l7 7-7 7"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                  />
+                </svg>
+              </button>            
+            <button
+              onClick={nextSlide1}
+              className=" absolute top-[50%] right-1 rounded-full  p-1 bg-slate-200 text-white hover:bg-slate-400"
+            >
+              <svg
+                className="h-5 w-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M9 5l7 7-7 7"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                />
+              </svg>
+            </button>
           </div>
           <div className="p-8">
             <div className=" text-center tracking-wide text-2xl text-blue-500 font-semibold lg:text-left">
