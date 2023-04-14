@@ -18,7 +18,7 @@ export function Banner() {
     };
 
     return (
-        <div className="max-w-[100%] h-[500px] w-full m-auto relative group hola">
+        <div className="max-w-[100%] h-[500px] w-full m-auto relative group">
             <div style={{backgroundImage:`url(${slides[currentIndex].src})`}} className="w-full h-full bg-center bg-cover duration-500">
             </div>
             <div onClick={nextSlide} className="hidden group-hover:block absolute top-[50%] -translate-x-0 tranlate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
