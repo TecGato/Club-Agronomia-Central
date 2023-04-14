@@ -32,7 +32,7 @@ export function InfoSlider({ images }) {
                                 Readaptación Deportiva.
                             </h2>
 
-                            <p className="mt-7 text-lg text-gray-800">
+                            <p className="mt-7 text-justify text-lg text-gray-800">
                                 Atenea Sports es un espacio dedicado al entrenamiento, la readaptación deportiva y la rehabilitación de lesiones. Desde una concepción integral y funcional de la persona, nuestro objetivo es ayudar a la persona a alcanzar su mejor versión, teniendo en cuenta sus objetivos, posibilidades y necesidades. Cada sesión, cada trabajo y cada ejercicio está pensado por nuestros profesionales para que vivas el deporte, el ejercicio y la actividad física con la misma calidad que lo hacen los profesionales. <strong>#EntrenaDistinto #RehabilitateMejor 😀</strong>
                                 <a href='https://instagram.com/ateneasports'>
                                     <Image src="/instagram-logo.svg" alt="Logo de Instagram" width={30} height={30} />
@@ -44,7 +44,7 @@ export function InfoSlider({ images }) {
                                     onClick={prevSlide}
                                     className="prev-button rounded-full border border-blue-900 p-3 text-blue-900 hover:bg-blue-900 hover:text-white"
                                 >
-                                    <span className="sr-only">Previous Slide</span>
+                
                                     <svg
                                         className="h-5 w-5 -rotate-180 transform"
                                         fill="none"

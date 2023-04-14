@@ -8,7 +8,7 @@ import { images } from './images'
 export default function TrainingCenter() {
   return (
     <Layout>
-      <HeaderTitle image={images[3].src} title='ATENEA SPORTS' />
+      <HeaderTitle image={images[1].src} title='ATENEA SPORTS' />
       <InfoSlider images={images} />
     </Layout>
   );
