@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Image from "next/image";
 
-export function InfoSlider({ images }) {
+export function InfoSlider({ images, info }) {
 
     const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -27,14 +27,14 @@ export function InfoSlider({ images }) {
                     >
                         <div className="max-w-xl text-center sm:text-left">
                             <h2 className="italic text-3xl font-bold tracking-tight sm:text-4xl">
-                                Centro de Entrenamiento y
+                                {info.title1}
                                 <br />
-                                Readaptación Deportiva.
+                                {info.title2}
                             </h2>
 
                             <p className="mt-7 text-justify text-lg text-gray-800">
-                                Atenea Sports es un espacio dedicado al entrenamiento, la readaptación deportiva y la rehabilitación de lesiones. Desde una concepción integral y funcional de la persona, nuestro objetivo es ayudar a la persona a alcanzar su mejor versión, teniendo en cuenta sus objetivos, posibilidades y necesidades. Cada sesión, cada trabajo y cada ejercicio está pensado por nuestros profesionales para que vivas el deporte, el ejercicio y la actividad física con la misma calidad que lo hacen los profesionales. <strong>#EntrenaDistinto #RehabilitateMejor 😀</strong>
-                                <a href='https://instagram.com/ateneasports'>
+                                {info.description} <strong>{info.strong}</strong>
+                                <a href={info.href}>
                                     <Image src="/instagram-logo.svg" alt="Logo de Instagram" width={30} height={30} />
                                 </a>
                             </p>
