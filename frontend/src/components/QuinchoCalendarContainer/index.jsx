@@ -376,6 +376,8 @@ return(
         key={fecha.date}
         fechacard={fecha.date}
         arrayeventos={eventos.filter(fechaE=>fechaE.date===fecha.date)} //le mando al componente dumb los eventos que corresponden a cada fecha
+        setShowModal={setShowModal}
+
         />
 
     })}
@@ -429,7 +431,7 @@ return(
                                 <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
                                     Nombre del cliente
                                 </label>
-                                <input className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="Jane" />
+                                <input className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="" />
 
                                 </div>
 
