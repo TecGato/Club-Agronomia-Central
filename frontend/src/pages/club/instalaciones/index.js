@@ -1,18 +1,14 @@
 import React from "react";
 import Image from "next/image";
 import Entrada from "../../../../public/instalaciones-img/Imagen1.jpg";
-// import Cocina from "../../../../public/instalaciones-img/Imagen2.jpg";
-// import Mesas from "../../../../public/instalaciones-img/Imagen3.jpg";
 import Quincho from "../../../../public/instalaciones-img/Imagen4.jpg";
 import Salon from "../../../../public/instalaciones-img/Imagen5.jpg";
-import Salon2 from "../../../../public/instalaciones-img/Imagen6.jpg";
 import Cancha from "../../../../public/instalaciones-img/Imagen7.jpg";
-// import Cancha2 from "../../../../public/instalaciones-img/Imagen8.jpg";
-import { Navbar } from "@/components";
+import { Layout } from "@/components";
 export default function Instalations() {
   return (
-    <>
-      <Navbar />
+    
+      <Layout>
       <div className="my-8">
         <h1 className="text-center text-3xl font-bold ">Instalaciones</h1>
       </div>
@@ -105,7 +101,7 @@ export default function Instalations() {
         </div>
       </div>
       {/* ---------------------- CANCHAS ----------------------- */}
-      <div className="mt-6 max-w-md  mx-auto bg-blue-100 shadow-md overflow-hidden lg:max-w-6xl">
+      <div className="my-6 max-w-md  mx-auto bg-blue-100 shadow-md overflow-hidden lg:max-w-6xl">
         <div className="lg:flex">
           <div className="lg:shrink-0">
             <Image
@@ -134,6 +130,6 @@ export default function Instalations() {
           </div>
         </div>
       </div>
-    </>
+    </Layout>
   );
 }
