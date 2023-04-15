@@ -5,10 +5,6 @@ const athleteSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  id: {
-    type: String,
-    required: true,
-  },
   discipline: {
     type: String,
     enum: [
