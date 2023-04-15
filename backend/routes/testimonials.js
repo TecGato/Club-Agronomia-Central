@@ -14,7 +14,6 @@ const router = Router();
 
 router.get("/", getTestimonials);
 router.get("/:id", getById);
-
 router.put("/:id", updateTestimonial);
 router.delete("/:id", deleteById);
 
