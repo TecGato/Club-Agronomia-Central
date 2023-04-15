@@ -3,9 +3,8 @@ import { Layout } from '@/components';
 
 export default function FutInF() {
   return (
-    <Layout>
+    <Layout title='Baby Futbol' image='https://img.freepik.com/vector-gratis/balon-futbol-pictograma-red_1284-11698.jpg?size=626&ext=jpg&ga=GA1.1.1228025790.1681327921&semt=sph'>
       <div className='m-4'>
-      <h1 className='text-4xl font-bold text-gray-800 text-center p-5 m-3'>Baby Futbol</h1>
       
       <div className="grid grid-cols-1 grid-rows-9 md:grid-cols-2 place-items-center">
 

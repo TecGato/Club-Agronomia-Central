@@ -1,16 +1,14 @@
 import React from "react";
-import { Navbar } from "@/components";
-import Post from "./[id]/index";
+import { Layout } from "@/components";
+import PostNoticias from "@/components/Noticias";
+
 
 export default function Posts() {
   return (
-    <div>
-      <Navbar />
-      <div className="my-8">
-        <h1 className="text-center text-3xl font-bold ">Últimas Noticias</h1>
-        <Post />
-        <Post />
+    <Layout title='Últimas Noticias' image='https://img.freepik.com/foto-gratis/gente-tiro-medio-corriendo-juntos_23-2149037629.jpg?size=626&ext=jpg&ga=GA1.2.1228025790.1681327921&semt=sph'>
+      <div className='m-4'>
+        <PostNoticias />
       </div>
-    </div>
+    </Layout>
   );
 }

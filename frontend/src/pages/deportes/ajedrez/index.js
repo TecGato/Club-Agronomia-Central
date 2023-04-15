@@ -3,10 +3,8 @@ import { Layout } from '@/components';
 
 export default function Chess() {
   return (
-    <Layout>
+    <Layout title='Club De Ajedrez Zugzwang' image='https://img.freepik.com/fotos-premium/visualizacion-figurativa-idea-estrategia-empresarial-forma-juego-ajedrez_124507-32323.jpg?size=626&ext=jpg&ga=GA1.1.1228025790.1681327921&semt=sph'>
       <div className='m-4'>
-        <h1 className='text-4xl font-bold text-gray-800 text-center p-5 m-3'>Club De Ajedrez Zugzwang</h1>
-
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 place-items-center">
 
           <img src="https://wallpaperaccess.com/full/8357317.jpg" alt="imagen de ajedrez" loading='lazy' className='w-full' />
