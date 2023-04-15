@@ -1,17 +1,13 @@
-const {Router} = require('express')
-const {Athlete} = require ('../models/Athletes')
+const { Router } = require("express");
+const { getAthletes, getById } = require("../controllers/athletes/getAthletes");
+const { createAthlete } = require("../controllers/athletes/postAthletes");
+const { updateAthlete } = require("../controllers/athletes/putAthletes");
 
-const router = Router()
+const router = Router();
 
-////////////////////////////////////////// GET ROUTES ////////////////////////////////////////////////////////
+router.get("/", getAthletes);
+router.get("/:id", getById);
+router.post("/", createAthlete);
+router.put("/:id", updateAthlete);
 
-routerAthletes.get("/", getPosts);
-
-routerAthletes.get("/:id", getById);
-
-////////////////////////////////////////// POST ROUTES ///////////////////////////////////////////////////////
-
-////////////////////////////////////////// PUT ROUTES ////////////////////////////////////////////////////////
-
-////////////////////////////////////////// DELETE ROUTES /////////////////////////////////////////////////////
-module.exports = router
+module.exports = router;

@@ -1,4 +1,3 @@
-const mongoose = require("mongoose");
 const Testimonial = require("../../models/Testimonial");
 
 const getAllTestimonials = async () => {
@@ -10,9 +9,9 @@ const getAllTestimonials = async () => {
   }
 };
 
-const getTestimonialByName = async (name) => {
+const getTestimonialsByName = async (name) => {
   try {
-    const testimonial = await Testimonial.findOne({ name: name });
+    const testimonial = await Testimonial.find({ name });
     return testimonial;
   } catch (error) {
     console.error(error.message);
@@ -30,6 +29,6 @@ const getTestimonialById = async (id) => {
 
 module.exports = {
   getAllTestimonials,
-  getTestimonialByName,
+  getTestimonialsByName,
   getTestimonialById,
 };

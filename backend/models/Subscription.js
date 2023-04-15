@@ -6,6 +6,11 @@ const subscriptionSchema = new mongoose.Schema({
     lowercase: true,
     required: true,
   },
+  subscribed: {
+    type: Boolean,
+    required: true,
+    default: true,
+  },
   createdAt: {
     type: Date,
     inmutable: true,

@@ -1,15 +1,14 @@
-const mongoose = require("mongoose");
 const Testimonial = require("../../models/Testimonial");
 
-const deleteById = async (id) => {
+const deleteTestimonial = async (id) => {
   try {
-    const deletedTestimonial = await Testimonial.deleteById(id);
-    return deletedTestimonial;
+    const testimonial = await Testimonial.deleteById(id);
+    return testimonial;
   } catch (error) {
     console.error(error.message);
   }
 };
 
 module.exports = {
-  deleteById,
+  deleteTestimonial,
 };
