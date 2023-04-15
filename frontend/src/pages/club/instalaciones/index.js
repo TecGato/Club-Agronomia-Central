@@ -34,15 +34,16 @@ export default function Instalations() {
     setCurrentIndex2(newIndex);
   };
   return (
-    <Layout>
-      <div className="my-8">
-        <h1 className="text-center text-3xl font-bold ">Instalaciones</h1>
-      </div>
+    <Layout
+     title={'Instalaciones'}
+     image={'https://img.freepik.com/foto-gratis/jugadores-futbol-accion-estadio-profesional_654080-1820.jpg?w=1060&t=st=1681512728~exp=1681513328~hmac=a67e09a84ca0bef8f8bd5310774b8bf6600c68d778b8587563603d69eb1942d3'}
+    >
+      <section className="py-10 px-5 w-full h-full">
       {/* ---------------------- BUFFET ----------------------- */}
       <div className="max-w-md  mx-auto bg-white  shadow-md lg:max-w-6xl">
         <div className="lg:flex">
           <div className="relative group">
-            <Image src={images1[currentIndex]} className="h-full"></Image>
+            <Image src={images1[currentIndex]} className=" h-full"></Image>
             
               <button
                 onClick={prevSlide}
@@ -83,7 +84,7 @@ export default function Instalations() {
               </svg>
             </button>
           </div>
-          <div className="p-8">
+          <div className="p-8 lg:w-[158%]">
             <div className=" text-center tracking-wide text-2xl text-blue-500 font-semibold lg:text-left">
               BUFFET
             </div>
@@ -103,17 +104,18 @@ export default function Instalations() {
           </div>
         </div>
       </div>
+      
       {/* ---------------------- QUINCHO ----------------------- */}
       <div className="mt-6 max-w-md  mx-auto bg-blue-100 shadow-md overflow-hidden lg:max-w-6xl">
         <div className="lg:flex">
-          <div className="lg:shrink-0">
+          <div>
             <Image
-              className="h-full lg:w-64"
+              className="h-full "
               src={Quincho}
               alt="Modern building architecture"
             />
           </div>
-          <div className="p-8">
+          <div className="p-8 lg:w-[180%]">
             <div className=" text-center tracking-wide text-2xl text-blue-500 font-semibold lg:text-left">
               QUINCHO
             </div>
@@ -135,14 +137,14 @@ export default function Instalations() {
       {/* ---------------------- SALON DE FIESTAS ----------------------- */}
       <div className="mt-6 max-w-md  mx-auto bg-white shadow-md overflow-hidden lg:max-w-6xl">
         <div className="lg:flex">
-          <div className="lg:shrink-0">
+          <div>
             <Image
-              className="h-full w-full lg:w-64"
+              className="h-full"
               src={Salon}
               alt="Modern building architecture"
             />
           </div>
-          <div className="p-8">
+          <div className="p-8 w-[100%]">
             <div className=" text-center tracking-wide text-2xl text-blue-500 font-semibold lg:text-left">
               SALON DE FIESTAS
             </div>
@@ -165,7 +167,7 @@ export default function Instalations() {
       <div className="my-6 max-w-md  mx-auto bg-blue-100 shadow-md  lg:max-w-6xl">
         <div className="lg:flex">
         <div className="relative group">
-            <Image src={images2[currentIndex2]} className=" w-[1230px] h-full"></Image>
+            <Image src={images2[currentIndex2]} className="  h-full"></Image>
               <button
                 onClick={prevSlide1}
                 className="absolute left-1 top-[50%] rounded-full p-1 bg-slate-200 text-white hover:bg-slate-400"
@@ -205,7 +207,7 @@ export default function Instalations() {
               </svg>
             </button>
           </div>
-          <div className="p-8">
+          <div className="p-8 w-[100%]">
             <div className=" text-center tracking-wide text-2xl text-blue-500 font-semibold lg:text-left">
               CANCHAS
             </div>
@@ -225,6 +227,7 @@ export default function Instalations() {
           </div>
         </div>
       </div>
+      </section>
     </Layout>
   );
 }
