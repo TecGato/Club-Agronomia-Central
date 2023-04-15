@@ -1,5 +1,9 @@
-import React from 'react';
+import { Layout } from '@/components/Dashboard';
 
 export default function Login() {
-    return <div>login</div>;
+    return (
+        <Layout>
+            <div>login</div>;
+        </Layout>
+    );
 }
