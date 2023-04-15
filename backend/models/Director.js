@@ -1,13 +1,16 @@
 const mongoose = require("mongoose");
 
-const dateEventSchema = new mongoose.Schema({
-  date: {
+const directorSchema = new mongoose.Schema({
+  name: {
     type: String,
     required: true,
   },
-  events: {
-    type: Array,
-    of: String,
+  position: {
+    type: String,
+    required: true,
+  },
+  picture: {
+    type: String,
     required: true,
   },
   createdAt: {
@@ -21,6 +24,6 @@ const dateEventSchema = new mongoose.Schema({
   },
 });
 
-const DateEvent = mongoose.model("DateEvent", dateEventSchema);
+const Director = mongoose.model("Director", directorSchema);
 
-module.exports = DateEvent;
+module.exports = Director;

@@ -1,10 +1,9 @@
-const mongoose = require("mongoose");
 const Subscription = require("../../models/Subscription");
 
 const getSubscriptions = async () => {
   try {
-    const subscribers = await Subscription.find();
-    return subscribers;
+    const subscriptions = await Subscription.find();
+    return subscriptions;
   } catch (error) {
     console.error(error.message);
   }

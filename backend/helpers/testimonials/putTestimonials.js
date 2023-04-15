@@ -1,20 +1,19 @@
-const mongoose = require("mongoose");
 const Testimonial = require("../../models/Testimonial");
 
-const updateById = async (id, name, testimony, picture, updatedAt) => {
+const putTestimonial = async (id, name, testimony, picture, updatedAt) => {
   try {
-    const updatedTestimony = await Testimonial.updateOne(id, {
+    const testimonial = await Testimonial.updateOne(id, {
       name,
       testimony,
       picture,
       updatedAt,
     });
-    return updatedTestimony;
+    return testimonial;
   } catch (error) {
     console.error(error.message);
   }
 };
 
 module.exports = {
-  updateById,
+  putTestimonial,
 };

@@ -1,18 +1,17 @@
-const mongoose = require("mongoose");
 const Subscription = require("../../models/Subscription");
 
-const newSubscription = async (email) => {
-  const subscriberExists = await Subscription.exists({ email });
+const postSubscription = async (email) => {
+  const subscriptionExists = await Subscription.exists({ email });
   try {
-    if (subscriberExists) {
-      const subscriber = await Subscription.findOne({ email });
-      return subscriber;
+    if (subscriptionExists) {
+      const subscription = await Subscription.findOne({ email });
+      return subscription;
     } else {
-      const newSubscriber = new Subscription({
+      const newSubscription = new Subscription({
         email,
       });
-      await newSubscriber.save();
-      return newSubscriber;
+      await newSubscription.save();
+      return newSubscription;
     }
   } catch (error) {
     console.error(error.message);
@@ -20,5 +19,5 @@ const newSubscription = async (email) => {
 };
 
 module.exports = {
-  newSubscription,
+  postSubscription,
 };

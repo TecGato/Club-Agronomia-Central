@@ -1,24 +1,15 @@
 const { Router } = require("express");
 const { getPosts, getById } = require("../controllers/posts/getPosts.js");
-const { deletePost } = require("../controllers/posts/deletePosts.js");
-const { updatePost } = require("../controllers/posts/updatePosts.js");
+const { createPost } = require("../controllers/posts/postPosts.js");
+const { updatePost } = require("../controllers/posts/putPosts.js");
+const { deleteById } = require("../controllers/posts/deletePosts.js");
 
 const router = Router();
 
-////////////////////////////////////////// GET ROUTES ////////////////////////////////////////////////////////
-
 router.get("/", getPosts);
-
 router.get("/:id", getById);
-
-////////////////////////////////////////// POST ROUTES ///////////////////////////////////////////////////////
-
-////////////////////////////////////////// PUT ROUTES ////////////////////////////////////////////////////////
-
+router.post("/", createPost);
 router.put("/:id", updatePost);
-
-////////////////////////////////////////// DELETE ROUTES /////////////////////////////////////////////////////
-
-router.delete("/:id", deletePost);
+router.delete("/:id", deleteById);
 
 module.exports = router;

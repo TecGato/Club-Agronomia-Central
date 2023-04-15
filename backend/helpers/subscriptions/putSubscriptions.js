@@ -1,17 +1,16 @@
-const mongoose = require("mongoose");
 const Subscription = require("../../models/Subscription");
 
-const unsubscribe = async (email) => {
+const putSubscription = async (email) => {
   try {
-    const subscriber = await Subscription.updateOne(email, {
+    const subscription = await Subscription.updateOne(email, {
       subscribed: false,
     });
-    return subscriber;
+    return subscription;
   } catch (error) {
     console.error(error.message);
   }
 };
 
 module.exports = {
-  unsubscribe,
+  putSubscription,
 };

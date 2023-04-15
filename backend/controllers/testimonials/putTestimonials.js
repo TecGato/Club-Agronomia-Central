@@ -1,19 +1,21 @@
-const { updateById } = require("../../helpers/testimonials/updateTestimonials");
+const {
+  putTestimonial,
+} = require("../../helpers/testimonials/putTestimonials");
 
 const updateTestimonial = async (req, res) => {
   const { id } = req.params;
   const { name, testimony, picture, updatedAt } = req.body;
   try {
-    const updatedTestimony = await updateById(
+    const testimonial = await putTestimonial(
       id,
       name,
       testimony,
       picture,
       updatedAt
     );
-    return res.status(200).json(updatedTestimony);
+    return res.status(202).json(testimonial);
   } catch (error) {
-    return res.status(400).send(error);
+    return res.status(500).json(error);
   }
 };
 

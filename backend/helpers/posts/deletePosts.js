@@ -1,13 +1,12 @@
-const mongoose = require("mongoose");
 const Post = require("../../models/Post");
 
-const deleteById = async (id) => {
+const deletePost = async (id) => {
   try {
-    const deletedPost = await Post.deleteById(id);
-    return deletedPost;
+    const post = await Post.deleteById(id);
+    return post;
   } catch (error) {
     console.error(error.message);
   }
 };
 
-module.exports = { deleteById };
+module.exports = { deletePost };

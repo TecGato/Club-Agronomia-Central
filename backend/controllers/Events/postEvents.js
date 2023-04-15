@@ -1,40 +1,40 @@
-const { createEvent } = require('../../helpers/events/postEvent');
+const { postEvent } = require("../../helpers/events/postEvents");
 
-const postEvent = async (req, res) => {
-    const {
-        name,
-        beg_time,
-        end_time,
-        state,
-        date,
-        ammount,
-        client,
-        email,
-        phone,
-        description,
-    } = req.body;
-    try {
-        const eventSaved = await createEvent(
-            name,
-            date,
-            beg_time,
-            end_time,
-            state,
-            ammount,
-            client,
-            email,
-            phone,
-            description
-        );
-        return res.status(201).json({
-            msg: 'Event created succesfully',
-            eventSaved,
-        });
-    } catch (error) {
-        return res.status(404).json(error);
-    }
+const createEvent = async (req, res) => {
+  const {
+    name,
+    beg_time,
+    end_time,
+    state,
+    date,
+    amount,
+    client,
+    email,
+    phone,
+    description,
+  } = req.body;
+  try {
+    const event = await postEvent(
+      name,
+      date,
+      beg_time,
+      end_time,
+      state,
+      amount,
+      client,
+      email,
+      phone,
+      description
+    );
+    return res.status(201).json({
+      msg: "Event Created Succesfully",
+      event,
+    });
+  } catch (error) {
+    return res.status(500).json(error);
+  }
 };
 
 module.exports = {
-    postEvent,
+  createEvent,
 };

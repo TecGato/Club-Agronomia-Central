@@ -1,12 +1,12 @@
-const { deletePost } = require("../../helpers/posts/deletePosts");
+const { deleteEvent } = require("../../helpers/events/deleteEvents");
 
 const deleteById = async (req, res) => {
   const { id } = req.params;
   try {
-    const post = await deletePost(id);
+    const event = await deleteEvent(id);
     return res.status(200).json({
-      msg: "Post Deleted Successfully",
-      post,
+      msg: "Event Deleted Succesfully",
+      event,
     });
   } catch (error) {
     return res.status(404).json(error);

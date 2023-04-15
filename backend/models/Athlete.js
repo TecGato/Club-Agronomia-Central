@@ -5,12 +5,20 @@ const athleteSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  last_name: {
+  id: {
     type: String,
     required: true,
   },
-  id: {
+  discipline: {
     type: String,
+    enum: [
+      "Ajedrez",
+      "Fútbol Infantil",
+      "Futsal",
+      "Futsal Femenino",
+      "Taekwondo",
+      "Centro de Entrenamiento",
+    ],
     required: true,
   },
   contact: {
@@ -25,20 +33,30 @@ const athleteSchema = new mongoose.Schema({
     type: Date,
     required: true,
   },
-  parents_contact: {
-    parents_name: {
+  emergency_contact: {
+    contact_name: {
       type: String,
       required: true,
     },
-    parents_contact: {
+    contact_phone: {
       type: String,
       required: true,
     },
-    parents_email: {
+    contact_email: {
       type: String,
     },
+  },
+  createdAt: {
+    type: Date,
+    inmutable: true,
+    default: () => Date.now(),
+  },
+  updatedAt: {
+    type: Date,
+    default: () => Date.now(),
   },
 });
 
 const Athlete = mongoose.model("Athlete", athleteSchema);
+
 module.exports = Athlete;
