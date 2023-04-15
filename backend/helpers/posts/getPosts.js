@@ -11,7 +11,7 @@ const getAllPosts = async () => {
 
 const getPostsByTitle = async (title) => {
   try {
-    const posts = await Post.findOne({ title });
+    const posts = await Post.find({ title });
     return posts;
   } catch (error) {
     console.error(error.message);

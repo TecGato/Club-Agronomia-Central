@@ -1,10 +1,13 @@
 const { Router } = require("express");
+const { getAthletes, getById } = require("../controllers/athletes/getAthletes");
+const { createAthlete } = require("../controllers/athletes/postAthletes");
+const { updateAthlete } = require("../controllers/athletes/putAthletes");
 
 const router = Router();
 
 router.get("/", getAthletes);
-router.get("/", getByDiscipline);
-router.get("/", getByName);
-router.get("/", getById);
+router.get("/:id", getById);
+router.post("/", createAthlete);
+router.put("/:id", updateAthlete);
 
 module.exports = router;
