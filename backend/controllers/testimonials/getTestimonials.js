@@ -1,6 +1,6 @@
 const {
   getAllTestimonials,
-  getTestimonialByName,
+  getTestimonialsByName,
   getTestimonialById,
 } = require("../../helpers/testimonials/getTestimonials.js");
 
@@ -8,7 +8,7 @@ const getTestimonials = async (req, res) => {
   const { name } = req.query;
   try {
     const testimonials = name
-      ? await getTestimonialByName(name)
+      ? await getTestimonialsByName(name)
       : await getAllTestimonials();
     return res.status(200).json(testimonials);
   } catch (error) {
