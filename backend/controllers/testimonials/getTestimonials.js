@@ -7,15 +7,12 @@ const {
 const getTestimonials = async (req, res) => {
   const { name } = req.query;
   try {
-    if (name) {
-      const testimonial = await getTestimonialByName(name);
-      return res.status(200).json(testimonial);
-    } else {
-      const allTestimonials = await getAllTestimonials();
-      return res.status(200).json(allTestimonials);
-    }
+    const testimonials = name
+      ? await getTestimonialByName(name)
+      : await getAllTestimonials();
+    return res.status(200).json(testimonials);
   } catch (error) {
-    return res.status(404).send(error);
+    return res.status(404).json(error);
   }
 };
 
@@ -25,7 +22,7 @@ const getById = async (req, res) => {
     const testimonial = await getTestimonialById(id);
     return res.status(200).json(testimonial);
   } catch (error) {
-    return res.status(404).send(error);
+    return res.status(404).json(error);
   }
 };
 

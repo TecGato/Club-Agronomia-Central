@@ -1,17 +1,20 @@
 const {
-  newSubscription,
+  postSubscription,
 } = require("../../helpers/subscriptions/postSubscriptions");
 
-const createSubscriber = async (req, res) => {
+const createSubscription = async (req, res) => {
   const { email } = req.body;
   try {
-    const newSubscriber = await newSubscription(email);
-    return res.status(202).json(newSubscriber);
+    const newSubscription = await postSubscription(email);
+    return res.status(201).json({
+      msg: "Subscription Created Successfully",
+      newSubscription,
+    });
   } catch (error) {
-    return res.status(404).send(error);
+    return res.status(500).json(error);
   }
 };
 
 module.exports = {
-  createSubscriber,
+  createSubscription,
 };

@@ -1,21 +1,16 @@
 const {
   getAllPosts,
-  getPostByTitle,
+  getPostsByTitle,
   getPostById,
 } = require("../../helpers/posts/getPosts.js");
 
 const getPosts = async (req, res) => {
   const { title } = req.query;
   try {
-    if (title) {
-      const post = await getPostByTitle(title);
-      return res.status(200).json(post);
-    } else {
-      const allPosts = await getAllPosts();
-      return res.status(200).json(allPosts);
-    }
+    const posts = title ? await getPostsByTitle(title) : await getAllPosts();
+    return res.status(200).json(posts);
   } catch (error) {
-    return res.status(404).send(error);
+    return res.status(404).json(error);
   }
 };
 
@@ -25,7 +20,7 @@ const getById = async (req, res) => {
     const post = await getPostById(id);
     return res.status(200).json(post);
   } catch (error) {
-    return res.status(404).send(error);
+    return res.status(404).json(error);
   }
 };
 

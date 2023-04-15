@@ -1,17 +1,20 @@
-const { deleteById } = require("../../helpers/testimonials/deleteTestimonials");
+const {
+  deleteTestimonial,
+} = require("../../helpers/testimonials/deleteTestimonials");
 
-const deleteTestimonial = async (req, res) => {
+const deleteById = async (req, res) => {
   const { id } = req.params;
   try {
-    await deleteById(id);
-    return res
-      .status(200)
-      .send("The testimonial has been successfully deleted.");
+    const testimonial = await deleteTestimonial(id);
+    return res.status(200).json({
+      msg: "Testimonial Deleted Successfully",
+      testimonial,
+    });
   } catch (error) {
-    return res.status(404).send(error);
+    return res.status(404).json(error);
   }
 };
 
 module.exports = {
-  deleteTestimonial,
+  deleteById,
 };

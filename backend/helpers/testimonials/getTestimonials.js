@@ -1,4 +1,3 @@
-const mongoose = require("mongoose");
 const Testimonial = require("../../models/Testimonial");
 
 const getAllTestimonials = async () => {

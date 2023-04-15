@@ -1,4 +1,3 @@
-const mongoose = require("mongoose");
 const Post = require("../../models/Post");
 
 const getAllPosts = async () => {
@@ -10,10 +9,10 @@ const getAllPosts = async () => {
   }
 };
 
-const getPostByTitle = async (title) => {
+const getPostsByTitle = async (title) => {
   try {
-    const post = await Post.findOne({ title: title });
-    return post;
+    const posts = await Post.findOne({ title });
+    return posts;
   } catch (error) {
     console.error(error.message);
   }
@@ -28,4 +27,4 @@ const getPostById = async (id) => {
   }
 };
 
-module.exports = { getAllPosts, getPostByTitle, getPostById };
+module.exports = { getAllPosts, getPostsByTitle, getPostById };

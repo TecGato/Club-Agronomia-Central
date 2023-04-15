@@ -2,15 +2,15 @@ const {
   getSubscriptions,
 } = require("../../helpers/subscriptions/getSubscriptions");
 
-const getAllSubscribers = async (req, res) => {
+const getAllSubscriptions = async (req, res) => {
   try {
-    const subscribers = await getSubscriptions();
-    return res.status(200).json(subscribers);
+    const subscriptions = await getSubscriptions();
+    return res.status(200).json(subscriptions);
   } catch (error) {
-    return res.status(404).send(error);
+    return res.status(404).json(error);
   }
 };
 
 module.exports = {
-  getAllSubscribers,
+  getAllSubscriptions,
 };
