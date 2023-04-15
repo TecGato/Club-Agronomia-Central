@@ -8,7 +8,6 @@ const router = Router();
 router.get("/", getAthletes);
 router.get("/:id", getById);
 router.post("/", createAthlete);
-
 router.put("/:id", updateAthlete);
 
 module.exports = router;
