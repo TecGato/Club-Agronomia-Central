@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import HistoryPic1 from '../../../../public/HistoryPics/HistoryPic1.jpg';
 import HistoryPic2 from '../../../../public/HistoryPics/HistoryPic2.jpg';
 import HistoryPic3 from '../../../../public/HistoryPics/HistoryPic3.jpg';
+import HistoryPic4 from '../../../../public/HistoryPics/HistoryPic4.jpg';
 import HistoryPic6 from '../../../../public/HistoryPics/HistoryPic6.jpg';
 import HistoryPic7 from '../../../../public/HistoryPics/HistoryPic7.jpg';
 import HistoryPic8 from '../../../../public/HistoryPics/HistoryPic8.jpg';
@@ -50,7 +51,7 @@ export default function History() {
   };
 
   return (
-    <Layout>
+    <Layout title='Historia del Club' image={HistoryPic4}>
       <>
         <div className='mt-8'>
           {inform[clickedButton] ? (
