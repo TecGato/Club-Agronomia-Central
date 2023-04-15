@@ -36,7 +36,7 @@ export default function Instalations() {
   return (
     <Layout
      title={'Instalaciones'}
-     image={'https://img.freepik.com/foto-gratis/jugadores-futbol-accion-estadio-profesional_654080-1820.jpg?w=1060&t=st=1681512728~exp=1681513328~hmac=a67e09a84ca0bef8f8bd5310774b8bf6600c68d778b8587563603d69eb1942d3'}
+     image={'https://easycdn.es/12/i/como-se-construyen-las-pistas-de-futbol-sala-y-cuales-son-sus-caracteristicas-principales_5512.webp'}
     >
       <section className="py-10 px-5 w-full h-full">
       {/* ---------------------- BUFFET ----------------------- */}
