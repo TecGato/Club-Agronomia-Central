@@ -1,8 +1,12 @@
-const Event = require('../../models/Event');
+const Event = require("../../models/Event");
 
 const putEvent = async (id, eventInfo) => {
   try {
-    const event = await Event.findOneAndUpdate({_id: id}, { ...eventInfo }, { new: true });
+    const event = await Event.findByIdAndUpdate(
+      id,
+      { ...eventInfo },
+      { new: true }
+    );
     return event;
   } catch (error) {
     console.error(error.message);

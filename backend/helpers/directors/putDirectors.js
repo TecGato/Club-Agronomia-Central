@@ -2,7 +2,7 @@ const Director = require("../../models/Director");
 
 const putDirector = async (id, name, position, picture) => {
   try {
-    const director = await Director.updateOne(id, {
+    const director = await Director.findByIdAndUpdate(id, {
       name,
       position,
       picture,
