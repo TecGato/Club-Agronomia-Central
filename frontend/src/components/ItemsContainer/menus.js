@@ -2,6 +2,7 @@ export const EL_CLUB = [
   { name: "Comisión Directiva", link: "/club/comision-directiva" },
   { name: "Historia", link: "/club/historia" },
   { name: "Instalaciones", link: "/club/instalaciones" },
+  { name: "Disponibilidad del Quicho", link: "/club/quincho" },
 ];
 export const DEPORTES = [
   { name: "Ajedrez", link: "/deportes/ajedrez" },
