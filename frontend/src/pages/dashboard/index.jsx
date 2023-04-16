@@ -1,9 +1,11 @@
-import { InfoItem, Layout } from '@/components/Dashboard';
+import { InfoItem, Layout, BarChart } from '@/components/Dashboard';
 
 export default function Dashboard() {
     return (
         <Layout>
-            <div className="w-full min-h-screen grid grid-cols-2 auto-rows-fr gap-2 justify-self-center items-center xl:w-11/12 sm:w-5/6 p-5 outline">
+            <div className="w-full min-h-screen grid grid-cols-2 gap-2 justify-self-center items-center xl:w-11/12 sm:w-5/6 p-5
+            sm:justify-items-center
+            ">
                 <InfoItem
                     icon={
                         <svg
@@ -224,6 +226,7 @@ export default function Dashboard() {
                     title={'Total eventos reservados'}
                     number={26}
                 />
+                <BarChart />
                 <div className="sm:h-[200px] sm:w-[200px] bg-orange-300">
                     ingresos quincho
                 </div>
