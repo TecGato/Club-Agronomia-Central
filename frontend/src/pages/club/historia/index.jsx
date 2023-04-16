@@ -1,23 +1,23 @@
 import Image from 'next/image';
 
-import { Layout } from '@/components';
+import { Layout } from '@/components/Page';
 import { useHistoryLine } from '@/hooks';
 
-import HistoryPic1 from '../../../../public/HistoryPics/HistoryPic1.jpg';
-import HistoryPic2 from '../../../../public/HistoryPics/HistoryPic2.jpg';
-import HistoryPic3 from '../../../../public/HistoryPics/HistoryPic3.jpg';
-import HistoryPic6 from '../../../../public/HistoryPics/HistoryPic6.jpg';
-import HistoryPic7 from '../../../../public/HistoryPics/HistoryPic7.jpg';
-import HistoryPic8 from '../../../../public/HistoryPics/HistoryPic8.jpg';
-import HistoryPic9 from '../../../../public/HistoryPics/HistoryPic9.jpg';
-import HistoryPic11 from '../../../../public/HistoryPics/HistoryPic11.jpg';
-import HistoryPic13 from '../../../../public/HistoryPics/HistoryPic13.jpg';
+import HistoryPic1 from '../../../../public/history-img/HistoryPic1.jpg';
+import HistoryPic2 from '../../../../public/history-img/HistoryPic2.jpg';
+import HistoryPic3 from '../../../../public/history-img/HistoryPic3.jpg';
+import HistoryPic6 from '../../../../public/history-img/HistoryPic6.jpg';
+import HistoryPic7 from '../../../../public/history-img/HistoryPic7.jpg';
+import HistoryPic8 from '../../../../public/history-img/HistoryPic8.jpg';
+import HistoryPic9 from '../../../../public/history-img/HistoryPic9.jpg';
+import HistoryPic11 from '../../../../public/history-img/HistoryPic11.jpg';
+import HistoryPic13 from '../../../../public/history-img/HistoryPic13.jpg';
 
 export default function History() {
     const { inform, clickedButton, handleClick, handlerNext, handlerPrev } =
         useHistoryLine();
     return (
-        <Layout>
+        <Layout title="Nuestra Historia" image={HistoryPic7}>
             <>
                 <div className="mt-8">
                     {inform[clickedButton] ? (

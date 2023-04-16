@@ -1,12 +1,12 @@
 import Image from 'next/image';
 
-import { Layout } from '@/components';
+import { Layout } from '@/components/Page';
 
-import Presidente from '../../../../public/directiva-img/imagen1.jpg';
-import Vicepresidente from '../../../../public/directiva-img/imagen2.jpg';
-import Secretario from '../../../../public/directiva-img/imagen3.jpg';
-import ProSecretario from '../../../../public/directiva-img/imagen4.jpg';
-import Tesorero from '../../../../public/directiva-img/imagen5.jpg';
+import Presidente from '../../../../public/directives-img/imagen1.jpg';
+import Vicepresidente from '../../../../public/directives-img/imagen2.jpg';
+import Secretario from '../../../../public/directives-img/imagen3.jpg';
+import ProSecretario from '../../../../public/directives-img/imagen4.jpg';
+import Tesorero from '../../../../public/directives-img/imagen5.jpg';
 
 export default function SteeringCommittee() {
     const directive = [

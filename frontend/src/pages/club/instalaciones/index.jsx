@@ -1,26 +1,27 @@
-import React, { useState } from 'react';
 import Image from 'next/image';
-import Entrada from '../../../../public/instalaciones-img/Imagen1.jpg';
-import Cocina from '../../../../public/instalaciones-img/Imagen2.jpg';
-import Mesas from '../../../../public/instalaciones-img/Imagen3.jpg';
-import Quincho from '../../../../public/instalaciones-img/Imagen4.jpg';
-import Salon from '../../../../public/instalaciones-img/Imagen5.jpg';
-import Cancha from '../../../../public/instalaciones-img/Imagen7.jpg';
-import Cancha2 from '../../../../public/instalaciones-img/Imagen8.jpg';
-import { Layout } from '@/components';
+
+import { Layout } from '@/components/Page';
 import { useSlideInstalations } from '@/hooks';
+
+import Entrada from '../../../../public/installations-img/Imagen1.jpg';
+import Cocina from '../../../../public/installations-img/Imagen2.jpg';
+import Mesas from '../../../../public/installations-img/Imagen3.jpg';
+import Quincho from '../../../../public/installations-img/Imagen4.jpg';
+import Salon from '../../../../public/installations-img/Imagen5.jpg';
+import Cancha from '../../../../public/installations-img/Imagen7.jpg';
+import Cancha2 from '../../../../public/installations-img/Imagen8.jpg';
+
 export default function Instalations() {
-    
-  const {
-    currentIndex,
-    currentIndex2,
-    images1,
-    images2,
-    prevSlide,
-    nextSlide,
-    prevSlide1,
-    nextSlide1
-} = useSlideInstalations(Entrada, Cocina, Mesas, Cancha, Cancha2)
+    const {
+        currentIndex,
+        currentIndex2,
+        images1,
+        images2,
+        prevSlide,
+        nextSlide,
+        prevSlide1,
+        nextSlide1,
+    } = useSlideInstalations(Entrada, Cocina, Mesas, Cancha, Cancha2);
 
     return (
         <Layout
