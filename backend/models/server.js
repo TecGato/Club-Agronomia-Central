@@ -12,6 +12,7 @@ class Server {
         this.postsPath = '/api/posts';
         this.athletesPath = '/api/athletes';
         this.eventsPath = '/api/events';
+        this.donationPath = '/api/donation';
         // Connect to Data Base
         this.connectToDB();
         // Middlewares
@@ -40,6 +41,7 @@ class Server {
         this.app.use(this.testimonialsPath, require('../routes/testimonials'));
         this.app.use(this.postsPath, require('../routes/posts'));
         this.app.use(this.eventsPath, require('../routes/events'));
+        this.app.use(this.donationPath, require('../routes/donations'));
     }
 
     listen() {
