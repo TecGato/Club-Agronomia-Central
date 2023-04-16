@@ -12,6 +12,7 @@ class Server {
         this.postsPath = '/api/posts';
         this.athletesPath = '/api/athletes';
         this.eventsPath = '/api/events';
+        this.matchesPath = '/api/matches';
         this.donationPath = '/api/donation';
         // Connect to Data Base
         this.connectToDB();
@@ -21,16 +22,16 @@ class Server {
         this.routes();
     }
 
-    async connectToDB() {
-        await connectionDB();
-    }
+  async connectToDB() {
+    await connectionDB();
+  }
 
-    middlewares() {
-        // CORS
-        this.app.use(cors());
+  middlewares() {
+    // CORS
+    this.app.use(cors());
 
-        // Lectura y parseo del body
-        this.app.use(express.json());
+    // Lectura y parseo del body
+    this.app.use(express.json());
 
         //Public dir
         this.app.use(express.static('public'));
@@ -41,14 +42,15 @@ class Server {
         this.app.use(this.testimonialsPath, require('../routes/testimonials'));
         this.app.use(this.postsPath, require('../routes/posts'));
         this.app.use(this.eventsPath, require('../routes/events'));
+        this.app.use(this.matchesPath, require('../routes/matches'));
         this.app.use(this.donationPath, require('../routes/donations'));
     }
 
-    listen() {
-        this.app.listen(this.port, () => {
-            console.log(`server runing on port: ${this.port}`);
-        });
-    }
+  listen() {
+    this.app.listen(this.port, () => {
+      console.log(`server runing on port: ${this.port}`);
+    });
+  }
 }
 
 module.exports = Server;
