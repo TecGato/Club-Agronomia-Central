@@ -3,7 +3,7 @@ import { InfoItem, Layout } from '@/components/Dashboard';
 export default function Dashboard() {
     return (
         <Layout>
-            <div className="w-full min-h-screen bg-[#f9fafb] flex flex-wrap gap-2 p-5">
+            <div className="w-full min-h-screen flex flex-col justify-self-center items-center xl:w-11/12 sm:w-5/6 gap-2 p-5 outline">
                 <InfoItem
                     icon={
                         <svg
@@ -191,6 +191,19 @@ export default function Dashboard() {
                     title={'Jugadores de Ajedrez'}
                     number={26}
                 />
+                <div className="sm:h-[200px] sm:w-[200px] bg-orange-300">
+                    eventos estado
+                </div>
+                <div className="sm:h-[200px] sm:w-[200px] bg-orange-300">
+                    ingresos quincho
+                </div>
+                
+                <div className="w-full h-2/6 bg-blue-300">
+                    proximos eventos quincho
+                </div>
+                <div className="w-full h-2/6 bg-blue-300">
+                    proximos partidos
+                </div>
             </div>
         </Layout>
     );

@@ -26,6 +26,7 @@ const createEvent = async (req, res) => {
       phone,
       description
     );
+    console.log(event);
     return res.status(201).json({
       msg: "Event Created Succesfully",
       event,
