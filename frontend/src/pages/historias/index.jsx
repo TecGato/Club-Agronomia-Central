@@ -1,5 +1,4 @@
-import { Layout, TestimonialItem } from '@/components';
-import React from 'react';
+import { Layout, TestimonialItem } from '@/components/Page';
 
 export default function Testimonials() {
     return (

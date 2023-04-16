@@ -1,13 +1,10 @@
-import React from 'react';
-import { InfoSlider } from '@/components/InfoSlider';
-import { Layout } from "@/components";
-import { images, info } from './images'
-
+import { Layout, InfoSlider } from '@/components/Page';
+import { images, info } from './images';
 
 export default function TrainingCenter() {
-  return (
-    <Layout image={images[1].src} title="ATENEA SPORTS">
-      <InfoSlider images={images} info={info}/>
-    </Layout>
-  );
-};
+    return (
+        <Layout image={images[1].src} title="ATENEA SPORTS">
+            <InfoSlider images={images} info={info} />
+        </Layout>
+    );
+}
