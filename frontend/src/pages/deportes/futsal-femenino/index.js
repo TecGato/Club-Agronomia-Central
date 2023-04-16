@@ -3,10 +3,8 @@ import { Layout } from '@/components';
 
 export default function FutFem() {
   return (
-    <Layout>
+    <Layout title='Futsal Femenino' image='https://img.freepik.com/foto-gratis/piernas-cultivo-pateando-pelota-sobre-hierba_23-2147817394.jpg?size=626&ext=jpg&ga=GA1.1.1228025790.1681327921&semt=sph'>
       <div className='m-4'>
-        <h1 className='text-4xl font-bold text-gray-800 text-center p-5 m-3'>Futsal Femenino</h1> 
-
         <div className='grid grid-cols-1 md:grid-row-2 md:grid-cols-3 place-items-center'>
 
           <div className='row-span-1 p-8 grid grid-cols-4 grid-row-2'>
