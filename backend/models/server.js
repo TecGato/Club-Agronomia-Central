@@ -8,6 +8,7 @@ class Server {
     this.port = process.env.PORT || 3001;
     this.authPath = "/api/auth";
     this.athletesPath = "/api/athletes";
+    this.dateEventsPath = "/api/dateEvents";
     this.directorsPath = "/api/directors";
     this.eventsPath = "/api/events";
     this.incomesPath = "/api/incomes";
@@ -41,6 +42,7 @@ class Server {
   routes() {
     this.app.use(this.authPath, require("../routes/auth"));
     this.app.use(this.athletesPath, require("../routes/athletes"));
+    this.app.use(this.dateEventsPath, require("../routes/dateEvents"));
     this.app.use(this.directorsPath, require("../routes/directors"));
     this.app.use(this.eventsPath, require("../routes/events"));
     this.app.use(this.incomesPath, require("../routes/incomes"));
