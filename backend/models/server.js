@@ -10,6 +10,7 @@ class Server {
     this.athletesPath = "/api/athletes";
     this.directorsPath = "/api/directors";
     this.eventsPath = "/api/events";
+    this.incomesPath = "/api/incomes";
     this.matchesPath = "/api/matches";
     this.postsPath = "/api/posts";
     this.subscriptionsPath = "/api/subscriptions";
@@ -42,11 +43,12 @@ class Server {
     this.app.use(this.athletesPath, require("../routes/athletes"));
     this.app.use(this.directorsPath, require("../routes/directors"));
     this.app.use(this.eventsPath, require("../routes/events"));
+    this.app.use(this.incomesPath, require("../routes/incomes"));
     this.app.use(this.matchesPath, require("../routes/matches"));
     this.app.use(this.postsPath, require("../routes/posts"));
     this.app.use(this.subscriptionsPath, require("../routes/subscriptions"));
     this.app.use(this.testimonialsPath, require("../routes/testimonials"));
-    this.app.use(this.usersPath, require("../routes/users"));
+    // this.app.use(this.usersPath, require("../routes/users"));
   }
 
   listen() {
