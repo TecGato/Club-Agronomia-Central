@@ -3,9 +3,13 @@ import { InfoItem, Layout, BarChart } from '@/components/Dashboard';
 export default function Dashboard() {
     return (
         <Layout>
-            <div className="w-full min-h-screen grid grid-cols-2 gap-2 justify-self-center items-center xl:w-11/12 sm:w-5/6 p-5
+            <div
+                className="w-full min-h-screen grid grid-cols-2 gap-2 justify-self-center items-center xl:w-11/12 sm:w-5/6 p-5
             sm:justify-items-center
-            ">
+            lg:grid-cols-3
+            xl:grid-cols-4
+            "
+            >
                 <InfoItem
                     icon={
                         <svg
@@ -223,19 +227,35 @@ export default function Dashboard() {
                             </g>
                         </svg>
                     }
-                    title={'Total eventos reservados'}
-                    number={26}
+                    title={'Jugadores en total'}
+                    number={200}
                 />
                 <BarChart />
-                <div className="sm:h-[200px] sm:w-[200px] bg-orange-300">
-                    ingresos quincho
+                <div className="sm:h-[200px] sm:w-[250px] xl:w-[450px] xl:col-span-2 xl:row-start-2 xl:col-start-3 bg-orange-300">
+                    Quincho proximas reservas
                 </div>
 
-                <div className="w-full h-2/6 bg-blue-300">
-                    proximos eventos quincho
+                <div className="sm:h-[200px] sm:w-[250px] lg:w-full lg:h-full bg-blue-300">
+                    Comision directiva
                 </div>
-                <div className="w-full h-2/6 bg-blue-300">
-                    proximos partidos
+                <div className="sm:h-[200px] sm:w-[250px] lg:w-full lg:h-full bg-blue-300">
+                    Cantidad de reservas
+                </div>
+                <div className="sm:h-[200px] sm:w-[250px] lg:w-full lg:h-full bg-blue-300">
+                    Estado de las reservas
+                </div>
+                <div
+                    className="bg-green-300 
+                                sm:h-[200px] sm:w-[250px] 
+                                lg:w-full lg:h-full
+                                xl:col-start-2 xl:w-[450px]
+                                "
+                >
+                    Numero de reservas por mes
+                </div>
+
+                <div className="sm:h-[200px] sm:w-[250px] lg:w-full lg:h-full bg-blue-300">
+                    Proximos partidos
                 </div>
             </div>
         </Layout>

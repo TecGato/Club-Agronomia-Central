@@ -49,7 +49,7 @@ export const options = {
 export const BarChart = () => {
     const ingresos = [
         { month: 'Enero', count: 17400 },
-        { month: 'Febrero', count: 200000 },
+        { month: 'Febrero', count: 20000 },
         { month: 'Marzo', count: 45450 },
         { month: 'Abril', count: 20000 },
         { month: 'Mayo', count: 23000 },
@@ -88,10 +88,23 @@ export const BarChart = () => {
         ],
     };
     return (
-        <div className="col-span-2 bg-white border border-neutral-300 shadow-[0px_3px_10px_2px_rgb(0_0_0_/_13%)] px-4 py-2 rounded-lg relative">
+        <div
+            className="w-full col-span-2 bg-white border border-neutral-300 shadow-[0px_3px_10px_2px_rgb(0_0_0_/_13%)] px-4 py-2 rounded-lg relative
+            lg:col-span-3
+            flex flex-col justify-between
+            "
+        >
+            <div className='flex justify-between'>
+
             <p className="text-lg text-center text-[#262626] font-medium">
                 Ingresos del Quincho
             </p>
+            <select name="" id="">
+                <option value="year">Año</option>
+                <option value="month">Mes</option>
+                <option value="week">Semana</option>
+            </select>
+            </div>
             <div>
                 <Bar data={data} options={options} />
             </div>
