@@ -16,6 +16,20 @@ const deleteEvent = async (id) => {
     //Substracts amount from total income
     const year = event.date.getFullYear();
     const month = event.date.getMonth();
+    const months = [
+      "Enero",
+      "Febrero",
+      "Marzo",
+      "Abril",
+      "Mayo",
+      "Junio",
+      "Julio",
+      "Agosto",
+      "Septiembre",
+      "Octubre",
+      "Noviembre",
+      "Diciembre",
+    ];
 
     const changeIncomes = await Income.findOne({ year });
     await Income.findOneAndUpdate(
@@ -23,7 +37,8 @@ const deleteEvent = async (id) => {
       {
         incomePerMonth: {
           ...changeIncomes.incomePerMonth,
-          [month]: changeIncomes.incomePerMonth[month] - event.amount,
+          [months[month]]:
+            changeIncomes.incomePerMonth[months[month]] - event.amount,
         },
       }
     );
