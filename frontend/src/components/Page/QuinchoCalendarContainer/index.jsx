@@ -324,7 +324,7 @@ export function QuinchoCalendarContainer() {
     const [showModal, setShowModal] = useState(false);
 
     return (
-        <Layout>
+        // <Layout>
             <div style={{ padding: '30px' }}>
                 <div class="flex items-center mt-4">
                     <div class="flex ml-6">
@@ -558,6 +558,6 @@ export function QuinchoCalendarContainer() {
                     </>
                 ) : null}
             </div>
-        </Layout>
+        // </Layout>
     );
 }

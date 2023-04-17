@@ -1,12 +1,8 @@
 const Post = require("../../models/Post");
 
-const postPost = async (title, description, picture) => {
+const postPost = async (postInfo) => {
   try {
-    const newPost = new Post({
-      title,
-      description,
-      picture,
-    });
+    const newPost = new Post({ ...postInfo });
     await newPost.save();
     return newPost;
   } catch (error) {
