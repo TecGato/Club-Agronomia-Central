@@ -1,45 +1,52 @@
 const Event = require("../../models/Event");
 const DateEvent = require("../../models/DateEvent");
+const Income = require("../../models/Income");
 
-const postEvent = async (
-  name,
-  date,
-  beg_time,
-  end_time,
-  state,
-  amount,
-  client,
-  email,
-  phone,
-  description
-) => {
+const postEvent = async ({ date, amount, ...eventInfo }) => {
   try {
-    // Create event
-    const event = new Event({
-      name,
-      beg_time,
-      end_time,
-      state,
+    // Creates the event
+    const newEvent = new Event({
       date,
       amount,
-      client,
-      email,
-      phone,
-      description,
+      ...eventInfo,
     });
-    // Save in DB
-    await event.save();
-    // Check if an event already exists on the specified day
+    // Saves it in DB
+    await newEvent.save();
+    // Checks if an event already exists on the specified day
     const dateEvent = await DateEvent.findOne({ date });
     if (dateEvent) {
-      dateEvent.events = [...dateEvent.events, event._id];
+      dateEvent.events = [...dateEvent.events, newEvent._id];
       await dateEvent.save();
     } else {
-      const newDate = new DateEvent({ date, events: [event._id] });
+      const newDate = new DateEvent({ date, events: [newEvent._id] });
       await newDate.save();
     }
+    //Adds up the earn amount to keep record of the income per month
 
-    return event;
+    const year = newEvent.date.getFullYear();
+    const month = newEvent.date.getMonth();
+    const incomes = await Income.findOne({ year });
+
+    if (incomes) {
+      await Income.findOneAndUpdate(
+        { year },
+        {
+          incomePerMonth: {
+            ...incomes.incomePerMonth,
+            [month]: incomes.incomePerMonth[month] + Number(amount),
+          },
+        }
+      );
+    } else {
+      const newIncomeYear = new Income({
+        year,
+        incomePerMonth: { [month]: Number(amount) },
+      });
+      await newIncomeYear.save();
+    }
+
+    // Returns the new Event
+    return newEvent;
   } catch (error) {
     console.error(error.message);
   }
