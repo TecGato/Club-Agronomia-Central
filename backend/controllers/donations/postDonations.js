@@ -1,34 +1,33 @@
 const { mercadopago } = require("../../mercadoPago/mercadoPago");
 
 const donation = async (req, res) => {
-  // const { datos } = req.body;
+  const { price } = req.body;
+
+  const amount = parseInt(price);
+
   try {
-    return res.status(200).json({message: "hola estas en la ruta de pago"})
-    // Crea un objeto de preferencia
     let preference = {
       items: [
         {
           title: "Aporte",
-          unit_price: datos.mont,
+          unit_price: amount,
           quantity: 1,
         },
       ],
+
+      // back_urls: {
+      //   "success": "http://localhost:3001/feedback",
+      //   "failure": "http://localhost:3001/feedback",
+      //   "pending": "http://localhost:3001/feedback"
+      // },
+      // auto_return: "approved",
     };
 
-    mercadopago.preferences
-      .create(preference)
-      .then(function (response) {
-        // Este valor reemplazará el string "<%= global.id %>" en tu HTML
+    const response = await mercadopago.preferences.create(preference);
 
-        return res.status(200).json(
-          global.id = response.body.id
-        );
-        
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-
+    return res.status(200).json({
+      global: response.body.id,
+    });
   } catch (error) {
     return res.status(404).json(error);
   }
