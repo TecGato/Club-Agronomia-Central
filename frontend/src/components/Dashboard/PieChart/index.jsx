@@ -7,8 +7,9 @@ import {
     Tooltip,
     Legend,
     PointElement,
+    ArcElement,
 } from 'chart.js';
-import { Line } from 'react-chartjs-2';
+import { Pie } from 'react-chartjs-2';
 
 ChartJS.register(
     CategoryScale,
@@ -17,32 +18,28 @@ ChartJS.register(
     Title,
     Tooltip,
     Legend,
-    PointElement
+    PointElement,
+    ArcElement
 );
 
-export const LineChart = () => {
+export const PieChart = () => {
     const ingresos = [
-        { month: 'Enero', count: 10 },
-        { month: 'Febrero', count: 20 },
-        { month: 'Marzo', count: 13 },
-        { month: 'Abril', count: 2 },
-        { month: 'Mayo', count: 7 },
-        { month: 'Junio', count: 17 },
-        { month: 'Julio', count: 15 },
-        { month: 'Agosto', count: 15 },
-        { month: 'Septiembre', count: 5 },
-        { month: 'Octubre', count: 20 },
-        { month: 'Noviembre', count: 19 },
-        { month: 'Diciembre', count: 25 },
+        { month: 'Reservado', count: 10 },
+        { month: 'Reservado y confirmado', count: 20 },
+        { month: 'Reservado,confirmado y pagado', count: 5 },
     ];
     const data = {
         labels: ingresos.map(({ month }) => month),
         datasets: [
             {
-                label: 'Reservas',
+                label: 'Estado',
                 data: ingresos.map(({ count }) => count),
                 fill: false,
-                borderColor: 'rgb(75, 192, 192)',
+                backgroundColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                ],
                 tension: 0,
             },
         ],
@@ -52,11 +49,13 @@ export const LineChart = () => {
         scales: {
             x: {
                 ticks: {
+                    display: false,
                     autoSkip: false,
                 },
             },
             y: {
                 ticks: {
+                    display: false,
                     autoSkip: false,
                 },
             },
@@ -85,7 +84,7 @@ export const LineChart = () => {
                 </select>
             </div>
             <div>
-                <Line data={data} options={options} />
+                <Pie data={data} options={options} />
             </div>
         </div>
     );

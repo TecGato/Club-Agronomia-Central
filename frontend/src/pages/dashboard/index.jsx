@@ -1,4 +1,4 @@
-import { InfoItem, Layout, BarChart, LineChart } from '@/components/Dashboard';
+import { InfoItem, Layout, BarChart, LineChart, PieChart } from '@/components/Dashboard';
 
 export default function Dashboard() {
 
@@ -240,14 +240,12 @@ export default function Dashboard() {
                 <div className="sm:h-[200px] sm:w-[250px] lg:w-full lg:h-full bg-blue-300">
                     Comision directiva
                 </div>
+                <PieChart />
+                <LineChart />
                 <div className="sm:h-[200px] sm:w-[250px] lg:w-full lg:h-full bg-blue-300">
                     Total de reservas
-                </div>
-                <div className="sm:h-[200px] sm:w-[250px] lg:w-full lg:h-full bg-blue-300">
-                    Estado de las reservas
-                </div>
-                <LineChart />
 
+                </div>
                 <div className="sm:h-[200px] sm:w-[250px] lg:w-full lg:h-full bg-blue-300">
                     Proximos partidos
                 </div>
