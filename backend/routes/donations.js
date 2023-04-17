@@ -1,9 +1,7 @@
 const { Router } = require("express");
-const { donation } = require("../controllers/donations/postDonations")
+const { donation } = require("../controllers/donations/postDonations");
 const router = Router();
 
-
-router.get("/", donation);
-
+router.post("/", donation);
 
 module.exports = router;
