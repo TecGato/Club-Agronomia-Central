@@ -1,9 +1,9 @@
 const { postPost } = require("../../helpers/posts/postPosts");
 
 const createPost = async (req, res) => {
-  const { title, description, picture } = req.body;
+  const { ...postInfo } = req.body;
   try {
-    const newPost = await postPost(title, description, picture);
+    const newPost = await postPost(postInfo);
     return res.status(201).json({
       msg: "Post Created Successfully",
       newPost,

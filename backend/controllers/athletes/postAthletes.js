@@ -1,17 +1,9 @@
 const { postAthlete } = require("../../helpers/athletes/postAthletes");
 
 const createAthlete = async (req, res) => {
-  const { name, discipline, contact, email, date_of_birth, emergency_contact } =
-    req.body;
+  const { ...athleteInfo } = req.body;
   try {
-    const newAthlete = await postAthlete(
-      name,
-      discipline,
-      contact,
-      email,
-      date_of_birth,
-      emergency_contact
-    );
+    const newAthlete = await postAthlete(athleteInfo);
     return res.status(201).json({
       msg: "Athlete Created Successfully",
       newAthlete,

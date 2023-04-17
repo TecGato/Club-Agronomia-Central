@@ -2,7 +2,7 @@ const Testimonial = require("../../models/Testimonial");
 
 const putTestimonial = async (id, name, testimony, picture, updatedAt) => {
   try {
-    const testimonial = await Testimonial.updateOne(id, {
+    const testimonial = await Testimonial.findByIdAndUpdate(id, {
       name,
       testimony,
       picture,
