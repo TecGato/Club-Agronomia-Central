@@ -1,22 +1,8 @@
 const Athlete = require("../../models/Athlete");
 
-const postAthlete = async (
-  name,
-  discipline,
-  contact,
-  email,
-  date_of_birth,
-  emergency_contact
-) => {
+const postAthlete = async (athleteInfo) => {
   try {
-    const newAthlete = new Athlete({
-      name,
-      discipline,
-      contact,
-      email,
-      date_of_birth,
-      emergency_contact,
-    });
+    const newAthlete = new Athlete({ ...athleteInfo });
     await newAthlete.save();
     return newAthlete;
   } catch (error) {
