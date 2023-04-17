@@ -17,6 +17,20 @@ const putEvent = async (id, eventInfo) => {
       const amountDifference = oldAmount.amount - eventInfo.amount;
       const year = event.date.getFullYear();
       const month = event.date.getMonth();
+      const months = [
+        "Enero",
+        "Febrero",
+        "Marzo",
+        "Abril",
+        "Mayo",
+        "Junio",
+        "Julio",
+        "Agosto",
+        "Septiembre",
+        "Octubre",
+        "Noviembre",
+        "Diciembre",
+      ];
 
       const changeIncomes = await Income.findOne({ year });
       await Income.findOneAndUpdate(
@@ -24,7 +38,8 @@ const putEvent = async (id, eventInfo) => {
         {
           incomePerMonth: {
             ...changeIncomes.incomePerMonth,
-            [month]: changeIncomes.incomePerMonth[month] - amountDifference,
+            [months[month]]:
+              changeIncomes.incomePerMonth[months[month]] - amountDifference,
           },
         }
       );
