@@ -1,4 +1,4 @@
-const { putAthlete } = require("../../helpers/athletes/putAthletes");
+const { putAthlete } = require('../../helpers/athletes/putAthletes');
 
 const updateAthlete = async (req, res) => {
   const { id } = req.params;
@@ -6,7 +6,7 @@ const updateAthlete = async (req, res) => {
   try {
     const athlete = await putAthlete(id, updates);
     return res.status(202).json({
-      msg: "Athlete Updated Successfully",
+      msg: 'Athlete Updated Successfully',
       athlete,
     });
   } catch (error) {

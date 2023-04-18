@@ -1,4 +1,4 @@
-const { putPost } = require("../../helpers/posts/putPosts");
+const { putPost } = require('../../helpers/posts/putPosts');
 
 const updatePost = async (req, res) => {
   const { id } = req.params;
@@ -6,7 +6,7 @@ const updatePost = async (req, res) => {
   try {
     const post = await putPost(id, updates);
     return res.status(202).json({
-      msg: "Post Updated Successfully",
+      msg: 'Post Updated Successfully',
       post,
     });
   } catch (error) {

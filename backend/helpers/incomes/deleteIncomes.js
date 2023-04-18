@@ -1,4 +1,4 @@
-const Income = require("../../models/Income");
+const Income = require('../../models/Income');
 
 const deleteIncome = async (id) => {
   try {

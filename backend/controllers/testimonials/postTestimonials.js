@@ -1,13 +1,13 @@
 const {
   postTestimonial,
-} = require("../../helpers/testimonials/postTestimonials");
+} = require('../../helpers/testimonials/postTestimonials');
 
 const createTestimonial = async (req, res) => {
   const { ...testimonialInfo } = req.body;
   try {
     const newTestimonial = await postTestimonial(testimonialInfo);
     return res.status(201).json({
-      msg: "Testimonial Created Successfully",
+      msg: 'Testimonial Created Successfully',
       newTestimonial,
     });
   } catch (error) {

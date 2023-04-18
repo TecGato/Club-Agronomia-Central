@@ -1,4 +1,4 @@
-const Director = require("../../models/Director");
+const Director = require('../../models/Director');
 
 const putDirector = async (id, updates) => {
   try {

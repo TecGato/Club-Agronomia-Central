@@ -1,4 +1,4 @@
-const { putDirector } = require("../../helpers/directors/putDirectors");
+const { putDirector } = require('../../helpers/directors/putDirectors');
 
 const updateDirector = async (req, res) => {
   const { id } = req.params;

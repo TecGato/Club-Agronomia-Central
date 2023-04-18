@@ -3,7 +3,7 @@ const {
   getDirectorsByName,
   getDirectorByPosition,
   getDirectorById,
-} = require("../../helpers/directors/getDirectors");
+} = require('../../helpers/directors/getDirectors');
 
 const getDirectors = async (req, res) => {
   const { name, position } = req.query;

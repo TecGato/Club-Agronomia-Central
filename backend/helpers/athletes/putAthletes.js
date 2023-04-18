@@ -1,4 +1,4 @@
-const Athlete = require("../../models/Athlete");
+const Athlete = require('../../models/Athlete');
 
 const putAthlete = async (id, updates) => {
   try {

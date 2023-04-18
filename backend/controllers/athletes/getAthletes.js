@@ -3,7 +3,7 @@ const {
   getAthletesByDiscipline,
   getAthletesByName,
   getAthleteById,
-} = require("../../helpers/athletes/getAthletes");
+} = require('../../helpers/athletes/getAthletes');
 
 const getAthletes = async (req, res) => {
   const { discipline, name } = req.query;

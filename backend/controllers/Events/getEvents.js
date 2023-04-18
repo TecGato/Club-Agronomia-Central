@@ -2,7 +2,7 @@ const {
   getAllEvents,
   getEventsByName,
   getEventById,
-} = require("../../helpers/events/getEvents");
+} = require('../../helpers/events/getEvents');
 
 const getEvents = async (req, res) => {
   const { name } = req.query;

@@ -1,6 +1,6 @@
-const Event = require("../../models/Event");
-const DateEvent = require("../../models/DateEvent");
-const Income = require("../../models/Income");
+const Event = require('../../models/Event');
+const DateEvent = require('../../models/DateEvent');
+const Income = require('../../models/Income');
 
 const deleteEvent = async (id) => {
   try {
@@ -17,18 +17,18 @@ const deleteEvent = async (id) => {
     const year = event.date.getFullYear();
     const month = event.date.getMonth();
     const months = [
-      "Enero",
-      "Febrero",
-      "Marzo",
-      "Abril",
-      "Mayo",
-      "Junio",
-      "Julio",
-      "Agosto",
-      "Septiembre",
-      "Octubre",
-      "Noviembre",
-      "Diciembre",
+      'Enero',
+      'Febrero',
+      'Marzo',
+      'Abril',
+      'Mayo',
+      'Junio',
+      'Julio',
+      'Agosto',
+      'Septiembre',
+      'Octubre',
+      'Noviembre',
+      'Diciembre',
     ];
 
     const changeIncomes = await Income.findOne({ year });

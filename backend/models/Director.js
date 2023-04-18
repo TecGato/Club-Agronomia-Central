@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 const directorSchema = new mongoose.Schema({
   name: {
@@ -20,6 +20,6 @@ const directorSchema = new mongoose.Schema({
   },
 });
 
-const Director = mongoose.model("Director", directorSchema);
+const Director = mongoose.model('Director', directorSchema);
 
 module.exports = Director;

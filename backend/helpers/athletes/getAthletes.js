@@ -1,4 +1,4 @@
-const Athlete = require("../../models/Athlete");
+const Athlete = require('../../models/Athlete');
 
 const getAllAthletes = async () => {
   try {
