@@ -1,4 +1,4 @@
-const { putEvent } = require("../../helpers/events/putEvents");
+const { putEvent } = require('../../helpers/events/putEvents');
 
 const updateEvent = async (req, res) => {
   const { id } = req.params;

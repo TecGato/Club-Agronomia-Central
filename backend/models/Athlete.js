@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 const athleteSchema = new mongoose.Schema({
   name: {
@@ -8,12 +8,12 @@ const athleteSchema = new mongoose.Schema({
   discipline: {
     type: String,
     enum: [
-      "Ajedrez",
-      "Fútbol Infantil",
-      "Futsal",
-      "Futsal Femenino",
-      "Taekwondo",
-      "Centro de Entrenamiento",
+      'Ajedrez',
+      'Fútbol Infantil',
+      'Futsal',
+      'Futsal Femenino',
+      'Taekwondo',
+      'Centro de Entrenamiento',
     ],
     required: true,
   },
@@ -53,6 +53,6 @@ const athleteSchema = new mongoose.Schema({
   },
 });
 
-const Athlete = mongoose.model("Athlete", athleteSchema);
+const Athlete = mongoose.model('Athlete', athleteSchema);
 
 module.exports = Athlete;

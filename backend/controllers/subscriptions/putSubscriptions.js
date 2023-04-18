@@ -1,6 +1,6 @@
 const {
   putSubscription,
-} = require("../../helpers/subscriptions/putSubscriptions");
+} = require('../../helpers/subscriptions/putSubscriptions');
 
 const updateSubscription = async (req, res) => {
   const { email } = req.body;

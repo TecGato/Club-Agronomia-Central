@@ -1,4 +1,4 @@
-const Testimonial = require("../../models/Testimonial");
+const Testimonial = require('../../models/Testimonial');
 
 const putTestimonial = async (id, name, testimony, picture, updatedAt) => {
   try {

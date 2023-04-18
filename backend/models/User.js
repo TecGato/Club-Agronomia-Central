@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 const userSchema = new mongoose.Schema({
   name: {
@@ -25,7 +25,7 @@ const userSchema = new mongoose.Schema({
   role: {
     type: String,
     required: true,
-    enum: ["ADMIN_ROLE", "USER_ROLE"],
+    enum: ['ADMIN_ROLE', 'USER_ROLE'],
   },
   createdAt: {
     type: Date,
@@ -44,6 +44,6 @@ userSchema.methods.toJSON = function () {
   return user;
 };
 
-const User = mongoose.model("User", userSchema);
+const User = mongoose.model('User', userSchema);
 
 module.exports = User;
