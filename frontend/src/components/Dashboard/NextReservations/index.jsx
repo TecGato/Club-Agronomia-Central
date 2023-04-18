@@ -17,29 +17,29 @@ export const NextReservations = () => {
       </div>
       <section className="w-full h-auto flex flex-col gap-2 ">
         <PreviewItem
-          name={'Cumpleaños Camila'}
-          date={'2 de Mayo'}
-          hourBegin="10:00am"
+          columnOne={'Cumpleaños Camila'}
+          columnTwo={'2 de Mayo'}
+          columnThree="10:00am"
         />
         <PreviewItem
-          name={'Cumpleaños Camila'}
-          date={'2 de Mayo'}
-          hourBegin="10:00am"
+          columnOne={'Cumpleaños Camila'}
+          columnTwo={'2 de Mayo'}
+          columnThree="10:00am"
         />
         <PreviewItem
-          name={'Cumpleaños Camila'}
-          date={'2 de Mayo'}
-          hourBegin="10:00am"
+          columnOne={'Cumpleaños Camila'}
+          columnTwo={'2 de Mayo'}
+          columnThree="10:00am"
         />
         <PreviewItem
-          name={'Cumpleaños Camila'}
-          date={'2 de Mayo'}
-          hourBegin="10:00am"
+          columnOne={'Cumpleaños Camila'}
+          columnTwo={'2 de Mayo'}
+          columnThree="10:00am"
         />
         <PreviewItem
-          name={'Cumpleaños Camila'}
-          date={'2 de Mayo'}
-          hourBegin="10:00am"
+          columnOne={'Cumpleaños Camila'}
+          columnTwo={'2 de Mayo'}
+          columnThree="10:00am"
         />
       </section>
       <a className="mt-2 py-2 rounded-lg text-center text-white cursor-pointer transition-all duration-500 bg-[#1b418a] hover:bg-[#10306b]">

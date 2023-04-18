@@ -12,34 +12,34 @@ export const NextMatches = () => {
             <p>Proximos partidos</p>
             <div className="w-full grid grid-cols-3 my-1">
                 <p className="text-blue-700">Evento</p>
+                <p className="text-blue-700">Deporte</p>
                 <p className="text-blue-700">Fecha</p>
-                <p className="text-blue-700">Hora Inicio</p>
             </div>
             <section className="w-full h-auto flex flex-col gap-2 ">
                 <PreviewItem
-                    name={'Cumpleaños Camila'}
-                    date={'2 de Mayo'}
-                    hourBegin="10:00am"
+                    columnOne={'AgroVSjairo'}
+                    columnTwo={'Futsal'}
+                    columnThree="2 de Mayo"
                 />
                 <PreviewItem
-                    name={'Cumpleaños Camila'}
-                    date={'2 de Mayo'}
-                    hourBegin="10:00am"
+                    columnOne={'AgroVSjairo'}
+                    columnTwo={'Futsal'}
+                    columnThree="2 de Mayo"
                 />
                 <PreviewItem
-                    name={'Cumpleaños Camila'}
-                    date={'2 de Mayo'}
-                    hourBegin="10:00am"
+                    columnOne={'AgroVSjairo'}
+                    columnTwo={'Futsal'}
+                    columnThree="2 de Mayo"
                 />
                 <PreviewItem
-                    name={'Cumpleaños Camila'}
-                    date={'2 de Mayo'}
-                    hourBegin="10:00am"
+                    columnOne={'AgroVSjairo'}
+                    columnTwo={'Futsal'}
+                    columnThree="2 de Mayo"
                 />
                 <PreviewItem
-                    name={'Cumpleaños Camila'}
-                    date={'2 de Mayo'}
-                    hourBegin="10:00am"
+                    columnOne={'AgroVSjairo'}
+                    columnTwo={'Futsal'}
+                    columnThree="2 de Mayo"
                 />
             </section>
             <a className="mt-2 py-2 rounded-lg text-center text-white cursor-pointer transition-all duration-500 bg-[#1b418a] hover:bg-[#10306b]">

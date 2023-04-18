@@ -5,6 +5,7 @@ import {
   LineChart,
   PieChart,
   NextReservations,
+  NextMatches,
 } from '@/components/Dashboard';
 export default function Dashboard() {
   return (
@@ -314,6 +315,7 @@ export default function Dashboard() {
           title={'Partidos en total'}
           number={20}
         />
+        <NextMatches />
         <div className="sm:h-[200px] sm:w-[250px] lg:w-full lg:h-full bg-blue-300">
           Proximos partidos
         </div>
