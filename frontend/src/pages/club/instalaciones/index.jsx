@@ -83,7 +83,7 @@ export default function Instalations() {
                             <div className=" text-center tracking-wide text-2xl text-blue-500 font-semibold lg:text-left">
                                 BUFFET
                             </div>
-                            <p className="block mt-6 text-lg leading-tight font-medium text-black">
+                            <p className="block mt-6 text-lg leading-tight font-medium text-gray-800">
                                 Económico, Familiar, con ambiente climatizado
                             </p>
                             <p className="mt-6 text-slate-500 text-justify">
@@ -116,7 +116,7 @@ export default function Instalations() {
                             <div className=" text-center tracking-wide text-2xl text-blue-500 font-semibold lg:text-left">
                                 QUINCHO
                             </div>
-                            <p className="block mt-6 text-lg leading-tight font-medium text-black">
+                            <p className="block mt-6 text-lg leading-tight font-medium text-gray-800">
                                 Espacio equipado para eventos diversos.
                             </p>
                             <p className="mt-6 text-slate-500 text-justify">
@@ -147,7 +147,7 @@ export default function Instalations() {
                             <div className=" text-center tracking-wide text-2xl text-blue-500 font-semibold lg:text-left">
                                 SALON DE FIESTAS
                             </div>
-                            <p className="block mt-6 text-lg leading-tight font-medium text-black">
+                            <p className="block mt-6 text-lg leading-tight font-medium text-gray-800">
                                 Salón exclusivo para eventos memorables.
                             </p>
                             <p className="mt-6 text-slate-500 text-justify">
@@ -216,7 +216,7 @@ export default function Instalations() {
                             <div className=" text-center tracking-wide text-2xl text-blue-500 font-semibold lg:text-left">
                                 CANCHAS
                             </div>
-                            <p className="block mt-6 text-lg leading-tight font-medium text-black">
+                            <p className="block mt-6 text-lg leading-tight font-medium text-gray-800">
                                 Canchas en excelente estado listas para
                                 disfrutar.
                             </p>
