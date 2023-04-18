@@ -352,7 +352,12 @@ export function QuinchoCalendarContainer({ props }) {
     const [showModal, setShowModal] = useState(false);
 
     return (
-        <Layout>
+        <Layout
+            title={'Disponibilidad Quincho'}
+            image={
+                'https://easycdn.es/12/i/como-se-construyen-las-pistas-de-futbol-sala-y-cuales-son-sus-caracteristicas-principales_5512.webp'
+            }
+        >
             <div style={{ padding: '30px' }}>
                 <div class="flex items-center mt-4">
                     <div class="flex ml-6">
