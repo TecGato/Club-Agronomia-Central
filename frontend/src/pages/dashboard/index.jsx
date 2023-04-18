@@ -236,9 +236,11 @@ export default function Dashboard() {
                 <div className="sm:h-[200px] sm:w-[250px] lg:w-full lg:h-full bg-blue-300">
                     Comision directiva
                 </div>
-                <PieChart />
-                <LineChart />
+                <div className="sm:h-[200px] sm:w-[200px] bg-orange-300">
+                    ingresos quincho
+                </div>
 
+<<<<<<< HEAD
                 <InfoItem
                     icon={
                         <svg
@@ -308,6 +310,13 @@ export default function Dashboard() {
                 <div className="sm:h-[200px] sm:w-[250px] lg:w-full lg:h-full bg-blue-300 xl:col-span-3">
                     Proximos partidos
 
+=======
+                <div className="w-full h-2/6 bg-blue-300">
+                    proximos eventos quincho
+                </div>
+                <div className="w-full h-2/6 bg-blue-300">
+                    proximos partidos
+>>>>>>> e41f261b73dceeb1ea823ab5c80f6851fe54e96e
                 </div>
             </div>
         </Layout>

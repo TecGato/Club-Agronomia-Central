@@ -1,9 +1,9 @@
 const { postDirector } = require("../../helpers/directors/postDirectors");
 
 const createDirector = async (req, res) => {
-  const { name, position, picture } = req.body;
+  const { ...directorInfo } = req.body;
   try {
-    const newDirector = await postDirector(name, position, picture);
+    const newDirector = await postDirector(directorInfo);
     return res.status(201).json({
       msg: "Director Created Successfully",
       newDirector,
