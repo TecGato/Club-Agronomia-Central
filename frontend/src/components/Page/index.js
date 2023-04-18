@@ -1,5 +1,6 @@
 export * from './Banner';
 export * from './Contributions';
+export * from './Donation';
 export * from './Footer';
 export * from './HeaderTitle';
 export * from './HomePage';

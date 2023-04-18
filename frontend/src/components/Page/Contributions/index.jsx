@@ -23,7 +23,7 @@ export function Contributions() {
   const handleClick = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:3001/api/donation",
+        "http://localhost:3001/api/donations",
         contribution
       );
       console.log(response.data.global);
