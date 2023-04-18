@@ -2,7 +2,7 @@ const {
   getAllTestimonials,
   getTestimonialsByName,
   getTestimonialById,
-} = require("../../helpers/testimonials/getTestimonials.js");
+} = require('../../helpers/testimonials/getTestimonials.js');
 
 const getTestimonials = async (req, res) => {
   const { name } = req.query;

@@ -1,4 +1,4 @@
-const Subscription = require("../../models/Subscription");
+const Subscription = require('../../models/Subscription');
 
 const postSubscription = async (email) => {
   const subscriptionExists = await Subscription.exists({ email });

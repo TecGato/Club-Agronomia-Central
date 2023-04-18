@@ -1,11 +1,11 @@
-const { deleteMatch } = require("../../helpers/matches/deleteMatches");
+const { deleteMatch } = require('../../helpers/matches/deleteMatches');
 
 const deleteById = async (req, res) => {
   const { id } = req.params;
   try {
     const match = await deleteMatch(id);
     return res.status(200).json({
-      msg: "Match Deleted Successfully",
+      msg: 'Match Deleted Successfully',
       match,
     });
   } catch (error) {

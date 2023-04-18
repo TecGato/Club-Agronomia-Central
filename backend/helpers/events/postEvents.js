@@ -1,6 +1,6 @@
-const Event = require("../../models/Event");
-const DateEvent = require("../../models/DateEvent");
-const Income = require("../../models/Income");
+const Event = require('../../models/Event');
+const DateEvent = require('../../models/DateEvent');
+const Income = require('../../models/Income');
 
 const postEvent = async ({ date, amount, ...eventInfo }) => {
   try {
@@ -28,18 +28,18 @@ const postEvent = async ({ date, amount, ...eventInfo }) => {
     const incomes = await Income.findOne({ year });
 
     const months = [
-      "Enero",
-      "Febrero",
-      "Marzo",
-      "Abril",
-      "Mayo",
-      "Junio",
-      "Julio",
-      "Agosto",
-      "Septiembre",
-      "Octubre",
-      "Noviembre",
-      "Diciembre",
+      'Enero',
+      'Febrero',
+      'Marzo',
+      'Abril',
+      'Mayo',
+      'Junio',
+      'Julio',
+      'Agosto',
+      'Septiembre',
+      'Octubre',
+      'Noviembre',
+      'Diciembre',
     ];
 
     if (incomes) {

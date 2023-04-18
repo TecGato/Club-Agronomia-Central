@@ -1,4 +1,4 @@
-const Director = require("../../models/Director");
+const Director = require('../../models/Director');
 
 const postDirector = async (directorInfo) => {
   try {

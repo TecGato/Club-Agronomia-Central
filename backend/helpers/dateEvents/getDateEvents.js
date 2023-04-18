@@ -1,4 +1,4 @@
-const DateEvent = require("../../models/DateEvent");
+const DateEvent = require('../../models/DateEvent');
 
 const getAllDateEvents = async () => {
   try {

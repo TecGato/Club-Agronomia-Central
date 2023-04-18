@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 const testimonialSchema = new mongoose.Schema({
   name: {
@@ -20,6 +20,6 @@ const testimonialSchema = new mongoose.Schema({
     default: () => Date.now(),
   },
 });
-const Testimonial = mongoose.model("Testimonial", testimonialSchema);
+const Testimonial = mongoose.model('Testimonial', testimonialSchema);
 
 module.exports = Testimonial;

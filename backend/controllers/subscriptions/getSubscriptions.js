@@ -1,6 +1,6 @@
 const {
   getSubscriptions,
-} = require("../../helpers/subscriptions/getSubscriptions");
+} = require('../../helpers/subscriptions/getSubscriptions');
 
 const getAllSubscriptions = async (req, res) => {
   try {

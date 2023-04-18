@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 const dateEventSchema = new mongoose.Schema({
   date: {
@@ -21,6 +21,6 @@ const dateEventSchema = new mongoose.Schema({
   },
 });
 
-const DateEvent = mongoose.model("DateEvent", dateEventSchema);
+const DateEvent = mongoose.model('DateEvent', dateEventSchema);
 
 module.exports = DateEvent;

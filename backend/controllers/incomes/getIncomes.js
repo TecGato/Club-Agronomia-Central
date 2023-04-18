@@ -1,4 +1,4 @@
-const { getAllIncomes } = require("../../helpers/incomes/getIncomes");
+const { getAllIncomes } = require('../../helpers/incomes/getIncomes');
 
 const getIncomes = async (req, res) => {
   try {
