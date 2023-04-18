@@ -9,11 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
-<<<<<<< HEAD
-=======
     "chart.js": "^4.2.1",
     "@mercadopago/sdk-react": "^0.0.8",
->>>>>>> a167dd89d9f8379109dad63757e6b69e376f4825
     "axios": "^1.3.5",
     "eslint": "8.38.0",
     "eslint-config-next": "13.3.0",
