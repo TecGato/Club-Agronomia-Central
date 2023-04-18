@@ -1,6 +1,6 @@
-export const InfoItem = ({ icon, title, number }) => {
+export const InfoItem = ({ icon, title, number, className = '' }) => {
     return (
-        <div className="min-h-[192px] sm:h-[200px] sm:w-[250px] lg:w-full xl:w-full flex flex-col justify-start  items-start gap-4 border bg-white border-neutral-300 shadow-[0px_3px_10px_2px_rgb(0_0_0_/_13%)] px-4 py-2 rounded-lg">
+        <div className={`min-h-[192px] sm:h-[200px] sm:w-[250px] lg:w-full xl:w-full flex flex-col justify-start  items-start gap-4 border bg-white border-neutral-300 shadow-[0px_3px_10px_2px_rgb(0_0_0_/_13%)] px-4 py-2 rounded-lg ${className}`}>
             <div className="w-20 h-20 flex justify-center items-center bg-[#eff2f7] rounded-full">
                 {icon}
             </div>

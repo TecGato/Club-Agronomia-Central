@@ -239,13 +239,11 @@ export default function Dashboard() {
         <NextReservations />
         <BarChart />
 
-        <div className="sm:h-[200px] sm:w-[250px] lg:w-full lg:h-full bg-blue-300">
-          Comision directiva
-        </div>
         <PieChart />
         <LineChart />
 
         <InfoItem
+          className="lg:row-start-5"
           icon={
             <svg
               viewBox="0 0 24 24"
@@ -281,6 +279,7 @@ export default function Dashboard() {
           number={200}
         />
         <InfoItem
+          className="lg:row-start-6 xl:row-start-5"
           icon={
             <svg
               viewBox="0 0 24 24"
@@ -317,6 +316,9 @@ export default function Dashboard() {
         />
         <div className="sm:h-[200px] sm:w-[250px] lg:w-full lg:h-full bg-blue-300">
           Proximos partidos
+        </div>
+        <div className="sm:h-[200px] sm:w-[250px] lg:w-full lg:h-full xl:col-start-4 xl:row-start-3 bg-blue-300">
+          Comision directiva
         </div>
       </div>
     </Layout>

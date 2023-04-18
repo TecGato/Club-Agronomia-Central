@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const PreviewReserv = ({name, date, hourBegin}) => {
+export const PreviewItem = ({name, date, hourBegin}) => {
     return (
         <div className="grid grid-cols-3">
             <p className="text-sm text-neutral-800 truncate">{name}</p>
