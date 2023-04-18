@@ -55,7 +55,7 @@ export default function FutInF() {
                     </div>
 
                     <p className="text-base text-gray-700 leading-6 p-7 m-5">
-                        Este deporte se realiza con chicos
+                        Este deporte se realiza con chicos {''}
                         <strong>desde los 6 hasta los 13 años</strong>, que
                         encuentran en el mismo un sano espacio de recreación e
                         iniciación en el deporte, como también medición de
@@ -72,20 +72,20 @@ export default function FutInF() {
                     <p className="text-base text-gray-700 leading-6 p-7 m-5">
                         Las tiras selectivo matutino y color practican los
                         martes y viernes <strong>de 18.00hs a 19.00</strong>
-                        categorías 2017/2016/2015,
+                        categorías 2017/2016/2015, {''}
                         <strong>de 19.00hs a 20.00hs</strong> categorías
-                        2014/2013, <strong>de 20.00hs a 21.00hs</strong>
+                        2014/2013, <strong>de 20.00hs a 21.00hs</strong> {''}
                         categorías 2012/2011/2010, las mismas son dictadas por
                         los profes <em>Diego, Gonzalo, Román, Lucas</em>
                     </p>
 
                     <p className="text-base text-gray-700 leading-6 p-7 m-5">
-                        La tira de letra practica los
+                        La tira de letra practica los {''}
                         <strong>lunes y miércoles de 17.00hs a 18.00hs</strong>
-                        categorías 2016/2015
+                        categorías 2016/2015 {''}
                         <strong>, de 18.00hs a 19.00hs</strong> categorías
                         2014/2013, <strong>de 19.00hs a 20.00hs</strong> las
-                        categorías 2012/2011/2010, con los profes
+                        categorías 2012/2011/2010, con los profes {''}
                         <em>Juan y Julián</em>.
                     </p>
 
