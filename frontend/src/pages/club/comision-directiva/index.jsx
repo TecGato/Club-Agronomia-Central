@@ -1,47 +1,43 @@
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import axios from "axios";
 import { Layout } from "@/components/Page";
-// import Presidente from "../../../../public/directives-img/imagen1.jpg";
+import image from "../../../../public/directives-img/directive.svg";
 // import Vicepresidente from "../../../../public/directives-img/imagen2.jpg";
 // import Secretario from "../../../../public/directives-img/imagen3.jpg";
 // import ProSecretario from "../../../../public/directives-img/imagen4.jpg";
 // import Tesorero from "../../../../public/directives-img/imagen5.jpg";
 
 export default function SteeringCommittee() {
-  const [directives, setDirectives] = useState();
-  useEffect(() => {
-    axios.get("http://localhost:3001/api/directors").then((response) => {
-      return setDirectives(response.data);
-    });
-  }, [directives]);
+  // const [directives, setDirectives] = useState();
+  // useEffect(() => {
+  //   axios.get("http://localhost:3001/api/directors").then((response) => {
+  //     return setDirectives(response.data);
+  //   });
+  // }, [directives]);
 
-  //   const directives = [
-  //       {
-  //         name:'Diego Dottore',
-  //         position:'Presidente',
-  //         picture: Presidente
-  //     },
-  //       {
-  //         position:'Vicepresidente',
-  //         name:'Hernán Blotta',
-  //         picture: Vicepresidente
-  //     },
-  //       {
-  //         position:'Secretario',
-  //         name:'Marcelo Vitar',
-  //         picture: Secretario
-  //     },
-  //       {
-  //         position: 'Pro Secretario',
-  //         name: 'Gustavo Majluf',
-  //         picture: ProSecretario
-  //     },
-  //       {
-  //         position: 'Tesorero',
-  //         name: 'Pablo Jorge',
-  //         picture: Tesorero
-  //     },
-  //   ];
+    const directives = [
+        {
+          name:'Diego Dottore',
+          position:'Presidente',
+      },
+        {
+          position:'Vicepresidente',
+          name:'Hernán Blotta',
+      },
+        {
+          position:'Secretario',
+          name:'Marcelo Vitar',
+      },
+        {
+          position: 'Pro-Secretario',
+          name: 'Gustavo Majluf',
+      },
+        {
+          position: 'Tesorero',
+          name: 'Pablo Jorge',
+      },
+    ];
 
   return (
     <Layout
@@ -54,7 +50,7 @@ export default function SteeringCommittee() {
         {directives?.map((d) => {
           return (
             <div class=" max-w-sm mx-auto bg-white shadow-lg mb-10  ">
-              <img src={d.picture} alt={d.name} className="lg:h-52 lg:w-52" />
+              <Image src={image} alt={d.name} className="lg:h-32"  />
               <div class="text-center py-4 lg:text-left lg: pl-2 bg-gray-100">
                 <p class="text-lg pb-3 text-black font-bold">{d.name}</p>
                 <p class="text-slate-500 font-medium">{d.position}</p>
