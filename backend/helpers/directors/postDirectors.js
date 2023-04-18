@@ -1,12 +1,8 @@
 const Director = require("../../models/Director");
 
-const postDirector = async (name, position, picture) => {
+const postDirector = async (directorInfo) => {
   try {
-    const newDirector = new Director({
-      name,
-      position,
-      picture,
-    });
+    const newDirector = new Director({ ...directorInfo });
     await newDirector.save();
     return newDirector;
   } catch (error) {
