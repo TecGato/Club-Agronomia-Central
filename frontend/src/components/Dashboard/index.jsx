@@ -5,3 +5,6 @@ export * from './LineChart';
 export * from './PieChart';
 export * from './NextReservations';
 export * from './PreviewReserv';
+export * from './AuthLayout';
+export * from './GoogleButton';
+export * from './InputForm';
