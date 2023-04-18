@@ -2,7 +2,16 @@ import { useState } from 'react';
 
 import { Layout, QuinchoCalendarDay } from '..';
 
-export function QuinchoCalendarContainer() {
+
+//getServerSideProps
+//export async function getStaticProps(){
+
+
+
+
+export function QuinchoCalendarContainer({ props }) {
+
+    // console.log("otra entrada"+props)
     /*
     EJEMPLO DEL ARRAY
     "id":1
@@ -17,189 +26,208 @@ export function QuinchoCalendarContainer() {
 
 
     */
+    // console.log(props.data)
+    const eventos = props.data;
 
-    const eventos = [
-        {
-            id: 1,
-            name: 'Desayuno del Grupo Juvenil',
-            beg_time: '8:30am',
-            end_time: '11:30am',
-            date: '2 mayo',
-            state: 1,
-            ammount: '$21.500',
-            email: 'client1@ac.com.arg',
-            phone: '325 256 90 15',
-            description: 'We are going to have fun',
-            color: 'red',
-        },
-        {
-            id: 2,
-            name: 'Quince años Familia Henry',
-            beg_time: '2:15pm',
-            end_time: '5:15pm',
-            date: '2 mayo',
-            state: 3,
-            ammount: '$21.500',
-            email: 'client2@ac.com.arg',
-            phone: '325 256 90 15',
-            description: 'We are going to have fun',
-            color: 'red',
-        },
-        {
-            id: 3,
-            name: 'Almuerzo graduación',
-            beg_time: '12:00m',
-            end_time: '5:15pm',
-            date: '4 mayo',
-            state: 1,
-            ammount: '$21.500',
-            email: 'client2@ac.com.arg',
-            phone: '325 256 90 15',
-            description: 'We are going to have fun',
-            color: 'red',
-        },
-        {
-            id: 4,
-            name: 'Carnaval local',
-            beg_time: '6:00pm',
-            end_time: '8:15pm',
-            date: '13 mayo',
-            state: 2,
-            ammount: '$21.500',
-            email: 'client2@ac.com.arg',
-            phone: '325 256 90 15',
-            description: 'We are going to have fun',
-            color: 'red',
-        },
-        {
-            id: 5,
-            name: 'Rumba Grupo 6',
-            beg_time: '6:00pm',
-            end_time: '8:15pm',
-            date: '6 mayo',
-            state: 2,
-            ammount: '$21.500',
-            email: 'client2@ac.com.arg',
-            phone: '325 256 90 15',
-            description: 'We are going to have fun',
-            color: 'red',
-        },
-        {
-            id: 6,
-            name: 'Asado del grupo de futbol',
-            beg_time: '7:00pm',
-            end_time: '8:15pm',
-            date: '14 mayo',
-            state: 3,
-            ammount: '$21.500',
-            email: 'client2@ac.com.arg',
-            phone: '325 256 90 15',
-            description: 'We are going to have fun',
-            color: 'red',
-        },
-        {
-            id: 7,
-            name: 'Feria de las flores',
-            beg_time: '6:00pm',
-            end_time: '8:15pm',
-            date: '17 mayo',
-            state: 3,
-            ammount: '$21.500',
-            email: 'client2@ac.com.arg',
-            phone: '325 256 90 15',
-            description: 'We are going to have fun',
-            color: 'red',
-        },
-        {
-            id: 8,
-            name: 'Fiesta de integración Henry',
-            beg_time: '6:00pm',
-            end_time: '8:15pm',
-            date: '4 mayo',
-            state: 3,
-            ammount: '$21.500',
-            email: 'client2@ac.com.arg',
-            phone: '325 256 90 15',
-            description: 'We are going to have fun',
-            color: 'red',
-        },
-        {
-            id: 9,
-            name: 'Cumpleaños feliz',
-            beg_time: '7:00pm',
-            end_time: '8:15pm',
-            date: '27 mayo',
-            state: 3,
-            ammount: '$21.500',
-            email: 'client2@ac.com.arg',
-            phone: '325 256 90 15',
-            description: 'We are going to have fun',
-            color: 'red',
-        },
-        {
-            id: 10,
-            name: 'Desayuno del grupo Nacional',
-            beg_time: '8:30am',
-            end_time: '8:15pm',
-            date: '28 mayo',
-            state: 1,
-            ammount: '$21.500',
-            email: 'client2@ac.com.arg',
-            phone: '325 256 90 15',
-            description: 'We are going to have fun',
-            color: 'red',
-        },
-        {
-            id: 11,
-            name: 'Entrega PF',
-            beg_time: '8:30am',
-            end_time: '8:15pm',
-            date: '28 mayo',
-            state: 3,
-            ammount: '$21.500',
-            email: 'client2@ac.com.arg',
-            phone: '325 256 90 15',
-            description: 'We are going to have fun',
-            color: 'red',
-        },
-        {
-            id: 12,
-            name: 'Fiesta de las monjitas',
-            beg_time: '6:00pm',
-            end_time: '8:15pm',
-            date: '4 mayo',
-            state: 3,
-            ammount: '$21.500',
-            email: 'client2@ac.com.arg',
-            phone: '325 256 90 15',
-            description: 'We are going to have fun',
-            color: 'red',
-        },
-        {
-            id: 13,
-            name: 'Entrega Cliente',
-            beg_time: '6:15pm',
-            end_time: '8:15pm',
-            date: '31 mayo',
-            state: 3,
-            ammount: '$21.500',
-            email: 'client2@ac.com.arg',
-            phone: '325 256 90 15',
-            description: 'We are going to have fun',
-            color: 'blue',
-        },
-    ];
+    // console.log(eventos)
+    // const eventos = [
+    //     {
+    //         id: 1,
+    //         name: 'Desayuno del Grupo Juvenil',
+    //         beg_time: '8:30am',
+    //         end_time: '11:30am',
+    //         date: '2 mayo',
+    //         state: 1,
+    //         ammount: '$21.500',
+    //         email: 'client1@ac.com.arg',
+    //         phone: '325 256 90 15',
+    //         description: 'We are going to have fun',
+    //         color: 'red',
+    //     },
+    //     {
+    //         id: 2,
+    //         name: 'Quince años Familia Henry',
+    //         beg_time: '2:15pm',
+    //         end_time: '5:15pm',
+    //         date: '2 mayo',
+    //         state: 3,
+    //         ammount: '$21.500',
+    //         email: 'client2@ac.com.arg',
+    //         phone: '325 256 90 15',
+    //         description: 'We are going to have fun',
+    //         color: 'red',
+    //     },
+    //     {
+    //         id: 3,
+    //         name: 'Almuerzo graduación',
+    //         beg_time: '12:00m',
+    //         end_time: '5:15pm',
+    //         date: '4 mayo',
+    //         state: 1,
+    //         ammount: '$21.500',
+    //         email: 'client2@ac.com.arg',
+    //         phone: '325 256 90 15',
+    //         description: 'We are going to have fun',
+    //         color: 'red',
+    //     },
+    //     {
+    //         id: 4,
+    //         name: 'Carnaval local',
+    //         beg_time: '6:00pm',
+    //         end_time: '8:15pm',
+    //         date: '13 mayo',
+    //         state: 2,
+    //         ammount: '$21.500',
+    //         email: 'client2@ac.com.arg',
+    //         phone: '325 256 90 15',
+    //         description: 'We are going to have fun',
+    //         color: 'red',
+    //     },
+    //     {
+    //         id: 5,
+    //         name: 'Rumba Grupo 6',
+    //         beg_time: '6:00pm',
+    //         end_time: '8:15pm',
+    //         date: '6 mayo',
+    //         state: 2,
+    //         ammount: '$21.500',
+    //         email: 'client2@ac.com.arg',
+    //         phone: '325 256 90 15',
+    //         description: 'We are going to have fun',
+    //         color: 'red',
+    //     },
+    //     {
+    //         id: 6,
+    //         name: 'Asado del grupo de futbol',
+    //         beg_time: '7:00pm',
+    //         end_time: '8:15pm',
+    //         date: '14 mayo',
+    //         state: 3,
+    //         ammount: '$21.500',
+    //         email: 'client2@ac.com.arg',
+    //         phone: '325 256 90 15',
+    //         description: 'We are going to have fun',
+    //         color: 'red',
+    //     },
+    //     {
+    //         id: 7,
+    //         name: 'Feria de las flores',
+    //         beg_time: '6:00pm',
+    //         end_time: '8:15pm',
+    //         date: '17 mayo',
+    //         state: 3,
+    //         ammount: '$21.500',
+    //         email: 'client2@ac.com.arg',
+    //         phone: '325 256 90 15',
+    //         description: 'We are going to have fun',
+    //         color: 'red',
+    //     },
+    //     {
+    //         id: 8,
+    //         name: 'Fiesta de integración Henry',
+    //         beg_time: '6:00pm',
+    //         end_time: '8:15pm',
+    //         date: '4 mayo',
+    //         state: 3,
+    //         ammount: '$21.500',
+    //         email: 'client2@ac.com.arg',
+    //         phone: '325 256 90 15',
+    //         description: 'We are going to have fun',
+    //         color: 'red',
+    //     },
+    //     {
+    //         id: 9,
+    //         name: 'Cumpleaños feliz',
+    //         beg_time: '7:00pm',
+    //         end_time: '8:15pm',
+    //         date: '27 mayo',
+    //         state: 3,
+    //         ammount: '$21.500',
+    //         email: 'client2@ac.com.arg',
+    //         phone: '325 256 90 15',
+    //         description: 'We are going to have fun',
+    //         color: 'red',
+    //     },
+    //     {
+    //         id: 10,
+    //         name: 'Desayuno del grupo Nacional',
+    //         beg_time: '8:30am',
+    //         end_time: '8:15pm',
+    //         date: '28 mayo',
+    //         state: 1,
+    //         ammount: '$21.500',
+    //         email: 'client2@ac.com.arg',
+    //         phone: '325 256 90 15',
+    //         description: 'We are going to have fun',
+    //         color: 'red',
+    //     },
+    //     {
+    //         id: 11,
+    //         name: 'Entrega PF',
+    //         beg_time: '8:30am',
+    //         end_time: '8:15pm',
+    //         date: '28 mayo',
+    //         state: 3,
+    //         ammount: '$21.500',
+    //         email: 'client2@ac.com.arg',
+    //         phone: '325 256 90 15',
+    //         description: 'We are going to have fun',
+    //         color: 'red',
+    //     },
+    //     {
+    //         id: 12,
+    //         name: 'Fiesta de las monjitas',
+    //         beg_time: '6:00pm',
+    //         end_time: '8:15pm',
+    //         date: '4 mayo',
+    //         state: 3,
+    //         ammount: '$21.500',
+    //         email: 'client2@ac.com.arg',
+    //         phone: '325 256 90 15',
+    //         description: 'We are going to have fun',
+    //         color: 'red',
+    //     },
+    //     {
+    //         id: 13,
+    //         name: 'Entrega Cliente',
+    //         beg_time: '6:15pm',
+    //         end_time: '8:15pm',
+    //         date: '31 mayo',
+    //         state: 3,
+    //         ammount: '$21.500',
+    //         email: 'client2@ac.com.arg',
+    //         phone: '325 256 90 15',
+    //         description: 'We are going to have fun',
+    //         color: 'blue',
+    //     },
+    // ];
 
     //const eventos = currentEventos;
 
+    const months=[
+        "enero",
+        "febrero",
+        "marzo",
+        "abril"
+    ]
+
+    //2023-05-22
     const fechas = [
+
+        {
+            "_id": "643cd2b9211a08052a71eaf6",
+            "date": "2023-04-17T10:01:27.274Z",
+            "events": ["6438a165ef2dd23641aa0315"],
+            "createdAt": "2023-04-17T05:01:45.808Z",
+            "updatedAt": "2023-04-17T05:01:45.808Z",
+        },
         {
             date: '1 mayo',
             eventos: [],
         },
         {
-            date: '2 mayo',
-            eventos: [1, 2],
+            date: '2023-05-22',
+            eventos: ["6438a165ef2dd23641aa0315"],
         },
         {
             date: '3 mayo',
@@ -324,7 +352,7 @@ export function QuinchoCalendarContainer() {
     const [showModal, setShowModal] = useState(false);
 
     return (
-        // <Layout>
+        <Layout>
             <div style={{ padding: '30px' }}>
                 <div class="flex items-center mt-4">
                     <div class="flex ml-6">
@@ -558,6 +586,28 @@ export function QuinchoCalendarContainer() {
                     </>
                 ) : null}
             </div>
-        // </Layout>
+        </Layout>
+        // <h1>Hola</h1>
     );
 }
+
+
+
+
+
+
+
+// export async function getStaticProps(context) {
+//     const res = await fetch(`https://.../data`)
+//     const data = await res.json()
+
+//     if (!data) {
+//       return {
+//         notFound: true,
+//       }
+//     }
+
+//     return {
+//       props: { data }, // will be passed to the page component as props
+//     }
+//   }

@@ -1,5 +1,24 @@
 import { InfoItem, Layout } from '@/components/Dashboard';
 
+
+export async function getStaticProps(){
+    try{
+
+        const res = await fetch('http://localhost:3001/api/events');
+        const data = await res.json();
+
+        return {
+            props: { data }
+        }
+
+    }catch(error){
+        return{error:error.message}
+    }
+
+}
+
+
+
 export default function Dashboard() {
     return (
         <Layout>
@@ -197,7 +216,7 @@ export default function Dashboard() {
                 <div className="sm:h-[200px] sm:w-[200px] bg-orange-300">
                     ingresos quincho
                 </div>
-                
+
                 <div className="w-full h-2/6 bg-blue-300">
                     proximos eventos quincho
                 </div>

@@ -4,7 +4,7 @@ import { QuinchoCalendarContainer } from '@/components/Page';
 export default function Quincho() {
     return (
         <Layout>
-            <div><QuinchoCalendarContainer /></div>
+            <div>index</div>
         </Layout>
     );
 }
