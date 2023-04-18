@@ -24,9 +24,9 @@ ChartJS.register(
 
 export const PieChart = () => {
     const ingresos = [
-        { month: 'Reservado', count: 10 },
+        { month: 'Reservado', count: 2 },
         { month: 'Reservado y confirmado', count: 20 },
-        { month: 'Reservado,confirmado y pagado', count: 5 },
+        { month: 'Confirmado y pagado', count: 7 },
     ];
     const data = {
         labels: ingresos.map(({ month }) => month),
@@ -38,7 +38,7 @@ export const PieChart = () => {
                 backgroundColor: [
                     'rgba(255, 99, 132, 1)',
                     'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
+                    'rgba(86, 255, 94, 1)',
                 ],
                 tension: 0,
             },
@@ -50,42 +50,46 @@ export const PieChart = () => {
             x: {
                 ticks: {
                     display: false,
-                    autoSkip: false,
+                },
+                grid: {
+                    display: false,
+                    drawBorder: false,
                 },
             },
             y: {
                 ticks: {
                     display: false,
-                    autoSkip: false,
+                },
+                grid: {
+                    display: false,
+                    drawBorder: false,
                 },
             },
         },
         plugins: {
             legend: {
-                display: false,
+                position: 'bottom',
+                display: true,
+                align: 'start',
+                labels: {
+                    boxWidth: 10,
+                    borderRadius: 20
+                },
             },
         },
     };
     return (
         <div
-            className="w-full col-span-2 bg-white border border-neutral-300 shadow-[0px_3px_10px_2px_rgb(0_0_0_/_13%)] px-4 py-2 rounded-lg relative
-            lg:col-span-2
+            className="w-full h-full col-span-2 bg-white border border-neutral-300 shadow-[0px_3px_10px_2px_rgb(0_0_0_/_13%)] px-4 py-2 rounded-lg relative
+            lg:col-span-2 xl:col-span-2 xl:row-span-2
             flex flex-col justify-between
             "
         >
-            <div className="flex justify-between">
-                <p className="text-lg text-center text-[#262626] font-medium">
-                    Numero de Reservas
-                </p>
-                <select name="" id="">
-                    <option value="year">Año</option>
-                    <option value="month">Mes</option>
-                    <option value="week">Semana</option>
-                </select>
-            </div>
-            <div>
-                <Pie data={data} options={options} />
-            </div>
+            <p className="text-lg text-start text-[#262626] font-medium">
+                Estado de las Reservas
+            </p>
+
+            <Pie data={data} options={options} />
         </div>
     );
 };
