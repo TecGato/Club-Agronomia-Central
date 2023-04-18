@@ -316,11 +316,28 @@ export default function Dashboard() {
           number={20}
         />
         <NextMatches />
-        <div className="sm:h-[200px] sm:w-[250px] lg:w-full lg:h-full bg-blue-300">
-          Proximos partidos
-        </div>
-        <div className="sm:h-[200px] sm:w-[250px] lg:w-full lg:h-full xl:col-start-4 xl:row-start-3 bg-blue-300">
+        <div className="min-h-[192px] sm:h-[200px] sm:w-[250px] lg:w-full xl:w-full flex flex-col justify-start  items-start gap-4 border bg-white border-neutral-300 shadow-[0px_3px_10px_2px_rgb(0_0_0_/_13%)] px-4 py-2 rounded-lg">
           Comision directiva
+          <div>
+            <p>Diego Dottore</p>
+            <p>Presidente</p>
+          </div>
+          <div>
+            <p>Hernán Blotta</p>
+            <p>Vicepresidente</p>
+          </div>
+          <div>
+            <p>Marcelo Vitar</p>
+            <p>Secretario</p>
+          </div>
+          <div>
+            <p>Gustavo Majluf</p>
+            <p>Pro-Secretario</p>
+          </div>
+          <div>
+            <p>Pablo Jorge</p>
+            <p>Tesorero</p>
+          </div>
         </div>
       </div>
     </Layout>
