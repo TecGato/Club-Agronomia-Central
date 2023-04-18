@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Layout } from "@/components/Page";
