@@ -3,41 +3,38 @@ import Image from "next/image";
 import axios from "axios";
 import { Layout } from "@/components/Page";
 import image from "../../../../public/directives-img/directive.svg";
-// import Vicepresidente from "../../../../public/directives-img/imagen2.jpg";
-// import Secretario from "../../../../public/directives-img/imagen3.jpg";
-// import ProSecretario from "../../../../public/directives-img/imagen4.jpg";
-// import Tesorero from "../../../../public/directives-img/imagen5.jpg";
+
 
 export default function SteeringCommittee() {
-  // const [directives, setDirectives] = useState();
-  // useEffect(() => {
-  //   axios.get("http://localhost:3001/api/directors").then((response) => {
-  //     return setDirectives(response.data);
-  //   });
-  // }, [directives]);
+  const [directives, setDirectives] = useState();
+  useEffect(() => {
+    axios.get("http://localhost:3001/api/directors").then((response) => {
+      return setDirectives(response.data);
+    });
+  }, [directives]);
 
-    const directives = [
-        {
-          name:'Diego Dottore',
-          position:'Presidente',
-      },
-        {
-          position:'Vicepresidente',
-          name:'Hernán Blotta',
-      },
-        {
-          position:'Secretario',
-          name:'Marcelo Vitar',
-      },
-        {
-          position: 'Pro-Secretario',
-          name: 'Gustavo Majluf',
-      },
-        {
-          position: 'Tesorero',
-          name: 'Pablo Jorge',
-      },
-    ];
+    // const directives = [
+    //     {
+    //       name:'Diego Dottore',
+    //       position:'Presidente',
+    //   },
+    //     {
+    //       position:'Vicepresidente',
+    //       name:'Hernán Blotta',
+    //   },
+    //     {
+    //       position:'Secretario',
+    //       name:'Marcelo Vitar',
+    //   },
+    //     {
+    //       position: 'Pro-Secretario',
+    //       name: 'Gustavo Majluf',
+    //   },
+    //     {
+    //       position: 'Tesorero',
+    //       name: 'Pablo Jorge',
+    //   },
+    // ];
 
   return (
     <Layout
