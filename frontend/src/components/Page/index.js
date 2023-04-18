@@ -1,4 +1,5 @@
 export * from './Banner';
+export * from './Contributions';
 export * from './Footer';
 export * from './HeaderTitle';
 export * from './HomePage';
