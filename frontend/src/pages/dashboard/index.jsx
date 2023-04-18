@@ -1,34 +1,27 @@
-import { InfoItem, Layout } from '@/components/Dashboard';
-
-
-export async function getStaticProps(){
-    try{
-
-        const res = await fetch('http://localhost:3001/api/events');
-        const data = await res.json();
-
-        return {
-            props: { data }
-        }
-
-    }catch(error){
-        return{error:error.message}
-    }
-
-}
-
-
-
+import {
+    InfoItem,
+    Layout,
+    BarChart,
+    LineChart,
+    PieChart,
+    NextReservations,
+} from '@/components/Dashboard';
 export default function Dashboard() {
     return (
         <Layout>
-            <div className="w-full min-h-screen flex flex-col justify-self-center items-center xl:w-11/12 sm:w-5/6 gap-2 p-5 outline">
+            <div
+                className="w-full min-h-screen grid grid-cols-2 gap-2 justify-self-center items-center xl:w-11/12 sm:w-5/6 p-5
+            sm:justify-items-center
+            lg:grid-cols-3
+            xl:grid-cols-4
+            "
+            >
                 <InfoItem
                     icon={
                         <svg
                             fill="#1b418a"
-                            height={70}
-                            width={70}
+                            height={60}
+                            width={60}
                             version="1.1"
                             id="Layer_1"
                             xmlns="http://www.w3.org/2000/svg"
@@ -66,32 +59,32 @@ export default function Dashboard() {
                     icon={
                         <svg
                             fill="#1b418a"
+                            width={60}
+                            height={60}
                             viewBox="0 0 24 24"
-                            width={70}
-                            height={70}
-                            className="min-w-[70px] min-h-[70px]"
                             xmlns="http://www.w3.org/2000/svg"
                             stroke="#1b418a"
+                            strokeWidth="0.00024000000000000003"
                         >
-                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g id="SVGRepo_bgCarrier" strokeWidth={0} />
                             <g
                                 id="SVGRepo_tracerCarrier"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                            ></g>
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                            />
                             <g id="SVGRepo_iconCarrier">
-                                <path d="M12,23A11,11,0,1,0,1,12,11.046,11.046,0,0,0,12,23ZM8,20.05a9.029,9.029,0,0,1-2.6-1.956A2,2,0,0,1,8,20.05Zm8,0a2,2,0,0,1,2.6-1.956A8.989,8.989,0,0,1,16,20.05Zm3.369-13.2a9.236,9.236,0,0,1,1.395,3.135A2,2,0,0,1,19.37,6.851Zm-5.745-3.7a1.985,1.985,0,0,1-3.25,0A8.783,8.783,0,0,1,13.625,3.155Zm-9,3.7A2,2,0,0,1,3.235,9.986,8.73,8.73,0,0,1,4.63,6.851ZM5.964,5.344a9.008,9.008,0,0,1,2.459-1.6,3.965,3.965,0,0,0,7.154,0,9.008,9.008,0,0,1,2.459,1.6A3.987,3.987,0,0,0,21,12a8.934,8.934,0,0,1-1.19,4.454,3.976,3.976,0,0,0-5.729,4.293,8.685,8.685,0,0,1-4.162,0A3.976,3.976,0,0,0,4.19,16.454,8.934,8.934,0,0,1,3,12,3.987,3.987,0,0,0,5.964,5.344ZM12,16a4,4,0,1,0-4-4A4,4,0,0,0,12,16Zm0-6a2,2,0,1,1-2,2A2,2,0,0,1,12,10Z"></path>
+                                <path d="M12,23A11,11,0,1,0,1,12,11.046,11.046,0,0,0,12,23ZM8,20.05a9.029,9.029,0,0,1-2.6-1.956A2,2,0,0,1,8,20.05Zm8,0a2,2,0,0,1,2.6-1.956A8.989,8.989,0,0,1,16,20.05Zm3.369-13.2a9.236,9.236,0,0,1,1.395,3.135A2,2,0,0,1,19.37,6.851Zm-5.745-3.7a1.985,1.985,0,0,1-3.25,0A8.783,8.783,0,0,1,13.625,3.155Zm-9,3.7A2,2,0,0,1,3.235,9.986,8.73,8.73,0,0,1,4.63,6.851ZM5.964,5.344a9.008,9.008,0,0,1,2.459-1.6,3.965,3.965,0,0,0,7.154,0,9.008,9.008,0,0,1,2.459,1.6A3.987,3.987,0,0,0,21,12a8.934,8.934,0,0,1-1.19,4.454,3.976,3.976,0,0,0-5.729,4.293,8.685,8.685,0,0,1-4.162,0A3.976,3.976,0,0,0,4.19,16.454,8.934,8.934,0,0,1,3,12,3.987,3.987,0,0,0,5.964,5.344ZM12,16a4,4,0,1,0-4-4A4,4,0,0,0,12,16Zm0-6a2,2,0,1,1-2,2A2,2,0,0,1,12,10Z" />
                             </g>
                         </svg>
                     }
-                    title={'Jugadores de Futsal Femenino'}
+                    title={'Jugadoras de Futsal Femenino'}
                     number={26}
                 />
                 <InfoItem
                     icon={
                         <svg
-                            height="71px"
-                            width="71px"
+                            height={60}
+                            width={60}
                             version="1.1"
                             id="_x32_"
                             xmlns="http://www.w3.org/2000/svg"
@@ -139,9 +132,8 @@ export default function Dashboard() {
                             id="taekwondo-2"
                             data-name="Flat Color"
                             xmlns="http://www.w3.org/2000/svg"
-                            height={70}
-                            width={70}
-                            className="min-w-[70px] min-h-[70px]"
+                            height={60}
+                            width={60}
                         >
                             <g id="SVGRepo_bgCarrier" strokeWidth={0} />
                             <g
@@ -164,9 +156,8 @@ export default function Dashboard() {
                 <InfoItem
                     icon={
                         <svg
-                            height="70px"
-                            width="70px"
-                            className="min-w-[70px] min-h-[70px]"
+                            height={60}
+                            width={60}
                             version="1.1"
                             id="_x32_"
                             xmlns="http://www.w3.org/2000/svg"
@@ -210,8 +201,46 @@ export default function Dashboard() {
                     title={'Jugadores de Ajedrez'}
                     number={26}
                 />
-                <div className="sm:h-[200px] sm:w-[200px] bg-orange-300">
-                    eventos estado
+                <InfoItem
+                    icon={
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            stroke="#1b418a"
+                            height={60}
+                            width={60}
+                        >
+                            <g id="SVGRepo_bgCarrier" strokeWidth={0} />
+                            <g
+                                id="SVGRepo_tracerCarrier"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                            />
+                            <g id="SVGRepo_iconCarrier">
+                                {' '}
+                                <g id="Calendar / Calendar_Days">
+                                    {' '}
+                                    <path
+                                        id="Vector"
+                                        d="M8 4H7.2002C6.08009 4 5.51962 4 5.0918 4.21799C4.71547 4.40973 4.40973 4.71547 4.21799 5.0918C4 5.51962 4 6.08009 4 7.2002V8M8 4H16M8 4V2M16 4H16.8002C17.9203 4 18.4796 4 18.9074 4.21799C19.2837 4.40973 19.5905 4.71547 19.7822 5.0918C20 5.5192 20 6.07899 20 7.19691V8M16 4V2M4 8V16.8002C4 17.9203 4 18.4801 4.21799 18.9079C4.40973 19.2842 4.71547 19.5905 5.0918 19.7822C5.5192 20 6.07899 20 7.19691 20H16.8031C17.921 20 18.48 20 18.9074 19.7822C19.2837 19.5905 19.5905 19.2842 19.7822 18.9079C20 18.4805 20 17.9215 20 16.8036V8M4 8H20M16 16H16.002L16.002 16.002L16 16.002V16ZM12 16H12.002L12.002 16.002L12 16.002V16ZM8 16H8.002L8.00195 16.002L8 16.002V16ZM16.002 12V12.002L16 12.002V12H16.002ZM12 12H12.002L12.002 12.002L12 12.002V12ZM8 12H8.002L8.00195 12.002L8 12.002V12Z"
+                                        stroke="#1b418a"
+                                        strokeWidth={2}
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                    />{' '}
+                                </g>{' '}
+                            </g>
+                        </svg>
+                    }
+                    title={'Jugadores en total'}
+                    number={200}
+                />
+                <NextReservations />
+                <BarChart />
+
+                <div className="sm:h-[200px] sm:w-[250px] lg:w-full lg:h-full bg-blue-300">
+                    Comision directiva
                 </div>
                 <div className="sm:h-[200px] sm:w-[200px] bg-orange-300">
                     ingresos quincho

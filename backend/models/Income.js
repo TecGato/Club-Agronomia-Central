@@ -6,51 +6,51 @@ const incomeSchema = new mongoose.Schema({
     required: true,
   },
   incomePerMonth: {
-    0: {
+    Enero: {
       type: Number,
       default: 0,
     },
-    1: {
+    Febrero: {
       type: Number,
       default: 0,
     },
-    2: {
+    Marzo: {
       type: Number,
       default: 0,
     },
-    3: {
+    Abril: {
       type: Number,
       default: 0,
     },
-    4: {
+    Mayo: {
       type: Number,
       default: 0,
     },
-    5: {
+    Junio: {
       type: Number,
       default: 0,
     },
-    6: {
+    Julio: {
       type: Number,
       default: 0,
     },
-    7: {
+    Agosto: {
       type: Number,
       default: 0,
     },
-    8: {
+    Septiembre: {
       type: Number,
       default: 0,
     },
-    9: {
+    Octubre: {
       type: Number,
       default: 0,
     },
-    10: {
+    Noviembre: {
       type: Number,
       default: 0,
     },
-    11: {
+    Diciembre: {
       type: Number,
       default: 0,
     },

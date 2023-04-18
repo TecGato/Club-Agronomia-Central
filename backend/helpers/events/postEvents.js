@@ -27,20 +27,36 @@ const postEvent = async ({ date, amount, ...eventInfo }) => {
     const month = newEvent.date.getMonth();
     const incomes = await Income.findOne({ year });
 
+    const months = [
+      "Enero",
+      "Febrero",
+      "Marzo",
+      "Abril",
+      "Mayo",
+      "Junio",
+      "Julio",
+      "Agosto",
+      "Septiembre",
+      "Octubre",
+      "Noviembre",
+      "Diciembre",
+    ];
+
     if (incomes) {
       await Income.findOneAndUpdate(
         { year },
         {
           incomePerMonth: {
             ...incomes.incomePerMonth,
-            [month]: incomes.incomePerMonth[month] + Number(amount),
+            [months[month]]:
+              incomes.incomePerMonth[months[month]] + Number(amount),
           },
         }
       );
     } else {
       const newIncomeYear = new Income({
         year,
-        incomePerMonth: { [month]: Number(amount) },
+        incomePerMonth: { [months[month]]: Number(amount) },
       });
       await newIncomeYear.save();
     }
