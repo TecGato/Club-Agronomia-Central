@@ -9,10 +9,6 @@ const directorSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  picture: {
-    type: String,
-    required: true,
-  },
   createdAt: {
     type: Date,
     inmutable: true,
