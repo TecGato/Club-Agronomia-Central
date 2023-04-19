@@ -1,8 +1,8 @@
-const { Router } = require("express");
-const { getDateEvents } = require("../controllers/dateEvents/getDateEvents");
+const { Router } = require('express');
+const { getDateEvents } = require('../controllers/dateEvents/getDateEvents');
 
 const router = Router();
 
-router.get("/", getDateEvents);
+router.get('/', getDateEvents);
 
 module.exports = router;

@@ -1,6 +1,6 @@
 const {
   putTestimonial,
-} = require("../../helpers/testimonials/putTestimonials");
+} = require('../../helpers/testimonials/putTestimonials');
 
 const updateTestimonial = async (req, res) => {
   const { id } = req.params;

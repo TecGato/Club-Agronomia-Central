@@ -2,7 +2,7 @@ const {
   getAllPosts,
   getPostsByTitle,
   getPostById,
-} = require("../../helpers/posts/getPosts.js");
+} = require('../../helpers/posts/getPosts.js');
 
 const getPosts = async (req, res) => {
   const { title } = req.query;

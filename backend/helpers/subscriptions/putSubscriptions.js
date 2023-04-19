@@ -1,4 +1,4 @@
-const Subscription = require("../../models/Subscription");
+const Subscription = require('../../models/Subscription');
 
 const putSubscription = async (email) => {
   try {

@@ -1,4 +1,4 @@
-const { mercadopago } = require("../../mercadoPago/mercadoPago");
+const { mercadopago } = require('../../mercadoPago/mercadoPago');
 
 const donation = async (req, res) => {
   const { price } = req.body;
@@ -9,7 +9,7 @@ const donation = async (req, res) => {
     let preference = {
       items: [
         {
-          title: "Aporte",
+          title: 'Aporte',
           unit_price: amount,
           quantity: 1,
         },

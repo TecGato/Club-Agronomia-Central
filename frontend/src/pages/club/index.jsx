@@ -52,7 +52,7 @@ export default function Club() {
                                 className="lg:w-full lg:h-52"
                             />
                             <div class="text-center py-4  lg:text-left lg:pl-2">
-                                <p class="text-lg  text-black font-bold">
+                                <p class="text-lg text-gray-800 text-black font-bold">
                                     {name}
                                 </p>
                                 <p class="text-slate-500 font-normal">

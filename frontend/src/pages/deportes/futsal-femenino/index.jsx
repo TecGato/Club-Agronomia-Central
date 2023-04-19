@@ -69,7 +69,7 @@ export default function FutFem() {
                         </h3>
                         <p className="text-base text-gray-700 leading-6 py-0 row-span-1 col-span-3">
                             El profe a cargo es <em>Fernando</em> y las
-                            practicas:
+                            practicas: {''}
                             <strong>
                                 lunes y miercoles de 20.00hs a 22.00hs
                             </strong>

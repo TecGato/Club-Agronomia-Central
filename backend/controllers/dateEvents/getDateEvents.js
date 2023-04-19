@@ -1,4 +1,4 @@
-const { getAllDateEvents } = require("../../helpers/dateEvents/getDateEvents");
+const { getAllDateEvents } = require('../../helpers/dateEvents/getDateEvents');
 
 const getDateEvents = async (req, res) => {
   try {

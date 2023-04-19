@@ -1,30 +1,30 @@
-const nodeMailer = require("nodemailer");
+const nodeMailer = require('nodemailer');
 
-const html = "";
+const html = '';
 
-const title = "";
+const title = '';
 
 const subscribers = [];
 
 async function mailer() {
   const transporter = nodeMailer.createTransport({
-    host: "",
+    host: '',
     port: 465,
     secure: true,
     auth: {
-      user: "",
-      pass: "",
+      user: '',
+      pass: '',
     },
   });
 
   const info = await transporter.sendMail({
-    from: "Club Agronomía Central <>",
+    from: 'Club Agronomía Central <>',
     to: subscribers,
     subject: title,
     html: html,
   });
 
-  console.log("Message sent: " + info.messageId);
+  console.log('Message sent: ' + info.messageId);
   console.log(info.accepted);
   console.log(info.rejected);
 }
