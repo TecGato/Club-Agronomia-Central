@@ -1,13 +1,14 @@
-import React from "react";
-import { useState } from "react";
-import { initMercadoPago, Wallet } from "../../../../node_modules/@mercadopago/sdk-react"
-import axios from "axios";
+import React from 'react';
+import { useState } from 'react';
+import {
+  initMercadoPago,
+  Wallet,
+} from '../../../../node_modules/@mercadopago/sdk-react';
+import axios from 'axios';
 
-initMercadoPago("TEST-6c23655f-039f-4d68-9ee2-55e0cc334f88");
+initMercadoPago('TEST-6c23655f-039f-4d68-9ee2-55e0cc334f88');
 
 export function Contributions() {
-
-  
   const [preferenceId, setPreferenceID] = useState(null);
   const [contribution, setContribution] = useState({ price: null });
   const [isReady, setIsReady] = React.useState(false);
@@ -23,7 +24,7 @@ export function Contributions() {
   const handleClick = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:3001/api/donation",
+        'http://localhost:3001/api/donation',
         contribution
       );
       console.log(response.data.global);
@@ -35,7 +36,7 @@ export function Contributions() {
 
   const handleOnReady = () => {
     setIsReady(true);
-  }
+  };
 
   return (
     <div className="h-[400px] my-10 w-96 md:w-4/5 bg-white shadow-md">
@@ -47,22 +48,22 @@ export function Contributions() {
           />
           <div className="m-auto ">
             <p className="absolute top-4 font-semibold text-blue-900 cursor-pointer left-4 text-xs">
-              ¡Apoya a la Juventus a través del deporte con una donación
-              voluntaria! Tu ayuda es esencial
+              ¡Apoyá a la Juventus con una donación voluntaria! Tu ayuda es
+              esencial
             </p>
             <p className="absolute top-8 font-semibold text-blue-900 cursor-pointer left-4 text-xs">
               para continuar brindando programas y actividades deportivas a la
               comunidad.
             </p>
             <p className="absolute top-12 font-semibold text-blue-900 cursor-pointer left-4 text-xs">
-              ¡Haz la diferencia con tu contribución!
+              ¡Hacé la diferencia con tu contribución!
             </p>
           </div>
         </div>
 
         <div className="h-full bg-white shadow-md px-8 pt-6 pb-8 mb-4">
           <h3 className="mb-4 font-semibold text-gray-900 dark:text-black">
-            selecciona el monto de tu donacion
+            Seleccioná el monto de tu donación
           </h3>
           <ul className="items-center w-full text-sm font-medium text-gray-900 bg-white border border-gray-200 sm:flex dark:bg-gray-700 dark:border-gray-600 dark:text-white">
             <li className="w-full border-b border-gray-200 sm:border-b-0 sm:border-r dark:border-gray-600">
@@ -140,7 +141,7 @@ export function Contributions() {
               htmlFor="price"
               className="block mb-2 text-sm font-medium text-gray-900 "
             >
-              ingresa el monto que deseas donar
+              Ingresá el monto que deseas donar
             </label>
             <input
               name="price"
@@ -161,11 +162,13 @@ export function Contributions() {
           </div>
 
           {preferenceId === null ? null : (
-            <Wallet initialization={{ preferenceId: preferenceId }} 
-            onReady={handleOnReady}/>
+            <Wallet
+              initialization={{ preferenceId: preferenceId }}
+              onReady={handleOnReady}
+            />
           )}
         </div>
       </div>
     </div>
   );
-};
+}
