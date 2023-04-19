@@ -9,3 +9,5 @@ export * from './AuthLayout';
 export * from './GoogleButton';
 export * from './InputForm';
 export * from './NextMatches';
+export * from './SteeringCommitteePreview';
+export * from './Administrative';
