@@ -15,12 +15,12 @@ export function Navbar() {
       <p className='font-semibold text-lg lg:hidden'>Club Agronomia Central</p>
 
       <ul className='gap-4 hidden lg:flex'>
-        <NavLink text={'INICIO'} link={'/'} />
-        <NavLink text={'EL CLUB'} link={'/club'} sonLinks={clubLinks} />
-        <NavLink text={'DEPORTES'} link={'/deportes'} sonLinks={sportsLinks} />
-        <NavLink text={'HISTORIAS'} link={'/historias'} />
-        <NavLink text={'NOTICIAS'} link={'/noticias'} />
-        <NavLink text={'CONTACTANOS'} link={'/contacto'} />
+        <NavLink text={'Inicio'} link={'/'} />
+        <NavLink text={'El Club'} link={'/club'} sonLinks={clubLinks} />
+        <NavLink text={'Deportes'} link={'/deportes'} sonLinks={sportsLinks} />
+        <NavLink text={'Testimonios'} link={'/testimonios'} />
+        <NavLink text={'Noticias'} link={'/noticias'} />
+        <NavLink text={'Contactanos'} link={'/contacto'} />
       </ul>
       <div
         className={`w-10 h-10 relative ${openMenu ? 'fixed z-50' : 'relative'}`}
