@@ -16,13 +16,13 @@ export const arrow = [
                 version="1.1"
                 xmlns="http://www.w3.org/2000/svg"
                 stroke="#ffffff"
-                stroke-width="1.6"
+                strokeWidth="1.6"
             >
-                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
                 <g
                     id="SVGRepo_tracerCarrier"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                 ></g>
                 <g id="SVGRepo_iconCarrier">
                     {' '}
@@ -41,14 +41,14 @@ export const arrow = [
                 version="1.1"
                 xmlns="http://www.w3.org/2000/svg"
                 stroke="#ffffff"
-                stroke-width="1.6"
+                strokeWidth="1.6"
                 transform="matrix(-1, 0, 0, 1, 0, 0)"
             >
-                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
                 <g
                     id="SVGRepo_tracerCarrier"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                 ></g>
                 <g id="SVGRepo_iconCarrier">
                     {' '}
