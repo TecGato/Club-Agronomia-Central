@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const connectionDB = async () => {
-  const connectionString = `mongodb+srv://henrystudents:henrypf35a@mongo.dau0olv.mongodb.net/test`;
+  const connectionString = process.env.MONGO_URL;
   try {
     mongoose.set('strictQuery', false);
     await mongoose.connect(connectionString);

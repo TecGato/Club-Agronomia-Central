@@ -3,7 +3,7 @@ import { initMercadoPago, Wallet } from "../../../../node_modules/@mercadopago/s
 import { useContributions } from '@/hooks';
 import { WarningAlert, LoadingSmall } from "..";
 
-initMercadoPago("TEST-6c23655f-039f-4d68-9ee2-55e0cc334f88");
+initMercadoPago(process.env.NEXT_PUBLIC_MERCADOPAGO_KEY);
 
 export function Contributions({ visibleContributions }) {
 
