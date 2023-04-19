@@ -8,6 +8,7 @@ export * from './InfoSlider';
 export * from './Item';
 export * from './ItemsContainer';
 export * from './Layout';
+export * from './LoadingSmall';
 export * from './MobileMenu';
 export * from './Navbar';
 export * from './NavLink';
