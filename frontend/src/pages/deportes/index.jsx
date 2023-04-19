@@ -116,6 +116,37 @@ export default function Sports() {
                         className="p-4"
                     />
                 </div>
+
+                <div className="overflow-hidden shadow-lg m-1 max-w-xs sm:z-10 bg-white">
+                    <h3 className="text-lg font-bold text-gray-800 px-5 pt-5 pb-3">
+                        Entrenamiento de Arqueros
+                    </h3>
+                    <div className="border-2 border-blue-600 mb-8 mx-5 w-14"></div>
+                    <p className="text-base text-gray-700 leading-6 px-5 pt-0">
+                    Consiste en enseñar a los porteros a parar los tiros del equipo contrario y proteger la portería de su equipo para que no entre el balón.
+                    </p>
+                    <img
+                        src="https://img.freepik.com/foto-gratis/jugadores-futbol-accion-estadio-profesional_654080-1261.jpg?size=626&ext=jpg&ga=GA1.1.1228025790.1681327921&semt=ais"
+                        alt="Entrenamiento de Arqueros"
+                        loading="lazy"
+                        className="p-4"
+                    />
+                </div>
+
+                <div className="overflow-hidden shadow-lg m-1 max-w-xs sm:z-10 bg-white">
+                    <h3 className="text-lg font-bold text-gray-800 px-5 pt-5 pb-3">
+                        Escuelita de Fútbol
+                    </h3>
+                    <div className="border-2 border-blue-600 mb-8 mx-5 w-14"></div>
+                    <p className="text-base text-gray-700 leading-6 px-5 pt-0">
+                        Introduce a los niños de 3-5 años a la práctica deportiva del fútbol a través de juegos adaptados a su edad y habilidades motoras.
+                    </p>
+                    <img
+                        src="https://img.freepik.com/foto-gratis/nino-pequeno-que-juega-futbol-campo_1303-16425.jpg?size=626&ext=jpg&ga=GA1.2.1228025790.1681327921&semt=ais"
+                        loading="lazy"
+                        className="p-4 max-h-52 w-full"
+                    />
+                </div>
             </div>
         </Layout>
     );
