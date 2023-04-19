@@ -17,9 +17,9 @@ export default function Arqueros() {
                     src='https://img.freepik.com/vector-premium/estadio-deportivo-ilustracion-porteria-futbol_53562-5609.jpg?size=626&ext=jpg&ga=GA1.1.1228025790.1681327921&semt=sph' 
                     alt='Arqueria de fútbol'
                     loading='lazy'
-                    className='col-span-3 rounded-l-lg h-96'
+                    className='col-span-3 md:rounded-l-lg h-96'
                 />
-                <div class="col-span-2 h-96 p-5 max-w-xl bg-[#031936] rounded-r-lg flex items-center justify-center h-screen">
+                <div class="col-span-2 max-h-96 p-5 bg-[#031936] md:rounded-r-lg flex items-center justify-center h-screen">
                 <p className="text-base text-white leading-6 ">
                     Se practican los días {''}
                     <strong>
