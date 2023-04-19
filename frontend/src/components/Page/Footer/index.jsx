@@ -2,12 +2,12 @@ import { SocialIcons, ItemsContainer } from '..';
 
 export function Footer() {
     return (
-        <footer className="bg-gray-900 text-white">
+        <footer className="bg-neutral-900 text-white flex flex-wrap justify-evenly">
             <ItemsContainer />
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 text-center pt-2 text-gray-400 text-sm pb-8">
-                <span>© 2020 Appy. All rights reserved.</span>
-                <span>Terms · Privacy Policy</span>
-                <SocialIcons />
+            <div className="grid grid-row-5 text-center p-5 text-gray-400 text-sm py-16">
+                <SocialIcons className='row-span-3' />
+                <span className='row-span-1 p-0'>© 2020 Appy. All rights reserved.</span>
+                <span className='row-span-1 p-0'>Terms · Privacy Policy</span>
             </div>
         </footer>
     );

@@ -17,31 +17,31 @@ export default function Chess() {
 
                     <p className="text-base text-gray-700 leading-6 py-5 md:p-5 lg:mx-8 xl:p-8 xl:m-8 2xl:px-24 2xl:mx-12">
                         La idea de club de ajedrez nació en el 2016 con una
-                        comisión directiva integrada por
+                        comisión directiva integrada por {''}
                         <em>
                             Ezequiel Alfero, Jesuan Letizia, Gabriel Izak,
                             Daniel Astaburuaga y Oscar Ponomareff
                         </em>
                         . Hoy es una realidad con sus torneos pensados, rápidos
                         y blitz y tradicionales torneos por equipos, mixturado
-                        con una escuela de ajedrez comandada por la
+                        con una escuela de ajedrez comandada por la {''}
                         <em>
                             maestra internacional y excampeona argentina Marisa
                             Zuriel
                         </em>
-                        , quien dicta las clases para nivel intermedio
+                        , quien dicta las clases para nivel intermedio {''}
                         <strong>martes 18hs</strong>.
                     </p>
 
                     <div className="bg-indigo-100 w-full h-full flex items-center">
                         <p className="text-base text-gray-700 leading-6 py-5 md:p-5 lg:mx-8 xl:p-8 xl:m-8 2xl:px-24 2xl:mx-12 bg-indigo-100">
                             En un ambiente familiar y sumamente amistoso, se
-                            desarrollan los
+                            desarrollan los {''}
                             <strong>martes a las 19.30hs</strong> los certámenes
-                            de ritmo más lento, mientras que los
+                            de ritmo más lento, mientras que los {''}
                             <strong>sábados a las 16hs</strong>, están a
                             disposición los de ritmo más rápido. Donde jugadores
-                            de todas las edades combinan
+                            de todas las edades combinan {''}
                             <em>
                                 mates, jaques, celadas y todas las actividades
                                 relacionadas al deporte ciencia
@@ -65,10 +65,10 @@ export default function Chess() {
                     />
                     <p className="text-base text-gray-700 leading-6 py-5 md:p-5 lg:mx-8 xl:p-8 xl:m-8 2xl:px-24 2xl:mx-12">
                         Por otro lado, la escuela de ajedrez a nivel inicial
-                        para niños y juveniles, de la mano de
+                        para niños y juveniles, de la mano de {''}
                         <em>Horacio Taddeo</em>, gran referente del ajedrez
-                        escolar, se desarrolla los
-                        <strong>martes a las 18hs</strong> y a su vez,
+                        escolar, se desarrolla los {''}
+                        <strong>martes a las 18hs</strong> y a su vez, {''}
                         <em>Zuriel</em> lleva adelante en el mismo horario la
                         escuela para nivel intermedio.
                     </p>
@@ -76,7 +76,7 @@ export default function Chess() {
                     <div className="bg-indigo-100 w-full h-full flex items-center">
                         <p className="text-base text-gray-700 leading-6 py-5 md:p-5 lg:mx-8 xl:p-8 xl:m-8 2xl:px-24 2xl:mx-12">
                             El Club De Ajedrez Zugzwang en el año 2019 se afilio
-                            a la
+                            a la {''}
                             <strong>federación metropolitana de ajedrez</strong>
                             para darle un formato legal y serio a su constante
                             desarrollo. Si te gusta el ajedrez, este es el lugar

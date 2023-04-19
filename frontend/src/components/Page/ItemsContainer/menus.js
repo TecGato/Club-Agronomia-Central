@@ -9,19 +9,14 @@ export const DEPORTES = [
   { name: "Futbol Infantil", link: "/deportes/futbol-infantil" },
   { name: "Futsal", link: "/deportes/futsal" },
   { name: "Futsal Femenino", link: "/deportes/futsal-femenino" },
-  { name: "TaeKwonDo", link: "/deportes/taekwondo" },
+  { name: "Taekwondo", link: "/deportes/taekwondo" },
   { name: "Centro de Entrenamiento", link: "/deportes/centro-de-entrenamiento" },
 ];
-export const COMPANY = [
-  { name: "Diversity & inclusion", link: "#" },
-  { name: "About us", link: "#" },
-  { name: "Press", link: "#" },
-  { name: "Customer Stories", link: "#" },
-  { name: "Online communities", link: "#" },
-];
-export const SUPPORT = [
-  { name: "Documentation", link: "#" },
-  { name: "Tutorials & guides", link: "#" },
-  { name: "Webinars", link: "#" },
-  { name: "Open-source", link: "#" },
+export const CONTACTO = [
+  { name: "Senior", link: "https://www.instagram.com/agronomiacentralsenior/" },
+  { name: "Futbol", link: "https://www.instagram.com/agronomiacentral.futbol/?hl=es" },
+  { name: "Futsal", link: "https://www.instagram.com/agronomiafutsal/" },
+  { name: "Futsal Femenino", link: "https://www.instagram.com/agronomia.futsalfem/" },
+  { name: "Club social y deportivo", link: "https://www.facebook.com/clubagronomiacentral" },
+  { name: "Contacto", link: "/contacto" },
 ];
