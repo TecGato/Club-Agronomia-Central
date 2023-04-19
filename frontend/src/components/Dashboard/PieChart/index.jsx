@@ -81,7 +81,7 @@ export const PieChart = () => {
     return (
         <div
             className="w-full h-full col-span-2 bg-white border border-neutral-300 shadow-[0px_3px_10px_2px_rgb(0_0_0_/_13%)] px-4 py-2 rounded-lg relative
-            lg:col-span-2 xl:col-span-2 xl:row-span-2
+            lg:col-span-2 lg:row-span-2 xl:col-span-2 xl:row-span-2 xl:col-start-1 xl:row-start-4
             flex flex-col justify-between
             "
         >
