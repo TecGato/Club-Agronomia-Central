@@ -16,3 +16,4 @@ export * from './QuinchoCalendarContainer';
 export * from './QuinchoCalendarDay';
 export * from './SocialIcons';
 export * from './TestimonialItem';
+export * from './WarningAlert';

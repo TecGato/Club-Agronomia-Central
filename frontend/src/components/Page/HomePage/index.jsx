@@ -11,7 +11,7 @@ export function HomePage() {
             <Banner />
             <h1 className="text-3xl font-bold underline">Bienvenidos</h1>
             <Donation visibleContributions={ visibleContributions } />
-            { donate ? <Contributions /> : null}
+            { donate ? <Contributions visibleContributions={visibleContributions} /> : null}
         </>
     );
 };
