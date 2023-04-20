@@ -1,11 +1,4 @@
 import { Layout } from '@/components/Page';
-import Image from 'next/image';
-import location from '../../../public/contact-img/location.svg';
-import tfno from '../../../public/contact-img/tfno.svg';
-import mail from '../../../public/contact-img/mail.svg';
-import insta from '../../../public/contact-img/insta.svg';
-import face from '../../../public/contact-img/face.svg';
-import ws from '../../../public/contact-img/ws.svg';
 
 export default function Contact() {
   return (

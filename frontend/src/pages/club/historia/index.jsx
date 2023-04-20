@@ -175,30 +175,13 @@ export default function History() {
                             <div>
                                 <div className="md:flex">
                                     <p className="text-justify text-gray-700 m-1 p-2 md:p-4 md:items-center lg:p-6 xl:p-8">
-                                        En una piecita de la calle chorroarin
-                                        632, alrededor de una mesa de pino, y a
-                                        la luz de una lampara a petróleo, se
-                                        reunió el 11 de diciembre de 1928, un
-                                        grupo de jóvenes del barrio, para dejar
-                                        constituido un club deportivo.
+                                        En un cuartito de la calle Chorroarín 632, alrededor de una mesa de pino y a la luz de una lámpara a kerosene, un grupo de jóvenes del barrio se reunieron el 11 de diciembre de 1928 para fundar un club deportivo.
                                     </p>
                                     <p className="text-justify text-gray-700 m-1 p-2 md:p-4 md:items-center lg:p-6 xl:p-8">
-                                        Así nació el club social y deportivo
-                                        agronomía central. Durante dos años, el
-                                        núcleo fundador paseo los prestigios de
-                                        la institución por todas las canchas de
-                                        futbol improvisadas en los baldíos de la
-                                        ciudad.
+                                        Así nació el Club Social y Deportivo Agronomía Central. Durante dos años, el grupo fundador llevó con orgullo el prestigio de la institución por todas las canchas de fútbol improvisadas en los terrenos baldíos de la ciudad.
                                     </p>
                                     <p className="text-justify text-gray-700 m-1 p-2 md:p-4 md:items-center lg:p-6 xl:p-8">
-                                        En 1930 realizaron su fusión con el club
-                                        villa modelo, eligiendo para dirigir los
-                                        destinos de la nueva entidad, a la
-                                        comisión directiva integrada por los
-                                        señores: Mirabelli, Collazo, Gama de
-                                        santis, Repetto, Placido, Felice,
-                                        Staricanelli, Turconi, Gentile,
-                                        Florentino, Bruneli, Borghi y Amore.
+                                        En 1930, se fusionaron con el Club Villa Modelo, y para dirigir los destinos de la nueva entidad, se eligió a la Comisión Directiva integrada por los señores Mirabelli, Collazo, Gama de Santis, Repetto, Plácido, Felice, Staricanelli, Turconi, Gentile, Florentino, Bruneli, Borghi y Amore.
                                     </p>
                                 </div>
                                 <div className="md:grid md:grid-cols-2 gap-6 items-center text-gray-700">
@@ -219,33 +202,7 @@ export default function History() {
                         {clickedButton === '2' && (
                             <div className="">
                                 <p className="text-justify text-gray-700 m-1 p-2 md:p-4 md:items-center lg:p-6 xl:p-8">
-                                    Hasta 1933, el club ocupo una casita en la
-                                    esquina de las calles Chorroarin y
-                                    Andonaegui. Entonces, otros deportes
-                                    comenzaron a ejercer su seducción en los
-                                    asociados, y poco a poco la práctica del
-                                    basquetball y del tenis fue desalojando al
-                                    futbol. Contemporáneamente fue tomando
-                                    impulso la actividad social en la
-                                    institución, afirmándose con el ingreso de
-                                    las primeras socias. El local pronto resulto
-                                    pequeño y, así fue necesario mudarse a la
-                                    finca de la calle Bucareli 964, primero y
-                                    Bauness 931 después. La comisión directiva
-                                    que se hizo cargo de los destinos del club
-                                    en 1930, al realizarse la fusión con el club
-                                    villa modelo. Finalmente llego 1936 y con la
-                                    más importante de las innovaciones para el
-                                    club: la adquisición de la casa propia. Las
-                                    autoridades de la entidad compraron un
-                                    amplio solar en la calle Bauness 958 e
-                                    hicieron construir allí un cuerpo de
-                                    edificio, que consta de dos salas, donde se
-                                    instalaron las oficinas de secretaria y la
-                                    biblioteca; de un amplio hall en el que
-                                    funcionaban los juegos de salón, y de una
-                                    habitación larga, donde se hallaban los
-                                    billares.
+                                    Hasta 1933, el club ocupó una casita en la esquina de las calles Chorroarín y Andonaegui. Luego, otros deportes comenzaron a seducir a los asociados y poco a poco el baloncesto y el tenis fueron desplazando al fútbol. Al mismo tiempo, la actividad social en la institución ganó impulso con la incorporación de las primeras socias. El local pronto se quedó pequeño y fue necesario mudarse a la finca de la calle Bucareli 964, y luego a la de Bauness 931. La Comisión Directiva que asumió el cargo en 1930 tras la fusión con el Club Villa Modelo tomó una decisión importante en 1936: adquirir la casa propia. Las autoridades del club compraron un amplio terreno en la calle Bauness 958 y construyeron un edificio que constaba de dos salas, donde se instalaron las oficinas de la secretaría y la biblioteca; un amplio hall en el que se llevaban a cabo los juegos de salón, y una habitación larga donde se encontraban los billares.
                                 </p>
                             </div>
                         )}
@@ -258,20 +215,7 @@ export default function History() {
                                     className=""
                                 />
                                 <p className="text-justify text-gray-700">
-                                    Sobre la edificación se había dispuesto una
-                                    amplia terraza que utilizaban como buffet en
-                                    los días calurosos y templados. Sobre tres
-                                    lotes contiguos fueron habilitadas las
-                                    canchas de basquet, tennis, pelota y bochas.
-                                    Las instalaciones propias se completaban con
-                                    dos amplias pistas de baile, y se proyecta
-                                    en ese momento una cancha cerrada de pelota,
-                                    que además serviría como salón de baile. En
-                                    ese periodo la comisión directiva estaba
-                                    integrada por el señor Alfonso Rodriguez, a
-                                    quienes secundaban el secretario Carlos
-                                    Pozzi, el prosecretario Zamora Casas y el
-                                    tesorero Osvaldo Borghi.
+                                    En cuanto a la construcción, habían preparado una gran terraza que se utilizaba como buffet en los días cálidos y templados. Se habían habilitado canchas de básquet, tenis, pelota y bochas en tres lotes contiguos. Además, las instalaciones propias incluían dos amplias pistas de baile y en ese momento se estaba proyectando una cancha cerrada de pelota que también serviría como salón de baile. Durante ese período, la comisión directiva estaba encabezada por el señor Alfonso Rodríguez, con el secretario Carlos Pozzi, el prosecretario Zamora Casas y el tesorero Osvaldo Borghi como sus colaboradores
                                 </p>
 
                                 <Image
@@ -290,11 +234,7 @@ export default function History() {
                                         className=""
                                     />
                                     <figcaption className="text-justify text-gray-700">
-                                        A lo largo de los años en el club se
-                                        fueron desarrollando distintas
-                                        disciplinas, entre las que se destacan
-                                        dos en especial el básquet donde llego a
-                                        jugar en la liga de capital y el futbol.
+                                        A lo largo de los años en el club fueron desarrollándose distintas disciplinas, entre las que se destacan dos en especial: el básquet, donde el club llegó a jugar en la liga de la capital, y el fútbol.
                                     </figcaption>
                                 </figure>
                                 <figure>
@@ -304,12 +244,7 @@ export default function History() {
                                         className=""
                                     />
                                     <figcaption className="text-justify text-gray-700">
-                                        Tambien club se caracterizó por festejar
-                                        los carnavales con distintas murgas de
-                                        los barrios y sus famosos campeonatos de
-                                        baile y a la vez torneos de papi futbol,
-                                        donde se anotan equipos de las
-                                        cercanías.
+                                        El club también se caracterizó por celebrar los carnavales con distintas murgas de los barrios y sus famosos campeonatos de baile. Además, se organizaban torneos de papi fútbol, donde se inscribían equipos de las cercanías.
                                     </figcaption>
                                 </figure>
                             </div>
@@ -318,13 +253,7 @@ export default function History() {
                         {clickedButton === '5' && (
                             <div className="flex flex-col items-center text-gray-700 gap-6 m-1 p-2 md:p-4 md:items-center lg:p-6 xl:p-8">
                                 <p>
-                                    Luego en el año 1983 se acercaron al club
-                                    “el turco” Balouz y Jose Rucci, con un
-                                    proyecto de comenzar el Baby Futbol en el
-                                    club donde jugarían chicos entre 6 años y 13
-                                    años, desde ahí se dio comienzo a lo que al
-                                    día de hoy se mantiene de forma
-                                    ininterrumpida 40 años.
+                                    En 1983, "el turco" Balouz y Jose Rucci se acercaron al club con la idea de comenzar a jugar al Baby Fútbol, donde participarían chicos de entre 6 y 13 años. A partir de ahí, se dio inicio a lo que hoy continúa de manera ininterrumpida después de 40 años.
                                 </p>
                                 <Image src={HistoryPic9} alt="PicBabyFutbol" />
                             </div>
@@ -335,8 +264,7 @@ export default function History() {
                                 <figure>
                                     <Image src={HistoryPic11} alt="PicObras" />
                                     <figcaption className="text-justify text-gray-700">
-                                        Colecta de un vagon de ropa para los
-                                        damnificados post-inundación de Santa Fe
+                                        Juntada de un vagón de ropa para los afectados por la inundación en Santa Fe
                                     </figcaption>
                                 </figure>
                                 <figure>
@@ -351,18 +279,7 @@ export default function History() {
                         {/* <h1 className='text-lg underline'>En la Actualidad:</h1> */}
                         {clickedButton === '7' && (
                             <p className="text-justify text-gray-700 m-1 p-2 md:p-4 md:items-center lg:p-6 xl:p-8">
-                                Hoy en día el club se ha desarrollado
-                                notablemente, donde además de las actividades de
-                                Futbol, también se practican otras actividades
-                                como Ajedrez, Touch Ball y Taekwondo, además el
-                                club cuenta con un quincho con capacidad para 50
-                                personas, un buffet económico y un Salón de
-                                Fiestas con capacidad para 120 personas, todo
-                                esto no se podría haber alcanzado sin la
-                                constante ayuda de las distintas generaciones
-                                que pasaron por nuestro club, siempre ad honorem
-                                buscando el crecimiento constante para llegar a
-                                hoy en día a ser lo que somos.
+                                Actualmente, el club ha crecido notablemente y ofrece no solo fútbol sino también ajedrez, touch ball y taekwondo. Además, cuenta con un quincho con capacidad para 50 personas, un buffet económico y un salón de fiestas para 120 personas. Todo esto no hubiera sido posible sin la ayuda constante de las diferentes generaciones que han pasado por el club, siempre trabajando sin recibir compensación para lograr un crecimiento constante. Gracias a esto, hoy en día somos lo que somos.
                             </p>
                         )}
                     </div>
