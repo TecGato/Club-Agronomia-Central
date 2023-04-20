@@ -38,10 +38,11 @@ export function Banner() {
                 <div className="flex items-center justify-center gap-2">
                     {slides.map((_, i) => (
                         <div
+                            key={ i }
                             className={`
-                            transition-all w-3 h-3 bg-white rounded-full
-                            ${currentIndex === i ? 'p-2' : 'bg-opacity-50'}
-                        `}
+                                transition-all w-3 h-3 bg-white rounded-full
+                                ${currentIndex === i ? 'p-2' : 'bg-opacity-50'}
+                            `}
                         />
                     ))}
                 </div>
