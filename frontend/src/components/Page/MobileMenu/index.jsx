@@ -16,11 +16,11 @@ export function MobileMenu({ openMenu }) {
                 <ul className="w-3/4">
                     {/* Link Home */}
                     <div className="h-10 flex items-center ">
-                        <NavLink text={'INICIO'} link={'/'} />
+                        <NavLink text={'Inicio'} link={'/'} />
                     </div>
                     {/* Link Club */}
                     <div className="flex w-full h-10 justify-between items-center">
-                        <NavLink text={'EL CLUB'} link={'/club'} />
+                        <NavLink text={'El Club'} link={'/club'} />
                         <button
                             onClick={() => setClubOpen(!clubOpen)}
                             className={`w-[40px] h-[40px] flex justify-center items-center transition-all duration-300 ${
@@ -33,19 +33,19 @@ export function MobileMenu({ openMenu }) {
                     {clubOpen && (
                         <div className="mb-2 ml-5 transition-all duration-100 animate-[openMobileMenu_0.1s_ease] origin-top">
                             <NavLink
-                                text={'COMISIÓN DIRECTIVA'}
+                                text={'Comisión Directiva'}
                                 link={'/club/comision-directiva'}
                             />
                             <NavLink
-                                text={'HISTORIA'}
+                                text={'Historia'}
                                 link={'/club/historia'}
                             />
                             <NavLink
-                                text={'INSTALACIONES'}
+                                text={'Instalaciones'}
                                 link={'/club/instalaciones'}
                             />
                             <NavLink
-                                text={'DISPONIBILIDAD DEL QUINCHO'}
+                                text={'Disponibilidad Del Quincho'}
                                 link={'/club/quincho'}
                             />
                         </div>
@@ -54,7 +54,7 @@ export function MobileMenu({ openMenu }) {
                     <div
                         className={`flex w-full h-10 justify-between items-center transition-all duration-200`}
                     >
-                        <NavLink text={'DEPORTES'} link={'/deportes'} />
+                        <NavLink text={'Deportes'} link={'/deportes'} />
                         <button
                             onClick={() => setSportsOpen(!sportsOpen)}
                             className={`w-[40px] h-[40px] flex justify-center items-center transition-all duration-300 ${
@@ -67,38 +67,38 @@ export function MobileMenu({ openMenu }) {
                     {sportsOpen && (
                         <div className="mb-2 ml-5 transition-all duration-100 animate-[openMobileMenu_0.1s_ease] origin-top">
                             <NavLink
-                                text={'AJEDREZ'}
+                                text={'Ajedrez'}
                                 link={'/deportes/ajedrez'}
                             />
                             <NavLink
-                                text={'FUTBOL INFANTIL'}
+                                text={'Futbol Infantil'}
                                 link={'/deportes/futbol-infantil'}
                             />
                             <NavLink
-                                text={'FUTSAL'}
+                                text={'Futsal'}
                                 link={'/deportes/futsal'}
                             />
                             <NavLink
-                                text={'FUTSAL FEMENINO'}
+                                text={'Futsal Femenino'}
                                 link={'/deportes/futsal-femenino'}
                             />
                             <NavLink
-                                text={'TAEKWONDO'}
+                                text={'Taekwondo'}
                                 link={'/deportes/taekwondo'}
                             />
                             <NavLink
-                                text={'CENTRO DE ENTRENAMIENTO'}
+                                text={'Centro De Entrenamiento'}
                                 link={'/deportes/centro-de-entrenamiento'}
                             />
                         </div>
                     )}
                     {/* Link Stories */}
                     <div className="h-10 flex items-center ">
-                        <NavLink text={'HISTORIAS'} link={'/historias'} />
+                        <NavLink text={'Historias'} link={'/historias'} />
                     </div>
                     {/* Link Contact */}
                     <div className="h-10 flex items-center ">
-                        <NavLink text={'CONTACTANOS'} link={'/contacto'} />
+                        <NavLink text={'Contactanos'} link={'/contacto'} />
                     </div>
                 </ul>
             </div>

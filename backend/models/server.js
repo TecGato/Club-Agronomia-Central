@@ -17,8 +17,8 @@ class Server {
     this.postsPath = '/api/posts';
     this.subscriptionsPath = '/api/subscriptions';
     this.testimonialsPath = '/api/testimonials';
+    this.uploadPath = '/api/uploads';
     this.usersPath = '/api/users';
-    this.donationsPath = '/api/donations';
     // Connect to Data Base
     this.connectToDB();
     // Middlewares
@@ -36,7 +36,10 @@ class Server {
     this.app.use(cors());
 
     // Lectura y parseo del body
-    this.app.use(express.json());
+    this.app.use(express.json({ limit: '1024mb' }));
+
+    // It parses incoming requests with URL-encoded payloads
+    this.app.use(express.urlencoded({ limit: '1024mb', extended: true }));
 
     //Public dir
     this.app.use(express.static('public'));
@@ -53,6 +56,7 @@ class Server {
     this.app.use(this.postsPath, require('../routes/posts'));
     this.app.use(this.subscriptionsPath, require('../routes/subscriptions'));
     this.app.use(this.testimonialsPath, require('../routes/testimonials'));
+    this.app.use(this.uploadPath, require('../routes/uploads'));
     this.app.use(this.usersPath, require('../routes/users'));
   }
 

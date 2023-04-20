@@ -5,28 +5,26 @@ import NavLink from '../NavLink';
 export function QuinchoCalendarDay(props) {
     //${eventstates[state]}
     const eventstates = {
-        1: 'gray',
-        2: 'yellow',
-        3: 'green',
-        //'bg-red-500'
+        1: "flex-shrink-0 w-2 h-2 border border-gray-500 bg-gray-500 rounded-full",
+        2: "flex-shrink-0 w-2 h-2 border border-yellow-500 bg-yellow-500 rounded-full",
+        3: "flex-shrink-0 w-2 h-2 border border-green-500 bg-green-500 rounded-full",
+
     };
 
     // `who $options`
     return (
         <div>
             <div class="relative flex flex-col bg-white group">
-                {/* {props.arrayeventos.length>0? <p>true</p>: <p>false</p>} */}
-                {/* {props.arrayeventos.length>0? props.arrayeventos.map(detail=>{
-                            return <h2>{detail.name}</h2>
-                        }): <></>} */}
+
                 <div class="relative flex flex-col bg-white group">
                     <span class="mx-2 my-1 text-xs font-bold">
-                        {props.fechacard}
+                        {props.dateCard}
                     </span>
-                    {props.arrayeventos.length > 0 ? (
-                        props.arrayeventos.map((detail) => {
+                    {props.eventArray.length > 0 ? (
+                        props.eventArray.map((detail) => {
                             return (
                                 <>
+                                {console.log(detail.state)}
                                     <div class="flex flex-col px-1 py-1 overflow-auto">
                                         <button
                                             class="flex items-center flex-shrink-0 h-5 px-1 text-xs hover:bg-gray-200"
@@ -35,8 +33,9 @@ export function QuinchoCalendarDay(props) {
                                             }
                                         >
                                             <span
+
                                                 class={
-                                                    'flex-shrink-0 w-2 h-2 border border-red-500 bg-red-500 rounded-full'
+                                                    eventstates[detail.state]
                                                 }
                                             ></span>
 

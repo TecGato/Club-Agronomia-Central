@@ -16,17 +16,24 @@ export default function Quincho(props) {
 
 
 export async function getStaticProps(){
-    // try{
+    try{
 
         const res = await fetch('http://localhost:3001/api/events');
         const data = await res.json();
 
+
+        const resDates = await fetch('http://localhost:3001/api/dateevents');
+        const dataDates = await resDates.json();
+
         return {
-            props: { data }
+            props: {
+                data,
+                dataDates,
+             }
         }
 
-    // }catch(error){
-    //     return{error:error.message}
-    // }
+    }catch(error){
+        return{error:error.message}
+    }
 
 }

@@ -1,45 +1,53 @@
 export const clubLinks = [
     {
-        text: 'COMISIÓN DIRECTIVA',
+        text: 'Comisión Directiva',
         linkSon: '/club/comision-directiva',
     },
     {
-        text: 'HISTORIA',
+        text: 'Historia',
         linkSon: '/club/historia',
     },
     {
-        text: 'INSTALACIONES',
+        text: 'Instalaciones',
         linkSon: '/club/instalaciones',
     },
     {
-        text: 'DISPONIBILIDAD DEL QUINCHO',
+        text: 'Disponibilidad Del Quincho',
         linkSon: '/club/quincho',
     }
 ];
 
 export const sportsLinks = [
     {
-        text: 'AJEDREZ',
+        text: 'Ajedrez',
         linkSon: '/deportes/ajedrez',
     },
     {
-        text: 'FUTBOL INFANTIL',
+        text: 'Futbol Infantil',
         linkSon: '/deportes/futbol-infantil',
     },
     {
-        text: 'FUTSAL',
+        text: 'Futsal',
         linkSon: '/deportes/futsal',
     },
     {
-        text: 'FUTSAL FEMENINO',
+        text: 'Futsal Femenino',
         linkSon: '/deportes/futsal-femenino',
     },
     {
-        text: 'TAEKWONDO',
+        text: 'Taekwondo',
         linkSon: '/deportes/taekwondo',
     },
     {
-        text: 'CENTRO DE ENTRENAMIENTO',
+        text: 'Centro De Entrenamiento',
         linkSon: '/deportes/centro-de-entrenamiento',
+    },    
+    {
+        text: 'Entrenamiento de Arqueros',
+        linkSon: '/deportes/entrenamiento-arqueros',
+    },
+    {
+        text: 'Escuelita de Fútbol',
+        linkSon: '/deportes/escuelita-futbol',
     },
 ];
