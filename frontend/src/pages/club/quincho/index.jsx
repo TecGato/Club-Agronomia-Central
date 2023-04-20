@@ -21,8 +21,15 @@ export async function getStaticProps(){
         const res = await fetch('http://localhost:3001/api/events');
         const data = await res.json();
 
+
+        const resDates = await fetch('http://localhost:3001/api/dateevents');
+        const dataDates = await resDates.json();
+
         return {
-            props: { data }
+            props: {
+                data,
+                dataDates,
+             }
         }
 
     // }catch(error){

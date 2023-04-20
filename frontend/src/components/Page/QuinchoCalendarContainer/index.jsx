@@ -3,16 +3,9 @@ import { useState } from 'react';
 import { Layout, QuinchoCalendarDay } from '..';
 
 
-//getServerSideProps
-//export async function getStaticProps(){
-
-
-
-
 export function QuinchoCalendarContainer({ props }) {
 
 
-    // console.log(props.data)
     const events = props.data;
 
 
@@ -25,45 +18,10 @@ export function QuinchoCalendarContainer({ props }) {
         "abril"
     ]
 
-    //2023-05-22
-    const eventDates = [
 
-        {
-            "_id": "643d79770671cddd4c8c9784",
-            "name": "Cumpleaños Hijo Andres",
-            "beg_time": "10:30am",
-            "end_time": "15:30am",
-            "state": 1,
-            "date": "2023-04-17T10:01:27.274Z",
-            "amount": "$220.500",
-            "client": "Camilo sexto",
-            "email": "pedro@gmail.com",
-            "phone": "320 678 90 54",
-            "description": "El cumpleaños del hijo de pedro el jugador de futsal",
-            "createdAt": "2023-04-17T16:53:11.802Z",
-            "updatedAt": "2023-04-17T16:53:11.802Z",
-            "__v": 0
-          },
-        {
-            "_id": "644088efb8e99ac35e701239",
-            "name": "Asado grupo 6 FT35a",
-            "beg_time": "9:30am",
-            "end_time": "11:30am",
-            "state": 1,
-            "date": "2023-04-19T10:01:27.274Z",
-            "amount": "$220.500",
-            "client": "Camilo octavo",
-            "email": "luis@gmail.com",
-            "phone": "320 839 49 25",
-            "description": "Messi se une a la fiesta",
-            "createdAt": "2023-04-20T00:35:59.199Z",
-            "updatedAt": "2023-04-20T00:35:59.199Z",
-            "__v": 0
-          }
+    const eventDates=props.dataDates;
 
-    ];
 
-    //const fechas = currentFechas;
     //Declare an initial state of the form modal
     const [showModal, setShowModal] = useState(false);
 
