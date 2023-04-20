@@ -39,6 +39,14 @@ export default function News({ posts }) {
             >
               ❌
             </button>
+            <button
+              className="absolute top-2 left-2 p-2 text-white rounded-xl w-7 h-7 align-middle"
+              onClick={() => {
+                setShowWarn(mainNews._id);
+              }}
+            >
+              ✏️
+            </button>
             <img
               src={mainNews.picture}
               alt={mainNews.title}
@@ -61,10 +69,16 @@ export default function News({ posts }) {
                 <button
                   className="absolute top-2 right-2 p-2 text-white rounded-xl w-7 h-7 align-middle"
                   onClick={() => {
-                    handlerDelete(news._id);
+                    setShowWarn(news._id);
                   }}
                 >
                   ❌
+                </button>
+                <button
+                  className="absolute top-2 left-2 p-2 text-white rounded-xl w-7 h-7 align-middle"
+                  onClick={() => {}}
+                >
+                  ✏️
                 </button>
                 <img
                   src={news.picture}
