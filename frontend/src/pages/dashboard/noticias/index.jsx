@@ -1,8 +1,14 @@
 import { Layout } from '@/components/Dashboard';
 import { useState, useMemo } from 'react';
+import { FormNews } from '../../../components/Dashboard/Forms/NewsForm';
 
 export default function News({ posts }) {
   const [arr, setArr] = useState(posts);
+  const [showForm, setShowForm] = useState(false);
+
+  const showModalForm = () => {
+    setShowForm(!showForm);
+  };
 
   const mainNews = useMemo(() => arr[arr.length - 1], [arr]);
   const otherNews = useMemo(() => arr.slice(0, -1), [arr]);
@@ -10,18 +16,21 @@ export default function News({ posts }) {
   return (
     <Layout>
       <div className="m-4">
-        <button className="bg-[#1b418a] hover:hover:bg-[#10306b] text-white font-bold py-2 px-4 rounded">
+        <button
+          className="bg-[#1b418a] hover:hover:bg-[#10306b] text-white font-bold py-2 px-4 rounded"
+          onClick={showModalForm}
+        >
           Crear Noticia
         </button>
         <div className="flex flex-wrap justify-center">
           <div className="sm:grid relative sm:grid-cols-2 sm:max-h-72 shadow-md overflow-hidden cursor-pointer hover:scale-105 transition ease-in-out mb-5 p-5">
             <button
-              className="absolute top-2 right-2 p-2 bg-red-500 text-white rounded-xl w-7 h-7 place-content-center"
+              className="absolute top-2 right-2 p-2 text-white rounded-xl w-7 h-7 place-content-center"
               onClick={() => {
                 console.log('p1');
               }}
             >
-              X
+              ❌
             </button>
             <img
               src={mainNews.picture}
@@ -42,8 +51,8 @@ export default function News({ posts }) {
           {otherNews.map((news) => {
             return (
               <div className="relative max-w-xs m-1 shadow-md overflow-hidden cursor-pointer hover:scale-105 transition ease-in-out p-5">
-                <button className="absolute top-2 right-2 p-2 bg-red-500 text-white rounded-xl w-7 h-7 align-middle">
-                  X
+                <button className="absolute top-2 right-2 p-2 text-white rounded-xl w-7 h-7 align-middle">
+                  ❌
                 </button>
                 <img
                   src={news.picture}
@@ -62,7 +71,7 @@ export default function News({ posts }) {
           })}
         </div>
       </div>
-      <div className="flex flex-col justify-center "></div>
+      {showForm && <FormNews showModalForm={showModalForm} />}
     </Layout>
   );
 }
