@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 
-export function FormNews({ showModalForm }) {
+export function FormNews({ showModalForm, handlerCreate }) {
   //   const AddPost = ({ title, image, post }) => {
   //     setArr([...arr, { title, image, post }]);
   //   };
 
   //   const [showForm, setShowForm] = useState(false);
 
-  //   const [post, setPost] = useState({
-  //     title: '',
-  //     image: '',
-  //     post: '',
-  //   });
+  const [post, setPost] = useState({
+    title: '',
+    picture: '',
+    description: '',
+  });
 
   const handlerChange = (event) => {
     setPost({
@@ -40,7 +40,12 @@ export function FormNews({ showModalForm }) {
       >
         ❌
       </button>
-      <form className="flex flex-col gap-2" onSubmit={handlerSubmit}>
+      <form
+        className="flex flex-col gap-2"
+        onSubmit={() => {
+          handlerCreate(post);
+        }}
+      >
         <label className="text-white text-lg">Titulo:</label>
         <input
           name="title"
@@ -48,25 +53,25 @@ export function FormNews({ showModalForm }) {
           className="border-2"
           placeholder="Titulo de la Noticia"
           onChange={handlerChange}
-          //   value={post.title}
+          value={post.title}
         />
         <label className="text-white text-lg">Imagen:</label>
         <input
-          name="image"
+          name="picture"
           type="text"
           className="border-2"
           placeholder="Url de la imagen"
-          //   onChange={handlerChange}
+          onChange={handlerChange}
           //   value={post.image}
         />
         <label className="text-white text-lg">Post:</label>
         <input
-          name="post"
+          name="description"
           type="text"
           className="border-2"
           placeholder="Contenido de la Noticia"
           onChange={handlerChange}
-          //   value={post.post}
+          value={post.post}
         />
         <button
           type="submit"

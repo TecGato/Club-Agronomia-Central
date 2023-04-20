@@ -1,17 +1,24 @@
 import { Layout } from '@/components/Dashboard';
 import { useState, useMemo } from 'react';
 import { FormNews } from '../../../components/Dashboard/Forms/NewsForm';
+import { Warn } from '@/components/Dashboard/Warn/Warn';
+import { useNews } from '@/hooks';
 
 export default function News({ posts }) {
+  const { handlerDelete, handlerCreate } = useNews();
   const [arr, setArr] = useState(posts);
   const [showForm, setShowForm] = useState(false);
+  const [showWarn, setShowWarn] = useState(false);
 
   const showModalForm = () => {
     setShowForm(!showForm);
   };
+  const showModalWarn = () => {
+    setShowWarn(false);
+  };
 
   const mainNews = useMemo(() => arr[arr.length - 1], [arr]);
-  const otherNews = useMemo(() => arr.slice(0, -1), [arr]);
+  const otherNews = useMemo(() => arr.slice(0, -1), [arr]).reverse();
 
   return (
     <Layout>
@@ -27,7 +34,7 @@ export default function News({ posts }) {
             <button
               className="absolute top-2 right-2 p-2 text-white rounded-xl w-7 h-7 place-content-center"
               onClick={() => {
-                console.log('p1');
+                setShowWarn(mainNews._id);
               }}
             >
               ❌
@@ -51,7 +58,12 @@ export default function News({ posts }) {
           {otherNews.map((news) => {
             return (
               <div className="relative max-w-xs m-1 shadow-md overflow-hidden cursor-pointer hover:scale-105 transition ease-in-out p-5">
-                <button className="absolute top-2 right-2 p-2 text-white rounded-xl w-7 h-7 align-middle">
+                <button
+                  className="absolute top-2 right-2 p-2 text-white rounded-xl w-7 h-7 align-middle"
+                  onClick={() => {
+                    handlerDelete(news._id);
+                  }}
+                >
                   ❌
                 </button>
                 <img
@@ -71,7 +83,16 @@ export default function News({ posts }) {
           })}
         </div>
       </div>
-      {showForm && <FormNews showModalForm={showModalForm} />}
+      {showForm && (
+        <FormNews showModalForm={showModalForm} handlerCreate={handlerCreate} />
+      )}
+      {showWarn && (
+        <Warn
+          handlerDelete={handlerDelete}
+          showModalWarn={showModalWarn}
+          showWarn={showWarn}
+        />
+      )}
     </Layout>
   );
 }
