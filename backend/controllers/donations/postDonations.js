@@ -9,18 +9,18 @@ const donation = async (req, res) => {
     let preference = {
       items: [
         {
-          title: 'Aporte',
+          title: 'Campaña de donación Agronomía Central',
           unit_price: amount,
           quantity: 1,
         },
       ],
 
-      // back_urls: {
-      //   "success": "http://localhost:3001/feedback",
-      //   "failure": "http://localhost:3001/feedback",
-      //   "pending": "http://localhost:3001/feedback"
-      // },
-      // auto_return: "approved",
+      back_urls: {
+        success: 'http://localhost:3000',
+        failure: 'http://localhost:3000',
+        pending: 'http://localhost:3000',
+      },
+      auto_return: 'approved',
     };
 
     const response = await mercadopago.preferences.create(preference);
