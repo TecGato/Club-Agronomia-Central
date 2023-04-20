@@ -16,7 +16,7 @@ export default function Quincho(props) {
 
 
 export async function getStaticProps(){
-    // try{
+    try{
 
         const res = await fetch('http://localhost:3001/api/events');
         const data = await res.json();
@@ -32,8 +32,8 @@ export async function getStaticProps(){
              }
         }
 
-    // }catch(error){
-    //     return{error:error.message}
-    // }
+    }catch(error){
+        return{error:error.message}
+    }
 
 }

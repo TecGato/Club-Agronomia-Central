@@ -8,7 +8,7 @@ export function QuinchoCalendarDay(props) {
         1: "flex-shrink-0 w-2 h-2 border border-gray-500 bg-gray-500 rounded-full",
         2: "flex-shrink-0 w-2 h-2 border border-yellow-500 bg-yellow-500 rounded-full",
         3: "flex-shrink-0 w-2 h-2 border border-green-500 bg-green-500 rounded-full",
-        //'bg-red-500'
+
     };
 
     // `who $options`
