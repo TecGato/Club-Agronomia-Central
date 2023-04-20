@@ -23,10 +23,10 @@ export default function FutFem() {
                     </div>
 
                     <img
-                        src="https://img.freepik.com/foto-gratis/mujer-adulta-forma-jugando-futbol_23-2148298910.jpg?size=626&ext=jpg&ga=GA1.1.1228025790.1681327921&semt=sph"
+                        src="https://img.freepik.com/foto-gratis/mujer-atletica-pateando-futbol_23-2148298864.jpg?size=626&ext=jpg&ga=GA1.1.1228025790.1681327921&semt=ais"
                         alt="futsal femenino"
                         loading="lazy"
-                        className="shadow-xl row-span-2 rounded-md"
+                        className="shadow-xl row-span-2"
                     />
 
                     <div className="row-span-1 p-8 grid grid-cols-4 grid-row-2">
