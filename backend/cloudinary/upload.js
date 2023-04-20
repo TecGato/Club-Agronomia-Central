@@ -11,15 +11,13 @@ cloudinary.config({
 });
 
 const upload = async (file) => {
-  // Upload
   try {
     const result = await cloudinary.uploader.upload(file, {
       upload_preset: 'club_agronomia_central',
     });
-    console.log(result);
     return result;
   } catch (error) {
-    console.log(error.message);
+    console.error(error.message);
   }
 };
 

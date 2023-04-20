@@ -9,7 +9,11 @@ const testimonialSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  picture: String,
+  picture: {
+    type: String,
+    required: true,
+  },
+  video: String,
   createdAt: {
     type: Date,
     inmutable: true,
