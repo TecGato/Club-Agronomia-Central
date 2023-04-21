@@ -10,10 +10,19 @@ const testimonialSchema = new mongoose.Schema({
     required: true,
   },
   picture: {
-    type: String,
-    required: true,
+    secure_url: {
+      type: String,
+      required: true,
+    },
+    public_id: {
+      type: String,
+      required: true,
+    },
   },
-  video: String,
+  video: {
+    secure_url: String,
+    public_id: String,
+  },
   createdAt: {
     type: Date,
     inmutable: true,
