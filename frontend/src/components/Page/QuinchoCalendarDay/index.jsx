@@ -1,9 +1,10 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import NavLink from '../NavLink';
+import { QuinchoCardDetail } from '../QuinchoCardDetail';
 
 export function QuinchoCalendarDay(props) {
-    //${eventstates[state]}
+
     const eventstates = {
         1: "flex-shrink-0 w-2 h-2 border border-gray-500 bg-gray-500 rounded-full",
         2: "flex-shrink-0 w-2 h-2 border border-yellow-500 bg-yellow-500 rounded-full",
@@ -11,12 +12,14 @@ export function QuinchoCalendarDay(props) {
 
     };
 
-    // `who $options`
+
     return (
         <div>
             <div class="relative flex flex-col bg-white group">
 
                 <div class="relative flex flex-col bg-white group">
+                    {props.dateCard.slice(5,7)==="05"?
+                    <>
                     <span class="mx-2 my-1 text-xs font-bold">
                         {props.dateCard}
                     </span>
@@ -24,16 +27,21 @@ export function QuinchoCalendarDay(props) {
                         props.eventArray.map((detail) => {
                             return (
                                 <>
-                                {console.log(detail.state)}
+
                                     <div class="flex flex-col px-1 py-1 overflow-auto">
                                         <button
                                             class="flex items-center flex-shrink-0 h-5 px-1 text-xs hover:bg-gray-200"
                                             onClick={() =>
-                                                props.setShowModal(true)
+                                                props.setShowCard(true)
                                             }
                                         >
-                                            <span
+                                        {props.showCard?
+                                        <QuinchoCardDetail
+                                        setShowCard={props.setShowCard}
+                                        detail={detail}
+                                        />:null}
 
+                                            <span
                                                 class={
                                                     eventstates[detail.state]
                                                 }
@@ -43,7 +51,7 @@ export function QuinchoCalendarDay(props) {
                                                 {detail.beg_time}
                                             </span>
                                             <span class="ml-2 font-medium leading-none truncate">
-                                                {detail.name}
+                                                {detail.description}
                                             </span>
                                         </button>
                                     </div>
@@ -53,7 +61,7 @@ export function QuinchoCalendarDay(props) {
                     ) : (
                         <></>
                     )}
-                    <button class="absolute bottom-0 right-0 flex items-center justify-center hidden w-6 h-6 mb-2 mr-2 text-white bg-gray-400 rounded group-hover:flex hover:bg-gray-500">
+                    {/* <button class="absolute bottom-0 right-0 flex items-center justify-center hidden w-6 h-6 mb-2 mr-2 text-white bg-gray-400 rounded group-hover:flex hover:bg-gray-500">
                         <svg
                             class="w-5 h-5 w-6 h-6 plus"
                             viewBox="0 0 20 20"
@@ -65,10 +73,20 @@ export function QuinchoCalendarDay(props) {
                                 clip-rule="evenodd"
                             ></path>
                         </svg>
-                    </button>
+                    </button> */}
+
+
+
+                    </>
+
+
+
+                    :
+                    null }
+
                 </div>
 
-                <button class="absolute bottom-0 right-0 flex items-center justify-center hidden w-6 h-6 mb-2 mr-2 text-white bg-gray-400 rounded group-hover:flex hover:bg-gray-500">
+                {/* <button class="absolute bottom-0 right-0 flex items-center justify-center hidden w-6 h-6 mb-2 mr-2 text-white bg-gray-400 rounded group-hover:flex hover:bg-gray-500">
                     <svg
                         class="w-5 h-5 w-6 h-6 plus"
                         viewBox="0 0 20 20"
@@ -80,7 +98,7 @@ export function QuinchoCalendarDay(props) {
                             clip-rule="evenodd"
                         ></path>
                     </svg>
-                </button>
+                </button> */}
             </div>
         </div>
     );
