@@ -1,22 +1,28 @@
 const {
   postTestimonial,
 } = require('../../helpers/testimonials/postTestimonials');
-const upload = require('../../cloudinary/upload');
+const { uploadMedia } = require('../../cloudinary/uploadMedia');
 
 const createTestimonial = async (req, res) => {
   const { ...testimonialInfo } = req.body;
   try {
     // Uploads Image to Cloudinary
-    const uploadedPicture = await upload(testimonialInfo.picture);
+    const uploadedPicture = await uploadMedia(testimonialInfo.picture);
 
     if (testimonialInfo.video) {
       // VIDEO WAS SENT BY USER. Uploads it to Cloudinary
-      const uploadedVideo = await upload(testimonialInfo.video);
-      // Sends testimonial info + image url and video url from cloudinary
+      const uploadedVideo = await uploadMedia(testimonialInfo.video);
+      // Sends testimonial info + image url and public id, and video url and public id from cloudinary
       const newTestimonial = await postTestimonial({
         ...testimonialInfo,
-        picture: uploadedPicture.secure_url,
-        video: uploadedVideo.secure_url,
+        picture: {
+          secure_url: uploadedPicture.secure_url,
+          public_id: uploadedPicture.public_id,
+        },
+        video: {
+          secure_url: uploadedVideo.secure_url,
+          public_id: uploadedVideo.public_id,
+        },
       });
       return res.status(201).json({
         msg: 'Testimonial Created Successfully',
@@ -24,10 +30,13 @@ const createTestimonial = async (req, res) => {
       });
     } else {
       // NO VIDEO WAS UPLOADED BY USER.
-      // Sends testimonial info + image url from cloudinary
+      // Sends testimonial info + image url and public id from cloudinary
       const newTestimonial = await postTestimonial({
         ...testimonialInfo,
-        picture: uploadedPicture.secure_url,
+        picture: {
+          secure_url: uploadedPicture.secure_url,
+          public_id: uploadedPicture.public_id,
+        },
       });
       return res.status(201).json({
         msg: 'Testimonial Created Successfully',
