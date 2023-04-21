@@ -13,3 +13,5 @@ export * from './SteeringCommitteePreview';
 export * from './Administrative';
 export * from './TestimonialItemDashboard';
 export * from './ButtonCreate';
+export * from './ButtonDelete';
+export * from './ButtonEdit';
