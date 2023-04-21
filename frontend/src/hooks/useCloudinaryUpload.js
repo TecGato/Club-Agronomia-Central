@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 
 export const useCloudinaryUpload = () => {
   const [previewCloudinarySource, setPreviewCloudinarySource] = useState();
@@ -19,27 +19,28 @@ export const useCloudinaryUpload = () => {
 
   const handleCloudinarySubmit = (event) => {
     event.preventDefault();
-    if (!previewCloudinarySource) return;
-    uploadCloudinaryFile(previewCloudinarySource);
+    return previewCloudinarySource;
+    // if (!previewCloudinarySource) return;
+    // uploadCloudinaryFile(previewCloudinarySource);
   };
 
-  const uploadCloudinaryFile = async (base64EncodedImage) => {
-    console.log(base64EncodedImage);
-    try {
-      const response = await axios.post('http://localhost:3001/api/uploads', {
-        image: base64EncodedImage,
-      });
-      console.log(response.data);
-      return response.data;
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  // const uploadCloudinaryFile = async (base64EncodedImage) => {
+  //   console.log(base64EncodedImage);
+  //   try {
+  //     const response = await axios.post('http://localhost:3001/api/uploads', {
+  //       image: base64EncodedImage,
+  //     });
+  //     console.log(response.data);
+  //     return response.data;
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
   return {
     handleCloudinaryChange,
     handleCloudinarySubmit,
     previewCloudinaryFile,
-    uploadCloudinaryFile,
+    // uploadCloudinaryFile,
   };
 };
