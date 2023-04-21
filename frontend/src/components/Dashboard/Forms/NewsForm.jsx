@@ -1,17 +1,23 @@
 import React, { useState } from 'react';
+import { useCloudinaryUpload } from '@/hooks';
 
 export function FormNews({ showModalForm, handlerCreate }) {
-  //   const AddPost = ({ title, image, post }) => {
-  //     setArr([...arr, { title, image, post }]);
-  //   };
-
-  //   const [showForm, setShowForm] = useState(false);
+  const { handleCloudinaryChange, handleCloudinarySubmit } =
+    useCloudinaryUpload();
 
   const [post, setPost] = useState({
     title: '',
     picture: '',
     description: '',
   });
+
+  const imagenChange = (event) => {
+    setPost({
+      ...post,
+      picture: handleCloudinaryChange(event),
+    });
+    console.log(post);
+  };
 
   const handlerChange = (event) => {
     setPost({
@@ -20,18 +26,16 @@ export function FormNews({ showModalForm, handlerCreate }) {
     });
   };
 
-  const handlerSubmit = (event) => {
+  const handlerSubmit = async (event) => {
     event.preventDefault();
-    console.log('gatito');
-    showModalForm();
-    //     AddPost(post);
-    //     setShowForm(false);
-    //     setPost({
-    //       title: '',
-    //       image: '',
-    //       post: '',
-    //     });
+    const picture = await handleCloudinarySubmit(event);
+    setPost({
+      ...post,
+      picture: picture,
+    });
+    handlerCreate(post);
   };
+
   return (
     <div className="flex bg-gray-900/80 backdrop-blur-sm justify-center items-center overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
       <button
@@ -40,12 +44,7 @@ export function FormNews({ showModalForm, handlerCreate }) {
       >
         ❌
       </button>
-      <form
-        className="flex flex-col gap-2"
-        onSubmit={() => {
-          handlerCreate(post);
-        }}
-      >
+      <form className="flex flex-col gap-2" onSubmit={handlerSubmit}>
         <label className="text-white text-lg">Titulo:</label>
         <input
           name="title"
@@ -58,11 +57,10 @@ export function FormNews({ showModalForm, handlerCreate }) {
         <label className="text-white text-lg">Imagen:</label>
         <input
           name="picture"
-          type="text"
+          type="file"
           className="border-2"
           placeholder="Url de la imagen"
-          onChange={handlerChange}
-          //   value={post.image}
+          onChange={imagenChange}
         />
         <label className="text-white text-lg">Post:</label>
         <input

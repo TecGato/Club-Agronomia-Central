@@ -9,17 +9,21 @@ export const useCloudinaryUpload = () => {
     previewCloudinaryFile(file);
   };
 
-  const previewCloudinaryFile = (file) => {
+  const previewCloudinaryFile = async (file) => {
     const reader = new FileReader();
+    console.log(reader);
     reader.readAsDataURL(file);
     reader.onloadend = () => {
       setPreviewCloudinarySource(reader.result);
+      //return reader.result;
     };
+    handleCloudinarySubmit();
   };
 
-  const handleCloudinarySubmit = (event) => {
-    event.preventDefault();
+  const handleCloudinarySubmit = () => {
+    console.log(previewCloudinarySource);
     return previewCloudinarySource;
+
     // if (!previewCloudinarySource) return;
     // uploadCloudinaryFile(previewCloudinarySource);
   };

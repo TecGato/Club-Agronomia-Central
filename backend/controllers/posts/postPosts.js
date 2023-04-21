@@ -2,6 +2,7 @@ const { postPost } = require('../../helpers/posts/postPosts');
 const upload = require('../../cloudinary/upload');
 
 const createPost = async (req, res) => {
+  console.log(req.body);
   const { ...postInfo } = req.body;
   try {
     // Uploads Image to Cloudinary
