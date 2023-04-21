@@ -9,7 +9,7 @@ export function HomePage() {
     return (
         <>
             <Banner />
-            <h1 className="text-3xl font-bold underline">Bienvenidos</h1>
+            <h1 className="text-3xl text-gray-800 font-bold underline">Bienvenidos</h1>
             <Donation visibleContributions={ visibleContributions } />
             { donate ? <Contributions visibleContributions={visibleContributions} /> : null}
         </>

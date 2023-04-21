@@ -18,7 +18,6 @@ class Server {
     this.subscriptionsPath = '/api/subscriptions';
     this.testimonialsPath = '/api/testimonials';
     this.usersPath = '/api/users';
-    this.donationsPath = '/api/donations';
     // Connect to Data Base
     this.connectToDB();
     // Middlewares
@@ -36,7 +35,10 @@ class Server {
     this.app.use(cors());
 
     // Lectura y parseo del body
-    this.app.use(express.json());
+    this.app.use(express.json({ limit: '1024mb' }));
+
+    // It parses incoming requests with URL-encoded payloads
+    this.app.use(express.urlencoded({ limit: '1024mb', extended: true }));
 
     //Public dir
     this.app.use(express.static('public'));

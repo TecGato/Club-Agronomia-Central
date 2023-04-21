@@ -11,7 +11,7 @@ export const images = [
 export const info = {
     title1: "Centro de Entrenamiento y",
     title2: "Readaptación Deportiva.",
-    description: "Atenea Sports es un espacio dedicado al entrenamiento, la readaptación deportiva y la rehabilitación de lesiones. Desde una concepción integral y funcional de la persona, nuestro objetivo es ayudar a la persona a alcanzar su mejor versión, teniendo en cuenta sus objetivos, posibilidades y necesidades. Cada sesión, cada trabajo y cada ejercicio está pensado por nuestros profesionales para que vivas el deporte, el ejercicio y la actividad física con la misma calidad que lo hacen los profesionales.",
+    description: "Atenea Sports es un espacio dedicado al entrenamiento, la readaptación deportiva y la rehabilitación de lesiones, con un enfoque integral y funcional para ayudar a las personas a alcanzar su mejor versión, considerando sus objetivos, posibilidades y necesidades. Cada sesión, trabajo y ejercicio es cuidadosamente planificado por nuestros profesionales, para que puedas experimentar la actividad física con la misma calidad que lo hacen los profesionales del deporte.",
     strong: "#EntrenaDistinto #RehabilitateMejor 😀",
     href: "https://instagram.com/ateneasports",
 };

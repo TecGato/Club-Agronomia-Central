@@ -17,9 +17,7 @@ export default function Sports() {
                     </h3>
                     <div className="border-2 border-blue-600 mb-8 mx-5 w-14"></div>
                     <p className="text-base text-gray-700 leading-6 px-5 pt-0">
-                        Es un juego de mesa en el que dos personas mueven las
-                        piezas en un tablero para tratar de capturar al rey del
-                        otro jugador.
+                        Es un juego de mesa donde dos personas mueven las fichas en un tablero para intentar capturar al rey del oponente.
                     </p>
                     <img
                         src="https://img.freepik.com/fotos-premium/visualizacion-figurativa-idea-estrategia-empresarial-forma-juego-ajedrez_124507-32323.jpg?size=626&ext=jpg&ga=GA1.1.1228025790.1681327921&semt=sph"
@@ -35,8 +33,7 @@ export default function Sports() {
                     </h3>
                     <div className="border-2 border-blue-600 mb-8 mx-5 w-14"></div>
                     <p className="text-base text-gray-700 leading-6 px-5 pt-0">
-                        Aprende cosas nuevas y practica habilidades para mejorar
-                        tu salud física y bienestar emocional.
+                        Aprendé cosas nuevas y practicá habilidades para mejorar tu salud física y bienestar emocional.
                     </p>
                     <img
                         src="https://img.freepik.com/fotos-premium/pareja-muscular-haciendo-tabla-ejercicio-juntos_13339-151107.jpg?size=626&ext=jpg&ga=GA1.1.1228025790.1681327921&semt=sph"
@@ -69,9 +66,7 @@ export default function Sports() {
                     </h3>
                     <div className="border-2 border-blue-600 mb-8 mx-5 w-14"></div>
                     <p className="text-base text-gray-700 leading-6 px-5 pt-0">
-                        Deporte parecido al fútbol, pero se juega en una cancha
-                        más pequeña y con menos jugadores, lo que hace el juego
-                        sea más rápido y emocionante.
+                        Un deporte parecido al fútbol, pero con una cancha más chica y menos jugadores, lo que hace el juego más rápido y emocionante.
                     </p>
                     <img
                         src="https://img.freepik.com/foto-gratis/jugador-futbol-o-futbol-masculino-caucasico-joven-pateando-pelota-gol-luz-mixta-pared-oscura-concepto-pasatiempo-deportivo-profesional-estilo-vida-saludable_155003-38568.jpg?size=626&ext=jpg&ga=GA1.1.1228025790.1681327921&semt=sph"
@@ -87,9 +82,7 @@ export default function Sports() {
                     </h3>
                     <div className="border-2 border-blue-600 mb-8 mx-5 w-14"></div>
                     <p className="text-base text-gray-700 leading-6 px-5 pt-0">
-                        Deporte muy parecido al fútbol en el que las mujeres
-                        juegan en un espacio más pequeño que una cancha normal y
-                        con menos jugadoras.
+                        Deporte muy similar al fútbol en el que las mujeres juegan en un espacio más reducido que una cancha convencional y con menos jugadoras.
                     </p>
                     <img
                         src="https://img.freepik.com/foto-gratis/mujer-ropa-deportiva-jugando-al-futbol_23-2148298870.jpg?size=626&ext=jpg&ga=GA1.1.1228025790.1681327921&semt=ais"

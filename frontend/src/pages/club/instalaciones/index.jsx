@@ -84,19 +84,10 @@ export default function Instalations() {
                                 BUFFET
                             </div>
                             <p className="block mt-6 text-lg leading-tight font-medium text-gray-800">
-                                Económico, Familiar, con ambiente climatizado
+                                Familiar y con aire acondicionado
                             </p>
                             <p className="mt-6 text-slate-500 text-justify">
-                                Si estás buscando un lugar donde disfrutar de
-                                deliciosas comidas en un ambiente acogedor y
-                                familiar, nuestro buffet es la elección
-                                perfecta. Abierto de lunes a sábado de 8 am a 12
-                                am, ofrecemos una amplia variedad de opciones
-                                para desayunos, almuerzos y cenas. Además,
-                                nuestro espacio está completamente climatizado,
-                                lo que lo convierte en el lugar ideal para
-                                disfrutar de una comida en cualquier época del
-                                año. ¡Te esperamos para que vengas a deleitarte!
+                                Si estás buscando un lugar para disfrutar de ricas comidas en un ambiente cálido y familiar, nuestro buffet es la opción ideal. Estamos abiertos de lunes a sábado desde las 8 de la mañana hasta las 12 de la noche, y ofrecemos una gran variedad de opciones para desayunos, almuerzos y cenas. Además, contamos con un espacio completamente climatizado, lo que lo hace perfecto para disfrutar de una comida en cualquier momento del año. ¡Te esperamos para que vengas a disfrutar!
                             </p>
                         </div>
                     </div>
@@ -117,18 +108,10 @@ export default function Instalations() {
                                 QUINCHO
                             </div>
                             <p className="block mt-6 text-lg leading-tight font-medium text-gray-800">
-                                Espacio equipado para eventos diversos.
+                                Lugar preparado para distintos tipos de eventos..
                             </p>
                             <p className="mt-6 text-slate-500 text-justify">
-                                Nuestra cede cuenta con un quincho cerrado de
-                                casi 50m2, equipado con 3 parrillas, mesas y
-                                sillas, TV, freezer, heladeras y cocina
-                                industrial. Perfecto para reuniones familiares,
-                                almuerzos empresariales, cumpleaños y mucho más.
-                                Ven a conocer nuestras instalaciones en el Club
-                                Social y Deportivo Agronomía Central en CABA o
-                                contáctanos en clubagronomiacentral@gmail.com o
-                                al 4524-2225.
+                                En nuestra sede, tenemos un quincho cerrado de 50 metros cuadrados, equipado con tres parrillas, mesas y sillas, televisor, freezer, heladeras y cocina industrial. Perfecto para juntadas en familia, almuerzos de trabajo, cumpleaños y todo lo que quieras. Vení a conocer nuestras instalaciones en el Club Social y Deportivo Agronomía Central en CABA, o escribinos a clubagronomiacentral@gmail.com o llamanos al 4524-2225.
                             </p>
                         </div>
                     </div>
@@ -151,16 +134,7 @@ export default function Instalations() {
                                 Salón exclusivo para eventos memorables.
                             </p>
                             <p className="mt-6 text-slate-500 text-justify">
-                                Celebra tu evento en Agronomía Central. Salón
-                                único y distinguido en Parque Chas con más de 30
-                                años de experiencia. Instalaciones adaptables
-                                para eventos de hasta 120 personas, equipado con
-                                barra de tragos, cocina industrial, cabina de DJ
-                                y más. Eventos corporativos, bautismos,
-                                cumpleaños, casamientos y más. Visítanos de
-                                lunes a viernes de 18 a 20 hs en Bauness 958
-                                CABA. Contáctanos en
-                                clubagronomiacentral@gmail.com o al 4524-2225.
+                                Festejá tu evento en Agronomía Central. El lugar más destacado y con trayectoria en Parque Chas por más de 30 años. Contamos con instalaciones adaptables para eventos de hasta 120 personas, equipado con barra de tragos, cocina industrial, cabina de DJ y mucho más. Ya sea para eventos empresariales, bautismos, cumpleaños, casamientos o cualquier otra celebración, nosotros lo hacemos posible. Acercate a visitarnos de lunes a viernes de 18 a 20 hs en Bauness 958 CABA. Si querés más información, escribinos a clubagronomiacentral@gmail.com al 4524-2225.
                             </p>
                         </div>
                     </div>
@@ -221,17 +195,7 @@ export default function Instalations() {
                                 disfrutar.
                             </p>
                             <p className="mt-6 text-slate-500 text-justify">
-                                En el Club encontrarás dos canchas techadas
-                                disponibles para que puedas disfrutar de tu
-                                deporte favorito sin preocuparte por las
-                                inclemencias del clima. La cancha principal es
-                                de fútbol 5, mientras que la auxiliar es más
-                                pequeña y se utiliza principalmente para
-                                entrenamientos. Además, la cancha auxiliar se
-                                encuentra disponible para alquiler junto con el
-                                quincho para fiestas infantiles. ¡Ven y disfruta
-                                de una experiencia deportiva única en nuestras
-                                cómodas instalaciones!
+                                En el Club vas a encontrar dos canchas techadas en excelente estado para disfrutar de tu deporte favorito sin importar el clima. Una principal de fútbol 5, y una auxiliar para entrenamientos. Además, podés alquilar la cancha auxiliar junto con el quincho para festejos infantiles. ¡Vení y disfrutá de una experiencia deportiva única en nuestras cómodas instalaciones!
                             </p>
                         </div>
                     </div>
