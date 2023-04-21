@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import { useCloudinaryUpload } from '@/hooks';
+import { useFileEncoding } from '@/hooks';
 
 export function FormNews({ showModalForm, handlerCreate }) {
-  const { handleCloudinaryChange, handleCloudinarySubmit } =
-    useCloudinaryUpload();
+  const { handleFileChange } = useFileEncoding();
 
   const [post, setPost] = useState({
     title: '',
@@ -12,11 +11,14 @@ export function FormNews({ showModalForm, handlerCreate }) {
   });
 
   const imagenChange = (event) => {
+    handleFileChange(event, setPicture);
+  };
+
+  const setPicture = (encodedFile) => {
     setPost({
       ...post,
-      picture: handleCloudinaryChange(event),
+      picture: encodedFile,
     });
-    console.log(post);
   };
 
   const handlerChange = (event) => {
@@ -28,12 +30,8 @@ export function FormNews({ showModalForm, handlerCreate }) {
 
   const handlerSubmit = async (event) => {
     event.preventDefault();
-    const picture = await handleCloudinarySubmit(event);
-    setPost({
-      ...post,
-      picture: picture,
-    });
     handlerCreate(post);
+    window.location.reload();
   };
 
   return (
