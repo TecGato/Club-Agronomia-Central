@@ -8,6 +8,7 @@ export default function FutSal() {
         >
             <div className="m-4 grid md:grid-cols-5">
                 <p className="text-base text-gray-700 leading-6 col-span-3 pl-5 ml-3 ">
+
                     El club participa en la modalidad de futsal desde el año
                     2014. También el club cuenta con futsal para mayores de 30
                     años y futsal seniors para mayores de 36 años, donde
@@ -26,12 +27,9 @@ export default function FutSal() {
                             Liga BAFI
                         </h3>
                         <p className="text-base text-gray-700 leading-6 md:col-span-2 row-span-2 md:row-span-1 px-5 md:order-2">
-                            En la actualidad el club participa en futsal
+                            Actualmente el club participa en futsal
                             promocional categorías 2015/2014/2013, en la{' '}
-                            <strong>liga BAFI</strong>, donde se enfrenta a
-                            clubes como San Lorenzo, Boca Juniors, Kimberley, 17
-                            de agosto y muchos clubes más con experiencia en
-                            dicha modalidad.
+                            <strong>liga BAFI</strong>, donde compite con otros clubes de gran renombre en la modalidad, como San Lorenzo, Boca Juniors, Kimberley, 17 de agosto, entre otros.
                         </p>
                     </div>
 

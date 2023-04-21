@@ -17,7 +17,6 @@ class Server {
     this.postsPath = '/api/posts';
     this.subscriptionsPath = '/api/subscriptions';
     this.testimonialsPath = '/api/testimonials';
-    this.uploadPath = '/api/uploads';
     this.usersPath = '/api/users';
     // Connect to Data Base
     this.connectToDB();
@@ -56,7 +55,6 @@ class Server {
     this.app.use(this.postsPath, require('../routes/posts'));
     this.app.use(this.subscriptionsPath, require('../routes/subscriptions'));
     this.app.use(this.testimonialsPath, require('../routes/testimonials'));
-    this.app.use(this.uploadPath, require('../routes/uploads'));
     this.app.use(this.usersPath, require('../routes/users'));
   }
 
