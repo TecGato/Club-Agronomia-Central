@@ -20,7 +20,7 @@ export function Navbar() {
         <NavLink text={'Deportes'} link={'/deportes'} sonLinks={sportsLinks} />
         <NavLink text={'Testimonios'} link={'/testimonios'} />
         <NavLink text={'Noticias'} link={'/noticias'} />
-        <NavLink text={'Contactanos'} link={'/contacto'} />
+        <NavLink text={'Contáctanos'} link={'/contacto'} />
       </ul>
       <div
         className={`w-10 h-10 relative ${openMenu ? 'fixed z-50' : 'relative'}`}

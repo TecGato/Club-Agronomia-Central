@@ -90,15 +90,23 @@ export function MobileMenu({ openMenu }) {
                                 text={'Centro De Entrenamiento'}
                                 link={'/deportes/centro-de-entrenamiento'}
                             />
+                            <NavLink
+                                text={'Entrenamiento de Arqueros'}
+                                link={'/deportes/entrenamiento-arqueros'}
+                            />
+                            <NavLink
+                                text={'Escuelita de Futbol'}
+                                link={'/deportes/escuelita-futbol'}
+                            />
                         </div>
                     )}
                     {/* Link Stories */}
                     <div className="h-10 flex items-center ">
-                        <NavLink text={'Historias'} link={'/historias'} />
+                        <NavLink text={'Testimonios'} link={'/testimonios'} />
                     </div>
                     {/* Link Contact */}
                     <div className="h-10 flex items-center ">
-                        <NavLink text={'Contactanos'} link={'/contacto'} />
+                        <NavLink text={'Contáctanos'} link={'/contacto'} />
                     </div>
                 </ul>
             </div>
