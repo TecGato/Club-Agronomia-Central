@@ -1,14 +1,10 @@
 import React, { useState } from 'react';
 import { useFileEncoding } from '@/hooks';
 
-export function FormNews({ showModalForm, handlerCreate }) {
+export function FormModifyNews({ ShowModify, showModalModify, handlerModify }) {
   const { handleFileChange } = useFileEncoding();
 
-  const [post, setPost] = useState({
-    title: '',
-    picture: '',
-    description: '',
-  });
+  const [post, setPost] = useState(ShowModify);
 
   const imagenChange = (event) => {
     handleFileChange(event, setPicture);
@@ -30,14 +26,14 @@ export function FormNews({ showModalForm, handlerCreate }) {
 
   const handlerSubmit = async (event) => {
     event.preventDefault();
-    handlerCreate(post);
+    handlerModify(post);
     window.location.reload();
   };
 
   return (
     <div className="flex bg-gray-900/80 backdrop-blur-sm justify-center items-center overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
       <button
-        onClick={showModalForm}
+        onClick={showModalModify}
         className="absolute top-4 right-6 p-2 text-white rounded-xl w-7 h-7 place-content-center"
       >
         ❌

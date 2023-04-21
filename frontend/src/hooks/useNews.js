@@ -23,8 +23,21 @@ export function useNews() {
     }
   };
 
+  const handlerModify = async (post) => {
+    try {
+      const { data } = await axios.put(
+        `http://localhost:3001/api/posts/${post.id}`,
+        post
+      );
+      console.log(data.msg);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return {
     handlerDelete,
     handlerCreate,
+    handlerModify,
   };
 }

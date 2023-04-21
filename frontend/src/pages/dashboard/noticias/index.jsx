@@ -1,13 +1,15 @@
 import { Layout } from '@/components/Dashboard';
 import { useState, useMemo } from 'react';
 import { FormNews } from '../../../components/Dashboard/Forms/NewsForm';
+import { FormModifyNews } from '../../../components/Dashboard/Forms/NewsModification';
 import { Warn } from '@/components/Dashboard/Warn/Warn';
 import { useNews } from '@/hooks';
 
 export default function News({ posts }) {
-  const { handlerDelete, handlerCreate } = useNews();
+  const { handlerDelete, handlerCreate, handlerModify } = useNews();
   const [arr, setArr] = useState(posts);
   const [showForm, setShowForm] = useState(false);
+  const [showModify, setShowModify] = useState(false);
   const [showWarn, setShowWarn] = useState(false);
 
   const showModalForm = () => {
@@ -15,6 +17,9 @@ export default function News({ posts }) {
   };
   const showModalWarn = () => {
     setShowWarn(false);
+  };
+  const showModalModify = () => {
+    setShowModify(false);
   };
 
   const mainNews = useMemo(() => arr[arr.length - 1], [arr]);
@@ -42,7 +47,12 @@ export default function News({ posts }) {
             <button
               className="absolute top-2 left-2 p-2 text-white rounded-xl w-7 h-7 align-middle"
               onClick={() => {
-                setShowWarn(mainNews._id);
+                setShowModify({
+                  id: mainNews._id,
+                  title: mainNews.title,
+                  picture: mainNews.picture,
+                  description: mainNews.description,
+                });
               }}
             >
               ✏️
@@ -76,7 +86,14 @@ export default function News({ posts }) {
                 </button>
                 <button
                   className="absolute top-2 left-2 p-2 text-white rounded-xl w-7 h-7 align-middle"
-                  onClick={() => {}}
+                  onClick={() => {
+                    setShowModify({
+                      id: news._id,
+                      title: news.title,
+                      picture: news.picture,
+                      description: news.description,
+                    });
+                  }}
                 >
                   ✏️
                 </button>
@@ -105,6 +122,13 @@ export default function News({ posts }) {
           handlerDelete={handlerDelete}
           showModalWarn={showModalWarn}
           showWarn={showWarn}
+        />
+      )}
+      {showModify && (
+        <FormModifyNews
+          handlerModify={handlerModify}
+          showModalModify={showModalModify}
+          ShowModify={showModify}
         />
       )}
     </Layout>
