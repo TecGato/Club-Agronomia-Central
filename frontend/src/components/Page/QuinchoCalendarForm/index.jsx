@@ -12,12 +12,12 @@ export function QuinchoCalendarForm(props){
             email: event.target.email.value,
             phone: event.target.phone.value,
             date: event.target.date.value,
-            beg_time: event.target.beg_time_h.value + event.target.beg_time_m.value + event.target.beg_time_s.value,
-            end_time: event.target.end_time_h.value + event.target.end_time_m.value + event.target.end_time_s.value,
+            beg_time: event.target.beg_time_h.value + ":" + event.target.beg_time_m.value ,
+            end_time: event.target.end_time_h.value + ":" +event.target.end_time_m.value ,
             description: event.target.description.value,
             name: "event name",
             state:1,
-            amount:"0",
+            amount:0,
 
         }
 
@@ -166,13 +166,13 @@ export function QuinchoCalendarForm(props){
                                             <option value="01">30</option>
 
                                         </select>
-                                        <select
+                                        {/* <select
                                         id="beg_time_s"
                                         name="beg_time_s"
                                         class="px-2 outline-none appearance-none bg-transparent">
                                             <option value="AM">AM</option>
                                             <option value="PM">PM</option>
-                                        </select>
+                                        </select> */}
                                     </div>
                                 </div>
                                 <div className="w-full px-3">
@@ -212,13 +212,13 @@ export function QuinchoCalendarForm(props){
                                             <option value="00">00</option>
                                             <option value="01">30</option>
                                         </select>
-                                        <select
+                                        {/* <select
                                         id="end_time_s"
                                         name="end_time_s"
                                         class="px-2 outline-none appearance-none bg-transparent">
                                             <option value="AM">AM</option>
                                             <option value="PM">PM</option>
-                                        </select>
+                                        </select> */}
                                     </div>
 
                                 </div>

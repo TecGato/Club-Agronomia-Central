@@ -93,7 +93,7 @@ export function QuinchoCalendarContainer({ props }) {
                                 key={dateEv.date}
                                 dateCard={dateEv.date}
                                 eventArray={events.filter(
-                                    (dateE) => dateE.date === dateEv.date
+                                    (dateE) => dateE.date === dateEv.date + "T00:00:00.000Z"
                                 )}
                                 setShowModal={setShowModal}
                             />

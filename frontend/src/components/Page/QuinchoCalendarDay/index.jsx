@@ -43,7 +43,7 @@ export function QuinchoCalendarDay(props) {
                                                 {detail.beg_time}
                                             </span>
                                             <span class="ml-2 font-medium leading-none truncate">
-                                                {detail.name}
+                                                {detail.description}
                                             </span>
                                         </button>
                                     </div>
