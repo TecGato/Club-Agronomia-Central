@@ -27,8 +27,8 @@ export async function getStaticProps(){
 
         return {
             props: {
-                data,
-                dataDates,
+                data: data,
+                dataDates:dataDates,
              }
         }
 
