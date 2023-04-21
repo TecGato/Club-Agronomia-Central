@@ -30,12 +30,12 @@ export function InfoSlider({ images, info }) {
                             <p className="mt-7 text-justify text-lg text-gray-800">
                                 {info.description}{' '}
                                 <strong>{info.strong}</strong>
-                                <a href={info.href}>
+                                <a href={info.href} target='blank'>
                                     <Image
-                                        src="/instagram-logo.svg"
+                                        src="/instagram.svg"
                                         alt="Logo de Instagram"
-                                        width={30}
-                                        height={30}
+                                        width={50}
+                                        height={50}
                                     />
                                 </a>
                             </p>
