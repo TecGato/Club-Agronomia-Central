@@ -30,7 +30,7 @@ const validateJWT = async (req, res, next) => {
     next();
   } catch (error) {
     res.status(401).json({
-      msh: 'Token is not valid',
+      msg: 'Token is not valid', 
     });
   }
 };
