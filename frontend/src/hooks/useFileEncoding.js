@@ -1,27 +1,18 @@
-import { useState } from 'react';
-
 export const useFileEncoding = () => {
-  const [encodedFile, setEncodedFile] = useState();
-
-  const handleFileChange = (event) => {
+  const handleFileChange = (event, setPicture) => {
     const file = event.target.files[0];
-    previewEncodedFile(file);
+    previewEncodedFile(file, setPicture);
   };
 
-  const previewEncodedFile = (file) => {
+  const previewEncodedFile = async (file, setPicture) => {
     const reader = new FileReader();
     reader.readAsDataURL(file);
     reader.onloadend = () => {
-      setEncodedFile(reader.result);
+      setPicture(reader.result);
     };
-  };
-
-  const handleEncodedFileSubmit = () => {
-    return encodedFile;
   };
 
   return {
     handleFileChange,
-    handleEncodedFileSubmit,
   };
 };
