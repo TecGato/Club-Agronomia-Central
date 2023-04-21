@@ -13,25 +13,25 @@ export default function Club() {
         [
             'Comision Directiva',
             Directiva,
-            'Conoce nuestros directivos',
+            'Conocé a nuestros directivos',
             'club/comision-directiva',
         ],
         [
             'Historia',
             Historia,
-            'Conoce mas acerca de la historia del club',
+            'Conocé mas acerca de la historia del club',
             'club/historia',
         ],
         [
             'Instalaciones',
             Instalaciones,
-            'Descubre mas a fondo nuestras instalaciones',
+            'Descubrí en detalle nuestras instalaciones',
             'club/instalaciones',
         ],
         [
             'Disponibilidad del Quincho',
             Quincho,
-            'Consulta si el quincho está disponible',
+            'Consultá si el quincho está disponible',
             'club/quincho',
         ],
     ];

@@ -26,12 +26,7 @@ export default function FutInF() {
                     </div>
 
                     <p className="text-base text-gray-700 leading-6 p-7 m-5">
-                        Por más de 40 años el club compite en baby futbol, en
-                        los primeros años en liga argentina, pasando por FAFI y
-                        actualmente en FEFI. El baby futbol es una actividad
-                        tanto a niños como a familiares que disfrutan de
-                        hermosas jornadas viendo crecer y divertir a sus seres
-                        queridos.
+                        Desde hace más de 40 años, nuestro club compite en baby fútbol, primero en la liga argentina y luego en <strong>FAFI</strong> y actualmente en <strong> FEFI</strong>. Este deporte es una actividad que reúne a niños y sus familiares, quienes disfrutan de hermosas jornadas viendo crecer y divertirse a sus seres queridos.
                     </p>
 
                     <div className="relative w-full hidden md:block ">
@@ -56,10 +51,7 @@ export default function FutInF() {
 
                     <p className="text-base text-gray-700 leading-6 p-7 m-5">
                         Este deporte se realiza con chicos {''}
-                        <strong>desde los 6 hasta los 13 años</strong>, que
-                        encuentran en el mismo un sano espacio de recreación e
-                        iniciación en el deporte, como también medición de
-                        aptitudes deportivas contra otros niños de similar edad.
+                        <strong>desde los 6 hasta los 13 años</strong>, quienes encuentran en él un espacio sano para recrearse y comenzar a practicar deporte, además de competir y medir sus habilidades contra otros niños de su misma edad.
                     </p>
 
                     <img
