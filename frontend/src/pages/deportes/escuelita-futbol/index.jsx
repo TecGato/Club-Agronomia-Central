@@ -15,7 +15,7 @@ export default function Escuelita() {
                         src='https://img.freepik.com/fotos-premium/nino-pateando-pelota-pie-descalzo-mientras-jugaba-futbol-callejero-campo-hierba-verde_34141-412.jpg?size=626&ext=jpg&ga=GA1.1.1228025790.1681327921&semt=ais'
                         alt='futbol infantil'
                         loading='lazy'
-                        className='md:rounded-bl-lg'
+                        className='md:rounded-bl-lg hidden md:block place-self-center'
                     />
                 </div>
 
@@ -30,7 +30,7 @@ export default function Escuelita() {
                         src='https://img.freepik.com/fotos-premium/bola-patadas-nino_236854-1800.jpg?size=626&ext=jpg&ga=GA1.1.1228025790.1681327921&semt=ais'
                         alt='futbol infantil'
                         loading='lazy'
-                        className='md:rounded-tr-lg'
+                        className='md:rounded-tr-lg hidden md:block'
                     />
                     <p className="text-base text-gray-700 leading-6 p-7 place-self-center">
                         Con la incorporación de esta actividad se brinda a los más chiquitos un espacio de juegos y conocimientos iniciadores del futbol, que año tras año irán adquiriendo <strong> nuevos conocimientos y potenciando nuevas sus habilidades</strong>.

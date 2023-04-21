@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import { Layout, QuinchoCalendarDay } from '..';
 import { QuinchoCalendarForm } from '../QuinchoCalendarForm';
+import { QuinchoCardDetail } from '../QuinchoCardDetail';
 
 export function QuinchoCalendarContainer({ props }) {
 
@@ -24,6 +25,9 @@ export function QuinchoCalendarContainer({ props }) {
 
     //Declare an initial state of the form modal
     const [showModal, setShowModal] = useState(false);
+
+    //Declare an initial state of the card detail
+    const [showCard, setShowCard] = useState(false);
 
     return (
         <Layout
@@ -89,14 +93,16 @@ export function QuinchoCalendarContainer({ props }) {
                 <div class="grid flex-grow w-full h-auto grid-cols-7 grid-rows-5 gap-px pt-px mt-1 bg-gray-200">
                     {eventDates.map((dateEv) => {
                         return (
+                            dateEv.date!=="2023-05-25"&&dateEv.date!=="2023-05-29"&&dateEv.date!=="2023-05-01"?
                             <QuinchoCalendarDay
                                 key={dateEv.date}
                                 dateCard={dateEv.date}
                                 eventArray={events.filter(
-                                    (dateE) => dateE.date === dateEv.date
+                                    (dateE) => dateE.date === dateEv.date + "T00:00:00.000Z"
                                 )}
-                                setShowModal={setShowModal}
-                            />
+                                showCard={showCard}
+                                setShowCard={setShowCard}
+                            />:null
                         );
                     })}
                 </div>
@@ -132,7 +138,7 @@ export function QuinchoCalendarContainer({ props }) {
                     type="button"
                     onClick={() => setShowModal(true)}
                 >
-                    Formulario
+                    Solicitar nueva reserva
                 </button>
 
                 {/* Si el estado del modal es true, renderiza el formulario */}
@@ -143,6 +149,17 @@ export function QuinchoCalendarContainer({ props }) {
 
                 />
                 ) : null}
+
+                {/* Si el estado del card detail es true, renderiza card detail */}
+                {showCard?(
+                <QuinchoCardDetail
+                    showCard={showCard}
+                    setShowCard={setShowCard}
+                />
+                ):null
+
+                }
+
             </div>
         </Layout>
 
