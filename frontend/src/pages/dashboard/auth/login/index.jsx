@@ -57,12 +57,14 @@ export default function Login() {
           }
           placeHolder={'*******'}
         />
-        <button
-          type="button"
-          className="text-white bg-[#1b418a] hover:bg-[#1b418a]/90 outline-none rounded-lg active:scale-95 text-lg py-3 w-full text-center inline-flex justify-center items-center border border-neutral-700 relative transition-all duration-200 "
-        >
-          Iniciar Sesion
-        </button>
+        <Link href="/dashboard">
+          <button
+            type="button"
+            className="text-white bg-[#1b418a] hover:bg-[#1b418a]/90 outline-none rounded-lg active:scale-95 text-lg py-3 w-full text-center inline-flex justify-center items-center border border-neutral-700 relative transition-all duration-200 "
+          >
+            Iniciar Sesion
+          </button>
+        </Link>
       </form>
       <span className="text-neutral-800">
         Aun no tienes una cuenta?
