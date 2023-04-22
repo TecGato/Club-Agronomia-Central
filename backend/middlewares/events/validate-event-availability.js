@@ -18,7 +18,7 @@ const validateEventAvailability = async (req, res, next) => {
     next();
   } catch (error) {
     res.status(500).json({
-      msh: 'Error server',
+      msg: 'Error server',
     });
   }
 };
