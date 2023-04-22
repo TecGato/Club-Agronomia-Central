@@ -71,10 +71,12 @@ export function Contributions({ visibleContributions }) {
           <input
             name="price"
             type="number"
+            min={1}
+            max={100000}
             value={contribution.price}
             onChange={handleInput}
             className=" text-gray-700 text-lg tracking-widest lg:text-left md:text-left text-left leading-none text-base py-4 lg:pl-[150px] md:pl-[260px] pl-4 lg:max-w-[400px] lg:w-full md:w-full w-full bg-white border border-gray-300 outline-0"
-            placeholder="$ 5.000"
+            placeholder="AR$ 5.000"
           />
         </div>
 
