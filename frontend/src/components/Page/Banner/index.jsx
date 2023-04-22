@@ -17,7 +17,7 @@ export function Banner() {
     };
 
     return (
-        <div className="max-w-[100%] h-[500px] w-full m-auto relative group">
+        <div className="max-w-[100%] h-[450px] w-full m-auto relative group">
             <div
                 style={{ backgroundImage: `url(${slides[currentIndex].src})` }}
                 className="w-full h-full bg-center bg-cover duration-500"
