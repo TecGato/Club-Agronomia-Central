@@ -7,7 +7,7 @@ import { QuinchoCardDetail } from '../QuinchoCardDetail';
 export function QuinchoCalendarContainer({ props }) {
 
 
-    const events = props.data;
+    const events = props.datad;
 
 
     //const eventos = currentEventos;
@@ -20,7 +20,7 @@ export function QuinchoCalendarContainer({ props }) {
     ]
 
 
-    const eventDates=props.dataDates;
+    const eventDates=props.dataDatesd;
 
 
     //Declare an initial state of the form modal
@@ -30,12 +30,12 @@ export function QuinchoCalendarContainer({ props }) {
     const [showCard, setShowCard] = useState(false);
 
     return (
-        <Layout
-            title={'Disponibilidad Quincho'}
-            image={
-                ''
-            }
-        >
+        // <Layout
+        //     title={'Disponibilidad Quincho'}
+        //     image={
+        //         ''
+        //     }
+        // >
             <div >
                 <div class="flex items-center mt-4">
                     <div class="flex ml-6">
@@ -161,7 +161,7 @@ export function QuinchoCalendarContainer({ props }) {
                 }
 
             </div>
-        </Layout>
+        // </Layout>
 
     );
 }
