@@ -4,10 +4,14 @@ import { QuinchoCalendarContainer } from '@/components/Page';
 
 
 
-export default function Quincho() {
+export default function Quincho(props) {
     return (
         <Layout>
-            <div>index</div>
+            <div className='p-10'>
+            <QuinchoCalendarContainer
+                props={props}
+            />
+            </div>
         </Layout>
     );
 }
@@ -18,11 +22,14 @@ export default function Quincho() {
 export async function getStaticProps(){
     try{
 
-        const res = await fetch('http://localhost:3001/api/events');
-        const data = await res.json();
+        const resd = await fetch('http://localhost:3001/api/events');
+        const datad = await resd.json();
+
+        const resDatesd = await fetch('http://localhost:3001/api/dateevents');
+        const dataDatesd = await resDatesd.json();
 
         return {
-            props: { data }
+            props: { datad:datad, dataDatesd: dataDatesd}
         }
 
     }catch(error){

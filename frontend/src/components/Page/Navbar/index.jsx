@@ -10,17 +10,18 @@ export function Navbar() {
   };
 
   return (
-    <header className='w-full h-14 fixed z-50 bg-white flex justify-between items-center shadow-xl px-3'>
-      <img src='/logo.webp' className='w-12' alt='' />
-      <p className='font-semibold text-lg lg:hidden'>Club Agronomia Central</p>
+    <header className="w-full h-14 fixed z-50 bg-white flex justify-between items-center shadow-xl px-3">
+      <img src="/logo.webp" className="w-12" alt="" />
+      <p className="font-semibold text-lg lg:hidden">Club Agronomia Central</p>
 
-      <ul className='gap-4 hidden lg:flex'>
+      <ul className="gap-4 hidden lg:flex">
         <NavLink text={'Inicio'} link={'/'} />
         <NavLink text={'El Club'} link={'/club'} sonLinks={clubLinks} />
         <NavLink text={'Deportes'} link={'/deportes'} sonLinks={sportsLinks} />
         <NavLink text={'Testimonios'} link={'/testimonios'} />
         <NavLink text={'Noticias'} link={'/noticias'} />
-        <NavLink text={'Contactanos'} link={'/contacto'} />
+        <NavLink text={'Contáctanos'} link={'/contacto'} />
+        <NavLink text={'Login'} link={'/dashboard/auth/login'} />
       </ul>
       <div
         className={`w-10 h-10 relative ${openMenu ? 'fixed z-50' : 'relative'}`}

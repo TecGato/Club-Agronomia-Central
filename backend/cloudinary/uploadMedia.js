@@ -10,7 +10,7 @@ cloudinary.config({
   secure: true,
 });
 
-const upload = async (file) => {
+const uploadMedia = async (file) => {
   try {
     const result = await cloudinary.uploader.upload(file, {
       upload_preset: 'club_agronomia_central',
@@ -21,4 +21,4 @@ const upload = async (file) => {
   }
 };
 
-module.exports = upload;
+module.exports = { uploadMedia };
