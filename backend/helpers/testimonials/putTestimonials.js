@@ -1,5 +1,5 @@
 const Testimonial = require('../../models/Testimonial');
-const { deleteMedia } = require('../../cloudinary/deleteMedia');
+const { deleteImage, deleteVideo } = require('../../cloudinary/deleteMedia');
 const { uploadImage, uploadVideo } = require('../../cloudinary/uploadMedia');
 
 const putTestimonial = async (id, updates) => {
@@ -8,8 +8,8 @@ const putTestimonial = async (id, updates) => {
     if (updates.picture && updates.video) {
       const testimonialInfo = await Testimonial.findById(id);
       // Deletes old picture and video
-      await deleteMedia(testimonialInfo.picture.public_id);
-      await deleteMedia(testimonialInfo.video.public_id);
+      await deleteImage(testimonialInfo.picture.public_id);
+      await deleteVideo(testimonialInfo.video.public_id);
       // Uploads new picture and video
       const newTestimonialPicture = await uploadImage(updates.picture);
       const newTestimonialVideo = await uploadVideo(updates.video);
@@ -34,7 +34,7 @@ const putTestimonial = async (id, updates) => {
       // IF PICTURE'S BEEN CHANGED, BUT NOT THE VIDEO
       const testimonialInfo = await Testimonial.findById(id);
       // Deletes old picture and uploads new one
-      await deleteMedia(testimonialInfo.picture.public_id);
+      await deleteImage(testimonialInfo.picture.public_id);
       const newTestimonialPicture = await uploadImage(updates.picture);
       // Updates testimonial
       const testimonial = await Testimonial.findByIdAndUpdate(
@@ -53,7 +53,7 @@ const putTestimonial = async (id, updates) => {
       // IF VIDEO'S BEEN CHANGED, BUT NOT THE PICTURE
       const testimonialInfo = await Testimonial.findById(id);
       // Deletes old video and uploads new one
-      await deleteMedia(testimonialInfo.video.public_id);
+      await deleteVideo(testimonialInfo.video.public_id);
       const newTestimonialVideo = await uploadVideo(updates.video);
       // Updates testimonial
       const testimonial = await Testimonial.findByIdAndUpdate(

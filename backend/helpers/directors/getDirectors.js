@@ -20,7 +20,7 @@ const getDirectorsByName = async (name) => {
 
 const getDirectorByPosition = async (position) => {
   try {
-    const director = await Director.findOne({ position });
+    const director = await Director.find({ position });
     return director;
   } catch (error) {
     console.error(error.message);
