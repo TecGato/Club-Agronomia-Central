@@ -97,7 +97,7 @@ export default function News({ posts }) {
                   ✏️
                 </button>
                 <img
-                  src={news.picture}
+                  src={news.picture.secure_url}
                   alt={news.title}
                   loading="lazy"
                   className=""
