@@ -9,7 +9,7 @@ export const useContributions = () => {
 
   const validation = (input) => {
     let errors = {};
-    const regexPrice = /^\d+$/;
+    const regexPrice = /^(?:[1-9]\d{0,4}|100000)$/;
     if (!regexPrice.test(input.price) || input.price <= 0)
       errors.price = 'Ingrese un monto válido.';
     if (!input.price) errors.price = 'El campo no puede estar vacío.';
