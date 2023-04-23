@@ -1,8 +1,12 @@
-export function ButtonCreate( props ) {
+export function ButtonCreate(props) {
     return (
         <>
             <button
                 className="mt-4 ml-4 w-48 h-12 flex justify-around inline-flex items-center px-3 py-2 text-base font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-2 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                onClick={() => {
+                    props.showModalForm()
+                    props.setCreateTestimonial(true)
+                }}
             >
                 Agregar Testimonio
                 <svg
@@ -27,7 +31,7 @@ export function ButtonCreate( props ) {
                         </g>
                     </g>
                 </svg>
-            </button>
+            </button >
         </>
     );
 };

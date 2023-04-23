@@ -1,6 +1,5 @@
-import { Layout } from '@/components/Dashboard';
+import { Layout, FormNews } from '@/components/Dashboard';
 import { useState, useMemo } from 'react';
-import { FormNews } from '../../../components/Dashboard/Forms/NewsForm';
 import { FormModifyNews } from '../../../components/Dashboard/Forms/NewsModification';
 import { Warn } from '@/components/Dashboard/Warn/Warn';
 import { useNews } from '@/hooks';
@@ -58,7 +57,7 @@ export default function News({ posts }) {
               ✏️
             </button>
             <img
-              src={mainNews.picture}
+              src={mainNews.picture.secure_url}
               alt={mainNews.title}
               loading="lazy"
               className="col-span-1 p-5 sm:order-2"
@@ -98,7 +97,7 @@ export default function News({ posts }) {
                   ✏️
                 </button>
                 <img
-                  src={news.picture}
+                  src={news.picture.secure_url}
                   alt={news.title}
                   loading="lazy"
                   className=""
