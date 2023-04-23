@@ -58,7 +58,7 @@ export default function News({ posts }) {
               ✏️
             </button>
             <img
-              src={mainNews.picture}
+              src={mainNews.picture.secure_url}
               alt={mainNews.title}
               loading="lazy"
               className="col-span-1 p-5 sm:order-2"
@@ -98,7 +98,7 @@ export default function News({ posts }) {
                   ✏️
                 </button>
                 <img
-                  src={news.picture}
+                  src={news.picture.secure_url}
                   alt={news.title}
                   loading="lazy"
                   className=""
