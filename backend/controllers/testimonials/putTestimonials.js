@@ -4,16 +4,13 @@ const {
 
 const updateTestimonial = async (req, res) => {
   const { id } = req.params;
-  const { name, testimony, picture, updatedAt } = req.body;
+  const { ...updates } = req.body;
   try {
-    const testimonial = await putTestimonial(
-      id,
-      name,
-      testimony,
-      picture,
-      updatedAt
-    );
-    return res.status(202).json(testimonial);
+    const testimonial = await putTestimonial(id, updates);
+    return res.status(202).json({
+      msg: 'Testimonial Updated Successfully',
+      testimonial,
+    });
   } catch (error) {
     return res.status(500).json(error);
   }
