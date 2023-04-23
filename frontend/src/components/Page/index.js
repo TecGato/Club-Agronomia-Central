@@ -1,4 +1,5 @@
 export * from './Banner';
+export * from './ClubIconSVG';
 export * from './Contributions';
 export * from './Donation';
 export * from './Footer';

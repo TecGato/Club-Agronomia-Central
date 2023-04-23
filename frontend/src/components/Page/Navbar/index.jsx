@@ -11,7 +11,7 @@ export function Navbar() {
 
   return (
     <header className="w-full h-14 fixed z-50 bg-white flex justify-between items-center shadow-xl px-3">
-      <img src="/logo.webp" className="w-12" alt="" />
+      <img src="/logo.png" className="w-12" alt="" />
       <p className="font-semibold text-lg lg:hidden">Club Agronomia Central</p>
 
       <ul className="gap-4 hidden lg:flex">
