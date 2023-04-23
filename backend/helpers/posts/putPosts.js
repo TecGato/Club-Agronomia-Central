@@ -7,7 +7,7 @@ const putPost = async (id, updates) => {
     // IF PICTURE'S BEING CHANGED
     if (updates.picture) {
       const postInfo = await Post.findById(id);
-      // Deletes old picture and updates new one
+      // Deletes old picture and uploads new one
       await deleteMedia(postInfo.picture.public_id);
       const newPostPicture = await uploadImage(updates.picture);
       // Updates post
