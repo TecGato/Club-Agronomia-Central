@@ -48,7 +48,6 @@ export default function News({ posts }) {
                 setShowModify({
                   id: mainNews._id,
                   title: mainNews.title,
-                  picture: mainNews.picture,
                   description: mainNews.description,
                 });
               }}
@@ -73,7 +72,7 @@ export default function News({ posts }) {
 
           {otherNews.map((news) => {
             return (
-              <div className="relative max-w-xs m-1 shadow-md overflow-hidden cursor-pointer hover:scale-105 transition ease-in-out p-5">
+              <div key={news._id} className="relative max-w-xs m-1 shadow-md overflow-hidden cursor-pointer hover:scale-105 transition ease-in-out p-5">
                 <button
                   className="absolute top-2 right-2 p-2 text-white rounded-xl w-7 h-7 align-middle"
                   onClick={() => {

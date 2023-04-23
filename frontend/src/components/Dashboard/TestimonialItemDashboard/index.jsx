@@ -1,6 +1,6 @@
 import { ButtonDelete, ButtonEdit } from "..";
 
-export function TestimonialItemDashboard({ title, text, img, showModalWarn, setId, id, showModalModify, setPostModify, video, setModifyTestimony }) {
+export function TestimonialItemDashboard({ title, text, img, showModalWarn, setId, id, showModalModify, setPostModify, setModifyTestimony }) {
     return (
         <div className="max-w-sm shadow-xl bg-gray-100 border border-gray-300 overflow-hidden group transition-all duration-200">
             <a href="#">
@@ -25,8 +25,6 @@ export function TestimonialItemDashboard({ title, text, img, showModalWarn, setI
                         setPostModify={setPostModify}
                         id={id}
                         title={title}
-                        // picture={img}
-                        // video={video}
                         description={text}
                         setModifyTestimony={setModifyTestimony}
                     />

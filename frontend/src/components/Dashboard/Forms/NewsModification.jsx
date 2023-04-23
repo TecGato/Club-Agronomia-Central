@@ -4,8 +4,6 @@ import { useFileEncoding } from '@/hooks';
 export function FormModifyNews({ ShowModify, showModalModify, handlerModify, modifyTestimony = false }) {
   const { handleFileChange } = useFileEncoding();
 
-  console.log(ShowModify);
-
   const [post, setPost] = useState(ShowModify);
 
   const imagenChange = (event) => {
@@ -39,9 +37,8 @@ export function FormModifyNews({ ShowModify, showModalModify, handlerModify, mod
 
   const handlerSubmit = async (event) => {
     event.preventDefault();
-    console.log(post);
     handlerModify(post);
-    // window.location.reload();
+    window.location.reload();
   };
 
   return (

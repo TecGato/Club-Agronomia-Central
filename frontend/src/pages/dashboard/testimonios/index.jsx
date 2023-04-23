@@ -42,7 +42,6 @@ export default function Testimonials({ testimonials }) {
                             id={testimonial._id}
                             showModalModify={showModalModify}
                             setPostModify={setPostModify}
-                            // video={testimonial.video ? testimonial.video : null}
                             setModifyTestimony={setModifyTestimony}
                         />
                     ))

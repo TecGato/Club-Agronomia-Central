@@ -6,10 +6,8 @@ export function ButtonEdit(props) {
                 onClick={() => {
                     props.setPostModify({
                         id: props.id,
-                        // title: props.title,
-                        // picture: props.picture,
-                        // description: props.description,
-                        // ...(props.video && { video: props.video, })
+                        title: props.title,
+                        description: props.description,
                     });
                     props.setModifyTestimony(true);
                     props.showModalModify();
