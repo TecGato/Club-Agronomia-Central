@@ -86,8 +86,8 @@ export const routes = [
         ),
     },
     {
-        pathName: '/dashboard/historias',
-        name: 'Historias',
+        pathName: '/dashboard/testimonios',
+        name: 'Testimonios',
         icon: (
             <svg
                 fill="#ffff"

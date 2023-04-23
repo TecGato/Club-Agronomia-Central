@@ -1,6 +1,6 @@
 import { ButtonDelete, ButtonEdit } from "..";
 
-export function TestimonialItemDashboard({ title, text, img }) {
+export function TestimonialItemDashboard({ title, text, img, showModalWarn, setId, id }) {
     return (
         <div className="max-w-sm shadow-xl bg-gray-100 border border-gray-300 overflow-hidden group transition-all duration-200">
             <a href="#">
@@ -21,7 +21,7 @@ export function TestimonialItemDashboard({ title, text, img }) {
                 <div className='flex mt-4 justify-around'>
 
                     <ButtonEdit />
-                    <ButtonDelete />
+                    <ButtonDelete showModalWarn={showModalWarn} setId={setId} id={id} />
                 </div>
             </div>
         </div>
