@@ -19,7 +19,7 @@ const eventSchema = new mongoose.Schema({
     default: 1,
   },
   date: {
-    type: Date,
+    type: String,
     required: true,
   },
   amount: {

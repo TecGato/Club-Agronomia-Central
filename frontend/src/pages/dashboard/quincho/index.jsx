@@ -1,39 +1,32 @@
 import { Layout } from '@/components/Dashboard';
 import { QuinchoCalendarContainer } from '@/components/Page';
 
-
-
-
-export default function Quincho(props) {
-    return (
-        <Layout>
-            <div className='p-10'>
-            <QuinchoCalendarContainer
-                props={props}
-            />
-            </div>
-        </Layout>
-    );
+export default function Quincho({ data, dataDates }) {
+  return (
+    <Layout>
+      <div className="p-10">
+        <QuinchoCalendarContainer
+          data={data}
+          dataDates={dataDates}
+          itsAdmin={true}
+        />
+      </div>
+    </Layout>
+  );
 }
 
+export async function getStaticProps() {
+  try {
+    const resd = await fetch('http://localhost:3001/api/events');
+    const datad = await resd.json();
 
+    const resDatesd = await fetch('http://localhost:3001/api/dateevents');
+    const dataDatesd = await resDatesd.json();
 
-
-export async function getStaticProps(){
-    try{
-
-        const resd = await fetch('http://localhost:3001/api/events');
-        const datad = await resd.json();
-
-        const resDatesd = await fetch('http://localhost:3001/api/dateevents');
-        const dataDatesd = await resDatesd.json();
-
-        return {
-            props: { datad:datad, dataDatesd: dataDatesd}
-        }
-
-    }catch(error){
-        return{error:error.message}
-    }
-
+    return {
+      props: { data: datad, dataDates: dataDatesd },
+    };
+  } catch (error) {
+    return { error: error.message };
+  }
 }
