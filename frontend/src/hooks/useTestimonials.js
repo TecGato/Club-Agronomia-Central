@@ -38,6 +38,18 @@ export function useTestimonials() {
     }
   };
 
+  const handlerModify = async (post) => {
+    try {
+      const { data } = await axios.put(
+        `http://localhost:3001/api/posts/${post.id}`,
+        post
+      );
+      console.log(data.msg);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return {
     showModalForm,
     showModalWarn,
@@ -49,6 +61,7 @@ export function useTestimonials() {
     setCreateTestimonial,
     handlerDelete,
     handlerCreate,
+    handlerModify,
     id,
     setId,
   };

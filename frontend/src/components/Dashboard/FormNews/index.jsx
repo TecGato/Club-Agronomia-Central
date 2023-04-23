@@ -12,12 +12,23 @@ export function FormNews({ showModalForm, handlerCreate, createTestimonial = fal
 
   const imagenChange = (event) => {
     handleFileChange(event, setPicture);
-  }
+  };
+
+  const videoChange = (event) => {
+    handleFileChange(event, setVideo);
+  };
 
   const setPicture = (encodedFile) => {
     setPost({
       ...post,
       picture: encodedFile,
+    });
+  };
+
+  const setVideo = (encodedFile) => {
+    setPost({
+      ...post,
+      video: encodedFile,
     });
   };
 
@@ -75,7 +86,7 @@ export function FormNews({ showModalForm, handlerCreate, createTestimonial = fal
                 accept="video/*"
                 className="block w-full border border-gray-200 shadow-sm rounded-md text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 file:hover:bg-blue-100 cursor-pointer file:cursor-pointer file:border-0 file:bg-gray-100 file:mr-4 file:py-3 file:px-4 hover:bg-blue focus:border-2"
                 placeholder="video"
-                onChange={imagenChange}
+                onChange={videoChange}
               />
             </>
           }

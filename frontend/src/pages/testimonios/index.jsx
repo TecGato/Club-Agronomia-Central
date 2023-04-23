@@ -1,6 +1,7 @@
 import { Layout, TestimonialItem } from '@/components/Page';
+import axios from 'axios';
 
-export default function Testimonials() {
+export default function Testimonials({ testimonials }) {
     return (
         <Layout
             title={'Historias en primera persona'}
@@ -9,43 +10,26 @@ export default function Testimonials() {
             }
         >
             <section className="grid grid-cols-1 lg:grid-cols-3 justify-items-center py-10 px-5 gap-5 w-full h-full">
-                <TestimonialItem
-                    title={'Messi mostrando su paso por club agronomia central'}
-                    text={
-                        'De suplente a capitan en agronomia para ganar el mundial, en entrevista mostrando como gano'
-                    }
-                    img={
-                        'https://static.eldiario.es/clip/87dc30f7-32fb-45f6-a9cd-45efd700e48d_16-9-discover-aspect-ratio_default_0.jpg'
-                    }
-                />
-                <TestimonialItem
-                    title={'Messi mostrando su paso por club agronomia central'}
-                    text={
-                        'De suplente a capitan en agronomia para ganar el mundial, en entrevista mostrando como gano'
-                    }
-                    img={
-                        'https://static.eldiario.es/clip/87dc30f7-32fb-45f6-a9cd-45efd700e48d_16-9-discover-aspect-ratio_default_0.jpg'
-                    }
-                />
-                <TestimonialItem
-                    title={'Messi mostrando su paso por club agronomia central'}
-                    text={
-                        'De suplente a capitan en agronomia para ganar el mundial, en entrevista mostrando como gano'
-                    }
-                    img={
-                        'https://static.eldiario.es/clip/87dc30f7-32fb-45f6-a9cd-45efd700e48d_16-9-discover-aspect-ratio_default_0.jpg'
-                    }
-                />
-                <TestimonialItem
-                    title={'Messi mostrando su paso por club agronomia central'}
-                    text={
-                        'De suplente a capitan en agronomia para ganar el mundial, en entrevista mostrando como gano'
-                    }
-                    img={
-                        'https://static.eldiario.es/clip/87dc30f7-32fb-45f6-a9cd-45efd700e48d_16-9-discover-aspect-ratio_default_0.jpg'
-                    }
-                />
+                {
+                    testimonials?.map(testimonial =>
+                        <TestimonialItem
+                            title={testimonial.title}
+                            text={testimonial.description}
+                            img={testimonial.picture.secure_url}
+                        />
+                    )
+                }
             </section>
         </Layout>
     );
 }
+
+export async function getServerSideProps() {
+    const res = await axios.get('http://localhost:3001/api/testimonials');
+    const testimonials = res.data;
+    return {
+        props: {
+            testimonials,
+        },
+    };
+};

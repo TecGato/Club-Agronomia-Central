@@ -3,7 +3,6 @@ import { useTestimonials } from '@/hooks';
 import { Layout, TestimonialItemDashboard, ButtonCreate, WarnDelete, FormNews } from '@/components/Dashboard';
 
 export default function Testimonials({ testimonials }) {
-
     const {
         showModalForm,
         showModalWarn,
@@ -12,8 +11,10 @@ export default function Testimonials({ testimonials }) {
         setCreateTestimonial,
         showWarn,
         showForm,
+        showModify,
         handlerDelete,
         handlerCreate,
+        handlerModify,
         id,
         setId
     } = useTestimonials();
@@ -26,7 +27,7 @@ export default function Testimonials({ testimonials }) {
             />
             <section className="grid grid-cols-1 lg:grid-cols-3 justify-items-center py-10 px-5 gap-5 w-full h-full">
                 {
-                    testimonials.map(testimonial => (
+                    testimonials?.map(testimonial => (
                         <TestimonialItemDashboard
                             key={testimonial._id}
                             title={testimonial.title}

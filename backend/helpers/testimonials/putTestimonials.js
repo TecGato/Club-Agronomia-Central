@@ -1,11 +1,12 @@
 const Testimonial = require('../../models/Testimonial');
 
-const putTestimonial = async (id, name, testimony, picture, updatedAt) => {
+const putTestimonial = async (id, title, description, picture, video, updatedAt) => {
   try {
     const testimonial = await Testimonial.findByIdAndUpdate(id, {
-      name,
-      testimony,
+      title,
+      description,
       picture,
+      video,
       updatedAt,
     });
     return testimonial;
