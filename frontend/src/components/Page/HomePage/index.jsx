@@ -1,5 +1,4 @@
-import { Banner, Contributions, Donation } from '..';
-import { Publicity } from '../Publicity';
+import { Banner, Contributions, Donation, Publicity } from '..';
 import { useState } from 'react';
 
 export function HomePage() {

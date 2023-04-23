@@ -18,3 +18,4 @@ export * from './QuinchoCalendarDay';
 export * from './SocialIcons';
 export * from './TestimonialItem';
 export * from './WarningAlert';
+export * from './Publicity';
