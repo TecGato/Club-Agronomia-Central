@@ -57,7 +57,7 @@ export default function Contact() {
             </a>
           </div>
         </div>
-          <form  action="https://formsubmit.co/josuedavidmora99@gmail.com" method="POST" className="flex lg:w-[50%] flex-col gap-4 ">
+          <form  action="https://formsubmit.co/Franco.elvis0606@gmail.com" method="POST" className="flex lg:w-[50%] flex-col gap-4 ">
             <input
               type="text"
               className="bg-[#191c5e92]  p-2"
