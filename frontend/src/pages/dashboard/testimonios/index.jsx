@@ -12,8 +12,10 @@ export default function Testimonials({ testimonials }) {
         setCreateTestimonial,
         showWarn,
         showForm,
+        showModify,
         handlerDelete,
         handlerCreate,
+        handlerModify,
         id,
         setId
     } = useTestimonials();
