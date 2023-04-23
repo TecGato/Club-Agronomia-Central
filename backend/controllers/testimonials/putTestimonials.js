@@ -12,7 +12,7 @@ const updateTestimonial = async (req, res) => {
       testimonial,
     });
   } catch (error) {
-    return res.status(500).json(error);
+    return res.status(404).json(error);
   }
 };
 

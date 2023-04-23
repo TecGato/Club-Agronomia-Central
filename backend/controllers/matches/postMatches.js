@@ -1,16 +1,9 @@
 const { postMatch } = require('../../helpers/matches/postMatches');
 
 const createMatch = async (req, res) => {
-  const { name, date, time, home_team, away_team, discipline } = req.body;
+  const { ...matchInfo } = req.body;
   try {
-    const newMatch = await postMatch(
-      name,
-      date,
-      time,
-      home_team,
-      away_team,
-      discipline
-    );
+    const newMatch = await postMatch(matchInfo);
     return res.status(201).json({
       msg: 'Match Created Successfully',
       newMatch,

@@ -5,7 +5,7 @@ const Income = require('../../models/Income');
 const deleteEvent = async (id) => {
   try {
     //Deletes the event
-    const event = await Event.findByIdAndDelete(id);
+    const event = await Event.deleteOne({ _id: id });
     //Updates date availability
     await DateEvent.findOneAndUpdate(
       { events: { $in: [id] } },
