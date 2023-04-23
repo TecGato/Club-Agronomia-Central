@@ -1,6 +1,5 @@
-import { Layout, FormNews } from '@/components/Dashboard';
+import { Layout, FormNews, FormModifyNews } from '@/components/Dashboard';
 import { useState, useMemo } from 'react';
-import { FormModifyNews } from '../../../components/Dashboard/Forms/NewsModification';
 import { Warn } from '@/components/Dashboard/Warn/Warn';
 import { useNews } from '@/hooks';
 

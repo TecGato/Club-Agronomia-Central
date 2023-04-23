@@ -1,8 +1,19 @@
-export function ButtonEdit( props ) {
+export function ButtonEdit(props) {
     return (
         <>
             <button
                 className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-2 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                onClick={() => {
+                    props.setPostModify({
+                        id: props.id,
+                        // title: props.title,
+                        // picture: props.picture,
+                        // description: props.description,
+                        // ...(props.video && { video: props.video, })
+                    });
+                    props.setModifyTestimony(true);
+                    props.showModalModify();
+                }}
             >
                 Editar
                 <svg

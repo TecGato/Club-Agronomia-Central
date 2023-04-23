@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { useTestimonials } from '@/hooks';
-import { Layout, TestimonialItemDashboard, ButtonCreate, WarnDelete, FormNews } from '@/components/Dashboard';
+import { Layout, TestimonialItemDashboard, ButtonCreate, WarnDelete, FormNews, FormModifyNews } from '@/components/Dashboard';
 
 export default function Testimonials({ testimonials }) {
     const {
@@ -9,6 +9,8 @@ export default function Testimonials({ testimonials }) {
         showModalModify,
         createTestimonial,
         setCreateTestimonial,
+        modifyTestimony,
+        setModifyTestimony,
         showWarn,
         showForm,
         showModify,
@@ -16,7 +18,9 @@ export default function Testimonials({ testimonials }) {
         handlerCreate,
         handlerModify,
         id,
-        setId
+        setId,
+        postModify,
+        setPostModify,
     } = useTestimonials();
 
     return (
@@ -32,10 +36,14 @@ export default function Testimonials({ testimonials }) {
                             key={testimonial._id}
                             title={testimonial.title}
                             text={testimonial.description}
-                            img={testimonial.picture.secure_url}
+                            img={testimonial.picture}
                             showModalWarn={showModalWarn}
                             setId={setId}
                             id={testimonial._id}
+                            showModalModify={showModalModify}
+                            setPostModify={setPostModify}
+                            // video={testimonial.video ? testimonial.video : null}
+                            setModifyTestimony={setModifyTestimony}
                         />
                     ))
                 }
@@ -54,7 +62,14 @@ export default function Testimonials({ testimonials }) {
                     createTestimonial={createTestimonial}
                 />
             )}
-
+            {showModify && (
+                <FormModifyNews
+                    showModalModify={showModalModify}
+                    handlerModify={handlerModify}
+                    modifyTestimony={modifyTestimony}
+                    ShowModify={postModify}
+                />
+            )}
         </Layout>
     );
 };
