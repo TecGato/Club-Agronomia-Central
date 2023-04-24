@@ -8,11 +8,17 @@ export function QuinchoCalendarForm({
   itsAdmin = false,
   setShowCard,
   eventArray,
+  showCard,
 }) {
+  console.log(showCard);
+  if (eventArray.lenght > 1) {
+    eventArray = eventArray.filter((item) => item._id === showCard);
+  }
+
+  console.log;
   const { handlerDelete } = useQuincho();
 
   const [showWarn, setShowWarn] = useState(false);
-  console.log(showWarn);
   const [data, setData] = useState({
     client: '',
     email: '',
@@ -117,7 +123,7 @@ export function QuinchoCalendarForm({
                       type="text"
                       placeholder=""
                       onChange={handleChange}
-                      value={itsAdmin ? eventArray[0].client : data.client}
+                      value={itsAdmin ? eventArray[0]?.client : data.client}
                     />
                   </div>
                 </div>
@@ -137,7 +143,7 @@ export function QuinchoCalendarForm({
                       type="text"
                       placeholder=""
                       onChange={handleChange}
-                      value={itsAdmin ? eventArray[0].email : data.email}
+                      value={itsAdmin ? eventArray[0]?.email : data.email}
                     />
                   </div>
                 </div>
@@ -157,7 +163,7 @@ export function QuinchoCalendarForm({
                       type="text"
                       placeholder=""
                       onChange={handleChange}
-                      value={itsAdmin ? eventArray[0].phone : data.phone}
+                      value={itsAdmin ? eventArray[0]?.phone : data.phone}
                     />
                   </div>
                 </div>
@@ -176,7 +182,7 @@ export function QuinchoCalendarForm({
                       name="date"
                       type="date"
                       onChange={handleChange}
-                      value={itsAdmin ? eventArray[0].date : data.date}
+                      value={itsAdmin ? eventArray[0]?.date : data.date}
                     />
                   </div>
                 </div>
@@ -200,7 +206,7 @@ export function QuinchoCalendarForm({
                         // "px-2 outline-none appearance-none bg-transparent"
                         defaultValue={
                           itsAdmin
-                            ? eventArray[0].beg_time === '11:00'
+                            ? eventArray[0]?.beg_time === '11:00'
                               ? 'schedule1'
                               : 'schedule2'
                             : 'default'
@@ -233,7 +239,7 @@ export function QuinchoCalendarForm({
                       placeholder=""
                       onChange={handleChange}
                       value={
-                        itsAdmin ? eventArray[0].description : data.description
+                        itsAdmin ? eventArray[0]?.description : data.description
                       }
                     />
                   </div>
@@ -301,7 +307,7 @@ export function QuinchoCalendarForm({
                     <button
                       type="button"
                       className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1"
-                      onClick={() => setShowWarn(eventArray[0]._id)}
+                      onClick={() => setShowWarn(eventArray[0]?._id)}
                     >
                       Eliminar Reserva
                     </button>

@@ -107,13 +107,13 @@ export function QuinchoCalendarContainer({
 
       {/* Encabezado del calendario mensual */}
       <div class="grid grid-cols-7 mt-4 border-t-4 border-indigo-500">
-        <div class="pl-1 text-sm">Lunes</div>
-        <div class="pl-1 text-sm">Martes</div>
-        <div class="pl-1 text-sm">Miércoles</div>
-        <div class="pl-1 text-sm">Jueves</div>
-        <div class="pl-1 text-sm">Viernes</div>
-        <div class="pl-1 text-sm">Sábado</div>
-        <div class="pl-1 text-sm">Domingo</div>
+        <div class="pl-1 text-sm">LUN</div>
+        <div class="pl-1 text-sm">MAR</div>
+        <div class="pl-1 text-sm">MIE</div>
+        <div class="pl-1 text-sm">JUE</div>
+        <div class="pl-1 text-sm">VIE</div>
+        <div class="pl-1 text-sm">SAB</div>
+        <div class="pl-1 text-sm">DOM</div>
       </div>
 
       {/* Contenedor principal */}

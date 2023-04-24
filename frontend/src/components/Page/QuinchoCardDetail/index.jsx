@@ -1,4 +1,6 @@
-export function QuinchoCardDetail({ detail, setShowCard }) {
+export function QuinchoCardDetail({ detail, setShowCard, showCard }) {
+  console.log(showCard);
+  console.log(detail);
   return (
     <>
       <div className="flex justify-center items-center overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none border-solid border-red-300">
