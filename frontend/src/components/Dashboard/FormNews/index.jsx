@@ -45,6 +45,16 @@ export function FormNews({ showModalForm, handlerCreate, createTestimonial = fal
     window.location.reload();
   };
 
+  const disableButton = Object.values(post).some((p) => p === '')
+
+  const stylesButton = () => {
+    if (disableButton) {
+      return 'font-semibold self-center text-gray-900 py-2 px-4 rounded w-1/8 border-2 border-gray-300 bg-gray-100 transition duration-300 ease-in-out';
+    } else {
+      return "bg-blue-700 hover:bg-blue-800 text-white font-semibold py-2 px-4 rounded w-1/8 self-center";
+    }
+  };
+
   return (
     <div className="flex bg-gray-900/80 backdrop-blur-sm justify-center items-center overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
       <div className="rounded-xl border bg-gray-50 w-[400px] border-gray-100 p-4 shadow-xl">
@@ -91,9 +101,8 @@ export function FormNews({ showModalForm, handlerCreate, createTestimonial = fal
             </>
           }
           <label className="text-gray-900 text-lg">Post:</label>
-          <input
+          <textarea
             name="description"
-            type="text"
             className="border w-full rounded-lg border-gray-200 p-3 text-sm"
             placeholder="Contenido"
             onChange={handlerChange}
@@ -101,7 +110,9 @@ export function FormNews({ showModalForm, handlerCreate, createTestimonial = fal
           />
           <button
             type="submit"
-            className="bg-blue-700 hover:bg-blue-800 text-white font-semibold py-2 px-4 rounded w-1/8 self-center"
+            disabled={disableButton}
+            // className="bg-blue-700 hover:bg-blue-800 text-white font-semibold py-2 px-4 rounded w-1/8 self-center"
+            className={stylesButton()}
           >
             Crear
           </button>
