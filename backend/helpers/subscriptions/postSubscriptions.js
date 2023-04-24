@@ -1,10 +1,16 @@
 const Subscription = require('../../models/Subscription');
 
 const postSubscription = async (email) => {
-  const subscriptionExists = await Subscription.exists({ email });
   try {
+    const subscriptionExists = await Subscription.exists({ email });
     if (subscriptionExists) {
-      const subscription = await Subscription.findOne({ email });
+      const subscription = await Subscription.findOneAndUpdate(
+        { email },
+        {
+          subscribed: true,
+        },
+        { new: true }
+      );
       return subscription;
     } else {
       const newSubscription = new Subscription({

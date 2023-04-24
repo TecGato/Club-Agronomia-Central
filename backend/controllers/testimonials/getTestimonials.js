@@ -5,10 +5,10 @@ const {
 } = require('../../helpers/testimonials/getTestimonials.js');
 
 const getTestimonials = async (req, res) => {
-  const { name } = req.query;
+  const { title } = req.query;
   try {
-    const testimonials = name
-      ? await getTestimonialsByName(name)
+    const testimonials = title
+      ? await getTestimonialsByName(title)
       : await getAllTestimonials();
     return res.status(200).json(testimonials);
   } catch (error) {

@@ -2,10 +2,13 @@ const { putMatch } = require('../../helpers/matches/putMatches');
 
 const updateMatch = async (req, res) => {
   const { id } = req.params;
-  const { ...matchInfo } = req.body;
+  const { ...updates } = req.body;
   try {
-    const match = await putMatch(id, matchInfo);
-    return res.status(202).json(match);
+    const match = await putMatch(id, updates);
+    return res.status(202).json({
+      msg: 'Match Updated Successfully',
+      match,
+    });
   } catch (error) {
     return res.status(404).json(error);
   }

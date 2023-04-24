@@ -21,7 +21,7 @@ export default function Posts({ posts }) {
         <div className="flex flex-wrap justify-center">
           <div className="sm:grid sm:grid-cols-2 sm:max-h-72 shadow-md overflow-hidden cursor-pointer hover:scale-105 transition ease-in-out mb-5 p-5">
             <img
-              src={mainNews.picture}
+              src={mainNews.picture.secure_url}
               alt={mainNews.title}
               loading="lazy"
               className="col-span-1 p-5 sm:order-2"

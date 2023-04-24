@@ -25,7 +25,7 @@ const postEvent = async ({ date, amount, ...eventInfo }) => {
 
     const year = newEvent.date.getFullYear();
     const month = newEvent.date.getMonth();
-    const incomes = await Income.findOne({ year });
+    const incomes = await Income.find({ year });
 
     const months = [
       'Enero',

@@ -1,7 +1,7 @@
 export function WarnDelete({ handlerDelete, showModalWarn, id }) {
     return (
         <div className="flex flex-col bg-gray-900/80 backdrop-blur-sm justify-center items-center overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
-            <div class="rounded-xl border bg-gray-50 border-gray-100 p-4 shadow-xl">
+            <div className="rounded-xl border bg-gray-50 border-gray-100 p-4 shadow-xl">
                 <div className="flex items-center gap-2 text-red-800">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
