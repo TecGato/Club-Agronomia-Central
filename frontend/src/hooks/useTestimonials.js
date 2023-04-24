@@ -7,6 +7,8 @@ export function useTestimonials() {
   const [showWarn, setShowWarn] = useState(false);
   const [id, setId] = useState(false);
   const [createTestimonial, setCreateTestimonial] = useState(false);
+  const [modifyTestimony, setModifyTestimony] = useState(false);
+  const [postModify, setPostModify] = useState()
 
   const showModalForm = () => {
     setShowForm(!showForm);
@@ -38,6 +40,18 @@ export function useTestimonials() {
     }
   };
 
+  const handlerModify = async (post) => {
+    try {
+      const { data } = await axios.put(
+        `http://localhost:3001/api/testimonials/${post.id}`,
+        post
+      );
+      console.log(data.msg);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return {
     showModalForm,
     showModalWarn,
@@ -47,8 +61,13 @@ export function useTestimonials() {
     showForm,
     createTestimonial,
     setCreateTestimonial,
+    modifyTestimony,
+    setModifyTestimony,
+    postModify,
+    setPostModify,
     handlerDelete,
     handlerCreate,
+    handlerModify,
     id,
     setId,
   };

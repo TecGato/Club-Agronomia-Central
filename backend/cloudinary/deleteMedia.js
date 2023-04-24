@@ -10,7 +10,7 @@ cloudinary.config({
   secure: true,
 });
 
-const deleteMedia = async (publicId) => {
+const deleteImage = async (publicId) => {
   try {
     const result = await cloudinary.uploader.destroy(publicId);
     return result;
@@ -19,4 +19,15 @@ const deleteMedia = async (publicId) => {
   }
 };
 
-module.exports = { deleteMedia };
+const deleteVideo = async (publicId) => {
+  try {
+    const result = await cloudinary.uploader.destroy(publicId, {
+      resource_type: 'video',
+    });
+    return result;
+  } catch (error) {
+    console.error(error.message);
+  }
+};
+
+module.exports = { deleteImage, deleteVideo };

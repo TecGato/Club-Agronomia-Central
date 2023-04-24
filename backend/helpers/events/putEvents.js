@@ -32,7 +32,7 @@ const putEvent = async (id, eventInfo) => {
         'Diciembre',
       ];
 
-      const changeIncomes = await Income.findOne({ year });
+      const changeIncomes = await Income.find({ year });
       await Income.findOneAndUpdate(
         { year },
         {

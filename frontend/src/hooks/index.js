@@ -5,4 +5,5 @@ export * from './useForm';
 export * from './useContributions';
 export * from './useNews';
 export * from './useQuincho';
+export * from './useFileEncoding'
 export * from './useTestimonials';

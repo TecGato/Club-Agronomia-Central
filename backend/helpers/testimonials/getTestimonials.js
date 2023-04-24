@@ -9,9 +9,9 @@ const getAllTestimonials = async () => {
   }
 };
 
-const getTestimonialsByName = async (name) => {
+const getTestimonialsByName = async (title) => {
   try {
-    const testimonial = await Testimonial.find({ name });
+    const testimonial = await Testimonial.find({ title });
     return testimonial;
   } catch (error) {
     console.error(error.message);
