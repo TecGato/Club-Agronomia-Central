@@ -33,7 +33,7 @@ export const useContributions = () => {
     setClick(true);
     try {
       const response = await axios.post(
-        'http://localhost:3001/api/donations',
+        'http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/donations',
         contribution
       );
       setPreferenceID(response.data.global);

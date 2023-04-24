@@ -94,7 +94,7 @@ export default function SteeringCommittee({props}) {
 }
 
 export async function getStaticProps() {
-  const res = await fetch('http://localhost:3001/api/directors');
+  const res = await fetch('http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/directors');
   const props = await res.json();
     return {
         props: {
