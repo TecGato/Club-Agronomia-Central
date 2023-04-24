@@ -22,7 +22,7 @@ export function useTestimonials() {
 
   const handlerDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:3001/api/testimonials/${id}`);
+      await axios.delete(`http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/testimonials/${id}`);
     } catch (error) {
       console.log(error);
     }
@@ -31,7 +31,7 @@ export function useTestimonials() {
   const handlerCreate = async (post) => {
     try {
       const { data } = await axios.post(
-        `http://localhost:3001/api/testimonials`,
+        `http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/testimonials`,
         post
       );
       console.log(data.msg);
@@ -43,7 +43,7 @@ export function useTestimonials() {
   const handlerModify = async (post) => {
     try {
       const { data } = await axios.put(
-        `http://localhost:3001/api/testimonials/${post.id}`,
+        `http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/testimonials/${post.id}`,
         post
       );
       console.log(data.msg);
