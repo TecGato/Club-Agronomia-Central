@@ -3,66 +3,66 @@ import usePagination from '@/components/Page/Pagination';
 
 const items = [
     <TestimonialItem
-        title={'Messi mostrando su paso por club agronomia central'}
+        title={'Mostrando su paso por club agronomia central'}
         text={
             'De suplente a capitan en agronomia para ganar el mundial, en entrevista mostrando como gano'
         }
         img={
-            'https://static.eldiario.es/clip/87dc30f7-32fb-45f6-a9cd-45efd700e48d_16-9-discover-aspect-ratio_default_0.jpg'
+            'https://img.freepik.com/fotos-premium/pareja-joven-corriendo-pista-forestal_35721-285.jpg?size=626&ext=jpg&ga=GA1.1.1228025790.1681327921&semt=sph'
         }
     />,
     <TestimonialItem
-        title={'Messi mostrando su paso por club agronomia central'}
+        title={'Entrevistado luego de ganar el balón de oro'}
         text={
             'De suplente a capitan en agronomia para ganar el mundial, en entrevista mostrando como gano'
         }
         img={
-            'https://static.eldiario.es/clip/87dc30f7-32fb-45f6-a9cd-45efd700e48d_16-9-discover-aspect-ratio_default_0.jpg'
+            'https://img.freepik.com/foto-gratis/determinada-mujer-construccion-muscular-corriendo-mientras-hace-ejercicio-naturaleza-copiar-espacio_637285-4877.jpg?size=626&ext=jpg&ga=GA1.2.1228025790.1681327921&semt=sph'
         }
     />,
    <TestimonialItem
-        title={'Messi mostrando su paso por club agronomia central'}
+        title={'Hablando con club agronomia central cuenta su experiencia'}
         text={
             'De suplente a capitan en agronomia para ganar el mundial, en entrevista mostrando como gano'
         }
         img={
-            'https://static.eldiario.es/clip/87dc30f7-32fb-45f6-a9cd-45efd700e48d_16-9-discover-aspect-ratio_default_0.jpg'
+            'https://img.freepik.com/foto-gratis/retrato-mujer-sonriente-fitness-auriculares_171337-13384.jpg?size=626&ext=jpg&ga=GA1.2.1228025790.1681327921&semt=sph'
         }
     />,
     <TestimonialItem
-        title={'Messi mostrando su paso por club agronomia central'}
+        title={'El mejor jugador del mundo'}
         text={
             'De suplente a capitan en agronomia para ganar el mundial, en entrevista mostrando como gano'
         }
         img={
-            'https://static.eldiario.es/clip/87dc30f7-32fb-45f6-a9cd-45efd700e48d_16-9-discover-aspect-ratio_default_0.jpg'
+            'https://img.freepik.com/foto-gratis/mujer-embarazada-tiro-medio-estera-yoga_23-2150310657.jpg?size=626&ext=jpg&ga=GA1.2.1228025790.1681327921&semt=sph'
         }
     />,
     <TestimonialItem
-        title={'Messi mostrando su paso por club agronomia central'}
+        title={'Visita nuestro club agronomia central'}
         text={
             'De suplente a capitan en agronomia para ganar el mundial, en entrevista mostrando como gano'
         }
         img={
-            'https://static.eldiario.es/clip/87dc30f7-32fb-45f6-a9cd-45efd700e48d_16-9-discover-aspect-ratio_default_0.jpg'
+            'https://img.freepik.com/fotos-premium/kickboxing-fitness-retrato-atleta-mujer-haciendo-ejercicio-cardiovascular-mientras-entrena-partido-ejercicio-deportivo-boxeadora-preparandose-pelea-gimnasio-salud-bienestar-deportivo_590464-121460.jpg?size=626&ext=jpg&ga=GA1.2.1228025790.1681327921&semt=sph'
         }
     />,
     <TestimonialItem
-        title={'Messi mostrando su paso por club agronomia central'}
+        title={'Mostrando sus habilidades'}
         text={
             'De suplente a capitan en agronomia para ganar el mundial, en entrevista mostrando como gano'
         }
         img={
-            'https://static.eldiario.es/clip/87dc30f7-32fb-45f6-a9cd-45efd700e48d_16-9-discover-aspect-ratio_default_0.jpg'
+            'https://img.freepik.com/foto-gratis/estudio-formacion-mujer-forma-disparo-completo_23-2149137062.jpg?size=626&ext=jpg&ga=GA1.2.1228025790.1681327921&semt=sph'
         }
     />,
     <TestimonialItem
-        title={'Messi mostrando su paso por club agronomia central'}
+        title={'Gana nuevamente balón de oro'}
         text={
             'De suplente a capitan en agronomia para ganar el mundial, en entrevista mostrando como gano'
         }
         img={
-            'https://static.eldiario.es/clip/87dc30f7-32fb-45f6-a9cd-45efd700e48d_16-9-discover-aspect-ratio_default_0.jpg'
+            'https://img.freepik.com/fotos-premium/mujer-bonita-fitness-botella-agua_1194-255449.jpg?size=626&ext=jpg&ga=GA1.2.1228025790.1681327921&semt=sph'
         }
     />
 ];
