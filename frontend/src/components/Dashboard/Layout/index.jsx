@@ -12,8 +12,8 @@ export const Layout = ({ children }) => {
       <header className='fixed top-0 z-[7777] lg:hidden p-2'>
         <div
           className={`w-14 h-14 relative flex justify-center items-center ${
-            openNavbar ? 'fixed z-[51]' : 'relative bg-white rounded-full shadow-lg'
-          }`}
+            openNavbar ? 'fixed z-[51] bg-transparent' : 'relative bg-white rounded-full shadow-lg'
+          } transition-all duration-500`}
         >
           <button
             onClick={handleNavbar}
