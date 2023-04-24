@@ -15,8 +15,8 @@ export default function Posts({ posts }) {
 
   return (
     <Layout
-      title='Últimas Noticias'
-      image='https://img.freepik.com/foto-gratis/gente-tiro-medio-corriendo-juntos_23-2149037629.jpg?size=626&ext=jpg&ga=GA1.2.1228025790.1681327921&semt=sph'
+      title="Últimas Noticias"
+      image="https://img.freepik.com/foto-gratis/gente-tiro-medio-corriendo-juntos_23-2149037629.jpg?size=626&ext=jpg&ga=GA1.2.1228025790.1681327921&semt=sph"
     >
       <div className='m-4'>
         <div className='flex flex-wrap justify-center'>
@@ -62,7 +62,6 @@ export default function Posts({ posts }) {
           })}
         </div>
       </div>
-      
       <div className="flex space-x-2 justify-center p-5">
         {pages.map((page) => (
           <button
@@ -78,6 +77,9 @@ export default function Posts({ posts }) {
           </button>
         ))}
       </div>
+
+
+      <div className="flex flex-col justify-center "></div>
 
     </Layout>
   );

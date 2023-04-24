@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
 import { useFileEncoding } from '@/hooks';
 
-export function FormModifyNews({ ShowModify, showModalModify, handlerModify, modifyTestimony = false }) {
+export function FormNews({ showModalForm, handlerCreate, createTestimonial = false }) {
   const { handleFileChange } = useFileEncoding();
 
-  const [post, setPost] = useState(ShowModify);
+  const [post, setPost] = useState({
+    title: '',
+    picture: '',
+    description: '',
+  });
 
   const imagenChange = (event) => {
     handleFileChange(event, setPicture);
@@ -35,9 +39,9 @@ export function FormModifyNews({ ShowModify, showModalModify, handlerModify, mod
     });
   };
 
-  const handlerSubmit = async (event) => {
+  const handlerSubmit = (event) => {
     event.preventDefault();
-    handlerModify(post);
+    handlerCreate(post);
     window.location.reload();
   };
 
@@ -47,7 +51,7 @@ export function FormModifyNews({ ShowModify, showModalModify, handlerModify, mod
 
         <div className='flex'>
           <button type="button" className="relative text-gray-400 bg-transparent  hover:bg-gray-200 hover:text-gray-900 rounded-full text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white"
-            onClick={showModalModify}
+            onClick={showModalForm}
           >
             <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
             <span className="sr-only">Close modal</span>
@@ -73,7 +77,7 @@ export function FormModifyNews({ ShowModify, showModalModify, handlerModify, mod
             placeholder="Imagen"
             onChange={imagenChange}
           />
-          {modifyTestimony &&
+          {createTestimonial &&
             <>
               <label className="text-gray-900 text-lg">Video:</label>
               <input
@@ -99,7 +103,7 @@ export function FormModifyNews({ ShowModify, showModalModify, handlerModify, mod
             type="submit"
             className="bg-blue-700 hover:bg-blue-800 text-white font-semibold py-2 px-4 rounded w-1/8 self-center"
           >
-            Modificar
+            Crear
           </button>
         </form>
       </div>

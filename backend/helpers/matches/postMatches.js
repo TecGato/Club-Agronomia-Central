@@ -1,22 +1,8 @@
 const Match = require('../../models/Match');
 
-const postMatch = async (
-  name,
-  date,
-  time,
-  home_team,
-  away_team,
-  discipline
-) => {
+const postMatch = async (matchInfo) => {
   try {
-    const newMatch = new Match({
-      name,
-      date,
-      time,
-      home_team,
-      away_team,
-      discipline,
-    });
+    const newMatch = new Match({ ...matchInfo });
     await newMatch.save();
     return newMatch;
   } catch (error) {

@@ -5,7 +5,10 @@ const updateDirector = async (req, res) => {
   const { ...updates } = req.body;
   try {
     const director = await putDirector(id, updates);
-    return res.status(202).json(director);
+    return res.status(202).json({
+      msg: 'Director Updated Successfully',
+      director,
+    });
   } catch (error) {
     return res.status(404).json(error);
   }

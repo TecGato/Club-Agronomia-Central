@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 
 const testimonialSchema = new mongoose.Schema({
-  name: {
+  title: {
     type: String,
     required: true,
   },
-  testimony: {
+  description: {
     type: String,
     required: true,
   },

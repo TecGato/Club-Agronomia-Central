@@ -15,3 +15,6 @@ export * from './TestimonialItemDashboard';
 export * from './ButtonCreate';
 export * from './ButtonDelete';
 export * from './ButtonEdit';
+export * from './WarnDelete';
+export * from './FormNews';
+export * from './Forms/NewsModification';
