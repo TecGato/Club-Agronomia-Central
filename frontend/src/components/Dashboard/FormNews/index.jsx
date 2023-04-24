@@ -41,9 +41,8 @@ export function FormNews({ showModalForm, handlerCreate, createTestimonial = fal
 
   const handlerSubmit = (event) => {
     event.preventDefault();
-    console.log(post);
     handlerCreate(post);
-    // window.location.reload();
+    window.location.reload();
   };
 
   const disableButton = Object.values(post).some((p) => p === '')
@@ -112,7 +111,6 @@ export function FormNews({ showModalForm, handlerCreate, createTestimonial = fal
           <button
             type="submit"
             disabled={disableButton}
-            // className="bg-blue-700 hover:bg-blue-800 text-white font-semibold py-2 px-4 rounded w-1/8 self-center"
             className={stylesButton()}
           >
             Crear
