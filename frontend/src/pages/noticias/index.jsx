@@ -1,7 +1,9 @@
 import { Layout, NewsPost } from '@/components/Page';
 import { useState, useMemo } from 'react';
 import usePagination from '../../components/Page/Pagination';
+import { NewsFilter } from '@/components/Page';
 import Link from "next/link";
+
 
 export default function Posts({ posts }) {
   const [items, setItems] = useState(posts);
@@ -21,7 +23,7 @@ export default function Posts({ posts }) {
       <div className='m-4'>
         <div className='flex flex-wrap justify-center'>
 
-          <Link href={`/noticias/${mainNews.id}`} key={mainNews.id}>
+          <Link href={`/noticias/${mainNews._id}`} key={mainNews._id}>
             <div className='sm:grid sm:grid-cols-2 sm:max-h-72 shadow-md overflow-hidden cursor-pointer hover:scale-105 transition ease-in-out mb-5 p-5'>
               <img
                 src={mainNews.picture}
@@ -42,7 +44,7 @@ export default function Posts({ posts }) {
 
           {otherNews.map((news) => {
             return (
-              <Link href={`/noticias/${otherNews.id}`} key={otherNews.id}>
+              <Link href={`/noticias/${otherNews._id}`} key={otherNews._id}>
                 <div className='max-w-xs m-1 shadow-md overflow-hidden cursor-pointer hover:scale-105 transition ease-in-out p-5'>
                   <img
                     src={news.picture}
