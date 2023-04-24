@@ -104,9 +104,17 @@ export function MobileMenu({ openMenu }) {
                     <div className="h-10 flex items-center ">
                         <NavLink text={'Testimonios'} link={'/testimonios'} />
                     </div>
+                    {/* Link News */}
+                    <div className="h-10 flex items-center ">
+                        <NavLink text={'Noticias'} link={'/noticias'} />
+                    </div>
                     {/* Link Contact */}
                     <div className="h-10 flex items-center ">
                         <NavLink text={'Contáctanos'} link={'/contacto'} />
+                    </div>
+                    {/* Link Login */}
+                    <div className="h-10 flex items-center ">
+                        <NavLink text={'Login'} link={'/dashboard/auth/login'} />
                     </div>
                 </ul>
             </div>
