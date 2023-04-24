@@ -1,9 +1,9 @@
 import { NavLink } from '../NavLink';
 import { routes } from './routes';
 
-export const Navbar = () => {
+export const Navbar = ({openNavbar}) => {
   return (
-    <nav className="w-60 h-screen bg-neutral-900 flex flex-col justify-between items-center gap-1 py-7 px-4 absolute -translate-x-full lg:relative lg:translate-x-0">
+    <nav className={`w-60 h-screen bg-neutral-900 flex flex-col justify-between items-center gap-1 py-7 px-4 z-50 ${openNavbar ? 'translate-x-0 pt-16 fixed top-0' : '-translate-x-full absolute' } lg:relative lg:translate-x-0 transition-all duration-500`}>
       <div>
         <div className="flex gap-2 mb-5">
           <img className="w-11" src="/logo.png" alt="" />
