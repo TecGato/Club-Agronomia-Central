@@ -1,5 +1,5 @@
 import { Layout, InfoSlider } from '@/components/Page';
-import { images, info } from './taekwondo';
+import { images, info } from '../../../helpers/taekwondo';
 
 export default function Taekwondo() {
     return (

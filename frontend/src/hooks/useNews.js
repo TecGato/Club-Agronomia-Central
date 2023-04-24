@@ -4,7 +4,7 @@ export function useNews() {
   const handlerDelete = async (id) => {
     try {
       const { data } = await axios.delete(
-        `http://localhost:3001/api/posts/${id}`
+        `http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/posts/${id}`
       );
     } catch (error) {
       console.log(error);
@@ -14,7 +14,7 @@ export function useNews() {
   const handlerCreate = async (post) => {
     try {
       const { data } = await axios.post(
-        `http://localhost:3001/api/posts`,
+        `http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/posts`,
         post
       );
       console.log(data.msg);
@@ -26,7 +26,7 @@ export function useNews() {
   const handlerModify = async (post) => {
     try {
       const { data } = await axios.put(
-        `http://localhost:3001/api/posts/${post.id}`,
+        `http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/posts/${post.id}`,
         post
       );
       console.log(data.msg);

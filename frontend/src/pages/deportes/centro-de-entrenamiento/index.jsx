@@ -1,5 +1,5 @@
 import { Layout, InfoSlider } from '@/components/Page';
-import { images, info } from './images';
+import { images, info } from '../../../helpers/images';
 
 export default function TrainingCenter() {
     return (
