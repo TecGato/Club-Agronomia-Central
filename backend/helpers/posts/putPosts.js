@@ -1,5 +1,5 @@
 const Post = require('../../models/Post');
-const { deleteMedia } = require('../../cloudinary/deleteMedia');
+const { deleteImage } = require('../../cloudinary/deleteMedia');
 const { uploadImage } = require('../../cloudinary/uploadMedia');
 
 const putPost = async (id, updates) => {
@@ -7,8 +7,8 @@ const putPost = async (id, updates) => {
     // IF PICTURE'S BEING CHANGED
     if (updates.picture) {
       const postInfo = await Post.findById(id);
-      // Deletes old picture and updates new one
-      await deleteMedia(postInfo.picture.public_id);
+      // Deletes old picture and uploads new one
+      await deleteImage(postInfo.picture.public_id);
       const newPostPicture = await uploadImage(updates.picture);
       // Updates post
       const post = await Post.findByIdAndUpdate(

@@ -1,4 +1,5 @@
 export * from './Banner';
+export * from './ClubIconSVG';
 export * from './Contributions';
 export * from './Donation';
 export * from './Footer';
@@ -18,3 +19,4 @@ export * from './QuinchoCalendarDay';
 export * from './SocialIcons';
 export * from './TestimonialItem';
 export * from './WarningAlert';
+export * from './Publicity';

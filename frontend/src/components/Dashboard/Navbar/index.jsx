@@ -6,7 +6,7 @@ export const Navbar = ({openNavbar}) => {
     <nav className={`w-60 h-screen bg-neutral-900 flex flex-col justify-between items-center gap-1 py-7 px-4 z-50 ${openNavbar ? 'translate-x-0 pt-16 fixed top-0' : '-translate-x-full absolute' } lg:relative lg:translate-x-0 transition-all duration-500`}>
       <div>
         <div className="flex gap-2 mb-5">
-          <img className="w-11" src="/logo.webp" alt="" />
+          <img className="w-11" src="/logo.png" alt="" />
           <p className="text-white">Club Agronomia Central</p>
         </div>
         <div className="flex flex-col gap-1">

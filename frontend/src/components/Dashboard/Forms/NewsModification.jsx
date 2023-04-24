@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useFileEncoding } from '@/hooks';
 
-export function FormModifyNews({ ShowModify, showModalModify, handlerModify }) {
+export function FormModifyNews({ ShowModify, showModalModify, handlerModify, modifyTestimony = false }) {
   const { handleFileChange } = useFileEncoding();
 
   const [post, setPost] = useState(ShowModify);
@@ -10,10 +10,21 @@ export function FormModifyNews({ ShowModify, showModalModify, handlerModify }) {
     handleFileChange(event, setPicture);
   };
 
+  const videoChange = (event) => {
+    handleFileChange(event, setVideo);
+  };
+
   const setPicture = (encodedFile) => {
     setPost({
       ...post,
       picture: encodedFile,
+    });
+  };
+
+  const setVideo = (encodedFile) => {
+    setPost({
+      ...post,
+      video: encodedFile,
     });
   };
 
@@ -32,46 +43,66 @@ export function FormModifyNews({ ShowModify, showModalModify, handlerModify }) {
 
   return (
     <div className="flex bg-gray-900/80 backdrop-blur-sm justify-center items-center overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
-      <button
-        onClick={showModalModify}
-        className="absolute top-4 right-6 p-2 text-white rounded-xl w-7 h-7 place-content-center"
-      >
-        ❌
-      </button>
-      <form className="flex flex-col gap-2" onSubmit={handlerSubmit}>
-        <label className="text-white text-lg">Titulo:</label>
-        <input
-          name="title"
-          type="text"
-          className="border-2"
-          placeholder="Titulo de la Noticia"
-          onChange={handlerChange}
-          value={post.title}
-        />
-        <label className="text-white text-lg">Imagen:</label>
-        <input
-          name="picture"
-          type="file"
-          className="border-2"
-          placeholder="Url de la imagen"
-          onChange={imagenChange}
-        />
-        <label className="text-white text-lg">Post:</label>
-        <input
-          name="description"
-          type="text"
-          className="border-2"
-          placeholder="Contenido de la Noticia"
-          onChange={handlerChange}
-          value={post.description}
-        />
-        <button
-          type="submit"
-          className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded w-1/8 self-center "
-        >
-          Button
-        </button>
-      </form>
+      <div className="rounded-xl border bg-gray-50 w-[400px] border-gray-100 p-4 shadow-xl">
+
+        <div className='flex'>
+          <button type="button" className="relative text-gray-400 bg-transparent  hover:bg-gray-200 hover:text-gray-900 rounded-full text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white"
+            onClick={showModalModify}
+          >
+            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
+            <span className="sr-only">Close modal</span>
+          </button>
+        </div>
+
+        <form className="flex flex-col gap-2" onSubmit={handlerSubmit}>
+          <label className="text-gray-900 text-lg">Titulo:</label>
+          <input
+            name="title"
+            type="text"
+            className="border w-full rounded-lg border-gray-200 p-3 text-sm"
+            placeholder="Titulo"
+            onChange={handlerChange}
+            value={post.title}
+          />
+          <label className="text-gray-900 text-lg">Imagen:</label>
+          <input
+            name="picture"
+            type="file"
+            accept="image/*"
+            className="block w-full border border-gray-200 shadow-sm rounded-md text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 file:hover:bg-blue-100 cursor-pointer file:cursor-pointer file:border-0 file:bg-gray-100 file:mr-4 file:py-3 file:px-4 hover:bg-blue"
+            placeholder="Imagen"
+            onChange={imagenChange}
+          />
+          {modifyTestimony &&
+            <>
+              <label className="text-gray-900 text-lg">Video:</label>
+              <input
+                name="video"
+                type="file"
+                accept="video/*"
+                className="block w-full border border-gray-200 shadow-sm rounded-md text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 file:hover:bg-blue-100 cursor-pointer file:cursor-pointer file:border-0 file:bg-gray-100 file:mr-4 file:py-3 file:px-4 hover:bg-blue focus:border-2"
+                placeholder="video"
+                onChange={videoChange}
+              />
+            </>
+          }
+          <label className="text-gray-900 text-lg">Post:</label>
+          <input
+            name="description"
+            type="text"
+            className="border w-full rounded-lg border-gray-200 p-3 text-sm"
+            placeholder="Contenido"
+            onChange={handlerChange}
+            value={post.description}
+          />
+          <button
+            type="submit"
+            className="bg-blue-700 hover:bg-blue-800 text-white font-semibold py-2 px-4 rounded w-1/8 self-center"
+          >
+            Modificar
+          </button>
+        </form>
+      </div>
     </div>
   );
 }
