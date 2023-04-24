@@ -11,6 +11,7 @@ const columns = [
     headerName: 'Numero de contacto',
     type: 'number',
     width: 170,
+    editable: true,
   },
   {
     field: 'emergency',
@@ -106,11 +107,19 @@ export default function Atlethes() {
     pageSize: 10,
     page: 0,
   });
+
+  const onEdit = (selectionModel) => {
+    console.log(selectionModel);
+    console.log('dw');
+  };
   return (
     <Layout>
       <section
         className={`w-full min-h-screen flex flex-col justify-self-center justify-center items-center xl:w-11/12 sm:w-5/6 `}
       >
+        <article>
+          <h1 className="text-5xl font-bold text-center">Administrar todos los atletas</h1>
+        </article>
         <article className="flex flex-col gap-2 border bg-white border-neutral-300 shadow-[0px_3px_10px_2px_rgb(0_0_0_/_13%)] px-4 py-2 rounded-lg max-w-full h-2/3">
           <DataGrid
             rows={rows}
@@ -122,7 +131,8 @@ export default function Atlethes() {
             onPaginationModelChange={setPaginationModel}
             pageSizeOptions={[5, 10, 25]}
             checkboxSelection
-            disableMultipleRowSelection={true}
+            onRowSelectionModelChange={onEdit}
+            disableMultipleRowSelection
           />
         </article>
       </section>
