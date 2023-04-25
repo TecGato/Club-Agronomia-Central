@@ -44,7 +44,7 @@ export default function Posts({ posts }) {
 
           {otherNews.map((news) => {
             return (
-              <Link href={`/noticias/${otherNews._id}`} key={otherNews._id}>
+              <Link href={`/noticias/${news._id}`} key={news._id}>
                 <div className='max-w-xs m-1 shadow-md overflow-hidden cursor-pointer hover:scale-105 transition ease-in-out p-5'>
                   <img
                     src={news.picture.secure_url}

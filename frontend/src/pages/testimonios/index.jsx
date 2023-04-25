@@ -12,7 +12,7 @@ export default function Testimonials({ testimonials }) {
 
     return (
         <Layout
-            title={'Testimonios'}
+            title={testimonials.title}
             image={
                 'https://fjwp.s3.amazonaws.com/blog/wp-content/uploads/2022/01/07110707/What-Your-Video-Interview-Background-Really-Says-About-You-2.jpg'
             }
@@ -20,9 +20,8 @@ export default function Testimonials({ testimonials }) {
             <section className="grid grid-cols-1 lg:grid-cols-3 justify-items-center py-10 px-5 gap-5 w-full h-full">
                 {
                     currentItems?.map(testimonial =>
-                        <Link href={`/testimonios/${testimonial.id}`} key={testimonial.id}>
+                        <Link href={`/testimonios/${testimonial._id}`} key={testimonial._id}>
                             <TestimonialItem
-                                title={testimonial.title}
                                 text={testimonial.description}
                                 img={testimonial.picture.secure_url}
                             />
