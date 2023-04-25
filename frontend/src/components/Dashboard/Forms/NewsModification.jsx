@@ -3,18 +3,15 @@ import { useFileEncoding } from '@/hooks';
 
 export function FormModifyNews({ ShowModify, showModalModify, handlerModify, modifyTestimony = false }) {
   const { handleFileChange } = useFileEncoding();
-  const [disableButton, setDisableButton] = useState(true)
 
   const [post, setPost] = useState(ShowModify);
 
   const imagenChange = (event) => {
     handleFileChange(event, setPicture);
-    setDisableButton(false);
   };
 
   const videoChange = (event) => {
     handleFileChange(event, setVideo);
-    setDisableButton(false);
   };
 
   const setPicture = (encodedFile) => {
@@ -32,7 +29,6 @@ export function FormModifyNews({ ShowModify, showModalModify, handlerModify, mod
   };
 
   const handlerChange = (event) => {
-    setDisableButton(false);
     setPost({
       ...post,
       [event.target.name]: event.target.value,
@@ -44,8 +40,8 @@ export function FormModifyNews({ ShowModify, showModalModify, handlerModify, mod
     handlerModify(post);
     window.location.reload();
   };
-
-  // const disableButton = Object.values(post).some((p) => p !== '')
+  
+const disableButton = post !== ShowModify ? false : true;
 
   const stylesButton = () => {
     if (disableButton) {
