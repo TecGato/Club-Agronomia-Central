@@ -24,7 +24,7 @@ export default function Posts({ posts }) {
           <Link href={`/noticias/${mainNews.id}`} key={mainNews.id}>
             <div className='sm:grid sm:grid-cols-2 sm:max-h-72 shadow-md overflow-hidden cursor-pointer hover:scale-105 transition ease-in-out mb-5 p-5'>
               <img
-                src={mainNews.picture}
+                src={mainNews.picture.secure_url}
                 alt={mainNews.title}
                 loading='lazy'
                 className='col-span-1 p-5 sm:order-2'
@@ -45,7 +45,7 @@ export default function Posts({ posts }) {
               <Link href={`/noticias/${otherNews.id}`} key={otherNews.id}>
                 <div className='max-w-xs m-1 shadow-md overflow-hidden cursor-pointer hover:scale-105 transition ease-in-out p-5'>
                   <img
-                    src={news.picture}
+                    src={news.picture.secure_url}
                     alt={news.title}
                     loading='lazy'
                     className=''

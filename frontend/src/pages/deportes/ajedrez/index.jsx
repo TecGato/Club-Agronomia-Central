@@ -1,6 +1,6 @@
 import { Layout } from '@/components/Page';
-
-export default function Chess() {
+import { MatchesInfo } from '@/components/Page/MatchesInfo';
+export default function Chess({data}) {
     return (
         <Layout
             title="Club De Ajedrez Zugzwang"
@@ -97,7 +97,27 @@ export default function Chess() {
                 <h2 className="text-lg text-center font-semibold text-gray-800 p-5">
                     ¡Los esperamos!
                 </h2>
+                <MatchesInfo
+                    data={data}
+                />
             </div>
         </Layout>
     );
 }
+
+
+
+
+export async function getStaticProps() {
+    try {
+    const res = await fetch('http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/matches');
+    const data = await res.json();
+
+
+    return {
+    props: { data: data },
+    };
+    } catch (error) {
+      return { error: error.message };
+    }
+  }
