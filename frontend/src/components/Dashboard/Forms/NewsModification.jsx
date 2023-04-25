@@ -3,15 +3,18 @@ import { useFileEncoding } from '@/hooks';
 
 export function FormModifyNews({ ShowModify, showModalModify, handlerModify, modifyTestimony = false }) {
   const { handleFileChange } = useFileEncoding();
+  const [disableButton, setDisableButton] = useState(true)
 
   const [post, setPost] = useState(ShowModify);
 
   const imagenChange = (event) => {
     handleFileChange(event, setPicture);
+    setDisableButton(false);
   };
 
   const videoChange = (event) => {
     handleFileChange(event, setVideo);
+    setDisableButton(false);
   };
 
   const setPicture = (encodedFile) => {
@@ -29,6 +32,7 @@ export function FormModifyNews({ ShowModify, showModalModify, handlerModify, mod
   };
 
   const handlerChange = (event) => {
+    setDisableButton(false);
     setPost({
       ...post,
       [event.target.name]: event.target.value,
@@ -39,6 +43,16 @@ export function FormModifyNews({ ShowModify, showModalModify, handlerModify, mod
     event.preventDefault();
     handlerModify(post);
     window.location.reload();
+  };
+
+  // const disableButton = Object.values(post).some((p) => p !== '')
+
+  const stylesButton = () => {
+    if (disableButton) {
+      return 'font-semibold self-center text-gray-900 py-2 px-4 rounded w-1/8 border-2 border-gray-300 bg-gray-100 transition duration-300 ease-in-out';
+    } else {
+      return "bg-blue-700 hover:bg-blue-800 text-white font-semibold py-2 px-4 rounded w-1/8 self-center";
+    }
   };
 
   return (
@@ -97,7 +111,8 @@ export function FormModifyNews({ ShowModify, showModalModify, handlerModify, mod
           />
           <button
             type="submit"
-            className="bg-blue-700 hover:bg-blue-800 text-white font-semibold py-2 px-4 rounded w-1/8 self-center"
+            disabled={disableButton}
+            className={stylesButton()}
           >
             Modificar
           </button>

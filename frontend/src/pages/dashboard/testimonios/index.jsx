@@ -25,10 +25,12 @@ export default function Testimonials({ testimonials }) {
 
     return (
         <Layout>
-            <ButtonCreate
-                showModalForm={showModalForm}
-                setCreateTestimonial={setCreateTestimonial}
-            />
+            <div className='flex justify-end'>
+                <ButtonCreate
+                    showModalForm={showModalForm}
+                    setCreateTestimonial={setCreateTestimonial}
+                />
+            </div>
             <section className="grid grid-cols-1 lg:grid-cols-3 justify-items-center py-10 px-5 gap-5 w-full h-full">
                 {
                     testimonials?.map(testimonial => (
