@@ -1,38 +1,12 @@
 import { useState } from 'react';
 import { DataGrid, GridToolbar } from '@mui/x-data-grid';
-import { Layout, TableActions } from '@/components/Dashboard';
-
-const columns = [
-  { field: 'name', headerName: 'Nombre', width: 130 },
-  { field: 'discipline', headerName: 'Disciplina', width: 130 },
-  { field: 'email', headerName: 'Correo Electronico', width: 130 },
-  {
-    field: 'contacto',
-    headerName: 'Numero de contacto',
-    type: 'number',
-    width: 170,
-    editable: true,
-  },
-  {
-    field: 'emergency',
-    headerName: 'Contacto de emergencia',
-    type: 'number',
-    width: 170,
-  },
-  {
-    field: 'emergency_name',
-    headerName: 'Nombre Contacto de emergencia',
-    type: 'number',
-    width: 170,
-  },
-  {
-    field: 'actions',
-    headerName: 'Acciones',
-    type: 'actions',
-    width: 150,
-    renderCell: (params) => <TableActions {...params} />,
-  },
-];
+import {
+  EditAthlete,
+  Layout,
+  ModalTable,
+  TableActions,
+} from '@/components/Dashboard';
+import { useTableActions } from '@/hooks';
 
 const rows = [
   {
@@ -40,7 +14,7 @@ const rows = [
     name: 'Aon Doe',
     discipline: 'Futbol',
     email: 'XXXXX@gmail.com',
-    contacto: '123456789',
+    contact: '123456789',
     emergency: '123456789',
     emergency_name: 'margarita rosa',
   },
@@ -49,7 +23,7 @@ const rows = [
     name: 'Bon Doe',
     discipline: 'Futbol',
     email: 'XXXXX@gmail.com',
-    contacto: '123456789',
+    contact: '123456789',
     emergency: '123456789',
     emergency_name: 'margarita rosa',
   },
@@ -58,7 +32,7 @@ const rows = [
     name: 'Con Doe',
     discipline: 'Futbol',
     email: 'XXXXX@gmail.com',
-    contacto: '123456789',
+    contact: '123456789',
     emergency: '123456789',
     emergency_name: 'margarita rosa',
   },
@@ -67,7 +41,7 @@ const rows = [
     name: 'Don Doe',
     discipline: 'Futbol',
     email: 'XXXXX@gmail.com',
-    contacto: '123456789',
+    contact: '123456789',
     emergency: '123456789',
     emergency_name: 'margarita rosa',
   },
@@ -76,7 +50,7 @@ const rows = [
     name: 'Eon Doe',
     discipline: 'Futbol',
     email: 'XXXXX@gmail.com',
-    contacto: '123456789',
+    contact: '123456789',
     emergency: '123456789',
     emergency_name: 'margarita rosa',
   },
@@ -85,7 +59,7 @@ const rows = [
     name: 'Fon Doe',
     discipline: 'Futbol',
     email: 'XXXXX@gmail.com',
-    contacto: '123456789',
+    contact: '123456789',
     emergency: '123456789',
     emergency_name: 'margarita rosa',
   },
@@ -94,7 +68,7 @@ const rows = [
     name: 'Gon Doe',
     discipline: 'Futbol',
     email: 'XXXXX@gmail.com',
-    contacto: '123456789',
+    contact: '123456789',
     emergency: '123456789',
     emergency_name: 'margarita rosa',
   },
@@ -103,7 +77,7 @@ const rows = [
     name: 'Gon Doe',
     discipline: 'Futbol',
     email: 'XXXXX@gmail.com',
-    contacto: '123456789',
+    contact: '123456789',
     emergency: '123456789',
     emergency_name: 'margarita rosa',
   },
@@ -112,22 +86,58 @@ const rows = [
     name: 'Gon Doe',
     discipline: 'Futbol',
     email: 'XXXXX@gmail.com',
-    contacto: '123456789',
+    contact: '123456789',
     emergency: '123456789',
     emergency_name: 'margarita rosa',
   },
 ];
 
 export default function Atlethes() {
+  const [editModal, setEditModal] = useState(false);
   const [paginationModel, setPaginationModel] = useState({
     pageSize: 10,
     page: 0,
   });
-
-  const onEdit = (selectionModel) => {
-    console.log(selectionModel);
-    console.log('dw');
-  };
+  const { row, handleDelete, handleUpdate } =
+    useTableActions(setEditModal);
+    
+  const columns = [
+    { field: 'name', headerName: 'Nombre', width: 130 },
+    { field: 'discipline', headerName: 'Disciplina', width: 130 },
+    { field: 'email', headerName: 'Correo Electronico', width: 130 },
+    {
+      field: 'contact',
+      headerName: 'Numero de contacto',
+      type: 'number',
+      width: 170,
+      editable: true,
+    },
+    {
+      field: 'emergency',
+      headerName: 'Contacto de emergencia',
+      type: 'number',
+      width: 170,
+    },
+    {
+      field: 'emergency_name',
+      headerName: 'Nombre Contacto de emergencia',
+      type: 'number',
+      width: 170,
+    },
+    {
+      field: 'actions',
+      headerName: 'Acciones',
+      type: 'actions',
+      width: 150,
+      renderCell: (params) => (
+        <TableActions
+          handleDelete={handleDelete}
+          handleUpdate={handleUpdate}
+          {...params}
+        />
+      ),
+    },
+  ];
   return (
     <Layout>
       <section
@@ -148,12 +158,16 @@ export default function Atlethes() {
             paginationModel={paginationModel}
             onPaginationModelChange={setPaginationModel}
             pageSizeOptions={[5, 10, 25]}
-            checkboxSelection
-            onRowSelectionModelChange={onEdit}
-            disableMultipleRowSelection
+            checkboxSelection={false}
+            disableRowSelection={true}
           />
         </article>
       </section>
+      {editModal && (
+        <ModalTable>
+          <EditAthlete {...row} setEditModal={setEditModal} />
+        </ModalTable>
+      )}
     </Layout>
   );
 }

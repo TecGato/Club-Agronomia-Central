@@ -133,7 +133,7 @@ export default function News({ posts }) {
 }
 
 export async function getStaticProps() {
-  const res = await fetch('http://localhost:3000/api/posts');
+  const res = await fetch('http://localhost:3001/api/posts');
   const posts = await res.json();
   return {
     props: {

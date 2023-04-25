@@ -52,7 +52,7 @@ export default function Testimonials({ testimonials }) {
 }
 
 export async function getServerSideProps() {
-    const res = await axios.get('http://localhost:3000/api/testimonials');
+    const res = await axios.get('http://localhost:3001/api/testimonials');
     const testimonials = res.data;
     return {
         props: {

@@ -19,3 +19,5 @@ export * from './WarnDelete';
 export * from './FormNews';
 export * from './Forms/NewsModification';
 export * from './TableActions';
+export * from './ModalTable';
+export * from './EditAthlete';

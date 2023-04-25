@@ -14,10 +14,10 @@ export default function Quincho({ data, dataDates }) {
 
 export async function getStaticProps() {
   try {
-    const res = await fetch('http://localhost:3000/api/events');
+    const res = await fetch('http://localhost:3001/api/events');
     const data = await res.json();
 
-    const resDates = await fetch('http://localhost:3000/api/dateevents');
+    const resDates = await fetch('http://localhost:3001/api/dateevents');
     const dataDates = await resDates.json();
 
     return {
