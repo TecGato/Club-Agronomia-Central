@@ -17,10 +17,10 @@ export default function Quincho({ data, dataDates }) {
 
 export async function getStaticProps() {
   try {
-    const resd = await fetch('http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/events');
+    const resd = await fetch('http://localhost:3000/api/events');
     const datad = await resd.json();
 
-    const resDatesd = await fetch('http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/dateevents');
+    const resDatesd = await fetch('http://localhost:3000/api/dateevents');
     const dataDatesd = await resDatesd.json();
 
     return {

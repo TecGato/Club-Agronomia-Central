@@ -18,3 +18,4 @@ export * from './ButtonEdit';
 export * from './WarnDelete';
 export * from './FormNews';
 export * from './Forms/NewsModification';
+export * from './TableActions';

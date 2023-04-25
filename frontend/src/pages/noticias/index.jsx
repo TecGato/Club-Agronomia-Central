@@ -86,7 +86,7 @@ export default function Posts({ posts }) {
 }
 
 export async function getStaticProps() {
-  const res = await fetch('http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/posts');
+  const res = await fetch('http://localhost:3000/api/posts');
   const posts = await res.json();
   return {
     props: {

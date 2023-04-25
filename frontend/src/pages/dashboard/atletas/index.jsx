@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { DataGrid, GridToolbar } from '@mui/x-data-grid';
-import { Layout } from '@/components/Dashboard';
+import { Layout, TableActions } from '@/components/Dashboard';
 
 const columns = [
   { field: 'name', headerName: 'Nombre', width: 130 },
@@ -25,6 +25,13 @@ const columns = [
     type: 'number',
     width: 170,
   },
+  {
+    field: 'actions',
+    headerName: 'Acciones',
+    type: 'actions',
+    width: 150,
+    renderCell: (params) => <TableActions {...params} />,
+  },
 ];
 
 const rows = [
@@ -35,6 +42,7 @@ const rows = [
     email: 'XXXXX@gmail.com',
     contacto: '123456789',
     emergency: '123456789',
+    emergency_name: 'margarita rosa',
   },
   {
     id: 2,
@@ -43,6 +51,7 @@ const rows = [
     email: 'XXXXX@gmail.com',
     contacto: '123456789',
     emergency: '123456789',
+    emergency_name: 'margarita rosa',
   },
   {
     id: 3,
@@ -51,6 +60,7 @@ const rows = [
     email: 'XXXXX@gmail.com',
     contacto: '123456789',
     emergency: '123456789',
+    emergency_name: 'margarita rosa',
   },
   {
     id: 4,
@@ -59,6 +69,7 @@ const rows = [
     email: 'XXXXX@gmail.com',
     contacto: '123456789',
     emergency: '123456789',
+    emergency_name: 'margarita rosa',
   },
   {
     id: 5,
@@ -67,6 +78,7 @@ const rows = [
     email: 'XXXXX@gmail.com',
     contacto: '123456789',
     emergency: '123456789',
+    emergency_name: 'margarita rosa',
   },
   {
     id: 6,
@@ -75,6 +87,7 @@ const rows = [
     email: 'XXXXX@gmail.com',
     contacto: '123456789',
     emergency: '123456789',
+    emergency_name: 'margarita rosa',
   },
   {
     id: 7,
@@ -83,6 +96,7 @@ const rows = [
     email: 'XXXXX@gmail.com',
     contacto: '123456789',
     emergency: '123456789',
+    emergency_name: 'margarita rosa',
   },
   {
     id: 8,
@@ -91,6 +105,7 @@ const rows = [
     email: 'XXXXX@gmail.com',
     contacto: '123456789',
     emergency: '123456789',
+    emergency_name: 'margarita rosa',
   },
   {
     id: 9,
@@ -99,6 +114,7 @@ const rows = [
     email: 'XXXXX@gmail.com',
     contacto: '123456789',
     emergency: '123456789',
+    emergency_name: 'margarita rosa',
   },
 ];
 
@@ -118,7 +134,9 @@ export default function Atlethes() {
         className={`w-full min-h-screen flex flex-col justify-self-center justify-center items-center xl:w-11/12 sm:w-5/6 `}
       >
         <article>
-          <h1 className="text-5xl font-bold text-center">Administrar todos los atletas</h1>
+          <h1 className="text-5xl font-bold text-center">
+            Administrar todos los atletas
+          </h1>
         </article>
         <article className="flex flex-col gap-2 border bg-white border-neutral-300 shadow-[0px_3px_10px_2px_rgb(0_0_0_/_13%)] px-4 py-2 rounded-lg max-w-full h-2/3">
           <DataGrid
