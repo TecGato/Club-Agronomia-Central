@@ -1,15 +1,23 @@
 import { Layout } from '@/components/Dashboard';
 import image from '../../../../public/directives-img/directive.svg';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import FormDirective from '@/components/Dashboard/Forms/DirectiveForm';
 
 export default function SteeringCommittee({props}) {
-  const directives = props;
+  const [directives, setDirectives] = useState(props) ;
   const [edit, setEdit] = useState(false);
   const showModalModify = () => {
     setEdit(false);
   };
+  const getDirectors = async ()=>{
+    const res = await fetch('http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/directors');
+    const directives = await res.json();
+    return setDirectives(directives)
+    }
+    useEffect(()=>{
+      getDirectors()
+    },[directives])
 
   return (
     <Layout>

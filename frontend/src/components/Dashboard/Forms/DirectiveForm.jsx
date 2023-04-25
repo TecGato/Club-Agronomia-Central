@@ -4,7 +4,7 @@ export default function FormDirective({ edit, showModalModify }) {
   const handlerModify = async (props) => {
     try {
       const { data } = await axios.put(
-        `http://localhost:3001/api/directors/${props.id}`,
+        `http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/directors/${props.id}`,
         props
       );
       console.log(data.msg);
@@ -12,8 +12,8 @@ export default function FormDirective({ edit, showModalModify }) {
       console.log(error);
     }
   };
+
   const [props, setProps] = useState(edit);
-  console.log(props);
   const handlerChange = (event) => {
     setProps({
       ...props,
@@ -24,7 +24,7 @@ export default function FormDirective({ edit, showModalModify }) {
   const handlerSubmit = async (event) => {
     event.preventDefault();
     handlerModify(props);
-    window.location.reload();
+    showModalModify()
   };
   return (
     <div className="flex bg-gray-900/80 backdrop-blur-sm justify-center items-center overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
