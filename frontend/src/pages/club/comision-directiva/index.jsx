@@ -7,7 +7,7 @@ import image from "../../../../public/directives-img/directive.svg";
 export default function SteeringCommittee() {
   const [directives, setDirectives] = useState();
   useEffect(() => {
-    axios.get("http://localhost:3001/api/directors").then((response) => {
+    axios.get("hhttp://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/directors").then((response) => {
       return setDirectives(response.data);
     });
   }, [directives]);
