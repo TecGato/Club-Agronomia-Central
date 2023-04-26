@@ -42,7 +42,7 @@ export function FormNews({ showModalForm, handlerCreate, createTestimonial = fal
   const handlerSubmit = (event) => {
     event.preventDefault();
     handlerCreate(post);
-    window.location.reload();
+    showModalForm();
   };
 
   const disableButton = Object.values(post).some((p) => p === '')

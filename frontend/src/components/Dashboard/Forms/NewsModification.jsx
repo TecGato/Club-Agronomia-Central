@@ -38,7 +38,7 @@ export function FormModifyNews({ ShowModify, showModalModify, handlerModify, mod
   const handlerSubmit = async (event) => {
     event.preventDefault();
     handlerModify(post);
-    window.location.reload();
+    showModalModify()
   };
   
 const disableButton = post !== ShowModify ? false : true;
@@ -97,9 +97,8 @@ const disableButton = post !== ShowModify ? false : true;
             </>
           }
           <label className="text-gray-900 text-lg">Post:</label>
-          <input
+          <textarea
             name="description"
-            type="text"
             className="border w-full rounded-lg border-gray-200 p-3 text-sm"
             placeholder="Contenido"
             onChange={handlerChange}

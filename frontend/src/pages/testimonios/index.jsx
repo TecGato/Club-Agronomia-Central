@@ -1,18 +1,20 @@
 import { Layout, TestimonialItem } from '@/components/Page';
-import axios from 'axios';
 import usePagination from '@/components/Page/Pagination';
 import Link from 'next/link';
+import { useState } from 'react';
 
 export default function Testimonials({ testimonials }) {
     // paginado
+    const [testimonialsLocal, setTestiminialsLocal] = useState(testimonials.reverse())
+    
     const { currentItems, pages, currentPage, setCurrentPage } = usePagination(
-        testimonials,
+        testimonialsLocal,
         3
     );
-
+    
     return (
         <Layout
-            title={testimonials.title}
+            title={testimonialsLocal.title}
             image={
                 'https://fjwp.s3.amazonaws.com/blog/wp-content/uploads/2022/01/07110707/What-Your-Video-Interview-Background-Really-Says-About-You-2.jpg'
             }
@@ -51,8 +53,8 @@ export default function Testimonials({ testimonials }) {
 }
 
 export async function getServerSideProps() {
-    const res = await axios.get('http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/testimonials');
-    const testimonials = res.data;
+    const res = await fetch('http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/testimonials');
+    const testimonials = await res.json();
     return {
         props: {
             testimonials,
