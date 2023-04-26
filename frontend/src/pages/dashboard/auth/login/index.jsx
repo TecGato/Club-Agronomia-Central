@@ -92,7 +92,7 @@ export default function Login() {
 
         <span className="text-neutral-800">
           <Link
-            className="text-[#1b418a] hover:underline ml-1"
+            className="text-[#1b418a] dark:text-slate-100 hover:underline ml-1"
             href="/dashboard/auth/register"
           >
             ¿Olvidaste tu contraseña?
@@ -117,7 +117,7 @@ export default function Login() {
           Registrate
         </Link>
       </span>
-      <div className="relative h-px w-full my-9 bg-zinc-300 before:content-['O'] before:absolute before:top-1/2 before:left-1/2 before:-translate-x-2/4 before:-translate-y-2/4 before:bg-white before:px-4"></div>
+      <div className="relative h-px w-full my-9 bg-zinc-300 before:content-['O'] dark:before:bg-[#2d2c2d] dark:text-slate-100 before:absolute before:top-1/2 before:left-1/2 before:-translate-x-2/4 before:-translate-y-2/4 before:bg-white before:px-4"></div>
       <GoogleButton title="Iniciar sesión con Google" />
     </AuthLayout>
   );
