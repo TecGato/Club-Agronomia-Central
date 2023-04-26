@@ -39,12 +39,12 @@ export const Navbar = ({ openNavbar }) => {
               icon={icon}
             />
           ))}
-      <div className='mt-4 ml-2 w-fit h-6 rounded-[50%] bg-white dark:bg-transparent'>
-          <Darkmode />
-      </div>
+          <div className="mt-4 ml-2 w-fit h-6 rounded-[50%] bg-white dark:bg-transparent invert dark:invert-0">
+            <Darkmode />
+          </div>
         </div>
       </div>
-    
+
       <button
         className={`w-full h-12 flex gap-4 items-center rounded-lg px-2 group cursor-pointer transition-all duration-500 bg-[#1b418a] hover:bg-[#10306b] `}
       >
