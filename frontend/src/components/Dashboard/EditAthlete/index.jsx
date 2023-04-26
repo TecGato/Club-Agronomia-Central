@@ -1,13 +1,22 @@
-export const EditAthlete = ({
-  name,
-  discipline,
-  email,
-  contact,
-  emergency,
-  emergency_name,
-  emergency_email,
-  setEditModal,
-}) => {
+import { useForm } from '@/hooks';
+
+export const EditAthlete = ({ setEditModal, row }) => {
+  const {
+    name,
+    discipline,
+    email,
+    contact,
+    emergency,
+    emergency_name,
+    emergency_email,
+    formState,
+    onInputChange,
+  } = useForm(row);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(formState);
+  }
   return (
     <div className="min-w-min flex flex-col justify-start  items-start gap-4 border bg-white border-neutral-300 shadow-[0px_3px_10px_2px_rgb(0_0_0_/_13%)] px-4 py-2 rounded-lg ">
       <div className="w-full flex flex-row justify-between items-center">
@@ -35,7 +44,7 @@ export const EditAthlete = ({
       </div>
       <form
         className="w-full flex flex-col gap-4 xl:grid xl:grid-cols-3"
-        action=""
+        onSubmit={handleSubmit}
       >
         {/* ========= name ========= */}
         <div>
@@ -48,9 +57,11 @@ export const EditAthlete = ({
           <input
             type="text"
             id="name"
+            name="name"
             className="block w-full p-2.5 rounded-lg bg-[#eff2f7] border border-neutral-400 placeholder-neutral-500 text-neutral-800 outline-none
           focus:outline-none focus:border-[#3264c0] focus:ring-1 focus:ring-[#3264c0] transition-all duration-200"
             value={name}
+            onChange={onInputChange}
           />
         </div>
         {/* ========= discipline ========= */}
@@ -64,9 +75,11 @@ export const EditAthlete = ({
           <input
             type="text"
             id="discipline"
+            name="discipline"
             className="block w-full p-2.5 rounded-lg bg-[#eff2f7] border border-neutral-400 placeholder-neutral-500 text-neutral-800 outline-none
           focus:outline-none focus:border-[#3264c0] focus:ring-1 focus:ring-[#3264c0] transition-all duration-200"
             value={discipline}
+            onChange={onInputChange}
           />
         </div>
         {/* ========= email ========= */}
@@ -80,9 +93,11 @@ export const EditAthlete = ({
           <input
             type="text"
             id="email"
+            name="email"
             className="block w-full p-2.5 rounded-lg bg-[#eff2f7] border border-neutral-400 placeholder-neutral-500 text-neutral-800 outline-none
           focus:outline-none focus:border-[#3264c0] focus:ring-1 focus:ring-[#3264c0] transition-all duration-200"
             value={email}
+            onChange={onInputChange}
           />
         </div>
         {/* ========= contact ========= */}
@@ -96,9 +111,11 @@ export const EditAthlete = ({
           <input
             type="text"
             id="contact"
+            name="contact"
             className="block w-full p-2.5 rounded-lg bg-[#eff2f7] border border-neutral-400 placeholder-neutral-500 text-neutral-800 outline-none
           focus:outline-none focus:border-[#3264c0] focus:ring-1 focus:ring-[#3264c0] transition-all duration-200"
             value={contact}
+            onChange={onInputChange}
           />
         </div>
         {/* ========= emergency_name ========= */}
@@ -112,9 +129,11 @@ export const EditAthlete = ({
           <input
             type="text"
             id="emergency_name"
+            name="emergency_name"
             className="block w-full p-2.5 rounded-lg bg-[#eff2f7] border border-neutral-400 placeholder-neutral-500 text-neutral-800 outline-none
           focus:outline-none focus:border-[#3264c0] focus:ring-1 focus:ring-[#3264c0] transition-all duration-200"
             value={emergency_name}
+            onChange={onInputChange}
           />
         </div>
         {/* ========= emergency ========= */}
@@ -128,9 +147,11 @@ export const EditAthlete = ({
           <input
             type="text"
             id="emergency"
+            name="emergency"
             className="block w-full p-2.5 rounded-lg bg-[#eff2f7] border border-neutral-400 placeholder-neutral-500 text-neutral-800 outline-none
           focus:outline-none focus:border-[#3264c0] focus:ring-1 focus:ring-[#3264c0] transition-all duration-200"
             value={emergency}
+            onChange={onInputChange}
           />
         </div>
         {/* ========= emergency_email ========= */}
@@ -144,9 +165,11 @@ export const EditAthlete = ({
           <input
             type="text"
             id="emergency_email"
+            name="emergency_email"
             className="block w-full p-2.5 rounded-lg bg-[#eff2f7] border border-neutral-400 placeholder-neutral-500 text-neutral-800 outline-none
           focus:outline-none focus:border-[#3264c0] focus:ring-1 focus:ring-[#3264c0] transition-all duration-200"
             value={emergency_email}
+            onChange={onInputChange}
           />
         </div>
         <div className="w-full flex items-end">

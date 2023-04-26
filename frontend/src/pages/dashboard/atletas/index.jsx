@@ -165,7 +165,7 @@ export default function Atlethes() {
       </section>
       {editModal && (
         <ModalTable>
-          <EditAthlete {...row} setEditModal={setEditModal} />
+          <EditAthlete row={row} setEditModal={setEditModal} />
         </ModalTable>
       )}
     </Layout>
