@@ -10,6 +10,28 @@ const initialForm = {
   emergency_email: '',
 };
 
+const formValidations = {
+  name: [(value) => value.length > 0, 'El nombre es obligatorio'],
+  discipline: [(value) => value.length > 0, 'La disciplina es obligatoria'],
+  email: [
+    (value) => /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(value),
+    'El email es obligatorio',
+  ],
+  contact: [(value) => value.length > 0, 'El contacto es obligatorio'],
+  emergency: [
+    (value) => value.length > 0,
+    'El contacto de emergencia es obligatorio',
+  ],
+  emergency_name: [
+    (value) => value.length > 0,
+    'El nombre de la persona de emergencia es obligatorio',
+  ],
+  emergency_email: [
+    (value) => value.length > 0,
+    'El email de la persona de emergencia es obligatorio',
+  ],
+};
+
 export const CreateAthlete = ({ setCreateModal }) => {
   const {
     name,
@@ -29,7 +51,7 @@ export const CreateAthlete = ({ setCreateModal }) => {
   return (
     <div className="min-w-min flex flex-col justify-start  items-start gap-4 border bg-white border-neutral-300 shadow-[0px_3px_10px_2px_rgb(0_0_0_/_13%)] px-4 py-2 rounded-lg ">
       <div className="w-full flex flex-row justify-between items-center">
-        <p className="text-lg font-medium text-neutral-800">Editar Atleta</p>
+        <p className="text-lg font-medium text-neutral-800">Añadir Atleta</p>
         <div className="flex">
           <button
             type="button"
