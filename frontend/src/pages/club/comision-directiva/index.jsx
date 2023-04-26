@@ -19,31 +19,31 @@ export default function SteeringCommittee({props}) {
       }
     >
       {directives ? (
-        <div className="my-10 dark:bg-slate-800">
+        <div className="my-10">
           <div className=" ml-[5%] flex flex-col items-center text-center ">
-            <div className=" w-[40%] lg:w-[20%] bg-white shadow-lg items-center rounded-lg">
+            <div className=" w-[40%] lg:w-[20%] bg-white dark:bg-[#353434b4] dark:text-slate-100 shadow-lg items-center rounded-lg">
               <Image src={image} className="h-24 "/>
               <h1>{directives[0]?.name}</h1>
               <h2>{directives[0]?.position}</h2>
             </div>
-            <div className=" mt-8 w-[40%] lg:w-[20%] bg-white shadow-lg text-center rounded-lg">
+            <div className=" mt-8 w-[40%] lg:w-[20%] bg-white dark:bg-[#353434b4] dark:text-slate-100 shadow-lg text-center rounded-lg">
             <Image src={image} className="h-24"/>
               <h1>{directives[1]?.name}</h1>
               <h2>{directives[1]?.position}</h2>
             </div>
           </div>
-          <div className="flex justify-around">
-          <div className=" text-center mt-8 w-[30%] lg:w-[20%] bg-white shadow-lg rounded-lg">
+          <div className="lg:ml-14 flex justify-around">
+          <div className=" text-center mt-8 w-[30%] lg:w-[20%] bg-white dark:bg-[#353434b4] dark:text-slate-100 shadow-lg rounded-lg">
           <Image src={image} className="h-24"/>
             <h1>{directives[2]?.name}</h1>
             <h2>{directives[2]?.position}</h2>
           </div>
-          <div className=" text-center mt-8 w-[30%] lg:w-[20%] bg-white shadow-lg rounded-lg ">
+          <div className=" text-center mt-8 w-[30%] lg:w-[20%] bg-white dark:bg-[#353434b4] dark:text-slate-100 shadow-lg rounded-lg ">
           <Image src={image} className="h-24"/>
             <h1>{directives[3]?.name}</h1>
             <h2>{directives[3]?.position}</h2>
           </div>
-          <div className=" text-center mt-8 w-[30%] lg:w-[20%] bg-white shadow-lg rounded-lg">
+          <div className=" text-center mt-8 w-[30%] lg:w-[20%] bg-white dark:bg-[#353434b4] dark:text-slate-100 shadow-lg rounded-lg">
           <Image src={image} className="h-24 "/>
             <h1>{directives[4]?.name}</h1>
             <h2>{directives[4]?.position}</h2>

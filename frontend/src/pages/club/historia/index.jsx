@@ -26,7 +26,7 @@ export default function History() {
                         </p>
                     ) : null}
                     <ul className="grid grid-cols-9 gap-4 justify-center flex-nowrap">
-                        <button className="text-5xl" onClick={handlerPrev}>
+                        <button className="text-5xl dark:text-slate-100" onClick={handlerPrev}>
                             {'<'}
                         </button>
                         {/* ---------------------------------------Boton 1------------------------------------------------ */}
@@ -162,7 +162,7 @@ export default function History() {
                                 </p>
                             ) : null}
                         </div>
-                        <button className="text-5xl" onClick={handlerNext}>
+                        <button className="text-5xl dark:text-slate-100" onClick={handlerNext}>
                             {'>'}
                         </button>
                     </ul>
@@ -174,17 +174,17 @@ export default function History() {
                         {clickedButton === '1' && (
                             <div>
                                 <div className="md:flex">
-                                    <p className="text-justify text-gray-700 m-1 p-2 md:p-4 md:items-center lg:p-6 xl:p-8">
+                                    <p className="text-justify dark:text-slate-100 text-gray-700 m-1 p-2 md:p-4 md:items-center lg:p-6 xl:p-8">
                                         En un cuartito de la calle Chorroarín 632, alrededor de una mesa de pino y a la luz de una lámpara a kerosene, un grupo de jóvenes del barrio se reunieron el 11 de diciembre de 1928 para fundar un club deportivo.
                                     </p>
-                                    <p className="text-justify text-gray-700 m-1 p-2 md:p-4 md:items-center lg:p-6 xl:p-8">
+                                    <p className="text-justify dark:text-slate-100 text-gray-700 m-1 p-2 md:p-4 md:items-center lg:p-6 xl:p-8">
                                         Así nació el Club Social y Deportivo Agronomía Central. Durante dos años, el grupo fundador llevó con orgullo el prestigio de la institución por todas las canchas de fútbol improvisadas en los terrenos baldíos de la ciudad.
                                     </p>
-                                    <p className="text-justify text-gray-700 m-1 p-2 md:p-4 md:items-center lg:p-6 xl:p-8">
+                                    <p className="text-justify dark:text-slate-100 text-gray-700 m-1 p-2 md:p-4 md:items-center lg:p-6 xl:p-8">
                                         En 1930, se fusionaron con el Club Villa Modelo, y para dirigir los destinos de la nueva entidad, se eligió a la Comisión Directiva integrada por los señores Mirabelli, Collazo, Gama de Santis, Repetto, Plácido, Felice, Staricanelli, Turconi, Gentile, Florentino, Bruneli, Borghi y Amore.
                                     </p>
                                 </div>
-                                <div className="md:grid md:grid-cols-2 gap-6 items-center text-gray-700">
+                                <div className="md:grid md:grid-cols-2 gap-6 items-center dark:text-slate-100 text-gray-700">
                                     <Image
                                         src={HistoryPic1}
                                         alt="PicAlgoHitoria1"
@@ -201,7 +201,7 @@ export default function History() {
                         {/* <h1 className='text-lg underline mt-2'>La casa propia:</h1> */}
                         {clickedButton === '2' && (
                             <div className="">
-                                <p className="text-justify text-gray-700 m-1 p-2 md:p-4 md:items-center lg:p-6 xl:p-8">
+                                <p className="text-justify dark:text-slate-100 text-gray-700 m-1 p-2 md:p-4 md:items-center lg:p-6 xl:p-8">
                                     Hasta 1933, el club ocupó una casita en la esquina de las calles Chorroarín y Andonaegui. Luego, otros deportes comenzaron a seducir a los asociados y poco a poco el baloncesto y el tenis fueron desplazando al fútbol. Al mismo tiempo, la actividad social en la institución ganó impulso con la incorporación de las primeras socias. El local pronto se quedó pequeño y fue necesario mudarse a la finca de la calle Bucareli 964, y luego a la de Bauness 931. La Comisión Directiva que asumió el cargo en 1930 tras la fusión con el Club Villa Modelo tomó una decisión importante en 1936: adquirir la casa propia. Las autoridades del club compraron un amplio terreno en la calle Bauness 958 y construyeron un edificio que constaba de dos salas, donde se instalaron las oficinas de la secretaría y la biblioteca; un amplio hall en el que se llevaban a cabo los juegos de salón, y una habitación larga donde se encontraban los billares.
                                 </p>
                             </div>
@@ -214,7 +214,7 @@ export default function History() {
                                     alt="PicNuevasInst"
                                     className=""
                                 />
-                                <p className="text-justify text-gray-700">
+                                <p className="text-justify dark:text-slate-100 text-gray-700">
                                     En cuanto a la construcción, habían preparado una gran terraza que se utilizaba como buffet en los días cálidos y templados. Se habían habilitado canchas de básquet, tenis, pelota y bochas en tres lotes contiguos. Además, las instalaciones propias incluían dos amplias pistas de baile y en ese momento se estaba proyectando una cancha cerrada de pelota que también serviría como salón de baile. Durante ese período, la comisión directiva estaba encabezada por el señor Alfonso Rodríguez, con el secretario Carlos Pozzi, el prosecretario Zamora Casas y el tesorero Osvaldo Borghi como sus colaboradores
                                 </p>
 
@@ -233,7 +233,7 @@ export default function History() {
                                         alt="PicEquipo"
                                         className=""
                                     />
-                                    <figcaption className="text-justify text-gray-700">
+                                    <figcaption className="text-justify dark:text-slate-100 text-gray-700">
                                         A lo largo de los años en el club fueron desarrollándose distintas disciplinas, entre las que se destacan dos en especial: el básquet, donde el club llegó a jugar en la liga de la capital, y el fútbol.
                                     </figcaption>
                                 </figure>
@@ -243,7 +243,7 @@ export default function History() {
                                         alt="PicEquipo2"
                                         className=""
                                     />
-                                    <figcaption className="text-justify text-gray-700">
+                                    <figcaption className="text-justify dark:text-slate-100 text-gray-700">
                                         El club también se caracterizó por celebrar los carnavales con distintas murgas de los barrios y sus famosos campeonatos de baile. Además, se organizaban torneos de papi fútbol, donde se inscribían equipos de las cercanías.
                                     </figcaption>
                                 </figure>
@@ -251,7 +251,7 @@ export default function History() {
                         )}
                         {/* <h1 className='text-lg underline'>Inicio del Baby Futbol</h1> */}
                         {clickedButton === '5' && (
-                            <div className="flex flex-col items-center text-gray-700 gap-6 m-1 p-2 md:p-4 md:items-center lg:p-6 xl:p-8">
+                            <div className="flex flex-col items-center text-gray-700 dark:text-slate-100 gap-6 m-1 p-2 md:p-4 md:items-center lg:p-6 xl:p-8">
                                 <p>
                                     En 1983, "el turco" Balouz y Jose Rucci se acercaron al club con la idea de comenzar a jugar al Baby Fútbol, donde participarían chicos de entre 6 y 13 años. A partir de ahí, se dio inicio a lo que hoy continúa de manera ininterrumpida después de 40 años.
                                 </p>
@@ -263,13 +263,13 @@ export default function History() {
                             <div className="md:grid grid-cols-2 gap-6 justify-items-center items-center m-1 p-2 md:p-4 md:items-center lg:p-6 xl:p-8">
                                 <figure>
                                     <Image src={HistoryPic11} alt="PicObras" />
-                                    <figcaption className="text-justify text-gray-700">
+                                    <figcaption className="text-justify dark:text-slate-100 text-gray-700">
                                         Juntada de un vagón de ropa para los afectados por la inundación en Santa Fe
                                     </figcaption>
                                 </figure>
                                 <figure>
                                     <Image src={HistoryPic13} alt="PicObras" />
-                                    <figcaption className="text-justify text-gray-700">
+                                    <figcaption className="text-justify dark:text-slate-100 text-gray-700">
                                         Tradición del partido de fin de año
                                         entre solteros y casados.
                                     </figcaption>
@@ -278,7 +278,7 @@ export default function History() {
                         )}
                         {/* <h1 className='text-lg underline'>En la Actualidad:</h1> */}
                         {clickedButton === '7' && (
-                            <p className="text-justify text-gray-700 m-1 p-2 md:p-4 md:items-center lg:p-6 xl:p-8">
+                            <p className="text-justify dark:text-slate-100 text-gray-700 m-1 p-2 md:p-4 md:items-center lg:p-6 xl:p-8">
                                 Actualmente, el club ha crecido notablemente y ofrece no solo fútbol sino también ajedrez, touch ball y taekwondo. Además, cuenta con un quincho con capacidad para 50 personas, un buffet económico y un salón de fiestas para 120 personas. Todo esto no hubiera sido posible sin la ayuda constante de las diferentes generaciones que han pasado por el club, siempre trabajando sin recibir compensación para lograr un crecimiento constante. Gracias a esto, hoy en día somos lo que somos.
                             </p>
                         )}

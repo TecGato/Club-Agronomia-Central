@@ -4,11 +4,11 @@ import Link from 'next/link';
 export default function Login() {
   return (
     <AuthLayout>
-      <h1 className="font-medium text-neutral-800 text-lg">
+      <h1 className="font-medium text-neutral-800 dark:text-slate-100  text-lg">
         Inicia sesión con tu cuenta
       </h1>
       <GoogleButton title="Iniciar sesion con google" />
-      <span className="text-sm text-neutral-700">o continua con tu correo</span>
+      <span className="text-sm text-neutral-700 dark:text-slate-200">o continua con tu correo</span>
       <form className="w-full">
         <InputForm
           title={'Correo Electronico'}
@@ -60,16 +60,16 @@ export default function Login() {
         <Link href="/dashboard">
           <button
             type="button"
-            className="text-white bg-[#1b418a] hover:bg-[#1b418a]/90 outline-none rounded-lg active:scale-95 text-lg py-3 w-full text-center inline-flex justify-center items-center border border-neutral-700 relative transition-all duration-200 "
+            className="text-white bg-[#1b418a] dark:bg-[#171717dc] dark:hover:bg-[#000000] hover:bg-[#1b418a]/90 outline-none rounded-lg active:scale-95 text-lg py-3 w-full text-center inline-flex justify-center items-center border border-neutral-700 relative transition-all duration-200 "
           >
             Iniciar Sesion
           </button>
         </Link>
       </form>
-      <span className="text-neutral-800">
+      <span className="text-neutral-800 dark:text-slate-100">
         Aun no tienes una cuenta?
         <Link
-          className="text-[#1b418a] hover:underline ml-1"
+          className="text-[#1b418a] dark:text-slate-100 hover:underline ml-1"
           href="/dashboard/auth/register"
         >
           Registrarse

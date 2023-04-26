@@ -23,7 +23,7 @@ export default function Contact() {
       title="Contactanos"
       image="https://images.unsplash.com/photo-1516387938699-a93567ec168e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80"
     >
-      <div className="  m-8 text-center p-8 lg:p-24 bg-[#1a2957e5] lg:flex  lg:items-center lg:mx-0 lg:flex-row shadow-lg  text-white">
+      <div className="  m-8 text-center p-8 lg:p-24 bg-[#1a2957e5] dark:bg-transparent lg:flex  lg:items-center lg:mx-0 lg:flex-row shadow-lg  text-white">
         <div className="lg:w-[50%]  mb-6 lg:ml-8 flex flex-col gap-8">
           <a href="https://goo.gl/maps/KxngTTmur7RhWZNdA" target="_blank">
             <div className="flex gap-2 ">
@@ -60,7 +60,7 @@ export default function Contact() {
           <form  action="https://formsubmit.co/Franco.elvis0606@gmail.com" method="POST" className="flex lg:w-[50%] flex-col gap-4 ">
             <input
               type="text"
-              className="bg-[#191c5e92]  p-2"
+              className="bg-[#191c5e92] dark:bg-[#353434b4] p-2"
               placeholder="Nombre"
               name='Nombre'
               value={message.Nombre}
@@ -68,13 +68,13 @@ export default function Contact() {
             />
             <input
               type="text"
-              className="bg-[#191c5e92] p-2"
+              className="bg-[#191c5e92] dark:bg-[#353434b4] p-2"
               placeholder="Email"
               name='email'
             />
             <input
               type="text"
-              className="bg-[#191c5e92] p-2"
+              className="bg-[#191c5e92] dark:bg-[#353434b4] p-2"
               placeholder="Asunto"
               name='Asunto'
               value={message.Asunto}
@@ -82,12 +82,12 @@ export default function Contact() {
             />
             <textarea
               name="Mensaje"
-              className="bg-[#191c5e92] p-2"
+              className="bg-[#191c5e92] dark:bg-[#353434b4] p-2"
               placeholder="Mensaje"
               cols="20"
               rows="5"
               />
-            <button className=" border-solid border-2 border-blue-700 py-3 px-10 text-white">
+            <button className=" border-solid border-2 border-blue-700 dark:border-slate-200 py-3 px-10 text-white">
               Enviar
             </button>
             <input type="hidden" name="_captcha" value="false" />

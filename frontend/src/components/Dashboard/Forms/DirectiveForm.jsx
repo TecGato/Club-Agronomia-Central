@@ -28,7 +28,7 @@ export default function FormDirective({ edit, showModalModify }) {
   };
   return (
     <div className="flex bg-gray-900/80 backdrop-blur-sm justify-center items-center overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
-      <div className="rounded-xl border bg-gray-50 w-[400px] border-gray-100 p-4 shadow-xl">
+      <div className="rounded-xl border bg-gray-50 w-[400px] dark:bg-[#171717] dark:border-none border-gray-100 p-4 shadow-xl">
         <div className="flex">
           <button
             type="button"
@@ -51,17 +51,17 @@ export default function FormDirective({ edit, showModalModify }) {
           </button>
         </div>
         <form className="flex flex-col gap-2" onSubmit={handlerSubmit}>
-          <label className="text-gray-900 text-lg">Nombre:</label>
+          <label className="text-gray-900 text-lg dark:text-slate-100">Nombre:</label>
           <input
             name="name"
             type="text"
-            className="border w-full rounded-lg border-gray-200 p-3 text-sm"
+            className="border w-full rounded-lg dark:bg-[#1F2123] dark:border-none border-gray-200 p-3 text-sm"
             placeholder="Nombre"
             onChange={handlerChange}
             value={props.name}
           />
-          <label className="text-gray-900 text-lg">Cargo:</label>
-          <label className="text-gray-900 text-lg">{props.position}</label>
+          <label className="text-gray-900 dark:text-slate-100 text-lg">Cargo:</label>
+          <label className="text-gray-900 dark:text-slate-100 text-lg">{props.position}</label>
 
           <button
             type="submit"

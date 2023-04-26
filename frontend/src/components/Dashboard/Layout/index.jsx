@@ -40,7 +40,7 @@ export const Layout = ({ children }) => {
           </button>
         </div>
       </header>
-      <main className="grid grid-cols-1 lg:grid-cols-[15rem_1fr] bg-[#f1f5f9]">
+      <main className="grid grid-cols-1 lg:grid-cols-[15rem_1fr] bg-[#f1f5f9] dark:bg-[#171717] ">
         <Navbar openNavbar={openNavbar} handleNavbar={handleNavbar} />
         <div className="w-full grid lg:max-h-screen lg:overflow-y-auto">
           {children}
