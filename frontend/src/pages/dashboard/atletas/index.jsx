@@ -7,7 +7,7 @@ import {
   ModalTable,
   TableActions,
 } from '@/components/Dashboard';
-import { useTableActions } from '@/hooks';
+import { useAthletes, useTableActions } from '@/hooks';
 
 export default function Athletes({ athletes }) {
   const [editModal, setEditModal] = useState(false);
@@ -16,7 +16,8 @@ export default function Athletes({ athletes }) {
     pageSize: 10,
     page: 0,
   });
-  const { row, handleDelete, handleUpdate } = useTableActions(setEditModal);
+  const { handlerDelete } = useAthletes()
+  const { row, handleDelete, handleUpdate } = useTableActions(setEditModal, handlerDelete);
 
   const columns = [
     { field: 'name', headerName: 'Nombre', width: 130 },

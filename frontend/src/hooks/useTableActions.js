@@ -1,21 +1,20 @@
-import { useState } from "react"
+import { useState } from 'react';
 
-export const useTableActions = (setEditModal) => {
-    const [row, setRow] = useState({})
+export const useTableActions = (setEditModal, handlerDelete) => {
+  const [row, setRow] = useState({});
 
-    const handleDelete = (r) => {
-        // TODO: Delete row
-    }
-    const handleUpdate = (r) => {
-        // TODO: Update row
-        setRow(r)
-        setEditModal(true)
-    }
+  const handleDelete = (athlete) => {
+    handlerDelete(athlete.id);
+  };
+  const handleUpdate = (r) => {
+    setRow(r);
+    setEditModal(true);
+  };
 
-    return {
-        row,
+  return {
+    row,
 
-        handleDelete,
-        handleUpdate
-    }
-}
+    handleDelete,
+    handleUpdate,
+  };
+};
