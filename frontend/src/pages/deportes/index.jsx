@@ -2,7 +2,7 @@ import { Layout } from '@/components/Page';
 
 export default function Sports() {
     return (
-        <Layout>
+        <Layout title={'Deportes'}>
             <div className="m-4 flex flex-wrap justify-center relative">
                 <img
                     src="https://img.freepik.com/fotos-premium/retrato-dinamico-joven-deportista-entrenando-corriendo-aislada-sobre-fondo-morado-neon-luces-mixtas_155003-45926.jpg?size=626&ext=jpg&ga=GA1.1.1228025790.1681327921&semt=sph"
@@ -11,12 +11,12 @@ export default function Sports() {
                     className="w-full z-0"
                 />
 
-                <div className="overflow-hidden shadow-lg m-1 max-w-xs sm:-translate-y-48 sm:z-10 bg-white">
-                    <h3 className="text-lg font-bold text-gray-800 px-5 pt-5 pb-3">
+                <div className="overflow-hidden shadow-lg m-1 max-w-xs sm:-translate-y-48 sm:z-10 bg-white dark:bg-[#353434]">
+                    <h3 className="text-lg font-bold text-gray-800 dark:text-white px-5 pt-5 pb-3">
                         Ajedrez
                     </h3>
                     <div className="border-2 border-blue-600 mb-8 mx-5 w-14"></div>
-                    <p className="text-base text-gray-700 leading-6 px-5 pt-0">
+                    <p className="text-base text-gray-700 dark:text-slate-300 leading-6 px-5 pt-0">
                         Es un juego de mesa donde dos personas mueven las fichas en un tablero para intentar capturar al rey del oponente.
                     </p>
                     <img
@@ -27,12 +27,12 @@ export default function Sports() {
                     />
                 </div>
 
-                <div className="overflow-hidden shadow-lg m-1 max-w-xs sm:-translate-y-48 sm:z-10 bg-white">
-                    <h3 className="text-lg font-bold text-gray-800 px-5 pt-5 pb-3">
+                <div className="overflow-hidden shadow-lg m-1 max-w-xs sm:-translate-y-48 sm:z-10 bg-white dark:bg-[#353434]">
+                    <h3 className="text-lg font-bold text-gray-800 dark:text-white px-5 pt-5 pb-3">
                         Centro de Entrenamiento
                     </h3>
                     <div className="border-2 border-blue-600 mb-8 mx-5 w-14"></div>
-                    <p className="text-base text-gray-700 leading-6 px-5 pt-0">
+                    <p className="text-base text-gray-700 dark:text-slate-300 leading-6 px-5 pt-0">
                         Aprendé cosas nuevas y practicá habilidades para mejorar tu salud física y bienestar emocional.
                     </p>
                     <img
@@ -43,12 +43,12 @@ export default function Sports() {
                     />
                 </div>
 
-                <div className="overflow-hidden shadow-lg m-1 max-w-xs sm:-translate-y-48 sm:z-10 bg-white">
-                    <h3 className="text-lg font-bold text-gray-800 px-5 pt-5 pb-3">
+                <div className="overflow-hidden shadow-lg m-1 max-w-xs sm:-translate-y-48 sm:z-10 bg-white dark:bg-[#353434]">
+                    <h3 className="text-lg font-bold text-gray-800 dark:text-white px-5 pt-5 pb-3">
                         Baby Futbol
                     </h3>
                     <div className="border-2 border-blue-600 mb-8 mx-5 w-14"></div>
-                    <p className="text-base text-gray-700 leading-6 px-5 pt-0">
+                    <p className="text-base text-gray-700 dark:text-slate-300 leading-6 px-5 pt-0">
                         Deporte donde los niños juegan al fútbol en equipo con
                         reglas y tamaños de cancha adecuados para su edad
                     </p>
@@ -60,12 +60,12 @@ export default function Sports() {
                     />
                 </div>
 
-                <div className="overflow-hidden shadow-lg m-1 max-w-xs -translate-y-20 z-10 bg-white">
-                    <h3 className="text-lg font-bold text-gray-800 px-5 pt-5 pb-3">
+                <div className="overflow-hidden shadow-lg m-1 max-w-xs -translate-y-20 z-10 bg-white dark:bg-[#353434]">
+                    <h3 className="text-lg font-bold text-gray-800 dark:text-white px-5 pt-5 pb-3">
                         Futsal
                     </h3>
                     <div className="border-2 border-blue-600 mb-8 mx-5 w-14"></div>
-                    <p className="text-base text-gray-700 leading-6 px-5 pt-0">
+                    <p className="text-base text-gray-700 dark:text-slate-300 leading-6 px-5 pt-0">
                         Un deporte parecido al fútbol, pero con una cancha más chica y menos jugadores, lo que hace el juego más rápido y emocionante.
                     </p>
                     <img
@@ -76,12 +76,12 @@ export default function Sports() {
                     />
                 </div>
 
-                <div className="overflow-hidden shadow-lg m-1 max-w-xs sm:-translate-y-20 sm:z-10 bg-white">
-                    <h3 className="text-lg font-bold text-gray-800 px-5 pt-5 pb-3">
+                <div className="overflow-hidden shadow-lg m-1 max-w-xs sm:-translate-y-20 sm:z-10 bg-white dark:bg-[#353434]">
+                    <h3 className="text-lg font-bold text-gray-800 dark:text-white px-5 pt-5 pb-3">
                         Futsal Femenino
                     </h3>
                     <div className="border-2 border-blue-600 mb-8 mx-5 w-14"></div>
-                    <p className="text-base text-gray-700 leading-6 px-5 pt-0">
+                    <p className="text-base text-gray-700 dark:text-slate-300 leading-6 px-5 pt-0">
                         Deporte muy similar al fútbol en el que las mujeres juegan en un espacio más reducido que una cancha convencional y con menos jugadoras.
                     </p>
                     <img
@@ -92,12 +92,12 @@ export default function Sports() {
                     />
                 </div>
 
-                <div className="overflow-hidden shadow-lg m-1 max-w-xs sm:-translate-y-20 sm:z-10 bg-white">
-                    <h3 className="text-lg font-bold text-gray-800 px-5 pt-5 pb-3">
+                <div className="overflow-hidden shadow-lg m-1 max-w-xs sm:-translate-y-20 sm:z-10 bg-white dark:bg-[#353434]">
+                    <h3 className="text-lg font-bold text-gray-800 dark:text-white px-5 pt-5 pb-3">
                         Taekwondo
                     </h3>
                     <div className="border-2 border-blue-600 mb-8 mx-5 w-14"></div>
-                    <p className="text-base text-gray-700 leading-6 px-5 pt-0">
+                    <p className="text-base text-gray-700 dark:text-slate-300 leading-6 px-5 pt-0">
                         Deporte de combate en el que se usan patadas y golpes
                         con las manos para defenderse y ganar puntos en un
                         torneo.

@@ -1,22 +1,30 @@
 import { Layout } from '@/components/Dashboard';
 import image from '../../../../public/directives-img/directive.svg';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import FormDirective from '@/components/Dashboard/Forms/DirectiveForm';
 
-export default function SteeringCommittee({props}) {
-  const directives = props;
+export default function SteeringCommittee() {
+  const [directives, setDirectives] = useState() ;
   const [edit, setEdit] = useState(false);
   const showModalModify = () => {
     setEdit(false);
   };
+  const getDirectors = async ()=>{
+    const res = await fetch('http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/directors');
+    const directives = await res.json();
+    return setDirectives(directives)
+    }
+    useEffect(()=>{
+      getDirectors()
+    },[directives])
 
   return (
     <Layout>
       {directives ? (
         <div className="my-10">
           <div className=" ml-[5%] flex flex-col items-center text-center ">
-            <div className=" w-[20%]  bg-white shadow-lg items-center rounded-lg">
+            <div className=" w-[20%]  bg-white dark:bg-[#1F2123] shadow-lg items-center rounded-lg">
               <Image src={image} alt={directives[0]?.name} className="h-24 " />
               <h1>{directives[0]?.name}</h1>
               <h2>{directives[0]?.position}</h2>
@@ -57,7 +65,7 @@ export default function SteeringCommittee({props}) {
             </button>
               </div>
             </div>
-            <div className=" mt-8 w-[20%] bg-white shadow-lg rounded-lg">
+            <div className=" mt-8 w-[20%] bg-white dark:bg-[#1F2123] shadow-lg rounded-lg">
               <Image src={image} alt={directives[1]?.name} className="h-24" />
               <h1>{directives[1]?.name}</h1>
               <h2>{directives[1]?.position}</h2>
@@ -100,7 +108,7 @@ export default function SteeringCommittee({props}) {
             </div>
           </div>
           <div className="flex justify-around">
-            <div className=" text-center mt-8 w-[20%] bg-white shadow-lg rounded-lg ml-[5%]">
+            <div className=" text-center mt-8 w-[20%] bg-white dark:bg-[#1F2123] shadow-lg rounded-lg ml-[5%]">
               <Image src={image} alt={directives[2]?.name} className="h-24" />
               <h1>{directives[2]?.name}</h1>
               <h2>{directives[2]?.position}</h2>
@@ -141,7 +149,7 @@ export default function SteeringCommittee({props}) {
             </button>
               </div>
             </div>
-            <div className=" text-center mt-8 w-[20%] bg-white shadow-lg rounded-lg  ml-[5%]">
+            <div className=" text-center mt-8 w-[20%] bg-white dark:bg-[#1F2123] shadow-lg rounded-lg  ml-[5%]">
               <Image src={image} alt={directives[3]?.name} className="h-24" />
               <h1>{directives[3]?.name}</h1>
               <h2>{directives[3]?.position}</h2>
@@ -182,7 +190,7 @@ export default function SteeringCommittee({props}) {
             </button>
               </div>
             </div>
-            <div className=" text-center mt-8 w-[20%] bg-white shadow-lg rounded-lg ml-[5%]">
+            <div className=" text-center mt-8 w-[20%] bg-white dark:bg-[#1F2123] shadow-lg rounded-lg ml-[5%]">
               <Image src={image} alt={directives[4]?.name} className="h-24 " />
               <h1>{directives[4]?.name}</h1>
               <h2>{directives[4]?.position}</h2>
@@ -238,14 +246,3 @@ export default function SteeringCommittee({props}) {
   );
 }
 
-export async function getStaticProps() {
-  const res = await fetch('http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/directors');
-  const props = await res.json();
-    return {
-        props: {
-          props
-        },
-      revalidate: 3600,
-    }
-    
-}
