@@ -1,14 +1,15 @@
 import { Layout, NewsPost } from '@/components/Page';
 import { useState, useMemo } from 'react';
 import usePagination from '../../components/Page/Pagination';
-import { NewsFilter } from '@/components/Page';
+// import { NewsFilter } from '@/components/Page';
 import Link from "next/link";
+import { useFilter } from '@/components/Page';
 
 
 export default function Posts({ posts }) {
-  const [items, setItems] = useState(posts);
+  const [filteredItems, setFilter] = useFilter(posts);
   const { currentItems, pages, currentPage, setCurrentPage } = usePagination(
-    items,
+    filteredItems,
     4
   );
   
@@ -20,11 +21,17 @@ export default function Posts({ posts }) {
       title="Últimas Noticias"
       image="https://img.freepik.com/foto-gratis/gente-tiro-medio-corriendo-juntos_23-2149037629.jpg?size=626&ext=jpg&ga=GA1.2.1228025790.1681327921&semt=sph"
     >
-      <div className='m-4'>
-        <div className='flex flex-wrap justify-center'>
+      <div className='m-4 relative'>
+        <input
+          type="text"
+          placeholder="Buscar noticias..."
+          onChange={(e) => setFilter(e.target.value)}
+          className="absolute top-0 right-0 max-w-xs px-4 py-2 border-gray-100 rounded-md hover:bg-sky-100 focus:outline-none focus:ring focus:ring-indigo-300"
+        />
 
+        <div className='mt-7 pt-7 flex flex-wrap justify-center'>
           <Link href={`/noticias/${mainNews._id}`} key={mainNews._id}>
-            <div className='sm:grid sm:grid-cols-2 sm:max-h-72 shadow-md overflow-hidden cursor-pointer hover:scale-105 transition ease-in-out mb-5 p-5'>
+            <div key={mainNews._id} className='sm:grid sm:grid-cols-2 sm:max-h-72 shadow-md overflow-hidden cursor-pointer hover:scale-105 transition ease-in-out mb-5 p-5'>
               <img
                 src={mainNews.picture.secure_url}
                 alt={mainNews.title}
@@ -45,7 +52,7 @@ export default function Posts({ posts }) {
           {otherNews.map((news) => {
             return (
               <Link href={`/noticias/${news._id}`} key={news._id}>
-                <div className='max-w-xs m-1 shadow-md overflow-hidden cursor-pointer hover:scale-105 transition ease-in-out p-5'>
+                <div key={news._id} className='max-w-xs m-1 shadow-md overflow-hidden cursor-pointer hover:scale-105 transition ease-in-out p-5'>
                   <img
                     src={news.picture.secure_url}
                     alt={news.title}
@@ -79,10 +86,6 @@ export default function Posts({ posts }) {
           </button>
         ))}
       </div>
-
-
-      <div className="flex flex-col justify-center "></div>
-
     </Layout>
   );
 }
