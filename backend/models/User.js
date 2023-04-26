@@ -9,7 +9,7 @@ const userSchema = new mongoose.Schema({
     type: String,
     lowercase: true,
     required: true,
-    unique:true,
+    unique: true,
   },
   password: {
     type: String,
@@ -26,7 +26,7 @@ const userSchema = new mongoose.Schema({
   role: {
     type: String,
     required: true,
-    enum: ['ADMIN_ROLE', 'USER_ROLE'],
+    enum: ['ADMIN_ROLE', 'DEV_ROLE'],
   },
   createdAt: {
     type: Date,

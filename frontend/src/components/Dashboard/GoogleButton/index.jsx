@@ -1,9 +1,10 @@
 import React from 'react';
 
-export const GoogleButton = ({onClick, title}) => {
+export const GoogleButton = ({ onClick, title }) => {
   return (
     <button
       type="button"
+      onClick={onClick}
       className="text-white dark:bg-[#171717dc] dark:border-none dark:hover:bg-[#000000] bg-[#1b418a] hover:bg-[#1b418a]/90 focus:ring-4 focus:outline-none focus:ring-[#1b418a]/50 rounded-lg text-lg py-3 w-full text-center inline-flex justify-center items-center border border-[#1b418a] relative my-3"
     >
       <svg

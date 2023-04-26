@@ -15,9 +15,9 @@ class Server {
     this.incomesPath = '/api/incomes';
     this.matchesPath = '/api/matches';
     this.postsPath = '/api/posts';
+    this.productsPath = '/api/products';
     this.subscriptionsPath = '/api/subscriptions';
     this.testimonialsPath = '/api/testimonials';
-    this.usersPath = '/api/users';
     // Connect to Data Base
     this.connectToDB();
     // Middlewares
@@ -53,9 +53,9 @@ class Server {
     this.app.use(this.incomesPath, require('../routes/incomes'));
     this.app.use(this.matchesPath, require('../routes/matches'));
     this.app.use(this.postsPath, require('../routes/posts'));
+    this.app.use(this.productsPath, require('../routes/products'));
     this.app.use(this.subscriptionsPath, require('../routes/subscriptions'));
     this.app.use(this.testimonialsPath, require('../routes/testimonials'));
-    this.app.use(this.usersPath, require('../routes/users'));
   }
 
   listen() {

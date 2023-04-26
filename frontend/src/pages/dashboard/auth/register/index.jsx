@@ -4,11 +4,9 @@ import { AuthLayout, GoogleButton, InputForm } from '@/components/Dashboard';
 export default function Register() {
   return (
     <AuthLayout>
-      <h1 className="font-medium text-neutral-800 text-lg">
-        Registrate con tu cuenta
+      <h1 className="text-3xl font-semibold text-neutral-800 my-7">
+        Registrá tu cuenta
       </h1>
-      <GoogleButton title="Registrarme con google" />
-      <span className="text-sm text-neutral-700">o continua con tu correo</span>
       <form className="w-full">
         <InputForm
           title={'Nombre'}
@@ -38,7 +36,7 @@ export default function Register() {
           placeHolder={'John Doe'}
         />
         <InputForm
-          title={'Correo Electronico'}
+          title={'Correo Electrónico'}
           type={'email'}
           icon={
             <svg
@@ -118,18 +116,20 @@ export default function Register() {
           type="button"
           className="text-white bg-[#1b418a] hover:bg-[#1b418a]/90 outline-none rounded-lg active:scale-95 text-lg py-3 w-full text-center inline-flex justify-center items-center border border-neutral-700 relative transition-all duration-200 "
         >
-          Iniciar Sesion
+          Registrarme
         </button>
       </form>
       <span className="text-neutral-800">
-        Ya tienes una cuenta?
+        ¿Ya tenés una cuenta?
         <Link
           className="text-[#1b418a] hover:underline ml-1"
-          href="/dashboard/auth/register"
+          href="/dashboard/auth/login"
         >
-          Iniciar sesion
+          Iniciá sesión
         </Link>
       </span>
+      <div className="relative h-px w-full my-9 bg-zinc-300 before:content-['O'] before:absolute before:top-1/2 before:left-1/2 before:-translate-x-2/4 before:-translate-y-2/4 before:bg-white before:px-4"></div>
+      <GoogleButton title="Registrarme con Google" onClick={signIn} />
     </AuthLayout>
   );
 }
