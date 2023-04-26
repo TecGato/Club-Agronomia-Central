@@ -3,11 +3,10 @@ export const IconMobileMenu = () => (
         viewBox="0 -4.5 20 20"
         width={20}
         height={20}
-        className={``}
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"
-        fill="#000000"
+        fill="currentColor"
         transform="rotate(180)"
     >
         <g id="SVGRepo_bgCarrier" strokeWidth={0} />
@@ -24,14 +23,14 @@ export const IconMobileMenu = () => (
                 id="Page-1"
                 stroke="none"
                 strokeWidth={1}
-                fill="none"
+                fill="currentColor"
                 fillRule="evenodd"
             >
                 {' '}
                 <g
                     id="Dribbble-Light-Preview"
                     transform="translate(-140.000000, -6683.000000)"
-                    fill="#000000"
+                    fill="currentColor"
                 >
                     {' '}
                     <g id="icons" transform="translate(56.000000, 160.000000)">

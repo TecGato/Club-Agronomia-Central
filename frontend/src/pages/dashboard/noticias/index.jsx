@@ -26,12 +26,14 @@ export default function News({ posts }) {
   return (
     <Layout>
       <div className="m-4">
-        <button
-          className="bg-[#1b418a] hover:hover:bg-[#10306b] text-white font-bold py-2 px-4 rounded"
-          onClick={showModalForm}
-        >
-          Crear Noticia
-        </button>
+        <div className='flex justify-end m-2'>
+          <button
+            className="bg-[#1b418a] hover:hover:bg-[#10306b] text-white font-bold py-2 px-4 rounded"
+            onClick={showModalForm}
+          >
+            Crear Noticia
+          </button>
+        </div>
         <div className="flex flex-wrap justify-center">
           <div className="sm:grid relative sm:grid-cols-2 sm:max-h-72 shadow-md overflow-hidden cursor-pointer hover:scale-105 transition ease-in-out mb-5 p-5">
             <button
