@@ -1,8 +1,12 @@
-import axios from 'axios';
+// import axios from 'axios';
 import { useTestimonials } from '@/hooks';
 import { Layout, TestimonialItemDashboard, ButtonCreate, WarnDelete, FormNews, FormModifyNews } from '@/components/Dashboard';
+import { useEffect, useContext } from 'react';
+import AppContext from '../../../../contexts/AppContext';
 
-export default function Testimonials({ testimonials }) {
+export default function Testimonials() {
+    const { testimonials, setTestiminials } = useContext(AppContext);
+    
     const {
         showModalForm,
         showModalWarn,
@@ -21,14 +25,21 @@ export default function Testimonials({ testimonials }) {
         setId,
         postModify,
         setPostModify,
+        stateGlobalTestimonials
     } = useTestimonials();
+
+    useEffect(()=>{
+        stateGlobalTestimonials()
+    },[])
 
     return (
         <Layout>
-            <ButtonCreate
-                showModalForm={showModalForm}
-                setCreateTestimonial={setCreateTestimonial}
-            />
+            <div className='flex justify-end'>
+                <ButtonCreate
+                    showModalForm={showModalForm}
+                    setCreateTestimonial={setCreateTestimonial}
+                />
+            </div>
             <section className="grid grid-cols-1 lg:grid-cols-3 justify-items-center py-10 px-5 gap-5 w-full h-full">
                 {
                     testimonials?.map(testimonial => (
@@ -71,15 +82,4 @@ export default function Testimonials({ testimonials }) {
             )}
         </Layout>
     );
-};
-
-
-export async function getServerSideProps() {
-    const res = await axios.get('http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/testimonials');
-    const testimonials = res.data;
-    return {
-        props: {
-            testimonials,
-        },
-    };
 };

@@ -18,16 +18,16 @@ export function InfoSlider({ images, info }) {
     return (
         <>
             <section>
-                <div className="mx-auto max-w-[1340px] text-gray-700 px-4 py-16 sm:px-6 sm:py-24 lg:mr-0 lg:pl-8 ">
+                <div className="mx-auto max-w-[1340px] text-gray-700 dark:text-slate-100 px-4 py-16 sm:px-6 sm:py-24 lg:mr-0 lg:pl-8 ">
                     <div className="grid grid-cols-1 gap-y-8  sm:grid-cols-2 sm:items-center lg:grid-cols-3 lg:items-center lg:gap-x-16">
                         <div className="max-w-xl text-center sm:text-left">
-                            <h2 className="italic text-3xl font-bold tracking-tight sm:text-4xl">
+                            <h2 className="italic  text-3xl font-bold tracking-tight sm:text-4xl">
                                 {info.title1}
                                 <br />
                                 {info.title2}
                             </h2>
 
-                            <p className="mt-7 text-justify text-lg text-gray-800">
+                            <p className="mt-7 text-justify text-lg text-gray-800 dark:text-slate-300 ">
                                 {info.description}{' '}
                                 <strong>{info.strong}</strong>
                                 <a href={info.href} target='blank'>

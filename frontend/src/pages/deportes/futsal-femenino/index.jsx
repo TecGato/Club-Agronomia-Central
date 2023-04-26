@@ -9,10 +9,10 @@ export default function FutFem() {
             <div className="m-4">
                 <div className="grid grid-cols-1 md:grid-row-2 md:grid-cols-3 place-items-center">
                     <div className="row-span-1 p-8 grid grid-cols-4 grid-row-2">
-                        <h3 className="text-lg font-bold text-gray-800 text-center p-5 row-span-1 col-span-3">
+                        <h3 className="text-lg font-bold text-gray-800 dark:text-slate-100 text-center p-5 row-span-1 col-span-3">
                             En el Club
                         </h3>
-                        <p className="text-base text-gray-700 leading-6 py-0 md:text-right row-span-1 col-span-3">
+                        <p className="text-base text-gray-700 dark:text-slate-300  leading-6 py-0 md:text-right row-span-1 col-span-3">
                             Se practica en nuestro club desde el año 2016
                         </p>
                         <img
@@ -35,10 +35,10 @@ export default function FutFem() {
                             alt="corona"
                             className="w-8 h-8 row-span-2 col-span-1 place-self-center"
                         />
-                        <h3 className="text-lg font-bold text-gray-800 text-center p-5 row-span-1 col-span-3">
+                        <h3 className="text-lg font-bold dark:text-slate-100 text-gray-800 text-center p-5 row-span-1 col-span-3">
                             Campeonas
                         </h3>
-                        <p className="text-base text-gray-700 leading-6 py-0 row-span-1 col-span-3">
+                        <p className="text-base text-gray-700 dark:text-slate-300  leading-6 py-0 row-span-1 col-span-3">
                             En varias oportunidades, en la actualidad
                         </p>
                     </div>
@@ -49,10 +49,10 @@ export default function FutFem() {
                             alt="liga"
                             className="w-8 h-8 row-span-2 col-span-1 place-self-center md:order-3"
                         />
-                        <h3 className="text-lg font-bold text-gray-800 text-center p-5 row-span-1 col-span-3 md:order-1">
+                        <h3 className="text-lg font-bold text-gray-800 dark:text-slate-100 text-center p-5 row-span-1 col-span-3 md:order-1">
                             Liga Laamba
                         </h3>
-                        <p className="text-base text-gray-700 leading-6 py-0 md:text-right row-span-1 col-span-3 md:order-2">
+                        <p className="text-base text-gray-700 dark:text-slate-300  leading-6 py-0 md:text-right row-span-1 col-span-3 md:order-2">
                             Contamos con 1 division, unica, 3 division y 4
                             division compitiendo en esta liga
                         </p>
@@ -64,10 +64,10 @@ export default function FutFem() {
                             alt="practica"
                             className="w-8 h-8 row-span-2 col-span-1 place-self-center"
                         />
-                        <h3 className="text-lg font-bold text-gray-800 text-center p-5 row-span-1 col-span-3">
+                        <h3 className="text-lg font-bold text-gray-800 dark:text-slate-100 text-center p-5 row-span-1 col-span-3">
                             Practica
                         </h3>
-                        <p className="text-base text-gray-700 leading-6 py-0 row-span-1 col-span-3">
+                        <p className="text-base text-gray-700 dark:text-slate-300  leading-6 py-0 row-span-1 col-span-3">
                             El profe a cargo es <em>Fernando</em> y las
                             practicas: {''}
                             <strong>
