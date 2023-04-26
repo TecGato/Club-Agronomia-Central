@@ -6,7 +6,7 @@ const createProduct = async (req, res) => {
   try {
     // Uploads Image to Cloudinary
     const uploadedPicture = await uploadImage(productInfo.picture);
-    // Sends post info + image url from cloudinary
+    // Sends product info + image url from cloudinary
     const newProduct = await postProduct({
       ...productInfo,
       picture: {
