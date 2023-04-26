@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import axios from 'axios';
+import AppContext from '../../contexts/AppContext';
 
 export function useTestimonials() {
   const [showForm, setShowForm] = useState(false);
@@ -8,7 +9,8 @@ export function useTestimonials() {
   const [id, setId] = useState(false);
   const [createTestimonial, setCreateTestimonial] = useState(false);
   const [modifyTestimony, setModifyTestimony] = useState(false);
-  const [postModify, setPostModify] = useState()
+  const [postModify, setPostModify] = useState();
+  const { testimonials, setTestiminials } = useContext(AppContext);
 
   const showModalForm = () => {
     setShowForm(!showForm);
@@ -22,7 +24,9 @@ export function useTestimonials() {
 
   const handlerDelete = async (id) => {
     try {
-      await axios.delete(`http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/testimonials/${id}`);
+      await axios.delete(
+        `http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/testimonials/${id}`
+      );
     } catch (error) {
       console.log(error);
     }
@@ -52,6 +56,16 @@ export function useTestimonials() {
     }
   };
 
+  const stateGlobalTestimonials = async () => {
+    if (testimonials.length === 0) {
+      const res = await axios.get(
+        'http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/testimonials'
+      );
+      const response = res.data.reverse();
+      setTestiminials(response);
+    }
+  };
+
   return {
     showModalForm,
     showModalWarn,
@@ -70,5 +84,6 @@ export function useTestimonials() {
     handlerModify,
     id,
     setId,
+    stateGlobalTestimonials,
   };
 }
