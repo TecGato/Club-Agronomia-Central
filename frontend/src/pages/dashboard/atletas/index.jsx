@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import { DataGrid, GridToolbar } from '@mui/x-data-grid';
 import {
+  CreateAthlete,
   EditAthlete,
   Layout,
   ModalTable,
   TableActions,
+  CustomToolbar
 } from '@/components/Dashboard';
 import { useTableActions } from '@/hooks';
 
@@ -15,8 +17,9 @@ const rows = [
     discipline: 'Futbol',
     email: 'XXXXX@gmail.com',
     contact: '123456789',
-    emergency: '123456789',
-    emergency_name: 'margarita rosa',
+    contact_phone: '123456789',
+    contact_name: 'margarita rosa',
+    contact_email: 'emergencia@email.com',
   },
   {
     id: 2,
@@ -24,8 +27,9 @@ const rows = [
     discipline: 'Futbol',
     email: 'XXXXX@gmail.com',
     contact: '123456789',
-    emergency: '123456789',
-    emergency_name: 'margarita rosa',
+    contact_phone: '123456789',
+    contact_name: 'margarita rosa',
+    contact_email: 'emergencia@email.com',
   },
   {
     id: 3,
@@ -33,8 +37,9 @@ const rows = [
     discipline: 'Futbol',
     email: 'XXXXX@gmail.com',
     contact: '123456789',
-    emergency: '123456789',
-    emergency_name: 'margarita rosa',
+    contact_phone: '123456789',
+    contact_name: 'margarita rosa',
+    contact_email: 'emergencia@email.com',
   },
   {
     id: 4,
@@ -42,8 +47,9 @@ const rows = [
     discipline: 'Futbol',
     email: 'XXXXX@gmail.com',
     contact: '123456789',
-    emergency: '123456789',
-    emergency_name: 'margarita rosa',
+    contact_phone: '123456789',
+    contact_name: 'margarita rosa',
+    contact_email: 'emergencia@email.com',
   },
   {
     id: 5,
@@ -51,8 +57,9 @@ const rows = [
     discipline: 'Futbol',
     email: 'XXXXX@gmail.com',
     contact: '123456789',
-    emergency: '123456789',
-    emergency_name: 'margarita rosa',
+    contact_phone: '123456789',
+    contact_name: 'margarita rosa',
+    contact_email: 'emergencia@email.com',
   },
   {
     id: 6,
@@ -60,8 +67,9 @@ const rows = [
     discipline: 'Futbol',
     email: 'XXXXX@gmail.com',
     contact: '123456789',
-    emergency: '123456789',
-    emergency_name: 'margarita rosa',
+    contact_phone: '123456789',
+    contact_name: 'margarita rosa',
+    contact_email: 'emergencia@email.com',
   },
   {
     id: 7,
@@ -69,8 +77,9 @@ const rows = [
     discipline: 'Futbol',
     email: 'XXXXX@gmail.com',
     contact: '123456789',
-    emergency: '123456789',
-    emergency_name: 'margarita rosa',
+    contact_phone: '123456789',
+    contact_name: 'margarita rosa',
+    contact_email: 'emergencia@email.com',
   },
   {
     id: 8,
@@ -78,8 +87,9 @@ const rows = [
     discipline: 'Futbol',
     email: 'XXXXX@gmail.com',
     contact: '123456789',
-    emergency: '123456789',
-    emergency_name: 'margarita rosa',
+    contact_phone: '123456789',
+    contact_name: 'margarita rosa',
+    contact_email: 'emergencia@email.com',
   },
   {
     id: 9,
@@ -87,40 +97,41 @@ const rows = [
     discipline: 'Futbol',
     email: 'XXXXX@gmail.com',
     contact: '123456789',
-    emergency: '123456789',
-    emergency_name: 'margarita rosa',
+    contact_phone: '123456789',
+    contact_name: 'margarita rosa',
+    contact_email: 'emergencia@email.com',
   },
 ];
 
 export default function Atlethes() {
   const [editModal, setEditModal] = useState(false);
+  const [createModal, setCreateModal] = useState(false);
   const [paginationModel, setPaginationModel] = useState({
     pageSize: 10,
     page: 0,
   });
-  const { row, handleDelete, handleUpdate } =
-    useTableActions(setEditModal);
-    
+  const { row, handleDelete, handleUpdate } = useTableActions(setEditModal);
+
   const columns = [
     { field: 'name', headerName: 'Nombre', width: 130 },
     { field: 'discipline', headerName: 'Disciplina', width: 130 },
-    { field: 'email', headerName: 'Correo Electronico', width: 130 },
+    { field: 'email', headerName: 'Correo Electronico', width: 150 },
     {
-      field: 'contact',
-      headerName: 'Numero de contacto',
+      field: 'contact_name',
+      headerName: 'Nombre Contacto de emergencia',
+      type: 'number',
+      width: 170,
+    },
+    {
+      field: 'contact_phone',
+      headerName: 'Numero de emergencia',
       type: 'number',
       width: 170,
       editable: true,
     },
     {
-      field: 'emergency',
-      headerName: 'Contacto de emergencia',
-      type: 'number',
-      width: 170,
-    },
-    {
-      field: 'emergency_name',
-      headerName: 'Nombre Contacto de emergencia',
+      field: 'contact_email',
+      headerName: 'Correo de emergencia',
       type: 'number',
       width: 170,
     },
@@ -153,7 +164,7 @@ export default function Atlethes() {
             rows={rows}
             columns={columns}
             slots={{
-              toolbar: GridToolbar,
+              toolbar: CustomToolbar,
             }}
             paginationModel={paginationModel}
             onPaginationModelChange={setPaginationModel}
@@ -166,6 +177,11 @@ export default function Atlethes() {
       {editModal && (
         <ModalTable>
           <EditAthlete row={row} setEditModal={setEditModal} />
+        </ModalTable>
+      )}
+      {createModal && (
+        <ModalTable>
+          <CreateAthlete setCreateModal={setCreateModal} />
         </ModalTable>
       )}
     </Layout>

@@ -21,3 +21,5 @@ export * from './Forms/NewsModification';
 export * from './TableActions';
 export * from './ModalTable';
 export * from './EditAthlete';
+export * from './CreateAthlete';
+export * from './CustomToolbar';

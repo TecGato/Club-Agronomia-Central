@@ -29,18 +29,16 @@ const athleteSchema = new mongoose.Schema({
     type: Date,
     required: true,
   },
-  emergency_contact: {
-    contact_name: {
-      type: String,
-      required: true,
-    },
-    contact_phone: {
-      type: String,
-      required: true,
-    },
-    contact_email: {
-      type: String,
-    },
+  contact_name: {
+    type: String,
+    required: true,
+  },
+  contact_phone: {
+    type: String,
+    required: true,
+  },
+  contact_email: {
+    type: String,
   },
   createdAt: {
     type: Date,
