@@ -39,10 +39,10 @@ export default function Posts({ posts }) {
                 className='col-span-1 p-5 sm:order-2'
               />
               <div className='sm:col-span-1 sm:grid sm:grid-row-2 sm:order-1'>
-                <h3 className='text-3xl place-self-center text-center font-bold text-gray-700 p-5 sm:row-span-1'>
+              <h3 className='text-3xl place-self-center text-center font-bold text-gray-700 dark:text-slate-100 p-5 sm:row-span-1'>
                   {mainNews.title}
                 </h3>
-                <p className='text-base text-gray-700 leading-6 pt-0 px-5 pb-5 mb-3 sm:row-span-1'>
+                <p className='text-base text-gray-700 dark:text-slate-300  leading-6 pt-0 px-5 pb-5 mb-3 sm:row-span-1'>
                   {mainNews.description}
                 </p>
               </div>
@@ -59,10 +59,10 @@ export default function Posts({ posts }) {
                     loading='lazy'
                     className=''
                   />
-                  <h3 className='text-lg text-center font-bold text-gray-700 px-5 pt-5 pb-3'>
+                  <h3 className='text-lg text-center font-bold text-gray-700 dark:text-slate-100 px-5 pt-5 pb-3'>
                     {news.title}
                   </h3>
-                  <p className='text-base text-gray-700 leading-6 px-5 pt-0'>
+                  <p className='text-base text-gray-700 dark:text-slate-300  leading-6 px-5 pt-0'>
                     {news.description}
                   </p>
                 </div>

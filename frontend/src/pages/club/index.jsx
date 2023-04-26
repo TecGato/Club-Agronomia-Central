@@ -29,7 +29,7 @@ export default function Club() {
             'club/instalaciones',
         ],
         [
-            'Disponibilidad del Quincho',
+            'Quincho',
             Quincho,
             'Consultá si el quincho está disponible',
             'club/quincho',
@@ -44,18 +44,20 @@ export default function Club() {
         >
             <div className="lg:grid grid-cols-4 gap-8 py-10 px-5 lg:px-0 ">
                 {section.map(([name, img, description, link]) => (
-                    <div class=" max-w-sm mx-auto  shadow-lg mb-10 bg-gray-100">
+                    <div class=" max-w-sm mx-auto  shadow-lg mb-10 bg-gray-100 dark:bg-[#353434b4] ">
+                        <h3 className="text-lg font-bold text-gray-800 dark:text-white px-5 pt-5 pb-3">
+                        {name}
+                    </h3>
+                        <div className="border-2 border-blue-600 mb-8 mx-5 w-14"></div>
                         <Link href={link}>
                             <Image
                                 src={img}
                                 alt={name}
                                 className="lg:w-full lg:h-52"
                             />
-                            <div class="text-center py-4  lg:text-left lg:pl-2">
-                                <p class="text-lg text-gray-800 text-black font-bold">
-                                    {name}
-                                </p>
-                                <p class="text-slate-500 font-normal">
+                            <div class="text-center py-4 lg:text-left lg:pl-2">
+                            
+                                <p class="text-slate-500 dark:text-slate-200 font-normal">
                                     {description}
                                 </p>
                             </div>

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { NavLink } from '..';
 import { IconMobileMenu } from './icon';
+import Darkmode from '@/components/Darkmode';
 
 export function MobileMenu({ openMenu }) {
     const [clubOpen, setClubOpen] = useState(false);
@@ -8,7 +9,7 @@ export function MobileMenu({ openMenu }) {
 
     return (
         <section
-            className={`z-40 w-full h-full bg-slate-500 top-0 left-0 fixed transition-all duration-500 [clip-path:circle(0%_at_100%_0%)] ${
+            className={`z-40 w-full h-full bg-slate-500 dark:bg-[#262525] top-0 left-0 fixed transition-all duration-500 [clip-path:circle(0%_at_100%_0%)] ${
                 openMenu && '[clip-path:circle(150%_at_100%_0%)]'
             }`}
         >
@@ -23,7 +24,7 @@ export function MobileMenu({ openMenu }) {
                         <NavLink text={'El Club'} link={'/club'} />
                         <button
                             onClick={() => setClubOpen(!clubOpen)}
-                            className={`w-[40px] h-[40px] flex justify-center items-center transition-all duration-300 ${
+                            className={`w-[40px] h-[40px] dark:text-slate-100 flex justify-center items-center transition-all duration-300 ${
                                 clubOpen && 'rotate-180'
                             }`}
                         >
@@ -57,11 +58,11 @@ export function MobileMenu({ openMenu }) {
                         <NavLink text={'Deportes'} link={'/deportes'} />
                         <button
                             onClick={() => setSportsOpen(!sportsOpen)}
-                            className={`w-[40px] h-[40px] flex justify-center items-center transition-all duration-300 ${
+                            className={`w-[40px] h-[40px] dark:text-slate-100 flex justify-center items-center transition-all duration-300 ${
                                 sportsOpen && 'rotate-180'
                             }`}
                         >
-                            <IconMobileMenu />
+                            <IconMobileMenu/>
                         </button>
                     </div>
                     {sportsOpen && (
@@ -115,6 +116,10 @@ export function MobileMenu({ openMenu }) {
                     {/* Link Login */}
                     <div className="h-10 flex items-center ">
                         <NavLink text={'Login'} link={'/dashboard/auth/login'} />
+                    </div>
+                    {/* Dark Mode */}
+                    <div className="h-10 flex items-center ">
+                        <Darkmode />
                     </div>
                 </ul>
             </div>
