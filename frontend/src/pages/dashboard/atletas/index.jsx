@@ -9,100 +9,7 @@ import {
 } from '@/components/Dashboard';
 import { useTableActions } from '@/hooks';
 
-const rows = [
-  {
-    id: 1,
-    name: 'Aon Doe',
-    discipline: 'Futbol',
-    email: 'XXXXX@gmail.com',
-    contact: '123456789',
-    contact_phone: '123456789',
-    contact_name: 'margarita rosa',
-    contact_email: 'emergencia@email.com',
-  },
-  {
-    id: 2,
-    name: 'Bon Doe',
-    discipline: 'Futbol',
-    email: 'XXXXX@gmail.com',
-    contact: '123456789',
-    contact_phone: '123456789',
-    contact_name: 'margarita rosa',
-    contact_email: 'emergencia@email.com',
-  },
-  {
-    id: 3,
-    name: 'Con Doe',
-    discipline: 'Futbol',
-    email: 'XXXXX@gmail.com',
-    contact: '123456789',
-    contact_phone: '123456789',
-    contact_name: 'margarita rosa',
-    contact_email: 'emergencia@email.com',
-  },
-  {
-    id: 4,
-    name: 'Don Doe',
-    discipline: 'Futbol',
-    email: 'XXXXX@gmail.com',
-    contact: '123456789',
-    contact_phone: '123456789',
-    contact_name: 'margarita rosa',
-    contact_email: 'emergencia@email.com',
-  },
-  {
-    id: 5,
-    name: 'Eon Doe',
-    discipline: 'Futbol',
-    email: 'XXXXX@gmail.com',
-    contact: '123456789',
-    contact_phone: '123456789',
-    contact_name: 'margarita rosa',
-    contact_email: 'emergencia@email.com',
-  },
-  {
-    id: 6,
-    name: 'Fon Doe',
-    discipline: 'Futbol',
-    email: 'XXXXX@gmail.com',
-    contact: '123456789',
-    contact_phone: '123456789',
-    contact_name: 'margarita rosa',
-    contact_email: 'emergencia@email.com',
-  },
-  {
-    id: 7,
-    name: 'Gon Doe',
-    discipline: 'Futbol',
-    email: 'XXXXX@gmail.com',
-    contact: '123456789',
-    contact_phone: '123456789',
-    contact_name: 'margarita rosa',
-    contact_email: 'emergencia@email.com',
-  },
-  {
-    id: 8,
-    name: 'Gon Doe',
-    discipline: 'Futbol',
-    email: 'XXXXX@gmail.com',
-    contact: '123456789',
-    contact_phone: '123456789',
-    contact_name: 'margarita rosa',
-    contact_email: 'emergencia@email.com',
-  },
-  {
-    id: 9,
-    name: 'Gon Doe',
-    discipline: 'Futbol',
-    email: 'XXXXX@gmail.com',
-    contact: '123456789',
-    contact_phone: '123456789',
-    contact_name: 'margarita rosa',
-    contact_email: 'emergencia@email.com',
-  },
-];
-
-export default function Atlethes() {
+export default function Atlethes({athletes}) {
   const [editModal, setEditModal] = useState(false);
   const [createModal, setCreateModal] = useState(false);
   const [paginationModel, setPaginationModel] = useState({
@@ -116,22 +23,33 @@ export default function Atlethes() {
     { field: 'discipline', headerName: 'Disciplina', width: 130 },
     { field: 'email', headerName: 'Correo Electronico', width: 150 },
     {
-      field: 'contact_name',
+      field: 'contact',
+      headerName: 'Numero de Contacto',
+      type: 'number',
+      width: 170,
+    },
+    {
+      field: 'emergency_name',
       headerName: 'Nombre Contacto de emergencia',
       type: 'number',
       width: 170,
     },
     {
-      field: 'contact_phone',
+      field: 'emergency_phone',
       headerName: 'Numero de emergencia',
       type: 'number',
       width: 170,
       editable: true,
     },
     {
-      field: 'contact_email',
+      field: 'emergency_email',
       headerName: 'Correo de emergencia',
       type: 'number',
+      width: 170,
+    },
+    {
+      field: 'date_of_birth',
+      headerName: 'Fecha de nacimiento',
       width: 170,
     },
     {
@@ -157,7 +75,10 @@ export default function Atlethes() {
           <h1 className="text-5xl text-neutral-800 font-bold text-center">
             Administrar todos los atletas
           </h1>
-          <button onClick={() => setCreateModal(true)} className="h-[36px] bg-[#1b418a] flex items-center p-2.5 rounded-lg text-white text-md leading-none">
+          <button
+            onClick={() => setCreateModal(true)}
+            className="h-[36px] bg-[#1b418a] flex items-center p-2.5 rounded-lg text-white text-md leading-none"
+          >
             <svg
               fill="#ffffff"
               width="25px"
@@ -187,9 +108,9 @@ export default function Atlethes() {
             AÑADIR ATLETA
           </button>
         </article>
-        <article className="flex flex-col gap-2 border bg-white border-neutral-300 shadow-[0px_3px_10px_2px_rgb(0_0_0_/_13%)] px-4 py-2 rounded-lg max-w-full h-2/3">
+        <article className="xl:max-w-5xl flex flex-col gap-2 border bg-white border-neutral-300 shadow-[0px_3px_10px_2px_rgb(0_0_0_/_13%)] px-4 py-2 rounded-lg h-2/3">
           <DataGrid
-            rows={rows}
+            rows={athletes}
             columns={columns}
             slots={{
               toolbar: GridToolbar,
@@ -214,4 +135,16 @@ export default function Atlethes() {
       )}
     </Layout>
   );
+}
+
+
+export async function getStaticProps() {
+  const res = await fetch('http://localhost:3001/api/athletes');
+  const athletes = await res.json();
+  return {
+    props: {
+      athletes,
+    },
+    revalidate: 3600,
+  };
 }

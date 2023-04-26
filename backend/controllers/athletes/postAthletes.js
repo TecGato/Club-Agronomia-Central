@@ -2,6 +2,7 @@ const { postAthlete } = require('../../helpers/athletes/postAthletes');
 
 const createAthlete = async (req, res) => {
   const { ...athleteInfo } = req.body;
+  console.log(athleteInfo);
   try {
     const newAthlete = await postAthlete(athleteInfo);
     return res.status(201).json({

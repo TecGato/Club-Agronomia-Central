@@ -14,6 +14,8 @@ const athleteSchema = new mongoose.Schema({
       'Futsal Femenino',
       'Taekwondo',
       'Centro de Entrenamiento',
+      'Entrenamiento de Arqueros',
+      'Escuelita de Fútbol',
     ],
     required: true,
   },
@@ -26,18 +28,18 @@ const athleteSchema = new mongoose.Schema({
     required: true,
   },
   date_of_birth: {
-    type: Date,
-    required: true,
-  },
-  contact_name: {
     type: String,
     required: true,
   },
-  contact_phone: {
+  emergency_name: {
     type: String,
     required: true,
   },
-  contact_email: {
+  emergency_phone: {
+    type: String,
+    required: true,
+  },
+  emergency_email: {
     type: String,
   },
   createdAt: {
@@ -50,6 +52,12 @@ const athleteSchema = new mongoose.Schema({
     default: () => Date.now(),
   },
 });
+
+athleteSchema.methods.toJSON = function () {
+  const { __v, _id, ...athlete } = this.toObject();
+  athlete.id = _id;
+  return athlete;
+};
 
 const Athlete = mongoose.model('Athlete', athleteSchema);
 
