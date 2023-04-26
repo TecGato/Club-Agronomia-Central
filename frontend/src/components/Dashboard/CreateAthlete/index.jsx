@@ -114,28 +114,28 @@ export const CreateAthlete = ({ setCreateModal }) => {
               value={discipline}
               onChange={onInputChange}
             >
-                <option value="Ajedrez" key="">
+                <option value="Ajedrez">
                   Ajedrez
                 </option>
-                <option value="Fútbol Infantil" key="">
+                <option value="Fútbol Infantil">
                   Fútbol Infantil
                 </option>
-                <option value="Futsal" key="">
+                <option value="Futsal">
                   Futsal
                 </option>
-                <option value="Futsal Femenino" key="">
+                <option value="Futsal Femenino">
                   Futsal Femenino
                 </option>
-                <option value="Taekwondo" key="">
+                <option value="Taekwondo">
                   Taekwondo
                 </option>
-                <option value="Centro de Entrenamiento" key="">
+                <option value="Centro de Entrenamiento">
                   Centro de Entrenamiento
                 </option>
-                <option value="Entrenamiento de Arqueros" key="">
+                <option value="Entrenamiento de Arqueros">
                   Entrenamiento de Arqueros
                 </option>
-                <option value="Escuelita de Fútbol" key="">
+                <option value="Escuelita de Fútbol">
                   Escuelita de Fútbol
                 </option>
             </select>

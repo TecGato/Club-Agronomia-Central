@@ -16,7 +16,7 @@ export const EditAthlete = ({ setEditModal, row }) => {
   const { handlerModify } = useAthletes();
   const handleSubmit = (e) => {
     e.preventDefault();
-    handlerModify(formState);
+    handlerModify({id: row.id, ...formState});
     setEditModal(false);
   };
   return (
@@ -81,28 +81,28 @@ export const EditAthlete = ({ setEditModal, row }) => {
               value={discipline}
               onChange={onInputChange}
             >
-              <option value="Ajedrez" key="">
+              <option value="Ajedrez" key="Ajedrez">
                 Ajedrez
               </option>
-              <option value="Fútbol Infantil" key="">
+              <option value="Fútbol Infantil" key="Fútbol Infantil">
                 Fútbol Infantil
               </option>
-              <option value="Futsal" key="">
+              <option value="Futsal" key="Futsal">
                 Futsal
               </option>
-              <option value="Futsal Femenino" key="">
+              <option value="Futsal Femenino" key="Futsal Femenino">
                 Futsal Femenino
               </option>
-              <option value="Taekwondo" key="">
+              <option value="Taekwondo" key="Taekwondo">
                 Taekwondo
               </option>
-              <option value="Centro de Entrenamiento" key="">
+              <option value="Centro de Entrenamiento" key="Centro de Entrenamiento">
                 Centro de Entrenamiento
               </option>
-              <option value="Entrenamiento de Arqueros" key="">
+              <option value="Entrenamiento de Arqueros" key="Entrenamiento de Arqueros">
                 Entrenamiento de Arqueros
               </option>
-              <option value="Escuelita de Fútbol" key="">
+              <option value="Escuelita de Fútbol" key="Escuelita de Fútbol">
                 Escuelita de Fútbol
               </option>
             </select>

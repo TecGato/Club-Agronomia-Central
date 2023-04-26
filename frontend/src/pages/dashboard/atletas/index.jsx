@@ -9,7 +9,7 @@ import {
 } from '@/components/Dashboard';
 import { useTableActions } from '@/hooks';
 
-export default function Atlethes({athletes}) {
+export default function Athletes({ athletes }) {
   const [editModal, setEditModal] = useState(false);
   const [createModal, setCreateModal] = useState(false);
   const [paginationModel, setPaginationModel] = useState({
@@ -137,14 +137,12 @@ export default function Atlethes({athletes}) {
   );
 }
 
-
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const res = await fetch('http://localhost:3001/api/athletes');
   const athletes = await res.json();
   return {
     props: {
       athletes,
     },
-    revalidate: 3600,
   };
 }
