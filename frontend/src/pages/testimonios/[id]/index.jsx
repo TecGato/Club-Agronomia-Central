@@ -13,9 +13,6 @@ export default function Testimony({testimonials}) {
                     loading='lazy'
                     className='place-self-center'
                 />
-                <h3 className='text-lg text-center font-bold text-gray-700 dark:text-slate-100 p-5'>
-                    {testimonials.title}
-                </h3>
                 <p className='text-base text-gray-700 dark:text-slate-300 leading-6 px-5 pt-0'>
                     {testimonials.description}
                 </p>
