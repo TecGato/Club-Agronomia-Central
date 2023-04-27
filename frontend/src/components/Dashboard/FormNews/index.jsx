@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useFileEncoding } from '@/hooks';
 
-export function FormNews({ showModalForm, handlerCreate, createTestimonial = false }) {
+export function FormNews({ showModalForm, handlerCreate, setLoading, createTestimonial = false }) {
   const { handleFileChange } = useFileEncoding();
 
   const [post, setPost] = useState({
@@ -43,9 +43,10 @@ export function FormNews({ showModalForm, handlerCreate, createTestimonial = fal
     event.preventDefault();
     handlerCreate(post);
     showModalForm();
+    setLoading(true);
   };
 
-  const disableButton = Object.values(post).some((p) => p === '')
+  const disableButton = Object.values(post).some((p) => p === '');
 
   const stylesButton = () => {
     if (disableButton) {

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useFileEncoding } from '@/hooks';
 
-export function FormModifyNews({ ShowModify, showModalModify, handlerModify, modifyTestimony = false }) {
+export function FormModifyNews({ ShowModify, showModalModify, handlerModify, setLoading, modifyTestimony = false }) {
   const { handleFileChange } = useFileEncoding();
 
   const [post, setPost] = useState(ShowModify);
@@ -38,7 +38,8 @@ export function FormModifyNews({ ShowModify, showModalModify, handlerModify, mod
   const handlerSubmit = async (event) => {
     event.preventDefault();
     handlerModify(post);
-    showModalModify()
+    showModalModify();
+    setLoading(true);
   };
   
 const disableButton = post !== ShowModify ? false : true;

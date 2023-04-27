@@ -6,12 +6,12 @@ import { useState } from 'react';
 export default function Testimonials({ testimonials }) {
     // paginado
     const [testimonialsLocal, setTestiminialsLocal] = useState(testimonials.reverse())
-    
+
     const { currentItems, pages, currentPage, setCurrentPage } = usePagination(
         testimonialsLocal,
         3
     );
-    
+
     return (
         <Layout
             title={testimonialsLocal.title}
@@ -34,20 +34,19 @@ export default function Testimonials({ testimonials }) {
 
             {/* Paginado */}
             <div className="flex space-x-2 justify-center p-5">
-            {pages.map((page) => (
-            <button
-                key={page}
-                className={`px-3 py-1 rounded ${
-                currentPage === page + 1
-                    ? 'bg-blue-700 text-white'
-                    : 'bg-gray-200 text-gray-700'
-                }`}
-                onClick={() => setCurrentPage(page + 1)}
-            >
-                {page + 1}
-            </button>
-            ))}
-        </div>
+                {pages.map((page) => (
+                    <button
+                        key={page}
+                        className={`px-3 py-1 rounded ${currentPage === page + 1
+                                ? 'bg-blue-700 text-white'
+                                : 'bg-gray-200 text-gray-700'
+                            }`}
+                        onClick={() => setCurrentPage(page + 1)}
+                    >
+                        {page + 1}
+                    </button>
+                ))}
+            </div>
         </Layout>
     );
 }
