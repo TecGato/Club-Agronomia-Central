@@ -27,7 +27,7 @@ export function Warn({ handlerDelete, showModalWarn, showWarn }) {
             onClick={() => {
               handlerDelete(showWarn);
               showModalWarn();
-              window.location.reload();
+              
             }}
           >
             Si
