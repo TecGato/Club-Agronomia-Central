@@ -23,7 +23,7 @@ export function MatchesInfo(props){
                 </div>
 
                 <div className="p-2 sm:p-10 text-center">
-                    <div style={{height: '350px'}} className="flex justify-center items-center max-w-sm rounded overflow-hidden shadow-lg bg-orange-500 hover:bg-orange-600">
+                    <div style={{height: '350px'}} className={props.className}>
                         <div className="space-y-10">
                             <div className="px-6 py-4">
                                 <div className="space-y-5">

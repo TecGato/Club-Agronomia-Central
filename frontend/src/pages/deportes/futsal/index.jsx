@@ -1,6 +1,6 @@
 import { Layout } from '@/components/Page';
-
-export default function FutSal() {
+import { MatchesInfo } from '@/components/Page/MatchesInfo';
+export default function FutSal({data}) {
     return (
         <Layout
             title="Futsal"
@@ -95,7 +95,29 @@ export default function FutSal() {
                         Consulta via whastapp o en nuestra sede para más información
                     </h3>
                 </div>
+
+
             </div>
+                <MatchesInfo
+                    data={data}
+                    className = {"w-full h-full flex items-center bg-zinc-100 dark:bg-[#353434b4]"}
+                />
         </Layout>
     );
 }
+
+
+
+export async function getStaticProps() {
+    try {
+    const res = await fetch('http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/matches');
+    const data = await res.json();
+
+
+    return {
+    props: { data: data },
+    };
+    } catch (error) {
+      return { error: error.message };
+    }
+  }
