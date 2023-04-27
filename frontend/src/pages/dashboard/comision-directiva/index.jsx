@@ -236,12 +236,7 @@ export default function SteeringCommittee() {
       ) : (
         ''
       )}
-      {edit && (
-        <FormDirective
-          edit={edit}
-          showModalModify={showModalModify}
-        />
-      )}
+      {edit && <FormDirective edit={edit} showModalModify={showModalModify} />}
     </Layout>
   );
 }
