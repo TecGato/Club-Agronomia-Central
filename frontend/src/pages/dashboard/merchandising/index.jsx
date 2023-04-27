@@ -69,26 +69,26 @@ export default function Merchandising() {
         <div className="m-8 grid justify-center lg:grid-cols-3 gap-4">
           {products?.map((product) => {
             return (
-              <div class="max-w-xs rounded overflow-hidden shadow-lg dark:bg-[#353434b4]">
+              <div class="max-w-[280px]  shadow-lg dark:bg-[#353434b4]">
                 <img
                   src={product?.picture?.secure_url}
                   loading="lazy"
                   alt={product.title}
-                  className='lg:h-[60%]'
+                  className='lg:h-[55%]'
                 />
                 
-                <div class="px-6 py-4">
+                <div class="px-6 py-3">
                   <div class="font-bold text-xl mb-2">{product.title}</div>
                   <p class="text-gray-700 dark:text-gray-300 text-base">
                     {product.description}
                   </p>
                 </div>
-                <div class="px-6 pb-2 text-end ">
+                <div class="px-6  text-end ">
                   <span class="inline-block bg-gray-200 dark:bg-gray-600 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 dark:text-gray-300 mr-2 mb-2">
                     ${product.price}
                   </span>
                 </div>
-                <div className="flex my-4 justify-around">
+                <div className="flex my-4 lg:mb-0 justify-around">
                   <button
                     className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-red-500 rounded-lg hover:bg-red-600 focus:ring-2 focus:outline-none focus:ring-red-300 dark:bg-red-500 dark:hover:bg-red-600 dark:focus:ring-red-600"
                     onClick={() => {

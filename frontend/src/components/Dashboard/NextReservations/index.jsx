@@ -7,13 +7,15 @@ export const NextReservations = () => {
         sm:h-full sm:w-full
         lg:col-span-3
         xl:w-full xl:row-start-2 xl:col-start-3 xl:col-span-2
+        dark:bg-[#2C2C2C] dark:border-none
+        dark:text-slate-100
         "
     >
       <p>Proximas reservas del quincho</p>
-      <div className="w-full grid grid-cols-3 my-1">
-        <p className="text-blue-700">Nombre</p>
-        <p className="text-blue-700">Fecha</p>
-        <p className="text-blue-700">Hora Inicio</p>
+      <div className="w-full grid grid-cols-3 my-1 text-blue-700 dark:text-slate-100 ">
+        <p>Nombre</p>
+        <p>Fecha</p>
+        <p>Hora Inicio</p>
       </div>
       <section className="w-full h-auto flex flex-col gap-2 ">
         <PreviewItem

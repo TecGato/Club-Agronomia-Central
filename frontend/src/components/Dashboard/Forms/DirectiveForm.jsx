@@ -55,7 +55,7 @@ export default function FormDirective({ edit, showModalModify }) {
           <input
             name="name"
             type="text"
-            className="border w-full rounded-lg dark:bg-[#1F2123] dark:border-none border-gray-200 p-3 text-sm"
+            className="border w-full rounded-lg dark:bg-[#1F2123] dark:text-slate-100 dark:border-none border-gray-200 p-3 text-sm"
             placeholder="Nombre"
             onChange={handlerChange}
             value={props.name}
