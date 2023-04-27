@@ -1,52 +1,38 @@
-import React, { useState } from 'react';
 import { useFileEncoding } from '@/hooks';
+import { useState } from 'react';
 
-export function FormNews({ showModalForm, handlerCreate, setLoading, createTestimonial = false }) {
+export function EditProduct({ ShowModify, showModalModify, handlerModify}) {
   const { handleFileChange } = useFileEncoding();
 
-  const [post, setPost] = useState({
-    title: '',
-    picture: '',
-    description: '',
-  });
+  const [product, setProduct] = useState(ShowModify);
 
   const imagenChange = (event) => {
     handleFileChange(event, setPicture);
   };
 
-  const videoChange = (event) => {
-    handleFileChange(event, setVideo);
-  };
-
   const setPicture = (encodedFile) => {
-    setPost({
-      ...post,
+    setProduct({
+      ...product,
       picture: encodedFile,
     });
   };
 
-  const setVideo = (encodedFile) => {
-    setPost({
-      ...post,
-      video: encodedFile,
-    });
-  };
+
 
   const handlerChange = (event) => {
-    setPost({
-      ...post,
+    setProduct({
+      ...product,
       [event.target.name]: event.target.value,
     });
   };
 
-  const handlerSubmit = (event) => {
+  const handlerSubmit = async (event) => {
     event.preventDefault();
-    handlerCreate(post);
-    showModalForm();
-    setLoading(true);
+    handlerModify(product);
+    showModalModify()
   };
-
-  const disableButton = Object.values(post).some((p) => p === '');
+  
+const disableButton = product !== ShowModify ? false : true;
 
   const stylesButton = () => {
     if (disableButton) {
@@ -62,7 +48,7 @@ export function FormNews({ showModalForm, handlerCreate, setLoading, createTesti
 
         <div className='flex'>
           <button type="button" className="relative text-gray-400 bg-transparent  hover:bg-gray-200 hover:text-gray-900 rounded-full text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white"
-            onClick={showModalForm}
+            onClick={showModalModify}
           >
             <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
             <span className="sr-only">Close modal</span>
@@ -77,7 +63,7 @@ export function FormNews({ showModalForm, handlerCreate, setLoading, createTesti
             className="border w-full rounded-lg border-gray-200 p-3 text-sm"
             placeholder="Titulo"
             onChange={handlerChange}
-            value={post.title}
+            value={product.title}
           />
           <label className="text-gray-900 text-lg">Imagen:</label>
           <input
@@ -88,33 +74,30 @@ export function FormNews({ showModalForm, handlerCreate, setLoading, createTesti
             placeholder="Imagen"
             onChange={imagenChange}
           />
-          {createTestimonial &&
-            <>
-              <label className="text-gray-900 text-lg">Video:</label>
-              <input
-                name="video"
-                type="file"
-                accept="video/*"
-                className="block w-full border border-gray-200 shadow-sm rounded-md text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 file:hover:bg-blue-100 cursor-pointer file:cursor-pointer file:border-0 file:bg-gray-100 file:mr-4 file:py-3 file:px-4 hover:bg-blue focus:border-2"
-                placeholder="video"
-                onChange={videoChange}
-              />
-            </>
-          }
-          <label className="text-gray-900 text-lg">Post:</label>
-          <textarea
+          <label className="text-gray-900 text-lg">Descripcion:</label>
+          <input
             name="description"
+            type="text"
             className="border w-full rounded-lg border-gray-200 p-3 text-sm"
-            placeholder="Contenido"
+            placeholder="Descripcion"
             onChange={handlerChange}
-            value={post.description}
+            value={product.description}
+          />
+          <label className="text-gray-900 text-lg">Precio:</label>
+          <input
+            name="price"
+            type="number"
+            className="border w-full rounded-lg border-gray-200 p-3 text-sm"
+            placeholder="Precio"
+            onChange={handlerChange}
+            value={product.price}
           />
           <button
             type="submit"
             disabled={disableButton}
             className={stylesButton()}
           >
-            Crear
+            Modificar
           </button>
         </form>
       </div>

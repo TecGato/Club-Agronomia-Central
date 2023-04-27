@@ -1,4 +1,4 @@
-export function Warn({ handlerDelete, showModalWarn, showWarn }) {
+export function Warn({ handlerDelete, showModalWarn, showWarn, setLoading }) {
   return (
     <div className="flex flex-col bg-gray-900/80 backdrop-blur-sm justify-center items-center overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
       <div className="rounded-xl border bg-gray-50 border-gray-100 p-4 shadow-xl">
@@ -27,7 +27,7 @@ export function Warn({ handlerDelete, showModalWarn, showWarn }) {
             onClick={() => {
               handlerDelete(showWarn);
               showModalWarn();
-              window.location.reload();
+            setLoading(true);
             }}
           >
             Si
