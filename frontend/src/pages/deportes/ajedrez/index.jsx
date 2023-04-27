@@ -98,7 +98,7 @@ export default function Chess({data}) {
             </div>
                 <MatchesInfo
                     data={data}
-                    className={"bg-indigo-100 w-full h-full flex items-center"}
+                    classname={"bg-indigo-100 w-full h-full flex items-center"}
                 />
         </Layout>
     );

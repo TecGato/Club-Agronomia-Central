@@ -100,7 +100,7 @@ export default function FutSal({data}) {
             </div>
                 <MatchesInfo
                     data={data}
-                    className = {"w-full h-full flex items-center bg-zinc-100 dark:bg-[#353434b4]"}
+                    classname = {"w-full h-full flex items-center bg-zinc-100 dark:bg-[#353434b4]"}
                 />
         </Layout>
     );

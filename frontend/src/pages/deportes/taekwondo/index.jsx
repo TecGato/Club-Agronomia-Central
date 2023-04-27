@@ -7,7 +7,7 @@ export default function Taekwondo({data}) {
             <InfoSlider images={images} info={info} />
             <MatchesInfo
                 data={data}
-                className={"bg-indigo-100 w-full h-full flex items-center"}
+                classname={"bg-indigo-100 w-full h-full flex items-center"}
             />
         </Layout>
     );

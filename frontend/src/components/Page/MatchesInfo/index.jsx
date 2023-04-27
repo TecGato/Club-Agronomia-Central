@@ -23,7 +23,7 @@ export function MatchesInfo(props){
                 </div>
 
                 <div className="p-2 sm:p-10 text-center">
-                    <div style={{height: '350px'}} className={props.className}>
+                    <div style={{height: '350px'}} className={props.classname}>
                         <div className="space-y-10">
                             <div className="px-6 py-4">
                                 <div className="space-y-5">
