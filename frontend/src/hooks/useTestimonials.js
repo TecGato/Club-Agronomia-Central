@@ -10,6 +10,7 @@ export function useTestimonials() {
   const [createTestimonial, setCreateTestimonial] = useState(false);
   const [modifyTestimony, setModifyTestimony] = useState(false);
   const [postModify, setPostModify] = useState();
+  const [loading, setLoading] = useState(false);
   const { testimonials, setTestiminials } = useContext(AppContext);
 
   const showModalForm = () => {
@@ -25,10 +26,10 @@ export function useTestimonials() {
   const handlerDelete = async (id) => {
     try {
       const { data } = await axios.delete(
-        // `http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/testimonials/${id}`
-        `http://localhost:3001/api/testimonials/${id}`
+        `http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/testimonials/${id}`
       );
-        data && setTestiminials(testimonials.filter(tes => tes._id !== id));
+      data && setTestiminials(testimonials.filter((tes) => tes._id !== id));
+      setLoading(false);
       console.log(data.msg);
     } catch (error) {
       console.log(error);
@@ -38,11 +39,11 @@ export function useTestimonials() {
   const handlerCreate = async (post) => {
     try {
       const { data } = await axios.post(
-        // `http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/testimonials`,
-        `http://localhost:3001/api/testimonials`,
+        `http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/testimonials`,
         post
       );
       data && setTestiminials([data.newTestimonial, ...testimonials]);
+      setLoading(false);
       console.log(data.msg);
     } catch (error) {
       console.log(error);
@@ -52,16 +53,16 @@ export function useTestimonials() {
   const handlerModify = async (post) => {
     try {
       const { data } = await axios.put(
-        // `http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/testimonials/${post.id}`,
-        `http://localhost:3001/api/testimonials/${post.id}`,
+        `http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/testimonials/${post.id}`,
         post
       );
       if (data) {
-        const updateTestimonial=[...testimonials]
-        const id = data.testimonial._id
-        const index = updateTestimonial.findIndex(tes => tes._id === id);
+        const updateTestimonial = [...testimonials];
+        const id = data.testimonial._id;
+        const index = updateTestimonial.findIndex((tes) => tes._id === id);
         updateTestimonial[index] = data.testimonial;
         setTestiminials(updateTestimonial);
+        setLoading(false);
       }
       console.log(data.msg);
     } catch (error) {
@@ -72,11 +73,11 @@ export function useTestimonials() {
   const stateGlobalTestimonials = async () => {
     if (testimonials.length === 0) {
       const res = await axios.get(
-        // 'http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/testimonials'
-        'http://localhost:3001/api/testimonials'
+        'http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/testimonials'
       );
       const response = res.data.reverse();
       setTestiminials(response);
+      setLoading(false);
     }
   };
 
@@ -99,5 +100,7 @@ export function useTestimonials() {
     id,
     setId,
     stateGlobalTestimonials,
+    loading,
+    setLoading,
   };
 }
