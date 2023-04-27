@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useFileEncoding } from '@/hooks';
 
-export function FormNews({ showModalForm, handlerCreate, createTestimonial = false }) {
+export function FormNews({ showModalForm, handlerCreate, setLoading, createTestimonial = false }) {
   const { handleFileChange } = useFileEncoding();
 
   const [post, setPost] = useState({
@@ -42,7 +42,18 @@ export function FormNews({ showModalForm, handlerCreate, createTestimonial = fal
   const handlerSubmit = (event) => {
     event.preventDefault();
     handlerCreate(post);
-    window.location.reload();
+    showModalForm();
+    setLoading(true);
+  };
+
+  const disableButton = Object.values(post).some((p) => p === '');
+
+  const stylesButton = () => {
+    if (disableButton) {
+      return 'font-semibold self-center text-gray-900 py-2 px-4 rounded w-1/8 border-2 border-gray-300 bg-gray-100 transition duration-300 ease-in-out';
+    } else {
+      return "bg-blue-700 hover:bg-blue-800 text-white font-semibold py-2 px-4 rounded w-1/8 self-center";
+    }
   };
 
   return (
@@ -91,9 +102,8 @@ export function FormNews({ showModalForm, handlerCreate, createTestimonial = fal
             </>
           }
           <label className="text-gray-900 text-lg">Post:</label>
-          <input
+          <textarea
             name="description"
-            type="text"
             className="border w-full rounded-lg border-gray-200 p-3 text-sm"
             placeholder="Contenido"
             onChange={handlerChange}
@@ -101,7 +111,8 @@ export function FormNews({ showModalForm, handlerCreate, createTestimonial = fal
           />
           <button
             type="submit"
-            className="bg-blue-700 hover:bg-blue-800 text-white font-semibold py-2 px-4 rounded w-1/8 self-center"
+            disabled={disableButton}
+            className={stylesButton()}
           >
             Crear
           </button>

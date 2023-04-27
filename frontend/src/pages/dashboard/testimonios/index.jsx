@@ -1,8 +1,12 @@
-import axios from 'axios';
+// import axios from 'axios';
 import { useTestimonials } from '@/hooks';
-import { Layout, TestimonialItemDashboard, ButtonCreate, WarnDelete, FormNews, FormModifyNews } from '@/components/Dashboard';
+import { Layout, TestimonialItemDashboard, ButtonCreate, WarnDelete, FormNews, FormModifyNews, Loader } from '@/components/Dashboard';
+import { useEffect, useContext } from 'react';
+import AppContext from '../../../../contexts/AppContext';
 
-export default function Testimonials({ testimonials }) {
+export default function Testimonials() {
+    const { testimonials } = useContext(AppContext);
+
     const {
         showModalForm,
         showModalWarn,
@@ -21,30 +25,43 @@ export default function Testimonials({ testimonials }) {
         setId,
         postModify,
         setPostModify,
+        stateGlobalTestimonials,
+        loading,
+        setLoading
     } = useTestimonials();
+
+    useEffect(() => {
+        stateGlobalTestimonials()
+    }, [])
 
     return (
         <Layout>
-            <ButtonCreate
-                showModalForm={showModalForm}
-                setCreateTestimonial={setCreateTestimonial}
-            />
+            <div className='flex justify-end'>
+                <ButtonCreate
+                    showModalForm={showModalForm}
+                    setCreateTestimonial={setCreateTestimonial}
+                />
+            </div>
             <section className="grid grid-cols-1 lg:grid-cols-3 justify-items-center py-10 px-5 gap-5 w-full h-full">
                 {
-                    testimonials?.map(testimonial => (
-                        <TestimonialItemDashboard
-                            key={testimonial._id}
-                            title={testimonial.title}
-                            text={testimonial.description}
-                            img={testimonial.picture}
-                            showModalWarn={showModalWarn}
-                            setId={setId}
-                            id={testimonial._id}
-                            showModalModify={showModalModify}
-                            setPostModify={setPostModify}
-                            setModifyTestimony={setModifyTestimony}
-                        />
-                    ))
+                    loading ? (
+                        <Loader />
+                    ) : (
+                        testimonials?.map(testimonial => (
+                            <TestimonialItemDashboard
+                                key={testimonial._id}
+                                title={testimonial.title}
+                                text={testimonial.description}
+                                img={testimonial.picture}
+                                showModalWarn={showModalWarn}
+                                setId={setId}
+                                id={testimonial._id}
+                                showModalModify={showModalModify}
+                                setPostModify={setPostModify}
+                                setModifyTestimony={setModifyTestimony}
+                            />
+                        ))
+                    )
                 }
             </section>
             {showWarn && (
@@ -52,6 +69,7 @@ export default function Testimonials({ testimonials }) {
                     handlerDelete={handlerDelete}
                     showModalWarn={showModalWarn}
                     id={id}
+                    setLoading={setLoading}
                 />
             )}
             {showForm && (
@@ -59,6 +77,7 @@ export default function Testimonials({ testimonials }) {
                     showModalForm={showModalForm}
                     handlerCreate={handlerCreate}
                     createTestimonial={createTestimonial}
+                    setLoading={setLoading}
                 />
             )}
             {showModify && (
@@ -67,19 +86,9 @@ export default function Testimonials({ testimonials }) {
                     handlerModify={handlerModify}
                     modifyTestimony={modifyTestimony}
                     ShowModify={postModify}
+                    setLoading={setLoading}
                 />
             )}
         </Layout>
     );
-};
-
-
-export async function getServerSideProps() {
-    const res = await axios.get('http://localhost:3001/api/testimonials');
-    const testimonials = res.data;
-    return {
-        props: {
-            testimonials,
-        },
-    };
 };

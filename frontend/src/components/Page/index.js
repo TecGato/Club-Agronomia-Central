@@ -20,3 +20,4 @@ export * from './SocialIcons';
 export * from './TestimonialItem';
 export * from './WarningAlert';
 export * from './Publicity';
+export * from './NewsFilter';

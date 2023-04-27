@@ -1,17 +1,44 @@
+import { useState } from 'react';
+import axios from 'axios';
+import { useRouter } from 'next/router';
 import { AuthLayout, GoogleButton, InputForm } from '@/components/Dashboard';
 import Link from 'next/link';
 
 export default function Login() {
+  const router = useRouter();
+
+  const [credentials, setCredentials] = useState({
+    email: '',
+    password: '',
+  });
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const response = await axios.post(
+      'http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/auth/login',
+      credentials
+    );
+    if (response.status === 200) {
+      router.push('/dashboard');
+    }
+  };
+
+  const handleChange = (event) => {
+    setCredentials({
+      ...credentials,
+      [event.target.name]: event.target.value,
+    });
+  };
+
   return (
     <AuthLayout>
-      <h1 className="font-medium text-neutral-800 text-lg">
-        Inicia sesión con tu cuenta
+      <h1 className="text-3xl font-semibold text-neutral-800 dark:text-slate-100 my-7">
+        Iniciá sesión
       </h1>
-      <GoogleButton title="Iniciar sesion con google" />
-      <span className="text-sm text-neutral-700">o continua con tu correo</span>
-      <form className="w-full">
+      <form className="w-full" onSubmit={handleSubmit}>
         <InputForm
-          title={'Correo Electronico'}
+          title={'Correo Electrónico'}
+          name={'email'}
           type={'email'}
           icon={
             <svg
@@ -26,9 +53,12 @@ export default function Login() {
             </svg>
           }
           placeHolder={'your@email.com'}
+          onChange={handleChange}
+          id={'email'}
         />
         <InputForm
           title={'Contraseña'}
+          name={'password'}
           type={'password'}
           icon={
             <svg
@@ -56,25 +86,39 @@ export default function Login() {
             </svg>
           }
           placeHolder={'*******'}
+          onChange={handleChange}
+          id={'password'}
         />
-        <Link href="/dashboard">
-          <button
-            type="button"
-            className="text-white bg-[#1b418a] hover:bg-[#1b418a]/90 outline-none rounded-lg active:scale-95 text-lg py-3 w-full text-center inline-flex justify-center items-center border border-neutral-700 relative transition-all duration-200 "
+
+        <span className="text-neutral-800">
+          <Link
+            className="text-[#1b418a] dark:text-slate-100 hover:underline ml-1"
+            href="/dashboard/auth/register"
           >
-            Iniciar Sesion
-          </button>
-        </Link>
+            ¿Olvidaste tu contraseña?
+          </Link>
+        </span>
+
+        {/* <Link href="/dashboard"> */}
+        <button
+          type="submit"
+          className="text-white bg-[#1b418a] dark:bg-[#171717dc] dark:hover:bg-[#000000] hover:bg-[#1b418a]/90 outline-none rounded-lg active:scale-95 text-lg py-3 w-full text-center inline-flex justify-center items-center border border-neutral-700 relative transition-all duration-200 mt-4"
+        >
+          Iniciar Sesión
+        </button>
+        {/* </Link> */}
       </form>
-      <span className="text-neutral-800">
-        Aun no tienes una cuenta?
+      <span className="text-neutral-800 dark:text-slate-100">
+        ¿Aún no tenés una cuenta?
         <Link
-          className="text-[#1b418a] hover:underline ml-1"
+          className="text-[#1b418a] dark:text-slate-100 hover:underline ml-1"
           href="/dashboard/auth/register"
         >
-          Registrarse
+          Registrate
         </Link>
       </span>
+      <div className="relative h-px w-full my-9 bg-zinc-300 before:content-['O'] dark:before:bg-[#2d2c2d] dark:text-slate-100 before:absolute before:top-1/2 before:left-1/2 before:-translate-x-2/4 before:-translate-y-2/4 before:bg-white before:px-4"></div>
+      <GoogleButton title="Iniciar sesión con Google" />
     </AuthLayout>
   );
 }

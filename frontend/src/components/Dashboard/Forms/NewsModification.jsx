@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useFileEncoding } from '@/hooks';
 
-export function FormModifyNews({ ShowModify, showModalModify, handlerModify, modifyTestimony = false }) {
+export function FormModifyNews({ ShowModify, showModalModify, handlerModify, setLoading, modifyTestimony = false }) {
   const { handleFileChange } = useFileEncoding();
 
   const [post, setPost] = useState(ShowModify);
@@ -38,7 +38,18 @@ export function FormModifyNews({ ShowModify, showModalModify, handlerModify, mod
   const handlerSubmit = async (event) => {
     event.preventDefault();
     handlerModify(post);
-    window.location.reload();
+    showModalModify();
+    setLoading(true);
+  };
+  
+const disableButton = post !== ShowModify ? false : true;
+
+  const stylesButton = () => {
+    if (disableButton) {
+      return 'font-semibold self-center text-gray-900 py-2 px-4 rounded w-1/8 border-2 border-gray-300 bg-gray-100 transition duration-300 ease-in-out';
+    } else {
+      return "bg-blue-700 hover:bg-blue-800 text-white font-semibold py-2 px-4 rounded w-1/8 self-center";
+    }
   };
 
   return (
@@ -87,9 +98,8 @@ export function FormModifyNews({ ShowModify, showModalModify, handlerModify, mod
             </>
           }
           <label className="text-gray-900 text-lg">Post:</label>
-          <input
+          <textarea
             name="description"
-            type="text"
             className="border w-full rounded-lg border-gray-200 p-3 text-sm"
             placeholder="Contenido"
             onChange={handlerChange}
@@ -97,7 +107,8 @@ export function FormModifyNews({ ShowModify, showModalModify, handlerModify, mod
           />
           <button
             type="submit"
-            className="bg-blue-700 hover:bg-blue-800 text-white font-semibold py-2 px-4 rounded w-1/8 self-center"
+            disabled={disableButton}
+            className={stylesButton()}
           >
             Modificar
           </button>

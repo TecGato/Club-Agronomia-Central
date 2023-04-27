@@ -1,9 +1,30 @@
+import Darkmode from '@/components/Darkmode';
 import { NavLink } from '../NavLink';
 import { routes } from './routes';
+import axios from 'axios';
+import { useRouter } from 'next/router';
 
-export const Navbar = ({openNavbar}) => {
+export const Navbar = ({ openNavbar }) => {
+  const router = useRouter();
+
+  const logOut = async () => {
+    try {
+      await axios.post('/api/auth/logout');
+      router.push('/');
+    } catch (error) {
+      console.error(error.message);
+      router.push('/');
+    }
+  };
+
   return (
-    <nav className={`w-60 h-screen bg-neutral-900 flex flex-col justify-between items-center gap-1 py-7 px-4 z-50 ${openNavbar ? 'translate-x-0 pt-16 fixed top-0' : '-translate-x-full absolute' } lg:relative lg:translate-x-0 transition-all duration-500`}>
+    <nav
+      className={`w-60 h-screen bg-neutral-900 flex flex-col justify-between items-center gap-1 py-7 px-4 z-50 ${
+        openNavbar
+          ? 'translate-x-0 pt-16 fixed top-0'
+          : '-translate-x-full absolute'
+      } lg:relative lg:translate-x-0 transition-all duration-500`}
+    >
       <div>
         <div className="flex gap-2 mb-5">
           <img className="w-11" src="/logo.png" alt="" />
@@ -18,8 +39,12 @@ export const Navbar = ({openNavbar}) => {
               icon={icon}
             />
           ))}
+          <div className="mt-4 ml-2 w-fit h-6  dark:bg-transparent invert dark:invert-0">
+            <Darkmode />
+          </div>
         </div>
       </div>
+
       <button
         className={`w-full h-12 flex gap-4 items-center rounded-lg px-2 group cursor-pointer transition-all duration-500 bg-[#1b418a] hover:bg-[#10306b] `}
       >
@@ -55,9 +80,9 @@ export const Navbar = ({openNavbar}) => {
             {'{'}' '{'}'}
           </g>
         </svg>
-        <NavLink pathname={'/'} name="Cerrar Sesion">
+        <NavLink pathname={'/'} name="Cerrar Sesión" onClick={() => logOut()}>
           <span className="w-full text-white text-start text-md">
-            Cerrar Sesion
+            Cerrar Sesión
           </span>
         </NavLink>
       </button>

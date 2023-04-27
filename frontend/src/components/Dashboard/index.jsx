@@ -18,3 +18,7 @@ export * from './ButtonEdit';
 export * from './WarnDelete';
 export * from './FormNews';
 export * from './Forms/NewsModification';
+export * from './ButtonCreateNews';
+export * from './ButtonDeleteNews';
+export * from './ButtonEditNews';
+export * from './Loader';

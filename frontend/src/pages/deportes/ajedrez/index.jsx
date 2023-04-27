@@ -1,6 +1,6 @@
 import { Layout } from '@/components/Page';
-
-export default function Chess() {
+import { MatchesInfo } from '@/components/Page/MatchesInfo';
+export default function Chess({data}) {
     return (
         <Layout
             title="Club De Ajedrez Zugzwang"
@@ -15,7 +15,7 @@ export default function Chess() {
                         className="w-full"
                     />
 
-                    <p className="text-base text-gray-700 leading-6 py-5 md:p-5 lg:mx-8 xl:p-8 xl:m-8 2xl:px-24 2xl:mx-12">
+                    <p className="text-base text-gray-700 dark:text-slate-100 leading-6 py-5 md:p-5 lg:mx-8 xl:p-8 xl:m-8 2xl:px-24 2xl:mx-12"> 
                         La idea de club de ajedrez nació en el 2016 con una
                         comisión directiva integrada por {''}
                         <em>
@@ -34,7 +34,7 @@ export default function Chess() {
                     </p>
 
                     <div className="bg-indigo-100 w-full h-full flex items-center">
-                        <p className="text-base text-gray-700 leading-6 py-5 md:p-5 lg:mx-8 xl:p-8 xl:m-8 2xl:px-24 2xl:mx-12 bg-indigo-100">
+                        <p className="text-base text-gray-700  leading-6 py-5 md:p-5 lg:mx-8 xl:p-8 xl:m-8 2xl:px-24 2xl:mx-12 bg-indigo-100">
                             En un ambiente familiar y sumamente amistoso, se
                             desarrollan los {''}
                             <strong>martes a las 19.30hs</strong> los certámenes
@@ -63,7 +63,7 @@ export default function Chess() {
                         loading="lazy"
                         className="w-full"
                     />
-                    <p className="text-base text-gray-700 leading-6 py-5 md:p-5 lg:mx-8 xl:p-8 xl:m-8 2xl:px-24 2xl:mx-12">
+                    <p className="text-base text-gray-700 dark:text-slate-100 leading-6 py-5 md:p-5 lg:mx-8 xl:p-8 xl:m-8 2xl:px-24 2xl:mx-12">
                         Por otro lado, la escuela de ajedrez a nivel inicial
                         para niños y juveniles, de la mano de {''}
                         <em>Horacio Taddeo</em>, gran referente del ajedrez
@@ -94,10 +94,30 @@ export default function Chess() {
                 </div>
                 <br />
 
-                <h2 className="text-lg text-center font-semibold text-gray-800 p-5">
+                <h2 className="text-lg text-center font-semibold text-gray-800 dark:text-slate-100 p-5">
                     ¡Los esperamos!
                 </h2>
+                <MatchesInfo
+                    data={data}
+                />
             </div>
         </Layout>
     );
 }
+
+
+
+
+export async function getStaticProps() {
+    try {
+    const res = await fetch('http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/matches');
+    const data = await res.json();
+
+
+    return {
+    props: { data: data },
+    };
+    } catch (error) {
+      return { error: error.message };
+    }
+  }
