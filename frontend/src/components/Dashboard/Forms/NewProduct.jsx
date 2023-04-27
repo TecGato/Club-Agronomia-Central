@@ -40,7 +40,7 @@ export function NewProduct ({ showModalForm, handlerCreate }) {
 
   const stylesButton = () => {
     if (disableButton) {
-      return 'font-semibold self-center text-gray-900 py-2 px-4 rounded w-1/8 border-2 border-gray-300 bg-gray-100 transition duration-300 ease-in-out';
+      return 'font-semibold self-center text-gray-900 py-2 px-4 rounded w-1/8 border-2 border-gray-300 bg-gray-100 dark:bg-gray-800 dark:text-slate-100 dark:border-none transition duration-300 ease-in-out';
     } else {
       return "bg-blue-700 hover:bg-blue-800 text-white font-semibold py-2 px-4 rounded w-1/8 self-center";
     }
@@ -48,7 +48,7 @@ export function NewProduct ({ showModalForm, handlerCreate }) {
 
   return (
     <div className="flex bg-gray-900/80 backdrop-blur-sm justify-center items-center overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
-      <div className="rounded-xl border bg-gray-50 w-[400px] border-gray-100 p-4 shadow-xl">
+      <div className="rounded-xl border bg-gray-50 w-[400px] dark:bg-[#171717] dark:border-none border-gray-100 p-4 shadow-xl">
 
         <div className='flex'>
           <button type="button" className="relative text-gray-400 bg-transparent  hover:bg-gray-200 hover:text-gray-900 rounded-full text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white"
@@ -60,37 +60,37 @@ export function NewProduct ({ showModalForm, handlerCreate }) {
         </div>
 
         <form className="flex flex-col gap-2" onSubmit={handlerSubmit}>
-          <label className="text-gray-900 text-lg">Titulo:</label>
+          <label className="text-gray-900 text-lg dark:text-slate-100">Titulo:</label>
           <input
             name="title"
             type="text"
-            className="border w-full rounded-lg border-gray-200 p-3 text-sm"
+            className="border w-full rounded-lg border-gray-200 p-3 text-sm dark:bg-[#1F2123] dark:text-slate-100 dark:border-none"
             placeholder="Titulo"
             onChange={handlerChange}
             value={product.title}
           />
-          <label className="text-gray-900 text-lg">Imagen:</label>
+          <label className="text-gray-900 text-lg dark:text-slate-100">Imagen:</label>
           <input
             name="picture"
             type="file"
             accept="image/*"
-            className="block w-full border border-gray-200 shadow-sm rounded-md text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 file:hover:bg-blue-100 cursor-pointer file:cursor-pointer file:border-0 file:bg-gray-100 file:mr-4 file:py-3 file:px-4 hover:bg-blue"
+            className="block w-full border border-gray-200 dark:bg-[#2d2e30] dark:text-slate-100 dark:border-none shadow-sm rounded-md text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 file:hover:bg-blue-100 cursor-pointer file:cursor-pointer file:border-0 file:bg-gray-100 dark:file:bg-[#1F2123] dark:file:text-slate-100 dark:file:border-none file:mr-4 file:py-3 file:px-4 hover:bg-blue"
             placeholder="Imagen"
             onChange={imagenChange}
           />
-          <label className="text-gray-900 text-lg">Descripcion:</label>
+          <label className="text-gray-900 text-lg dark:text-slate-100">Descripcion:</label>
           <input
             name="description"
-            className="border w-full rounded-lg border-gray-200 p-3 text-sm"
+            className="border w-full rounded-lg border-gray-200 p-3 text-sm dark:bg-[#1F2123] dark:text-slate-100 dark:border-none"
             placeholder="descripcion"
             onChange={handlerChange}
             value={product.description}
           />
-          <label className="text-gray-900 text-lg">Precio:</label>
+          <label className="text-gray-900 text-lg dark:text-slate-100">Precio:</label>
           <input
             name="price"
             type="number"
-            className="border w-full rounded-lg border-gray-200 p-3 text-sm"
+            className="border w-full rounded-lg border-gray-200 p-3 text-sm dark:bg-[#1F2123] dark:text-slate-100 dark:border-none"
             placeholder="Precio"
             onChange={handlerChange}
             value={product.price}
