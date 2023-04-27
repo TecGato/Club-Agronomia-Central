@@ -7,6 +7,7 @@ class Server {
     this.app = express();
     this.port = process.env.PORT || 3001;
     this.authPath = '/api/auth';
+    this.adsPath = '/api/ads';
     this.athletesPath = '/api/athletes';
     this.dateEventsPath = '/api/dateEvents';
     this.directorsPath = '/api/directors';
@@ -15,9 +16,9 @@ class Server {
     this.incomesPath = '/api/incomes';
     this.matchesPath = '/api/matches';
     this.postsPath = '/api/posts';
+    this.productsPath = '/api/products';
     this.subscriptionsPath = '/api/subscriptions';
     this.testimonialsPath = '/api/testimonials';
-    this.usersPath = '/api/users';
     // Connect to Data Base
     this.connectToDB();
     // Middlewares
@@ -45,6 +46,7 @@ class Server {
   }
   routes() {
     this.app.use(this.authPath, require('../routes/auth'));
+    this.app.use(this.adsPath, require('../routes/ads'));
     this.app.use(this.athletesPath, require('../routes/athletes'));
     this.app.use(this.dateEventsPath, require('../routes/dateEvents'));
     this.app.use(this.directorsPath, require('../routes/directors'));
@@ -53,9 +55,9 @@ class Server {
     this.app.use(this.incomesPath, require('../routes/incomes'));
     this.app.use(this.matchesPath, require('../routes/matches'));
     this.app.use(this.postsPath, require('../routes/posts'));
+    this.app.use(this.productsPath, require('../routes/products'));
     this.app.use(this.subscriptionsPath, require('../routes/subscriptions'));
     this.app.use(this.testimonialsPath, require('../routes/testimonials'));
-    this.app.use(this.usersPath, require('../routes/users'));
   }
 
   listen() {

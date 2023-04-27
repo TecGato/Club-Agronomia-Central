@@ -11,9 +11,9 @@ export function Layout({ children, image, title }) {
         <title>{title && `${title} -`} Club Agronomía Central</title>
       </Head>
       <Navbar />
-      <main className="w-full pt-14 min-h-screen">
+      <main className="w-full py-14 min-h-screen duration-500 dark:!text-white dark:bg-[#171717] ">
         {title && <HeaderTitle image={image} title={title} />}
-        <div className="w-full lg:max-w-5xl mx-auto">{children}</div>
+        <div className="w-full lg:max-w-5xl mx-auto ">{children}</div>
         <WhatsAppWidget
           CompanyIcon={ClubIconSVG}
           phoneNumber="584149056161"

@@ -6,6 +6,7 @@ import { esES as coreesES } from '@mui/material/locale';
 import { AppContextProvider } from '../../contexts/AppContext';
 
 const theme = createTheme(esES, coreesES);
+
 export default function App({ Component, pageProps }) {
   return (
     <>

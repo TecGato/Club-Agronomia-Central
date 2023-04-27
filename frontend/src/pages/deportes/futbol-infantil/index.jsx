@@ -25,7 +25,7 @@ export default function FutInF() {
                         <div className="absolute inset-0 md:bg-green-800 md:opacity-50"></div>
                     </div>
 
-                    <p className="text-base text-gray-700 leading-6 p-7 m-5">
+                    <p className="text-base text-gray-700 dark:text-slate-100 leading-6 p-7 m-5">
                         Desde hace más de 40 años, nuestro club compite en baby fútbol, primero en la liga argentina y luego en <strong>FAFI</strong> y actualmente en <strong> FEFI</strong>. Este deporte es una actividad que reúne a niños y sus familiares, quienes disfrutan de hermosas jornadas viendo crecer y divertirse a sus seres queridos.
                     </p>
 
@@ -49,7 +49,7 @@ export default function FutInF() {
                         <div className="absolute inset-0 md:bg-green-800 md:opacity-50"></div>
                     </div>
 
-                    <p className="text-base text-gray-700 leading-6 p-7 m-5">
+                    <p className="text-base text-gray-700 dark:text-slate-100 leading-6 p-7 m-5">
                         Este deporte se realiza con chicos {''}
                         <strong>desde los 6 hasta los 13 años</strong>, quienes encuentran en él un espacio sano para recrearse y comenzar a practicar deporte, además de competir y medir sus habilidades contra otros niños de su misma edad.
                     </p>
@@ -61,7 +61,7 @@ export default function FutInF() {
                         className="w-full"
                     />
 
-                    <p className="text-base text-gray-700 leading-6 p-7 m-5">
+                    <p className="text-base text-gray-700 dark:text-slate-100 leading-6 p-7 m-5">
                         Las tiras selectivo matutino y color practican los
                         martes y viernes <strong>de 18.00hs a 19.00</strong>
                         categorías 2017/2016/2015, {''}
@@ -71,7 +71,7 @@ export default function FutInF() {
                         los profes <em>Diego, Gonzalo, Román, Lucas</em>
                     </p>
 
-                    <p className="text-base text-gray-700 leading-6 p-7 m-5">
+                    <p className="text-base text-gray-700 dark:text-slate-100 leading-6 p-7 m-5">
                         La tira de letra practica los {''}
                         <strong>lunes y miércoles de 17.00hs a 18.00hs</strong>
                         categorías 2016/2015 {''}

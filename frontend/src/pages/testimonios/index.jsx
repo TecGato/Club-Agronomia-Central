@@ -14,7 +14,7 @@ export default function Testimonials({ testimonials }) {
 
     return (
         <Layout
-            title={testimonialsLocal.title}
+            title={'Testimonios'}
             image={
                 'https://fjwp.s3.amazonaws.com/blog/wp-content/uploads/2022/01/07110707/What-Your-Video-Interview-Background-Really-Says-About-You-2.jpg'
             }
@@ -24,6 +24,7 @@ export default function Testimonials({ testimonials }) {
                     currentItems?.map(testimonial =>
                         <Link href={`/testimonios/${testimonial._id}`} key={testimonial._id}>
                             <TestimonialItem
+                                title={testimonial.title}
                                 text={testimonial.description}
                                 img={testimonial.picture.secure_url}
                             />

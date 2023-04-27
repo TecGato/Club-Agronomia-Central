@@ -15,7 +15,7 @@ export default function Post({post}) {
                     loading='lazy'
                     className='place-self-center'
                 />
-                <p className='text-base text-gray-700 leading-6 px-5 pt-0'>
+                <p className='text-base text-gray-700 dark:text-slate-100 leading-6 px-5 pt-0'>
                     {post.description}
                 </p>
             </div>

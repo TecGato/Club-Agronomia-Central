@@ -1,56 +1,25 @@
-import React, { useState } from "react";
-import Posts from "@/pages/noticias";
+import { useState, useMemo } from 'react';
 
-export const NewsFilter = () => {
-  const [searchQuery, setSearchQuery] = useState("");
-  const [newsItems, setNewsItems] = useState([]);
-
-  const handleSearchChange = (e) => {
-    setSearchQuery(e.target.value);
-  };
-
-  const filterNewsItems = () => {
-    if (searchQuery.trim() === "") {
-      return newsItems;
+export function useFilter(items) {
+  const [searchTerm, setSearchTerm] = useState('');
+  
+  const filteredItems = useMemo(() => {
+    if (!searchTerm) {
+      return items;
     }
-
-    const filteredItems = newsItems.filter((item) =>
-      item.title.toLowerCase().includes(searchQuery.toLowerCase())
+    
+    const lowercaseSearchTerm = searchTerm.toLowerCase();
+    
+    return items.filter((item) =>
+      Object.values(item).some((value) =>
+        typeof value === 'string' && value.toLowerCase().includes(lowercaseSearchTerm)
+      )
     );
+  }, [items, searchTerm]);
 
-    return filteredItems;
-  };
+  function handleSearchTermChange(newSearchTerm) {
+    setSearchTerm(newSearchTerm);
+  }
 
-  const handleNewsFetch = async () => {
-    const newsData = await fetchNews(); // Aquí tendrías que implementar tu función de obtener noticias de una fuente de datos externa
-
-    setNewsItems(newsData);
-  };
-
-  return (
-    <div className="container mx-auto">
-      <h1 className="text-3xl font-bold mb-4">Últimas noticias</h1>
-      <div className="flex items-center mb-4">
-        <input
-          type="text"
-          placeholder="Buscar noticias..."
-          value={searchQuery}
-          onChange={handleSearchChange}
-          className="p-2 rounded-l-md w-full"
-        />
-        <button
-          className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-r-md"
-          onClick={handleNewsFetch}
-        >
-          Actualizar noticias
-        </button>
-      </div>
-      <div>
-        {filterNewsItems().map((item) => (
-          <Posts key={item.id} item={item} />
-        ))}
-      </div>
-    </div>
-  );
-};
-
+  return [filteredItems, handleSearchTermChange];
+}

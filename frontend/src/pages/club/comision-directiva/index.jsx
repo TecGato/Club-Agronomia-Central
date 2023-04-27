@@ -4,36 +4,12 @@ import axios from "axios";
 import { Layout } from "@/components/Page";
 import image from "../../../../public/directives-img/directive.svg";
 
-export default function SteeringCommittee() {
+export default function SteeringCommittee({props}) {
   const [directives, setDirectives] = useState();
   useEffect(() => {
-    axios.get("http://localhost:3001/api/directors").then((response) => {
-      return setDirectives(response.data);
-    });
+    return setDirectives(props);
+    ;
   }, [directives]);
-
-  // const directives = [
-  //     {
-  //       name:'Diego Dottore',
-  //       position:'Presidente',
-  //   },
-  //     {
-  //       position:'Vicepresidente',
-  //       name:'Hernán Blotta',
-  //   },
-  //     {
-  //       position:'Secretario',
-  //       name:'Marcelo Vitar',
-  //   },
-  //     {
-  //       position: 'Pro-Secretario',
-  //       name: 'Gustavo Majluf',
-  //   },
-  //     {
-  //       position: 'Tesorero',
-  //       name: 'Pablo Jorge',
-  //   },
-  // ];
 
   return (
     <Layout
@@ -45,29 +21,29 @@ export default function SteeringCommittee() {
       {directives ? (
         <div className="my-10">
           <div className=" ml-[5%] flex flex-col items-center text-center ">
-            <div className=" w-[20%] bg-white shadow-lg items-center rounded-lg">
+            <div className=" w-[40%] lg:w-[20%] bg-white dark:bg-[#353434b4] dark:text-slate-100 shadow-lg items-center rounded-lg">
               <Image src={image} className="h-24 "/>
               <h1>{directives[0]?.name}</h1>
               <h2>{directives[0]?.position}</h2>
             </div>
-            <div className=" mt-8 w-[20%] bg-white shadow-lg rounded-lg">
+            <div className=" mt-8 w-[40%] lg:w-[20%] bg-white dark:bg-[#353434b4] dark:text-slate-100 shadow-lg text-center rounded-lg">
             <Image src={image} className="h-24"/>
               <h1>{directives[1]?.name}</h1>
               <h2>{directives[1]?.position}</h2>
             </div>
           </div>
-          <div className="flex justify-around">
-          <div className=" text-center mt-8 w-[20%] bg-white shadow-lg rounded-lg ml-[5%]">
+          <div className="lg:ml-14 flex justify-around">
+          <div className=" text-center mt-8 w-[30%] lg:w-[20%] bg-white dark:bg-[#353434b4] dark:text-slate-100 shadow-lg rounded-lg">
           <Image src={image} className="h-24"/>
             <h1>{directives[2]?.name}</h1>
             <h2>{directives[2]?.position}</h2>
           </div>
-          <div className=" text-center mt-8 w-[20%] bg-white shadow-lg rounded-lg  ml-[5%]">
+          <div className=" text-center mt-8 w-[30%] lg:w-[20%] bg-white dark:bg-[#353434b4] dark:text-slate-100 shadow-lg rounded-lg ">
           <Image src={image} className="h-24"/>
             <h1>{directives[3]?.name}</h1>
             <h2>{directives[3]?.position}</h2>
           </div>
-          <div className=" text-center mt-8 w-[20%] bg-white shadow-lg rounded-lg ml-[5%]">
+          <div className=" text-center mt-8 w-[30%] lg:w-[20%] bg-white dark:bg-[#353434b4] dark:text-slate-100 shadow-lg rounded-lg">
           <Image src={image} className="h-24 "/>
             <h1>{directives[4]?.name}</h1>
             <h2>{directives[4]?.position}</h2>
@@ -79,4 +55,16 @@ export default function SteeringCommittee() {
       )}
     </Layout>
   );
+}
+
+export async function getStaticProps() {
+  const res = await fetch('http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/directors');
+  const props = await res.json();
+  return {
+    props: {
+      props
+    },
+  revalidate: 3600,
+}
+    
 }
