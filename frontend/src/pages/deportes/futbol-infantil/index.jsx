@@ -91,7 +91,7 @@ export default function FutInF({data}) {
 
                 <MatchesInfo
                     data={data}
-                    className={"w-full h-full flex items-center md:bg-green-300 md:opacity-200"}
+                    classname={"w-full h-full flex items-center md:bg-green-300 md:opacity-200"}
                 />
 
             </div>

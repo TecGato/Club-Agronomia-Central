@@ -80,7 +80,7 @@ export default function FutFem({data}) {
             </div>
             <MatchesInfo
                 data={data}
-                className={"w-full h-full flex items-center bg-zinc-200 dark:bg-[#353434b4]"}
+                classname={"w-full h-full flex items-center bg-zinc-200 dark:bg-[#353434b4]"}
             />
         </Layout>
     );
