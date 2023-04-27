@@ -46,7 +46,7 @@ export default function Posts({ posts }) {
                       {mainNews.title}
                     </h3>
                     <p className='text-base text-gray-700 dark:text-slate-300  leading-6 pt-0 px-5 pb-5 mb-3 sm:row-span-1'>
-                      {mainNews.description}
+                      {mainNews.description.slice(0, 280)+'...'}
                     </p>
                   </div>
                 </div>
@@ -66,7 +66,7 @@ export default function Posts({ posts }) {
                         {news.title}
                       </h3>
                       <p className='text-base text-gray-700 dark:text-slate-300  leading-6 px-5 pt-0'>
-                        {news.description}
+                        {news.description.slice(0, 280)+'...'}
                       </p>
                     </div>
                   </Link>

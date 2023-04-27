@@ -16,7 +16,7 @@ export function TestimonialItemDashboard({ title, text, img, showModalWarn, setI
                         {title}
                     </h5>
                 </a>
-                <p className="mb-3 font-normal text-gray-600">{text}</p>
+                <p className="mb-3 font-normal text-gray-600">{text.slice(0, 280)+'...'}</p>
 
                 <div className='flex mt-4 justify-around'>
 
