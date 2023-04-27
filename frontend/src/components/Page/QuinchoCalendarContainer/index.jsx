@@ -7,7 +7,6 @@ export function QuinchoCalendarContainer({
   data,
   itsAdmin = false,
 }) {
-  const events = data;
   const months = {
     1: 'Enero',
     2: 'Febrero',
@@ -27,6 +26,16 @@ export function QuinchoCalendarContainer({
 
   const [month, setMonth] = useState(date.getMonth() + 1);
   const [year, setYear] = useState(date.getFullYear());
+
+  const firstDayofEvents = new Date(
+    dataDates[0].date.slice(0, 4),
+    dataDates[0].date.slice(5, 7) - 1,
+    dataDates[0].date.slice(8, 10)
+  );
+
+  const firstDayofMonth = new Date(year, month - 1, 1);
+  const lastDay = new Date(year, month, 0);
+  const lastdayPreviousMonth = new Date(year, month - 1, 0);
 
   const nextYear = () => {
     setYear(year + 1);
@@ -54,6 +63,7 @@ export function QuinchoCalendarContainer({
     }
   };
 
+  const events = data;
   const eventDates = dataDates;
   //Declare an initial state of the form modal
   const [showModal, setShowModal] = useState(false);
@@ -106,7 +116,7 @@ export function QuinchoCalendarContainer({
       </div>
 
       {/* Encabezado del calendario mensual */}
-      <div class="grid grid-cols-7 mt-4 border-t-4 border-indigo-500">
+      <div class="grid justify-items-center grid-cols-7 mt-4 border-t-4 border-indigo-500">
         <div class="pl-1 text-sm">LUN</div>
         <div class="pl-1 text-sm">MAR</div>
         <div class="pl-1 text-sm">MIE</div>
@@ -118,24 +128,39 @@ export function QuinchoCalendarContainer({
 
       {/* Contenedor principal */}
 
-      <div class="grid flex-grow w-full h-auto grid-cols-7 grid-rows-5 gap-px pt-px mt-1 bg-gray-200">
-        {eventDates.map((dateEv) => {
-          return dateEv.date ? (
-            <QuinchoCalendarDay
-              key={dateEv.date}
-              dateCard={dateEv.date}
-              eventArray={events.filter((dateE) => dateE.date === dateEv.date)}
-              showCard={showCard}
-              setShowCard={setShowCard}
-              month={month}
-              year={year}
-              itsAdmin={itsAdmin}
-            />
-          ) : null;
+      <div class="grid flex-grow w-full h-auto grid-cols-7 grid-rows-5 gap-px pt-px mt-1 ">
+        {Array.from({ length: firstDayofMonth.getDay() - 1 }).map((_, i) => (
+          <div class="flex items-center justify-center w-full h-full text-sm text-gray-400">
+            {lastdayPreviousMonth.getDate() - firstDayofMonth.getDay() + i}
+          </div>
+        ))}
+        {Array.from({ length: lastDay.getDate() }).map((_, i) => {
+          return (
+            <>
+              <div className="flex flex-col items-center justify-center w-full h-full text-sm border border-gray-200 truncate">
+                {i + 1}
+                {eventDates.map((dateEv) => {
+                  return (
+                    <QuinchoCalendarDay
+                      day={i + 1}
+                      key={dateEv.date}
+                      dateCard={dateEv.date}
+                      eventArray={events.filter(
+                        (dateE) => dateE.date === dateEv.date
+                      )}
+                      showCard={showCard}
+                      setShowCard={setShowCard}
+                      month={month}
+                      year={year}
+                      itsAdmin={itsAdmin}
+                    />
+                  );
+                })}
+              </div>
+            </>
+          );
         })}
       </div>
-
-      {/* Tags */}
 
       <h3>Indicadores de la reserva</h3>
       <button class="flex items-center flex-shrink-0 h-5 px-1 text-xs">
@@ -173,7 +198,11 @@ export function QuinchoCalendarContainer({
 
       {/* Si el estado del modal es true, renderiza el formulario */}
       {showModal ? (
-        <QuinchoCalendarForm setShowModal={setShowModal} itsAdmin={itsAdmin} />
+        <QuinchoCalendarForm
+          setShowModal={setShowModal}
+          itsAdmin={itsAdmin}
+          eventsData={data}
+        />
       ) : null}
     </div>
   );
