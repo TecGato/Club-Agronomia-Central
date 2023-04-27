@@ -1,52 +1,42 @@
-import React, { useState } from 'react';
 import { useFileEncoding } from '@/hooks';
+import { useState } from 'react';
 
-export function FormNews({ showModalForm, handlerCreate, setLoading, createTestimonial = false }) {
+export function NewProduct ({ showModalForm, handlerCreate }) {
   const { handleFileChange } = useFileEncoding();
 
-  const [post, setPost] = useState({
+  const [product, setProduct] = useState({
     title: '',
-    picture: '',
     description: '',
+    price: '',
+    picture: '',
   });
 
   const imagenChange = (event) => {
     handleFileChange(event, setPicture);
   };
 
-  const videoChange = (event) => {
-    handleFileChange(event, setVideo);
-  };
-
   const setPicture = (encodedFile) => {
-    setPost({
-      ...post,
+    setProduct({
+      ...product,
       picture: encodedFile,
     });
   };
 
-  const setVideo = (encodedFile) => {
-    setPost({
-      ...post,
-      video: encodedFile,
-    });
-  };
-
   const handlerChange = (event) => {
-    setPost({
-      ...post,
+    setProduct({
+      ...product,
       [event.target.name]: event.target.value,
     });
   };
 
   const handlerSubmit = (event) => {
     event.preventDefault();
-    handlerCreate(post);
-    showModalForm();
-    setLoading(true);
+    handlerCreate(product);
+    showModalForm()
+    console.log(product);
   };
 
-  const disableButton = Object.values(post).some((p) => p === '');
+  const disableButton = Object.values(product).some((p) => p === '')
 
   const stylesButton = () => {
     if (disableButton) {
@@ -77,7 +67,7 @@ export function FormNews({ showModalForm, handlerCreate, setLoading, createTesti
             className="border w-full rounded-lg border-gray-200 p-3 text-sm"
             placeholder="Titulo"
             onChange={handlerChange}
-            value={post.title}
+            value={product.title}
           />
           <label className="text-gray-900 text-lg">Imagen:</label>
           <input
@@ -88,26 +78,22 @@ export function FormNews({ showModalForm, handlerCreate, setLoading, createTesti
             placeholder="Imagen"
             onChange={imagenChange}
           />
-          {createTestimonial &&
-            <>
-              <label className="text-gray-900 text-lg">Video:</label>
-              <input
-                name="video"
-                type="file"
-                accept="video/*"
-                className="block w-full border border-gray-200 shadow-sm rounded-md text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 file:hover:bg-blue-100 cursor-pointer file:cursor-pointer file:border-0 file:bg-gray-100 file:mr-4 file:py-3 file:px-4 hover:bg-blue focus:border-2"
-                placeholder="video"
-                onChange={videoChange}
-              />
-            </>
-          }
-          <label className="text-gray-900 text-lg">Post:</label>
-          <textarea
+          <label className="text-gray-900 text-lg">Descripcion:</label>
+          <input
             name="description"
             className="border w-full rounded-lg border-gray-200 p-3 text-sm"
-            placeholder="Contenido"
+            placeholder="descripcion"
             onChange={handlerChange}
-            value={post.description}
+            value={product.description}
+          />
+          <label className="text-gray-900 text-lg">Precio:</label>
+          <input
+            name="price"
+            type="number"
+            className="border w-full rounded-lg border-gray-200 p-3 text-sm"
+            placeholder="Precio"
+            onChange={handlerChange}
+            value={product.price}
           />
           <button
             type="submit"
