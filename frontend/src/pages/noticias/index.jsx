@@ -1,7 +1,6 @@
-import { Layout, NewsPost } from '@/components/Page';
-import { useState, useMemo } from 'react';
+import { Layout } from '@/components/Page';
+import { useMemo } from 'react';
 import usePagination from '../../components/Page/Pagination';
-// import { NewsFilter } from '@/components/Page';
 import Link from "next/link";
 import { useFilter } from '@/components/Page';
 
@@ -15,24 +14,11 @@ export default function Posts({ posts }) {
   
   const mainNews = useMemo(() => currentItems[currentItems.length - 1], [currentItems]);
   const otherNews = useMemo(() => currentItems.slice(0, -1), [currentItems]);
-
+  
   return (
     <>
       {currentItems.length === 0 
-      ? (
-        <div>
-          <Layout
-            title='No se encontraron noticias'
-            image='https://img.freepik.com/foto-gratis/gente-tiro-medio-corriendo-juntos_23-2149037629.jpg?size=626&ext=jpg&ga=GA1.2.1228025790.1681327921&semt=sph'
-          >
-            <input
-              type="text"
-              placeholder="Buscar noticias..."
-              onChange={(e) => setFilter(e.target.value)}
-              className="absolute top-0 right-0 max-w-xs px-4 py-2 border-gray-100 rounded-md hover:bg-sky-100 focus:outline-none focus:ring focus:ring-indigo-300"
-            />
-          </Layout>
-        </div>)
+      ? setFilter('')
       : (
         <Layout
           title="Últimas Noticias"
