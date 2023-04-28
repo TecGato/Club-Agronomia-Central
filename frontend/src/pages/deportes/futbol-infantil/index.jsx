@@ -1,6 +1,6 @@
 import { Layout } from '@/components/Page';
-
-export default function FutInF() {
+import { MatchesInfo } from '@/components/Page/MatchesInfo';
+export default function FutInF({data}) {
     return (
         <Layout
             title="Baby Futbol"
@@ -88,7 +88,29 @@ export default function FutInF() {
                         className="w-full"
                     />
                 </div>
+
+                <MatchesInfo
+                    data={data}
+                    classname={"w-full h-full flex items-center md:bg-green-300 md:opacity-200"}
+                />
+
             </div>
         </Layout>
     );
 }
+
+
+
+export async function getStaticProps() {
+    try {
+    const res = await fetch('http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/matches');
+    const data = await res.json();
+
+
+    return {
+    props: { data: data },
+    };
+    } catch (error) {
+      return { error: error.message };
+    }
+  }

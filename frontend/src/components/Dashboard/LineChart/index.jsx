@@ -69,16 +69,18 @@ export const LineChart = () => {
   };
   return (
     <div
-      className="w-full col-span-2 bg-white border border-neutral-300 shadow-[0px_3px_10px_2px_rgb(0_0_0_/_13%)] px-4 py-2 rounded-lg relative
+      className="w-full col-span-2 dark:bg-[#2C2C2C] dark:border-none
+      dark:text-slate-100 bg-white border border-neutral-300 shadow-[0px_3px_10px_2px_rgb(0_0_0_/_13%)] px-4 py-2 rounded-lg relative
             lg:col-span-3 xl:col-span-2
             flex flex-col justify-between
             "
     >
       <div className="flex justify-between">
-        <p className="text-lg text-center text-[#262626] font-medium">
+        <p className="text-lg text-center  font-medium">
           Numero de Reservas
         </p>
-        <select name="" id="">
+        <select name="" id="" className='dark:bg-[#2C2C2C] dark:border-none
+        dark:text-slate-100'>
           <option value="year">Año</option>
           <option value="month">Mes</option>
           <option value="week">Semana</option>

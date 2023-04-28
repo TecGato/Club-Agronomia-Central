@@ -15,7 +15,7 @@ export default function Chess({data}) {
                         className="w-full"
                     />
 
-                    <p className="text-base text-gray-700 dark:text-slate-100 leading-6 py-5 md:p-5 lg:mx-8 xl:p-8 xl:m-8 2xl:px-24 2xl:mx-12"> 
+                    <p className="text-base text-gray-700 dark:text-slate-100 leading-6 py-5 md:p-5 lg:mx-8 xl:p-8 xl:m-8 2xl:px-24 2xl:mx-12">
                         La idea de club de ajedrez nació en el 2016 con una
                         comisión directiva integrada por {''}
                         <em>
@@ -94,13 +94,12 @@ export default function Chess({data}) {
                 </div>
                 <br />
 
-                <h2 className="text-lg text-center font-semibold text-gray-800 dark:text-slate-100 p-5">
-                    ¡Los esperamos!
-                </h2>
+
+            </div>
                 <MatchesInfo
                     data={data}
+                    classname={"bg-indigo-100 w-full h-full flex items-center"}
                 />
-            </div>
         </Layout>
     );
 }

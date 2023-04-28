@@ -1,6 +1,6 @@
 import { Layout } from '@/components/Page';
-
-export default function FutFem() {
+import { MatchesInfo } from '@/components/Page/MatchesInfo';
+export default function FutFem({data}) {
     return (
         <Layout
             title="Futsal Femenino"
@@ -78,6 +78,25 @@ export default function FutFem() {
                     </div>
                 </div>
             </div>
+            <MatchesInfo
+                data={data}
+                classname={"w-full h-full flex items-center bg-zinc-200 dark:bg-[#353434b4]"}
+            />
         </Layout>
     );
 }
+
+
+export async function getStaticProps() {
+    try {
+    const res = await fetch('http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/matches');
+    const data = await res.json();
+
+
+    return {
+    props: { data: data },
+    };
+    } catch (error) {
+      return { error: error.message };
+    }
+  }

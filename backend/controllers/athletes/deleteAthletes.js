@@ -1,8 +1,9 @@
 const { deleteAthlete } = require('../../helpers/athletes/deleteAthletes');
 
-const deleteById = async (res, req) => {
-  const { id } = req.params;
+const deleteById = async (req, res) => {
   try {
+    console.log(req.params);
+    const { id } = req.params;
     const athlete = await deleteAthlete(id);
     return res.status(200).json({
       msg: 'Athlete Deleted Successfully',
