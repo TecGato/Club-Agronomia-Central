@@ -1,18 +1,19 @@
-import axios from 'axios';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { validate } from './CalendarFormValidation';
 import { useQuincho } from '@/hooks';
 import { Warn } from '@/components/Dashboard/Warn/Warn';
+import AppContext from '../../../../contexts/AppContext';
 
 export function QuinchoCalendarForm({
   setShowModal,
   itsAdmin = false,
   setShowCard,
   showCard,
-  eventsData,
 }) {
-  const { handlerDelete } = useQuincho();
-
+  const { handlerDelete, handlerCreate, handlerUpdate, setLoading } =
+    useQuincho();
+  const { reservations, setShowMessageModal, showMessageModal } =
+    useContext(AppContext);
   const [showWarn, setShowWarn] = useState(false);
   const [data, setData] = useState({
     client: '',
@@ -32,11 +33,12 @@ export function QuinchoCalendarForm({
 
   const showModalWarn = () => {
     setShowWarn(false);
+    setShowCard(false);
   };
 
   const handleReservationChange = (event) => {
     const { name, value } = event.target;
-    setData({ [name]: value });
+    setData({ [name]: value, someChange: true });
   };
 
   const handleChange = (event) => {
@@ -50,40 +52,30 @@ export function QuinchoCalendarForm({
     } else {
       setData({ ...data, [name]: value, someChange: true });
     }
-    setErrors(validate(data, eventsData));
+    setErrors(validate(data, reservations));
   };
 
   const handleSubmit = async (event) => {
     // Stop the form from submitting and refreshing the page.
     event.preventDefault();
-    setErrors(validate(data, eventsData));
     setShowError(false);
     if (Object.keys(errors).length === 0 && data.someChange) {
       if (itsAdmin) {
         try {
-          const response = await axios.put(
-            `http://localhost:3001/api/events/${showCard._id}`,
-            data
-          );
-          alert('Evento modificado');
+          handlerUpdate(data, showCard._id);
+          setShowMessageModal('Evento modificado con Exito');
           setShowModal ? setShowModal(false) : setShowCard(false);
-          window.location.reload();
         } catch (error) {
-          alert('Error al crear evento');
+          console.log(error);
         }
       } else {
         try {
-          const validation = eventsData.filter(
-            (event) => event.date === data.date
-          );
-          const response = await axios.post(
-            'http://localhost:3001/api/events',
-            data
-          );
-          alert('Evento creado');
+          setErrors(validate(data, reservations));
+          handlerCreate(data);
+          setShowMessageModal('Evento creado con Exito');
           setShowModal ? setShowModal(false) : setShowCard(false);
         } catch (error) {
-          alert('Error al crear evento');
+          setShowMessageModal(error);
         }
       }
     } else {
@@ -101,6 +93,7 @@ export function QuinchoCalendarForm({
               <button
                 className="bg-transparent border-0 text-black float-right"
                 onClick={() => {
+                  console.log('showModal', setShowModal);
                   if (setShowModal) {
                     setShowModal(false);
                   } else {
@@ -277,7 +270,7 @@ export function QuinchoCalendarForm({
                   <div className="flex flex-wrap -mx-3 mb-2">
                     <div className="w-full px-3">
                       <label
-                        class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                        class="block uppercase tracking-wide text-gray-700 text-xs font-bold"
                         htmlFor="grid-state"
                       >
                         Estado de la reserva
@@ -335,7 +328,9 @@ export function QuinchoCalendarForm({
                     <button
                       type="button"
                       className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1"
-                      onClick={() => setShowWarn(showCard._id)}
+                      onClick={() => {
+                        setShowWarn(showCard._id);
+                      }}
                     >
                       Eliminar Reserva
                     </button>
@@ -351,6 +346,7 @@ export function QuinchoCalendarForm({
           handlerDelete={handlerDelete}
           showModalWarn={showModalWarn}
           showWarn={showWarn}
+          setLoading={setLoading}
         />
       )}
     </>

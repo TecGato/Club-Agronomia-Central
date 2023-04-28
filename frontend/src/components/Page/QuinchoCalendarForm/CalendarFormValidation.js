@@ -1,5 +1,4 @@
 export function validate(data, eventsData) {
-  console.log(data);
   const date = new Date();
   const todayDate =
     date.getFullYear() +
@@ -13,7 +12,7 @@ export function validate(data, eventsData) {
   const eventFiltered = eventsData.filter(
     (event) => event.date === data.date && event.beg_time === data.beg_time
   );
-  console.log(eventFiltered);
+
   if (!data.client)
     errors.client = 'Se debe ingresar el Nombre del Solicitante';
   if (data.client && data.client.length < 4)

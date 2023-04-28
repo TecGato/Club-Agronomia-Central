@@ -5,9 +5,25 @@ const AppContext = createContext();
 function AppContextProvider({ children }) {
   const [testimonials, setTestiminials] = useState([]);
   const [newsGlobal, setNewsGlobal] = useState([]);
-  
+  const [reservations, setReservations] = useState([]);
+  const [reservationsDates, setReservationsDates] = useState([]);
+  const [showMessageModal, setShowMessageModal] = useState(false);
+
   return (
-    <AppContext.Provider value={{ testimonials, setTestiminials, newsGlobal, setNewsGlobal }}>
+    <AppContext.Provider
+      value={{
+        testimonials,
+        setTestiminials,
+        newsGlobal,
+        setNewsGlobal,
+        reservations,
+        setReservations,
+        reservationsDates,
+        setReservationsDates,
+        showMessageModal,
+        setShowMessageModal,
+      }}
+    >
       {children}
     </AppContext.Provider>
   );

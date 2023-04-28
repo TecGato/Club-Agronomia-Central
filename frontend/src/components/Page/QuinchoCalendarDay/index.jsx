@@ -15,7 +15,6 @@ export function QuinchoCalendarDay(props) {
           parseInt(props.dateCard.slice(0, 4)) === props.year &&
           parseInt(props.dateCard.slice(8, 10)) === props.day ? (
             <>
-              {/* <span class="mx-2 my-1 text-xs font-bold">{props.dateCard}</span> */}
               {props.eventArray.length > 0
                 ? props.eventArray.map((detail, index) => {
                     return (
