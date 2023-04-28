@@ -1,4 +1,8 @@
-export function Warn({ handlerDelete, showModalWarn, showWarn, setLoading }) {
+import React, { useContext } from 'react';
+import AppContext from '../../../../contexts/AppContext';
+
+export function MessageModal() {
+  const { showMessageModal, setShowMessageModal } = useContext(AppContext);
   return (
     <div className="flex flex-col bg-gray-900/80 backdrop-blur-sm justify-center items-center overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
       <div className="rounded-xl border bg-gray-50 border-gray-100 p-4 shadow-xl">
@@ -16,27 +20,16 @@ export function Warn({ handlerDelete, showModalWarn, showWarn, setLoading }) {
             />
           </svg>
           <p className="text-gray-900">
-            ¿Esta Seguro que desea eliminar esta noticia?
+            {showMessageModal}
             <br />
-            Esta accion es irreversible.
           </p>
         </div>
         <div className="flex justify-center items-center">
           <button
             className="bg-[#1b418a] m-4 hover:hover:bg-[#10306b] text-white font-bold py-2 px-4 rounded"
-            onClick={() => {
-              handlerDelete(showWarn);
-              showModalWarn();
-              setLoading(true);
-            }}
+            onClick={() => setShowMessageModal(false)}
           >
-            Si
-          </button>
-          <button
-            className="bg-[#1b418a] m-4 hover:hover:bg-[#10306b] text-white font-bold py-2 px-4 rounded"
-            onClick={() => showModalWarn()}
-          >
-            No
+            Ok
           </button>
         </div>
       </div>
