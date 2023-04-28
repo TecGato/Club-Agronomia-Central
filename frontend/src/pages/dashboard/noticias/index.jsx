@@ -55,10 +55,10 @@ export default function News() {
                     className="col-span-1 p-5 sm:order-2"
                   />
                   <div className="sm:col-span-1 sm:grid sm:grid-row-2 sm:order-1">
-                    <h3 className="text-3xl place-self-center text-center font-bold text-gray-700 p-5 sm:row-span-1">
+                    <h3 className="text-3xl place-self-center text-center font-bold  p-5 sm:row-span-1">
                       {mainNews?.title}
                     </h3>
-                    <p className="text-base text-gray-700 leading-6 pt-0 px-5 pb-5 mb-3 sm:row-span-1">
+                    <p className="text-base  leading-6 pt-0 px-5 pb-5 mb-3 sm:row-span-1">
                       {mainNews?.description.slice(0, 280)+'...'}
                     </p>
                   </div>
@@ -85,10 +85,10 @@ export default function News() {
                       loading="lazy"
                       className=""
                     />
-                    <h3 className="text-lg text-center font-bold text-gray-700 px-5 pt-5 pb-3">
+                    <h3 className="text-lg text-center font-bold px-5 pt-5 pb-3">
                       {news.title}
                     </h3>
-                    <p className="text-base text-gray-700 leading-6 px-5 pt-0">
+                    <p className="text-base leading-6 px-5 pt-0">
                       {news.description.slice(0, 280)+'...'}
                     </p>
                     <div className='flex justify-around m-2 mb-4'>

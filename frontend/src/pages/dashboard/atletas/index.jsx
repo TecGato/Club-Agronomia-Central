@@ -73,7 +73,7 @@ export default function Athletes({ athletes }) {
         className={`w-full min-h-screen flex flex-col justify-self-center justify-center items-center xl:w-11/12 sm:w-5/6 `}
       >
         <article className="flex xl:gap-6 items-center">
-          <h1 className="text-5xl text-neutral-800 font-bold text-center">
+          <h1 className="text-5xl  font-bold text-center">
             Administrar todos los atletas
           </h1>
           <button
