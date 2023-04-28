@@ -29,7 +29,7 @@ export default function Posts({ posts }) {
               type="text"
               placeholder="Buscar noticias..."
               onChange={(e) => setFilter(e.target.value)}
-              className="absolute top-0 right-0 max-w-xs px-4 py-2 border-gray-100 rounded-md hover:bg-sky-100 focus:outline-none focus:ring focus:ring-indigo-300"
+              className="absolute top-0 right-0 max-w-xs px-4 py-2 ring rounded-md hover:bg-sky-100 focus:outline-none focus:ring focus:ring-indigo-300"
             />
 
             <div className='mt-7 pt-7 flex flex-wrap justify-center'>
@@ -42,10 +42,10 @@ export default function Posts({ posts }) {
                     className='col-span-1 p-5 sm:order-2'
                   />
                   <div className='sm:col-span-1 sm:grid sm:grid-row-2 sm:order-1'>
-                  <h3 className='text-3xl place-self-center text-center font-bold text-gray-700 dark:text-slate-100 p-5 sm:row-span-1'>
+                  <h3 className='text-3xl place-self-center text-center font-bold text-gray-700 dark:text-slate-100 pt-5 px-5 pb-0 sm:row-span-1'>
                       {mainNews.title}
                     </h3>
-                    <p className='text-base text-gray-700 dark:text-slate-300  leading-6 pt-0 px-5 pb-5 mb-3 sm:row-span-1'>
+                    <p className='text-base text-gray-700 dark:text-slate-300 leading-6 pt-0 px-5 pb-5 mb-5 sm:row-span-1'>
                       {mainNews.description.slice(0, 280)+'...'}
                     </p>
                   </div>
