@@ -7,9 +7,9 @@ export function HomePage() {
     setDonate(!donate);
   };
   return (
-    <>
+    <div>
       <Banner />
-      <h1 className="text-3xl  dark:text-slate-100 text-gray-800 font-bold underline">
+      <h1 className="text-3xl dark:text-slate-100 text-gray-800 font-bold underline">
         Bienvenidos
       </h1>
       <Donation visibleContributions={visibleContributions} />
@@ -19,6 +19,6 @@ export function HomePage() {
       <br className="my-5 py-5" />
       <hr className="mt-5 pt-5" />
       <Publicity />
-    </>
+    </div>
   );
 }
