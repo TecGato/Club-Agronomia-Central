@@ -5,7 +5,7 @@ export function NavLink({ text, link, color = 'text-black', sonLinks }) {
         <>
             <li className="px-1 relative group">
                 <Link
-                    className={`text-slate-100 text-lg before:transition-all before:duration-300 rounded-md before:content-[''] before:w-full before:scale-x-0 before:h-1 before:rounded-lg before:bg-blue-600 before:absolute before:top-full hover:before:scale-x-100 hover:text-blue-600 before:origin-bottom-left`}
+                    className={`text-slate-100 text-lg before:transition-all before:duration-300 rounded-md before:content-[''] before:w-full before:scale-x-0 before:h-1 before:rounded-lg before:bg-blue-600 before:absolute before:top-full hover:before:scale-x-100 hover:text-blue-600 before:origin-bottom-left ${color}`}
                     href={link}
                 >
                     {text}
@@ -15,7 +15,7 @@ export function NavLink({ text, link, color = 'text-black', sonLinks }) {
                         {sonLinks.map(({ text, linkSon }) => (
                             <li key={linkSon} className="px-1 relative before:transition-all before:duration-300 rounded-md before:content-[''] before:w-full before:scale-x-0 before:h-1 before:rounded-lg before:bg-blue-600 before:absolute before:top-full hover:before:scale-x-100 hover:text-blue-600 before:origin-bottom-left">
                                 <Link
-                                    className={`text-slate-100 hover:text-blue-600 text-lg`}
+                                    className={`text-slate-100 hover:text-blue-600 text-lg ${color}`}
                                     href={linkSon}
                                 >
                                     {text}

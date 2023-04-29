@@ -10,8 +10,8 @@ export function Navbar() {
   };
 
   return (
-    <header className="w-full h-14 fixed z-50 bg-blue-900 backdrop-filter backdrop-blur-lg bg-opacity-30 duration-500 flex justify-between items-center shadow-xl px-3">
-      <img src="/logo.png" className="w-12" alt="" />
+    <header className="w-full h-14 fixed z-50 bg-blue-900 backdrop-filter backdrop-blur-lg bg-opacity-50 duration-500 flex justify-between items-center shadow-xl px-3">
+      <img src="/logo.png" className="w-12" alt="logo" />
       <p className="text-slate-100 text-lg lg:hidden">Club Agronomia Central</p>
 
       <ul className="gap-4 hidden lg:flex">
@@ -22,7 +22,6 @@ export function Navbar() {
         <NavLink text={'Noticias'} link={'/noticias'} />
         <NavLink text={'Merchandising'} link={'/merchandising'} />
         <NavLink text={'Contáctanos'} link={'/contacto'} />
-        <NavLink text={'Login'} link={'/dashboard/auth/login'} />
       </ul>
       <div
         className={`w-10 h-10 lg:h-auto relative ${openMenu ? 'fixed z-50' : 'relative'}`}
@@ -35,19 +34,19 @@ export function Navbar() {
           className={`flex absolute flex-col w-10 h-10 justify-center items-center border-none bg-transparent gap-[0.62rem] lg:hidden `}
         >
           <div
-            className={`w-full h-[5px] bg-black dark:bg-white rounded-md transition-all duration-500 origin-left ${
+            className={`w-full h-[5px] bg-slate-100 rounded-md transition-all duration-500 origin-left ${
               openMenu && 'rotate-45'
             }
                     `}
           ></div>
           <div
-            className={`w-full h-[5px] bg-black dark:bg-white rounded-md transition-all duration-300 origin-left ${
+            className={`w-full h-[5px] bg-slate-100 rounded-md transition-all duration-300 origin-left ${
               openMenu && 'opacity-0 -translate-x-2'
             }
                     `}
           ></div>
           <div
-            className={`w-full h-[5px] bg-black dark:bg-white rounded-md transition-all duration-500 origin-left ${
+            className={`w-full h-[5px] bg-slate-100 rounded-md transition-all duration-500 origin-left ${
               openMenu && '-rotate-45'
             }
                     `}

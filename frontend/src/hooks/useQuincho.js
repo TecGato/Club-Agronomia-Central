@@ -46,6 +46,7 @@ export function useQuincho() {
 
   const handlerUpdate = async (event,id) => {
     try {
+      console.log(event);
       const { data } = await axios.put(
         `http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/events/${id}`,
         event
