@@ -2,7 +2,7 @@ export const EL_CLUB = [
   { name: "Comisión Directiva", link: "/club/comision-directiva" },
   { name: "Historia", link: "/club/historia" },
   { name: "Instalaciones", link: "/club/instalaciones" },
-  { name: "Disponibilidad del Quicho", link: "/club/quincho" },
+  { name: "Disponibilidad del Quicho", link: "/club/quincho" }
 ];
 export const DEPORTES = [
   { name: "Ajedrez", link: "/deportes/ajedrez" },
@@ -18,5 +18,5 @@ export const CONTACTO = [
   { name: "Futsal", link: "https://www.instagram.com/agronomiafutsal/" },
   { name: "Futsal Femenino", link: "https://www.instagram.com/agronomia.futsalfem/" },
   { name: "Club social y deportivo", link: "https://www.facebook.com/clubagronomiacentral" },
-  { name: "Contacto", link: "/contacto" },
+  { name: "Contáctanos", link: "/contacto" },
 ];
