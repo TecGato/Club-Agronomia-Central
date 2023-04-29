@@ -1,5 +1,9 @@
 import { Layout } from '@/components/Page';
 import { MatchesInfo } from '@/components/Page/MatchesInfo';
+import insta from'../../../../public/contact-img/insta.svg'
+import face from'../../../../public/contact-img/face.svg'
+import twitter from'../../../../public/contact-img/twitter.svg'
+import Image from 'next/image';
 export default function Chess({data}) {
     return (
         <Layout
@@ -93,12 +97,23 @@ export default function Chess({data}) {
                     />
                 </div>
                 <br />
-
+            <p className="pl-2 text-center">Visita nuestras redes sociales para conocer más!!!</p>
+          <div className="flex flex-row items-center justify-center gap-4 mt-3 ">
+                <a href="https://www.instagram.com/clubzugzwang" target="_blank">
+              <Image src={insta} alt="Instagram" className="w-8 invert dark:invert-0" />
+                </a>
+                <a href="https://www.facebook.com/CLUBDEAJEDREZUGZWANG" target="_blank">
+                <Image src={face} alt="Facebook" className="w-8 invert dark:invert-0" />
+                </a>
+                <a href="https://twitter.com/ClubZugzwang" target="_blank">
+                <Image src={twitter} alt="Twitter" className="w-8 dark:invert" />
+                </a>
+          </div>
 
             </div>
                 <MatchesInfo
                     data={data}
-                    classname={"bg-indigo-100 w-full h-full flex items-center"}
+                    classname={"bg-indigo-100 dark:bg-[#2C2C2C]  w-full h-full flex items-center"}
                 />
         </Layout>
     );
