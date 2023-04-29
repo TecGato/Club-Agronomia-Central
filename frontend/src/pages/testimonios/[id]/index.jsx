@@ -6,7 +6,7 @@ export default function Testimony({testimonials}) {
             title={testimonials.title} 
             image={'https://img.freepik.com/foto-gratis/joven-corredor-atar-cordones_1421-46.jpg?size=626&ext=jpg&ga=GA1.2.1228025790.1681327921&semt=sph'}
         >
-            <div className="mx-4 my-7 py-5 shadow-2xl grid">
+            <div className="m-7 py-4 px-14 shadow-2xl grid">
                 {testimonials.video.secure_url 
                     ? <video src={testimonials.video.secure_url} className="w-full max-w-lg place-self-center p-5 bg-gray-100" controls>
                         Tu navegador no soporta el elemento video.
