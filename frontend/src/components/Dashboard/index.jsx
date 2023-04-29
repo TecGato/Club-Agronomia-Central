@@ -30,3 +30,4 @@ export * from './MessageModal';
 export * from './Publishing';
 export * from './CreateAd';
 export * from './EditAd';
+export * from './DeleteAd';

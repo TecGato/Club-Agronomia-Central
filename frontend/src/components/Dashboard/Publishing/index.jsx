@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const Publishing = ({ ad, number, name, tel, img, handleEdit }) => {
+export const Publishing = ({ ad, number, name, tel, img, handleEdit, handleDelete }) => {
   return (
     <article className="w-[48%] lg:w-[32%] h-fit 2xl:w-[20%] bg-white rounded-lg overflow-hidden shadow-lg">
       <img src={img} alt="" />
@@ -15,7 +15,7 @@ export const Publishing = ({ ad, number, name, tel, img, handleEdit }) => {
         <button onClick={() => handleEdit(ad)} className="text-white bg-[#1b418a] w-full py-1 rounded-lg">
           Editar
         </button>
-        <button className="text-white bg-[#bd3333] w-full py-1 rounded-lg disabled:bg-[#353333] disabled:text-[#353333]" disabled={number <= 3}>
+        <button onClick={() => handleDelete(ad)} className="text-white bg-[#bd3333] w-full py-1 rounded-lg disabled:bg-[#353333] disabled:text-[#353333]" disabled={number <= 3}>
           Eliminar
         </button>
       </div>

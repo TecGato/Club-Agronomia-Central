@@ -5,14 +5,16 @@ import {
   ModalTable,
   Publishing,
   EditAd,
+  DeleteAd,
 } from '@/components/Dashboard';
 import axios from 'axios';
 
 export default function PaginadePubli() {
   const [ads, setAds] = useState([]);
   const [editModal, setEditModal] = useState(false);
-  const [adToEdit, setAdToEdit] = useState({});
   const [createModal, setCreateModal] = useState(false);
+  const [deleteModal, setDeleteModal] = useState(false)
+  const [adToEdit, setAdToEdit] = useState({});
 
   const getAds = async () => {
     const { data } = await axios.get('http://localhost:3001/api/ads');
@@ -26,7 +28,14 @@ export default function PaginadePubli() {
     });
     setEditModal(true);
   };
-
+  const handleDelete = (ad) => {
+    setAdToEdit({
+      id: ad._id,
+      name: ad.name,
+      contact: ad.contact,
+    });
+    setDeleteModal(true);
+  }
   useEffect(() => {
     getAds();
   }, []);
@@ -83,22 +92,24 @@ export default function PaginadePubli() {
               name={ad.name}
               tel={ad.contact}
               handleEdit={handleEdit}
+              handleDelete={handleDelete}
             />
           ))}
         </section>
       </section>
       {editModal && (
         <ModalTable>
-          <EditAd
-            setEditModal={setEditModal}
-            getAds={getAds}
-            ad={adToEdit}
-          />
+          <EditAd setEditModal={setEditModal} getAds={getAds} ad={adToEdit} />
         </ModalTable>
       )}
       {createModal && (
         <ModalTable>
           <CreateAd setCreateModal={setCreateModal} getAds={getAds} />
+        </ModalTable>
+      )}
+      {deleteModal && (
+        <ModalTable>
+          <DeleteAd setDeleteModal={setDeleteModal} getAds={getAds} id={adToEdit.id}/>
         </ModalTable>
       )}
     </Layout>
