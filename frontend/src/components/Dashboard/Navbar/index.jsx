@@ -39,7 +39,7 @@ export const Navbar = ({ openNavbar }) => {
               icon={icon}
             />
           ))}
-          <div className="mt-4 ml-2 w-fit h-6  dark:bg-transparent invert dark:invert-0">
+          <div className="mt-4 ml-2 w-fit h-6  dark:bg-transparent">
             <Darkmode />
           </div>
         </div>
