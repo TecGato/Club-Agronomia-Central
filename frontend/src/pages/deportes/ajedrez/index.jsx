@@ -1,5 +1,9 @@
 import { Layout } from '@/components/Page';
 import { MatchesInfo } from '@/components/Page/MatchesInfo';
+import insta from'../../../../public/contact-img/insta.svg'
+import face from'../../../../public/contact-img/face.svg'
+import twitter from'../../../../public/contact-img/twitter.svg'
+import Image from 'next/image';
 export default function Chess({data}) {
     return (
         <Layout
@@ -15,7 +19,7 @@ export default function Chess({data}) {
                         className="w-full"
                     />
 
-                    <p className="text-base text-gray-700 dark:text-slate-100 leading-6 py-5 md:p-5 lg:mx-8 xl:p-8 xl:m-8 2xl:px-24 2xl:mx-12"> 
+                    <p className="text-base text-gray-700 dark:text-slate-100 leading-6 py-5 md:p-5 lg:mx-8 xl:p-8 xl:m-8 2xl:px-24 2xl:mx-12">
                         La idea de club de ajedrez nació en el 2016 con una
                         comisión directiva integrada por {''}
                         <em>
@@ -93,14 +97,24 @@ export default function Chess({data}) {
                     />
                 </div>
                 <br />
+            <p className="pl-2 text-center">Visita nuestras redes sociales para conocer más!!!</p>
+          <div className="flex flex-row items-center justify-center gap-4 mt-3 ">
+                <a href="https://www.instagram.com/clubzugzwang" target="_blank">
+              <Image src={insta} alt="Instagram" className="w-8 invert dark:invert-0" />
+                </a>
+                <a href="https://www.facebook.com/CLUBDEAJEDREZUGZWANG" target="_blank">
+                <Image src={face} alt="Facebook" className="w-8 invert dark:invert-0" />
+                </a>
+                <a href="https://twitter.com/ClubZugzwang" target="_blank">
+                <Image src={twitter} alt="Twitter" className="w-8 dark:invert" />
+                </a>
+          </div>
 
-                <h2 className="text-lg text-center font-semibold text-gray-800 dark:text-slate-100 p-5">
-                    ¡Los esperamos!
-                </h2>
+            </div>
                 <MatchesInfo
                     data={data}
+                    classname={"bg-indigo-100 dark:bg-[#2C2C2C]  w-full h-full flex items-center"}
                 />
-            </div>
         </Layout>
     );
 }

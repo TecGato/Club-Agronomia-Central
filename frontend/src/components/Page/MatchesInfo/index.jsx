@@ -8,7 +8,7 @@ export function MatchesInfo(props){
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 ">
 
                 <div className="p-2 sm:p-10 text-center">
-                    <div style={{height: '350px'}} className="flex justify-center items-center max-w-sm rounded overflow-hidden shadow-lg hover:bg-white bg-white">
+                    <div style={{height: '350px'}} className="flex justify-center items-center max-w-sm rounded overflow-hidden shadow-lg hover:bg-white bg-white dark:bg-[#2C2C2C]">
                         <div className="space-y-10">
                             <div className="px-6 py-4">
                                 <div className="px-10 max-w-2xl">
@@ -23,7 +23,7 @@ export function MatchesInfo(props){
                 </div>
 
                 <div className="p-2 sm:p-10 text-center">
-                    <div style={{height: '350px'}} className="flex justify-center items-center max-w-sm rounded overflow-hidden shadow-lg bg-orange-500 hover:bg-orange-600">
+                    <div style={{height: '350px'}} className={props.classname}>
                         <div className="space-y-10">
                             <div className="px-6 py-4">
                                 <div className="space-y-5">
@@ -45,7 +45,7 @@ export function MatchesInfo(props){
 
 
                 <div className="p-2 sm:p-10 text-center">
-                    <div style={{height: '350px'}}  className="flex justify-center items-center max-w-sm rounded overflow-hidden shadow-lg hover:bg-white bg-white ">
+                    <div style={{height: '350px'}}  className="flex justify-center items-center max-w-sm rounded overflow-hidden shadow-lg hover:bg-white bg-white dark:bg-[#2C2C2C] ">
                         <div className="space-y-10">
                             <div className="px-6 py-4">
                                 <div className="px-10 max-w-2xl">

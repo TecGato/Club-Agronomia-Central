@@ -22,3 +22,7 @@ export * from './ButtonCreateNews';
 export * from './ButtonDeleteNews';
 export * from './ButtonEditNews';
 export * from './Loader';
+export * from './TableActions';
+export * from './ModalTable';
+export * from './EditAthlete';
+export * from './CreateAthlete';
