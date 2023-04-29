@@ -5,11 +5,15 @@ export const EditAd = ({ ad, setEditModal, getAds }) => {
   const [picture, setPicture] = useState(null);
   const { name, contact, formState, onInputChange } = useForm(ad);
   const { handleFileChange } = useFileEncoding();
-  const { handlerCreate } = useAds();
+  const { handlerModify } = useAds();
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    await handlerCreate({ ...formState, picture });
+    if (!picture) {
+      await handlerModify({ id: ad.id, ...formState });
+    } else {
+      await handlerModify({ id: ad.id, ...formState, picture });
+    }
     await getAds();
     setEditModal(false);
   };

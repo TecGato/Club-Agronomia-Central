@@ -20,6 +20,7 @@ export default function PaginadePubli() {
   };
   const handleEdit = (ad) => {
     setAdToEdit({
+      id: ad._id,
       name: ad.name,
       contact: ad.contact,
     });
@@ -75,6 +76,7 @@ export default function PaginadePubli() {
           {/* Publicidad */}
           {ads?.map((ad, index) => (
             <Publishing
+              key={ad._id}
               ad={ad}
               number={index + 1}
               img={ad.picture.secure_url}
