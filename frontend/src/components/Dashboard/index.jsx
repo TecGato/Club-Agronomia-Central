@@ -28,3 +28,5 @@ export * from './EditAthlete';
 export * from './CreateAthlete';
 export * from './MessageModal';
 export * from './Publishing';
+export * from './CreateAd';
+export * from './EditAd';
