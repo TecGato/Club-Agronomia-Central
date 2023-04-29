@@ -16,16 +16,16 @@ export function QuinchoCalendarForm({
     useContext(AppContext);
   const [showWarn, setShowWarn] = useState(false);
   const [data, setData] = useState({
-    client: '',
-    email: '',
-    phone: '',
-    date: '',
-    beg_time: '',
-    end_time: '',
-    description: '',
-    name: 'Event name',
-    state: 1,
-    amount: 0,
+    client: itsAdmin ? showCard.client : '',
+    email: itsAdmin ? showCard.email : '',
+    phone: itsAdmin ? showCard.phone : '',
+    date: itsAdmin ? showCard.date : '',
+    beg_time: itsAdmin ? showCard.beg_time : '',
+    end_time: itsAdmin ? showCard.end_time : '',
+    description: itsAdmin ? showCard.description : '',
+    name: itsAdmin ? showCard.name : 'Event Name',
+    state: itsAdmin ? showCard.state : 1,
+    amount: itsAdmin ? showCard.amount : 0,
     someChange: false,
   });
   const [errors, setErrors] = useState({});
@@ -52,12 +52,13 @@ export function QuinchoCalendarForm({
     } else {
       setData({ ...data, [name]: value, someChange: true });
     }
-    setErrors(validate(data, reservations));
+    setErrors(validate(data, reservations, itsAdmin));
   };
 
   const handleSubmit = async (event) => {
     // Stop the form from submitting and refreshing the page.
     event.preventDefault();
+    setErrors(validate(data, reservations, itsAdmin));
     setShowError(false);
     if (Object.keys(errors).length === 0 && data.someChange) {
       if (itsAdmin) {
@@ -70,7 +71,6 @@ export function QuinchoCalendarForm({
         }
       } else {
         try {
-          setErrors(validate(data, reservations));
           handlerCreate(data);
           setShowMessageModal('Evento creado con Exito');
           setShowModal ? setShowModal(false) : setShowCard(false);
@@ -123,7 +123,7 @@ export function QuinchoCalendarForm({
                       type="text"
                       placeholder=""
                       onChange={handleChange}
-                      value={itsAdmin ? showCard.client : data.client}
+                      value={data.client}
                     />
                     {showError && errors.client && (
                       <p className="text-red-400 text-xs">{errors.client}</p>
@@ -146,7 +146,7 @@ export function QuinchoCalendarForm({
                       type="text"
                       placeholder=""
                       onChange={handleChange}
-                      value={itsAdmin ? showCard.email : data.email}
+                      value={data.email}
                     />
                     {showError && errors.email && (
                       <p className="text-red-400 text-xs">{errors.email}</p>
@@ -169,7 +169,7 @@ export function QuinchoCalendarForm({
                       type="text"
                       placeholder=""
                       onChange={handleChange}
-                      value={itsAdmin ? showCard.phone : data.phone}
+                      value={data.phone}
                     />
                     {showError && errors.phone && (
                       <p className="text-red-400 text-xs">{errors.phone}</p>
@@ -191,7 +191,7 @@ export function QuinchoCalendarForm({
                       name="date"
                       type="date"
                       onChange={handleChange}
-                      value={itsAdmin ? showCard.date : data.date}
+                      value={data.date}
                     />
                     {showError && errors.date && (
                       <p className="text-red-400 text-xs">{errors.date}</p>
@@ -256,7 +256,7 @@ export function QuinchoCalendarForm({
                       autoComplete="off"
                       placeholder=""
                       onChange={handleChange}
-                      value={itsAdmin ? showCard.description : data.description}
+                      value={data.description}
                     />
                     {showError && errors.description && (
                       <p className="text-red-400 text-xs">
@@ -277,7 +277,7 @@ export function QuinchoCalendarForm({
                       </label>
                       <div className="relative">
                         <select
-                          className="appearance-none block w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                          className="appearance-none block w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 mb-2"
                           id="grid-state"
                           name="state"
                           onChange={handleReservationChange}
@@ -298,6 +298,31 @@ export function QuinchoCalendarForm({
                           >
                             <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
                           </svg>
+                        </div>
+                      </div>
+                      <div className="flex flex-wrap -mx-3 mb-2">
+                        <div className="w-full px-3 mb-2">
+                          <label
+                            className="block uppercase tracking-wide text-gray-700 text-xs font-bold "
+                            htmlFor="amount"
+                          >
+                            COSTO DE LA RESERVA
+                          </label>
+                          <input
+                            className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
+                            id="amount"
+                            name="amount"
+                            type="number"
+                            autoComplete="off"
+                            placeholder=""
+                            onChange={handleChange}
+                            value={data.amount}
+                          />
+                          {showError && errors.amount && (
+                            <p className="text-red-400 text-xs">
+                              {errors.amount}
+                            </p>
+                          )}
                         </div>
                       </div>
                     </div>
