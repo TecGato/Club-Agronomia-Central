@@ -47,7 +47,7 @@ export function Publicity() {
   
     return (
       <div className="z-10 m-4 p-5 flex flex-wrap justify-center">
-        <div className="shadow-lg md:my-5 mx-1 relative" onClick={() => setSelectedIndex(index)}>
+        <div className="shadow-lg justify-center md:my-5 mx-1 relative">
             <div className='w-56 h-36 overflow-hidden'>
                 <img
                     src={selectedItem.image}
@@ -61,7 +61,7 @@ export function Publicity() {
             </div>
         </div>
   
-        <div className="shadow-lg md:my-5 mx-1 relative" onClick={() => setSelectedIndex(index)}>
+        <div className="shadow-lg md:my-5 mx-1 relative">
             <div className='w-56 h-36 overflow-hidden'>
                 <img
                     src={nextItem.image}
@@ -76,7 +76,7 @@ export function Publicity() {
             </div>
         </div>
 
-        <div className="shadow-lg md:my-5 mx-1 relative" onClick={() => setSelectedIndex(index)}>
+        <div className="shadow-lg md:my-5 mx-1 relative">
             <div className='w-56 h-36 overflow-hidden'>
                 <img
                     src={secondNextItem.image}
@@ -91,7 +91,7 @@ export function Publicity() {
             </div>
         </div>
 
-        <div className="shadow-lg md:my-5 mx-1 relative" onClick={() => setSelectedIndex(index)}>
+        <div className="shadow-lg md:my-5 mx-1 relative">
             <div className='w-56 h-36 overflow-hidden'>
                 <img
                     src={thirdNextItem.image}

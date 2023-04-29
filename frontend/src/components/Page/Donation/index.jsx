@@ -2,9 +2,10 @@ import React from "react";
 
 export function Donation({ visibleContributions }) {
     return (
+        <div className='grid justify-items-center pt-5'>
         <div
             style={{ backgroundImage: `url(/donation-img/banner-donation2.jpg)` }}
-            className="bg-center bg-cover m-2 max-w-[100%] rounded-lg"
+            className="bg-center lg:max-w-5xl bg-cover m-2 max-w-[100%] rounded-lg"
         >
             <div className="bg-gradient-to-r from-blue-950 to-cyan-500/0 py-[16px] px-4 md:px-6 lg:px-8 rounded-lg flex lg:flex-row flex-col justify-start lg:justify-between  lg:items-center ">
                 <div className="flex justify-start items-start flex-col">
@@ -18,6 +19,7 @@ export function Donation({ visibleContributions }) {
                     Doná
                 </button>
             </div>
+        </div>
         </div>
     );
 };
