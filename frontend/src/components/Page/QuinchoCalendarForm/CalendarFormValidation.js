@@ -1,4 +1,4 @@
-export function validate(data, eventsData) {
+export function validate(data, eventsData, itsAdmin) {
   const date = new Date();
   const todayDate =
     date.getFullYear() +
@@ -9,11 +9,12 @@ export function validate(data, eventsData) {
     date.getDate();
   const errors = {};
   const regexURL = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  const regecNum = /^([0-9])*$/;
   const eventFiltered = eventsData.filter(
     (event) => event.date === data.date && event.beg_time === data.beg_time
   );
 
-  if (!data.client)
+  if (!itsAdmin) {if (!data.client)
     errors.client = 'Se debe ingresar el Nombre del Solicitante';
   if (data.client && data.client.length < 4)
     errors.client = 'Longitud insuficiente';
@@ -34,6 +35,12 @@ export function validate(data, eventsData) {
     errors.beg_time = 'Ya existe una solicitud para este horario';
   if (!data.description)
     errors.description = 'Se debe ingresar una Descripcion del Evento';
+  } else {
+    if (!regecNum.test(data.amount)) errors.amount = 'No se pueden ingresar letras en el campo de cantidad';
+    if (data.amount && data.amount < 0)
+      errors.amount = 'La cantidad debe ser mayor a 0';
+      
+  }
 
   return errors;
 }
