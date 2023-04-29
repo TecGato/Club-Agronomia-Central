@@ -1,5 +1,4 @@
 
-
 export function Banner() {
     return (
         <div className="relative pb-52 sm:pb-96 lg:pb-0 lg:h-screen">
