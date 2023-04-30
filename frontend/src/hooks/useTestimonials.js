@@ -11,7 +11,7 @@ export function useTestimonials() {
   const [modifyTestimony, setModifyTestimony] = useState(false);
   const [postModify, setPostModify] = useState();
   const [loading, setLoading] = useState(false);
-  const { testimonials, setTestiminials } = useContext(AppContext);
+  const { testimonials, setTestiminials, setShowMessageModal } = useContext(AppContext);
 
   const showModalForm = () => {
     setShowForm(!showForm);
@@ -31,8 +31,11 @@ export function useTestimonials() {
       );
       data && setTestiminials(testimonials.filter((tes) => tes._id !== id));
       setLoading(false);
+      setShowMessageModal('Testimonio Eliminado con Exito');
       console.log(data.msg);
     } catch (error) {
+      setLoading(false);
+      setShowMessageModal('Ha ocurrido un error');
       console.log(error);
     }
   };
@@ -46,8 +49,11 @@ export function useTestimonials() {
       );
       data && setTestiminials([data.newTestimonial, ...testimonials]);
       setLoading(false);
+      setShowMessageModal('Testimonio Creado con Exito');
       console.log(data.msg);
     } catch (error) {
+      setLoading(false);
+      setShowMessageModal('Ha ocurrido un error');
       console.log(error);
     }
   };
@@ -66,22 +72,32 @@ export function useTestimonials() {
         updateTestimonial[index] = data.testimonial;
         setTestiminials(updateTestimonial);
         setLoading(false);
+        setShowMessageModal('Testimonio Editado con Exito');
       }
       console.log(data.msg);
     } catch (error) {
+      setLoading(false);
+      setShowMessageModal('Ha ocurrido un error');
       console.log(error);
     }
   };
 
   const stateGlobalTestimonials = async () => {
-    if (testimonials.length === 0) {
-      const res = await axios.get(
-        // 'http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/testimonials'
-        'http://localhost:3001/api/testimonials'
-      );
-      const response = res.data.reverse();
-      setTestiminials(response);
+    try {
+      if (testimonials.length === 0) {
+        setLoading(true);
+        const res = await axios.get(
+          // 'http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/testimonials'
+          'http://localhost:3001/api/testimonials'
+        );
+        const response = res.data.reverse();
+        setTestiminials(response);
+        setLoading(false);
+      }
+    } catch (error) {
       setLoading(false);
+      setShowMessageModal('Ha ocurrido un error');
+      console.log(error);
     }
   };
 
