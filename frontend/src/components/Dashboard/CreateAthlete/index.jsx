@@ -49,6 +49,7 @@ export const CreateAthlete = ({ setCreateModal }) => {
   const { handlerCreate } = useAthletes();
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log(formState);
     handlerCreate(formState);
     setCreateModal(false);
   };
@@ -114,30 +115,18 @@ export const CreateAthlete = ({ setCreateModal }) => {
               value={discipline}
               onChange={onInputChange}
             >
-                <option value="Ajedrez">
-                  Ajedrez
-                </option>
-                <option value="Fútbol Infantil">
-                  Fútbol Infantil
-                </option>
-                <option value="Futsal">
-                  Futsal
-                </option>
-                <option value="Futsal Femenino">
-                  Futsal Femenino
-                </option>
-                <option value="Taekwondo">
-                  Taekwondo
-                </option>
-                <option value="Centro de Entrenamiento">
-                  Centro de Entrenamiento
-                </option>
-                <option value="Entrenamiento de Arqueros">
-                  Entrenamiento de Arqueros
-                </option>
-                <option value="Escuelita de Fútbol">
-                  Escuelita de Fútbol
-                </option>
+              <option value="Ajedrez">Ajedrez</option>
+              <option value="Fútbol Infantil">Fútbol Infantil</option>
+              <option value="Futsal">Futsal</option>
+              <option value="Futsal Femenino">Futsal Femenino</option>
+              <option value="Taekwondo">Taekwondo</option>
+              <option value="Centro de Entrenamiento">
+                Centro de Entrenamiento
+              </option>
+              <option value="Entrenamiento de Arqueros">
+                Entrenamiento de Arqueros
+              </option>
+              <option value="Escuelita de Fútbol">Escuelita de Fútbol</option>
             </select>
           </div>
           {/* ========= email ========= */}

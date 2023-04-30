@@ -8,8 +8,40 @@ import {
   NextMatches,
   SteeringCommitteePreview,
 } from '@/components/Dashboard';
+import useStore from '@/store/globalstore';
+import { useEffect } from 'react';
 
 export default function Dashboard() {
+  const setAtletas = useStore((state) => state.setAtletas);
+  const atletas = useStore((state) => state.atletas);
+  const reservas = useStore((state) => state.reservas);
+  const setReservas = useStore((state) => state.setReservas);
+  const Ajedrez = atletas.filter((atleta) => atleta.discipline === 'Ajedrez');
+  const futbolInfantil = atletas.filter(
+    (atleta) => atleta.discipline === 'Fútbol Infantil'
+  );
+  const futsal = atletas.filter((atleta) => atleta.discipline === 'Futsal');
+  const futsalFemenino = atletas.filter(
+    (atleta) => atleta.discipline === 'Futsal Femenino'
+  );
+  const taekwondo = atletas.filter(
+    (atleta) => atleta.discipline === 'Taekwondo'
+  );
+  const centroEntrenamiento = atletas.filter(
+    (atleta) => atleta.discipline === 'Centro de Entrenamiento'
+  );
+  const entrenamientoArqueros = atletas.filter(
+    (atleta) => atleta.discipline === 'Entrenamiento de Arqueros'
+  );
+  const escuelitaFutbol = atletas.filter(
+    (atleta) => atleta.discipline === 'Escuelita de Fútbol'
+  );
+
+  useEffect(() => {
+    setAtletas();
+    setReservas();
+  }, []);
+
   return (
     <Layout>
       <div
@@ -56,7 +88,7 @@ export default function Dashboard() {
             </svg>
           }
           title={'Jugadores de Futsal'}
-          number={26}
+          number={futsal.length}
         />
         <InfoItem
           icon={
@@ -81,7 +113,7 @@ export default function Dashboard() {
             </svg>
           }
           title={'Jugadoras de Futsal Femenino'}
-          number={26}
+          number={futsalFemenino.length}
         />
         <InfoItem
           icon={
@@ -123,7 +155,7 @@ export default function Dashboard() {
             </svg>
           }
           title={'Jugadores de Futbol Infantil'}
-          number={26}
+          number={futbolInfantil.length}
         />
         <InfoItem
           icon={
@@ -152,7 +184,7 @@ export default function Dashboard() {
             </svg>
           }
           title={'Jugadores de Taekwondo'}
-          number={26}
+          number={taekwondo.length}
         />
         <InfoItem
           icon={
@@ -198,7 +230,7 @@ export default function Dashboard() {
             </svg>
           }
           title={'Jugadores de Ajedrez'}
-          number={26}
+          number={Ajedrez.length}
         />
         <InfoItem
           icon={
@@ -231,7 +263,7 @@ export default function Dashboard() {
             </svg>
           }
           title={'Jugadores en total'}
-          number={200}
+          number={atletas.length}
         />
         <NextReservations />
         <BarChart />
@@ -271,7 +303,7 @@ export default function Dashboard() {
             </svg>
           }
           title={'Reservas en total'}
-          number={200}
+          number={reservas.length}
         />
         <InfoItem
           className="lg:row-start-6 xl:row-start-5"
