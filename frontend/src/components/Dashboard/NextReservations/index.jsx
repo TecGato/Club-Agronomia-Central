@@ -1,9 +1,8 @@
-import { useRouter } from 'next/router';
 import { PreviewItem } from '..';
 import useStore from '@/store/globalstore';
+import Link from 'next/link';
 
 export const NextReservations = () => {
-  const router = useRouter();
   const allReservas = useStore((state) => state.reservas);
   const reservas = allReservas
     .sort((a, b) => {
@@ -44,12 +43,12 @@ export const NextReservations = () => {
           );
         })}
       </section>
-      <button
+      <Link
+        href={'/dashboard/quincho'}
         className="mt-2 py-2 rounded-lg text-center text-white cursor-pointer transition-all duration-500 bg-[#1b418a] hover:bg-[#10306b]"
-        onClick={() => router.push('/dashboard/quincho')}
       >
         Ver todas
-      </button>
+      </Link>
     </div>
   );
 };
