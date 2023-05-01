@@ -12,10 +12,11 @@ import useStore from '@/store/globalstore';
 import { useEffect } from 'react';
 
 export default function Dashboard() {
+  const setDirectiva = useStore((state) => state.setDirectiva);
   const setAtletas = useStore((state) => state.setAtletas);
+  const setReservas = useStore((state) => state.setReservas);
   const atletas = useStore((state) => state.atletas);
   const reservas = useStore((state) => state.reservas);
-  const setReservas = useStore((state) => state.setReservas);
   const Ajedrez = atletas.filter((atleta) => atleta.discipline === 'Ajedrez');
   const futbolInfantil = atletas.filter(
     (atleta) => atleta.discipline === 'Fútbol Infantil'
@@ -40,6 +41,7 @@ export default function Dashboard() {
   useEffect(() => {
     setAtletas();
     setReservas();
+    setDirectiva();
   }, []);
 
   return (
@@ -51,6 +53,93 @@ export default function Dashboard() {
     xl:grid-cols-4
     "
       >
+        <InfoItem
+          icon={
+            <svg
+              width="64px"
+              height="64px"
+              viewBox="0 0 48 48"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g
+                id="SVGRepo_tracerCarrier"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></g>
+              <g id="SVGRepo_iconCarrier">
+                {' '}
+                <path
+                  d="M29 14C31.7614 14 34 11.7614 34 9C34 6.23858 31.7614 4 29 4C26.2386 4 24 6.23858 24 9C24 11.7614 26.2386 14 29 14Z"
+                  fill="#2F88FF"
+                  stroke="#1b418a"
+                  stroke-width="4"
+                  stroke-miterlimit="2"
+                ></path>{' '}
+                <path
+                  d="M19 46C20.6569 46 22 44.6569 22 43C22 41.3431 20.6569 40 19 40C17.3431 40 16 41.3431 16 43C16 44.6569 17.3431 46 19 46Z"
+                  fill="#1b418a"
+                ></path>{' '}
+                <path
+                  d="M24.38 18.91L20 27L27.31 33.02C27.62 33.26 27.84 33.59 27.97 33.96L31 44"
+                  stroke="#1b418a"
+                  stroke-width="4"
+                  stroke-miterlimit="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>{' '}
+                <path
+                  d="M20 27L14.51 34.64C13.97 35.43 12.95 35.73 12.07 35.36L4 32"
+                  stroke="#1b418a"
+                  stroke-width="4"
+                  stroke-miterlimit="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>{' '}
+                <path
+                  d="M42 24H35C34.64 24 34.28 23.91 33.96 23.73L30.75 21.92C26.74 19.57 22.35 17.96 17.78 17.14L14.56 16.57C14.11 16.49 13.64 16.57 13.24 16.79L7 20"
+                  stroke="#1b418a"
+                  stroke-width="4"
+                  stroke-miterlimit="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>{' '}
+              </g>
+            </svg>
+          }
+          title={'Jugadores de Escuelita de Futbol'}
+          number={escuelitaFutbol.length}
+        />
+        <InfoItem
+          icon={
+            <svg
+              fill="#1b418a"
+              width="64px"
+              height="64px"
+              viewBox="0 0 15 15"
+              id="fitness-centre"
+              xmlns="http://www.w3.org/2000/svg"
+              stroke="#1b418a"
+            >
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g
+                id="SVGRepo_tracerCarrier"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></g>
+              <g id="SVGRepo_iconCarrier">
+                {' '}
+                <path
+                  id="daec40ff-71f5-4432-9d75-dcba7b9c1b89"
+                  d="M14.5,7V8h-1v2h-1v1H11V8H4v3H2.5V10h-1V8H.5V7h1V5h1V4H4V7h7V4h1.5V5h1V7Z"
+                ></path>{' '}
+              </g>
+            </svg>
+          }
+          title={'Participantes del Centro de Entrenamientos'}
+          number={centroEntrenamiento.length}
+        />
         <InfoItem
           icon={
             <svg
@@ -265,12 +354,36 @@ export default function Dashboard() {
           title={'Jugadores en total'}
           number={atletas.length}
         />
+        <InfoItem
+          icon={
+            <svg
+              width="64px"
+              height="64px"
+              viewBox="0 0 512 512"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="#000000"
+            >
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g
+                id="SVGRepo_tracerCarrier"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></g>
+              <g id="SVGRepo_iconCarrier">
+                <path
+                  fill="#1b418a"
+                  d="M18 78v414h36V114h404v378h36V78H18zm101 53v48H71.75v18H119v46H71.75v18H119v46H71.75v18H119v46H71.75v18H119v46H71.75v18H209.6c-.4-6-.9-12-1.3-18H201v-23.4h-.8l-17.2.3V435h-46v-46h42c.4-6 .8-12 1.4-18H137v-46h46v22c.2-1.9.4-3.9.6-5.6 1.8-17.1 6.6-35.5 17.4-49.1V261h8.5c-.9-6-1.2-12-.3-18H201v-46h43.4c3.6-1.2 7.5-1.9 11.4-2 4.5-.1 8.9.6 13.2 2h42v46h-8.7c.7 6 .6 12.1-.2 18h8.9v28.6c2.6 2.9 4.8 6 6.6 9.4 5.9 11.7 9.3 23.9 11.4 36.5V325h46v46h-43.1c.2 6 .2 12 .3 18H375v46h-46v-23.4h-18V435h-6l-1.2 18H441v-18h-48v-46h48v-18h-48v-46h48v-18h-48v-46h48v-18h-48v-46h48v-18h-48v-48h-18v48h-46v-48h-18v48h-46v-48h-18v48h-46v-48h-18v48h-46v-48h-18zm18 66h46v46h-46v-46zm192 0h46v46h-46v-46zm-72.1 15.3c-16.7-.4-30.9 17.8-30.9 39.1 0 11.8 4.1 22.2 10 29.4l7.2 8.5-11 2.1c-7.8 1.5-13.4 5.6-18.3 12.2-4.9 6.7-8.6 16-11.2 26.7-4.7 19.4-5.8 43.2-5.9 64.1h25.8l7.1 94.9c17.9 4.1 37.1 3.9 54.5 0l6.2-94.9H315c0-21.2-.3-45.2-4.6-64.8-2.3-10.8-5.9-20.1-10.8-26.7-5-6.6-10.9-10.6-19.6-12l-11.2-1.7 7-8.9c5.8-7.1 9.6-17.4 9.6-28.9 0-22.8-12.4-38.9-28.5-39.1zM137 261h46v46h-46v-46zm192 0h46v46h-46v-46z"
+                ></path>
+              </g>
+            </svg>
+          }
+          title={'Entrenamiento de Arqueros'}
+          number={entrenamientoArqueros.length}
+        />
         <NextReservations />
         <BarChart />
 
-        <PieChart />
         <LineChart />
-
         <InfoItem
           className="lg:row-start-5"
           icon={
@@ -339,8 +452,9 @@ export default function Dashboard() {
           title={'Partidos en total'}
           number={20}
         />
-        <NextMatches />
+        <PieChart />
         <SteeringCommitteePreview />
+        <NextMatches />
       </div>
     </Layout>
   );
