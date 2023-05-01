@@ -5,8 +5,10 @@ export * from './useForm';
 export * from './useContributions';
 export * from './useNews';
 export * from './useQuincho';
-export * from './useFileEncoding'
+export * from './useFileEncoding';
 export * from './useTestimonials';
 export * from './useTableActions';
 export * from './useAthletes';
+export * from './useBarChart';
+export * from './useLineChart';
 export * from './useAds';

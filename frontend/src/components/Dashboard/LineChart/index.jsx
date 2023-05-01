@@ -9,6 +9,8 @@ import {
   PointElement,
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
+import { useLineChart } from '@/hooks';
+import { useState } from 'react';
 
 ChartJS.register(
   CategoryScale,
@@ -21,22 +23,27 @@ ChartJS.register(
 );
 
 export const LineChart = () => {
-  const ingresos = [
-    { month: 'Enero', count: 10 },
-    { month: 'Febrero', count: 20 },
-    { month: 'Marzo', count: 13 },
-    { month: 'Abril', count: 2 },
-    { month: 'Mayo', count: 7 },
-    { month: 'Junio', count: 17 },
-    { month: 'Julio', count: 15 },
-    { month: 'Agosto', count: 15 },
-    { month: 'Septiembre', count: 5 },
-    { month: 'Octubre', count: 20 },
-    { month: 'Noviembre', count: 19 },
-    { month: 'Diciembre', count: 25 },
-  ];
+  const { yearView, monthView, weekView } = useLineChart();
+  const [view, setView] = useState('year');
+  let ingresos = [];
+
+  const handleChange = (event) => {
+    setView(event.target.value);
+  };
+
+  if (view === 'year') {
+    ingresos = yearView();
+  } else if (view === 'month') {
+    ingresos = monthView();
+  } else if (view === 'week') {
+    ingresos = weekView();
+  }
+
   const data = {
-    labels: ingresos.map(({ month }) => month),
+    labels:
+      view === 'year'
+        ? ingresos.map(({ month }) => month)
+        : ingresos.map(({ day }) => day),
     datasets: [
       {
         label: 'Reservas',
@@ -76,11 +83,14 @@ export const LineChart = () => {
             "
     >
       <div className="flex justify-between">
-        <p className="text-lg text-center  font-medium">
-          Numero de Reservas
-        </p>
-        <select name="" id="" className='dark:bg-[#2C2C2C] dark:border-none
-        dark:text-slate-100'>
+        <p className="text-lg text-center  font-medium">Numero de Reservas</p>
+        <select
+          onChange={handleChange}
+          name=""
+          id=""
+          className="dark:bg-[#2C2C2C] dark:border-none
+        dark:text-slate-100"
+        >
           <option value="year">Año</option>
           <option value="month">Mes</option>
           <option value="week">Semana</option>
