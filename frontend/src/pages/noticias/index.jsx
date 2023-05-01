@@ -46,21 +46,12 @@ export default function Posts({ posts }) {
                     loading="lazy"
                     className="col-span-1 p-5 sm:order-2"
                   />
-<<<<<<< HEAD
                   <div className='sm:col-span-1 sm:grid sm:grid-row-2 sm:order-1'>
                   <h3 className='text-3xl place-self-center text-center font-bold text-gray-700 dark:text-slate-100 pt-5 px-5 pb-0 sm:row-span-1'>
                       {mainNews.title}
                     </h3>
                     <p className='text-base text-gray-700 dark:text-slate-300 leading-6 pt-0 px-5 pb-5 mb-5 sm:row-span-1'>
                       {mainNews.description.slice(0, 280)+'...'}
-=======
-                  <div className="sm:col-span-1 sm:grid sm:grid-row-2 sm:order-1">
-                    <h3 className="text-3xl place-self-center text-center font-bold text-gray-700 dark:text-slate-100 p-5 sm:row-span-1">
-                      {mainNews.title}
-                    </h3>
-                    <p className="text-base text-gray-700 dark:text-slate-300  leading-6 pt-0 px-5 pb-5 mb-3 sm:row-span-1">
-                      {mainNews.description.slice(0, 280) + '...'}
->>>>>>> f4ad23a31fcb7ccf0be17500dd03421df54cbf3a
                     </p>
                   </div>
                 </div>

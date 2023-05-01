@@ -3,8 +3,7 @@ import { QuinchoCalendarDay } from '..';
 import { QuinchoCalendarForm } from '../QuinchoCalendarForm';
 import AppContext from '../../../../contexts/AppContext';
 import { useQuincho } from '@/hooks';
-import { Loader } from '@/components/Dashboard';
-import { MessageModal } from '@/components/Dashboard/MessageModal/Index';
+import { Loader, MessageModal } from '@/components/Dashboard';
 
 export function QuinchoCalendarContainer({ data, itsAdmin = false }) {
   const { getGlobalEvents, getGlobalDateEvents, loading } = useQuincho();

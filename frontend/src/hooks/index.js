@@ -11,3 +11,4 @@ export * from './useTableActions';
 export * from './useAthletes';
 export * from './useBarChart';
 export * from './useLineChart';
+export * from './useAds';
