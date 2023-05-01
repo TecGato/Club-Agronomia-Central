@@ -9,3 +9,4 @@ export * from './useFileEncoding'
 export * from './useTestimonials';
 export * from './useTableActions';
 export * from './useAthletes';
+export * from './useAds';

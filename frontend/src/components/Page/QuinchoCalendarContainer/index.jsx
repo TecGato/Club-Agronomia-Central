@@ -1,13 +1,24 @@
-import { useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { QuinchoCalendarDay } from '..';
 import { QuinchoCalendarForm } from '../QuinchoCalendarForm';
+import AppContext from '../../../../contexts/AppContext';
+import { useQuincho } from '@/hooks';
+import { Loader, MessageModal } from '@/components/Dashboard';
 
-export function QuinchoCalendarContainer({
-  dataDates,
-  data,
-  itsAdmin = false,
-}) {
-  const events = data;
+export function QuinchoCalendarContainer({ data, itsAdmin = false }) {
+  const { getGlobalEvents, getGlobalDateEvents, loading } = useQuincho();
+
+  useEffect(() => {
+    getGlobalEvents();
+    getGlobalDateEvents();
+  }, []);
+
+  const {
+    reservations,
+    reservationsDates,
+    showMessageModal,
+    setShowMessageModal,
+  } = useContext(AppContext);
   const months = {
     1: 'Enero',
     2: 'Febrero',
@@ -27,6 +38,10 @@ export function QuinchoCalendarContainer({
 
   const [month, setMonth] = useState(date.getMonth() + 1);
   const [year, setYear] = useState(date.getFullYear());
+
+  const firstDayofMonth = new Date(year, month - 1, 1);
+  const lastDay = new Date(year, month, 0);
+  const lastdayPreviousMonth = new Date(year, month - 1, 0);
 
   const nextYear = () => {
     setYear(year + 1);
@@ -54,7 +69,6 @@ export function QuinchoCalendarContainer({
     }
   };
 
-  const eventDates = dataDates;
   //Declare an initial state of the form modal
   const [showModal, setShowModal] = useState(false);
 
@@ -63,118 +77,165 @@ export function QuinchoCalendarContainer({
 
   return (
     <div>
-      <div class="flex items-center mt-4">
-        <div class="flex ml-6">
-          <button>
-            <svg
-              class="w-6 h-6"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              onClick={prevMonth}
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M15 19l-7-7 7-7"
-              />
-            </svg>
+      {loading ? (
+        <Loader />
+      ) : (
+        <>
+          <div class="flex items-center mt-4">
+            <div class="flex ml-6">
+              <button>
+                <svg
+                  class="w-6 h-6"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  onClick={prevMonth}
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15 19l-7-7 7-7"
+                  />
+                </svg>
+              </button>
+              <button>
+                <svg
+                  class="w-6 h-6"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  onClick={nextMonth}
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </button>
+            </div>
+            <h2 class="ml-2 text-xl font-bold leading-none">
+              {months[month]}, {year}
+            </h2>
+          </div>
+          {/* Encabezado del calendario mensual */}
+          <div
+            key="EncabezadoDias"
+            class="grid justify-items-center grid-cols-7 mt-4 border-t-4 border-indigo-500"
+          >
+            <div key="LUN" class="pl-1 text-sm">
+              LUN
+            </div>
+            <div key="MAR" class="pl-1 text-sm">
+              MAR
+            </div>
+            <div key="MIE" class="pl-1 text-sm">
+              MIE
+            </div>
+            <div key="JUE" class="pl-1 text-sm">
+              JUE
+            </div>
+            <div key="VIE" class="pl-1 text-sm">
+              VIE
+            </div>
+            <div key="SAB" class="pl-1 text-sm">
+              SAB
+            </div>
+            <div key="DOM" class="pl-1 text-sm">
+              DOM
+            </div>
+          </div>
+          {/* Contenedor principal */}
+          <div
+            key="ContenedorPrincipal"
+            class="grid flex-grow w-full h-auto grid-cols-7 grid-rows-5 gap-px pt-px mt-1 "
+          >
+            {Array.from({ length: firstDayofMonth.getDay() - 1 }).map(
+              (_, i) => (
+                <div
+                  key={i}
+                  class="flex items-center justify-center w-full h-full text-sm text-gray-400"
+                >
+                  {lastdayPreviousMonth.getDate() -
+                    firstDayofMonth.getDay() +
+                    i}
+                </div>
+              )
+            )}
+            {Array.from({ length: lastDay.getDate() }).map((_, i) => {
+              return (
+                <>
+                  <div
+                    key={i}
+                    className="flex flex-col items-center justify-center w-full h-full text-sm border border-gray-200 truncate"
+                  >
+                    {i + 1}
+                    {reservationsDates.map((dateEv) => {
+                      return (
+                        <QuinchoCalendarDay
+                          day={i + 1}
+                          key={dateEv.date}
+                          dateCard={dateEv.date}
+                          eventArray={reservations.filter(
+                            (dateE) => dateE.date === dateEv.date
+                          )}
+                          showCard={showCard}
+                          setShowCard={setShowCard}
+                          month={month}
+                          year={year}
+                          itsAdmin={itsAdmin}
+                        />
+                      );
+                    })}
+                  </div>
+                </>
+              );
+            })}
+          </div>
+          <h3>Indicadores de la reserva</h3>
+          <button class="flex items-center flex-shrink-0 h-5 px-1 text-xs">
+            <span class="flex-shrink-0 w-2 h-2 bg-gray-500 rounded-full"></span>
+            <span class="ml-2 font-medium leading-none truncate">
+              Reservas solicitadas
+            </span>
           </button>
-          <button>
-            <svg
-              class="w-6 h-6"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              onClick={nextMonth}
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M9 5l7 7-7 7"
-              />
-            </svg>
+          <button class="flex items-center flex-shrink-0 h-5 px-1 text-xs ">
+            <span class="flex-shrink-0 w-2 h-2 bg-yellow-500 rounded-full"></span>
+            <span class="ml-2 font-medium leading-none truncate">
+              Reservas Solicitadas y confirmadas
+            </span>
           </button>
-        </div>
-        <h2 class="ml-2 text-xl font-bold leading-none">
-          {months[month]}, {year}
-        </h2>
-      </div>
-
-      {/* Encabezado del calendario mensual */}
-      <div class="grid grid-cols-7 mt-4 border-t-4 border-indigo-500">
-        <div class="pl-1 text-sm">Lunes</div>
-        <div class="pl-1 text-sm">Martes</div>
-        <div class="pl-1 text-sm">Miércoles</div>
-        <div class="pl-1 text-sm">Jueves</div>
-        <div class="pl-1 text-sm">Viernes</div>
-        <div class="pl-1 text-sm">Sábado</div>
-        <div class="pl-1 text-sm">Domingo</div>
-      </div>
-
-      {/* Contenedor principal */}
-
-      <div class="grid flex-grow w-full h-auto grid-cols-7 grid-rows-5 gap-px pt-px mt-1 bg-gray-200">
-        {eventDates.map((dateEv) => {
-          return dateEv.date ? (
-            <QuinchoCalendarDay
-              key={dateEv.date}
-              dateCard={dateEv.date}
-              eventArray={events.filter((dateE) => dateE.date === dateEv.date)}
-              showCard={showCard}
-              setShowCard={setShowCard}
-              month={month}
-              year={year}
+          <button class="flex items-center flex-shrink-0 h-5 px-1 text-xs ">
+            <span class="flex-shrink-0 w-2 h-2 bg-green-500 rounded-full"></span>
+            <span class="ml-2 font-medium leading-none truncate">
+              Reservas Solicitadas, confirmadas y pagadas
+            </span>
+          </button>
+          {/* MODAL */}
+          {!itsAdmin && (
+            <button
+              className="bg-blue-200 text-black active:bg-blue-500 font-bold px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
+              type="button"
+              onClick={() => setShowModal(true)}
+            >
+              Solicitar nueva reserva
+            </button>
+          )}
+          {/* Si el estado del modal es true, renderiza el formulario */}
+          {showModal ? (
+            <QuinchoCalendarForm
+              setShowModal={setShowModal}
               itsAdmin={itsAdmin}
+              eventsData={data}
             />
-          ) : null;
-        })}
-      </div>
-
-      {/* Tags */}
-
-      <h3>Indicadores de la reserva</h3>
-      <button class="flex items-center flex-shrink-0 h-5 px-1 text-xs">
-        <span class="flex-shrink-0 w-2 h-2 bg-gray-500 rounded-full"></span>
-        <span class="ml-2 font-medium leading-none truncate">
-          Reservas solicitadas
-        </span>
-      </button>
-
-      <button class="flex items-center flex-shrink-0 h-5 px-1 text-xs ">
-        <span class="flex-shrink-0 w-2 h-2 bg-yellow-500 rounded-full"></span>
-        <span class="ml-2 font-medium leading-none truncate">
-          Reservas Solicitadas y confirmadas
-        </span>
-      </button>
-
-      <button class="flex items-center flex-shrink-0 h-5 px-1 text-xs ">
-        <span class="flex-shrink-0 w-2 h-2 bg-green-500 rounded-full"></span>
-        <span class="ml-2 font-medium leading-none truncate">
-          Reservas Solicitadas, confirmadas y pagadas
-        </span>
-      </button>
-
-      {/* MODAL */}
-
-      {!itsAdmin && (
-        <button
-          className="bg-blue-200 text-black active:bg-blue-500 font-bold px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
-          type="button"
-          onClick={() => setShowModal(true)}
-        >
-          Solicitar nueva reserva
-        </button>
+          ) : null}
+          {showMessageModal ? <MessageModal /> : null}
+        </>
       )}
-
-      {/* Si el estado del modal es true, renderiza el formulario */}
-      {showModal ? (
-        <QuinchoCalendarForm setShowModal={setShowModal} itsAdmin={itsAdmin} />
-      ) : null}
     </div>
   );
 }

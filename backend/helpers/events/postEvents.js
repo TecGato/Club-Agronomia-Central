@@ -23,7 +23,7 @@ const postEvent = async ({ date, amount, ...eventInfo }) => {
     }
     //Adds up the earn amount to keep record of the income per month
 
-    const year = newEvent.date.getFullYear();
+    const year = date.getFullYear();
     const month = newEvent.date.getMonth();
     const incomes = await Income.find({ year });
 

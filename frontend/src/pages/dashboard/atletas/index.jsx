@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { DataGrid, GridToolbar } from '@mui/x-data-grid';
 import {
   CreateAthlete,
@@ -19,21 +19,24 @@ export default function Athletes({ athletes }) {
   const { handlerDelete } = useAthletes()
   const { row, handleDelete, handleUpdate } = useTableActions(setEditModal, handlerDelete);
 
+  
   const columns = [
-    { field: 'name', headerName: 'Nombre', width: 130 },
-    { field: 'discipline', headerName: 'Disciplina', width: 130 },
-    { field: 'email', headerName: 'Correo Electronico', width: 150 },
+    { field: 'name', headerName: 'Nombre', width: 130, align: 'left' },
+    { field: 'discipline', headerName: 'Disciplina', width: 130, align: 'left' },
+    { field: 'email', headerName: 'Correo Electronico', width: 150, align: 'left' },
     {
       field: 'contact',
       headerName: 'Numero de Contacto',
       type: 'number',
-      width: 170,
+      width: 170, 
+      align: 'left',
     },
     {
       field: 'emergency_name',
       headerName: 'Nombre Contacto de emergencia',
       type: 'number',
       width: 170,
+      align: 'left',
     },
     {
       field: 'emergency_phone',
@@ -41,23 +44,27 @@ export default function Athletes({ athletes }) {
       type: 'number',
       width: 170,
       editable: true,
+      align: 'left',
     },
     {
       field: 'emergency_email',
       headerName: 'Correo de emergencia',
       type: 'number',
       width: 170,
+      align: 'left',
     },
     {
       field: 'date_of_birth',
       headerName: 'Fecha de nacimiento',
       width: 170,
+      align: 'left',
     },
     {
       field: 'actions',
       headerName: 'Acciones',
       type: 'actions',
       width: 150,
+      align: 'left',
       renderCell: (params) => (
         <TableActions
           handleDelete={handleDelete}
@@ -70,15 +77,15 @@ export default function Athletes({ athletes }) {
   return (
     <Layout>
       <section
-        className={`w-full min-h-screen flex flex-col justify-self-center justify-center items-center xl:w-11/12 sm:w-5/6 `}
+        className={`w-full min-h-screen m-4`}
       >
-        <article className="flex xl:gap-6 items-center">
-          <h1 className="text-5xl text-neutral-800 font-bold text-center">
+        <article className="p-5">
+          <h1 className="md:text-xl lg:text-3xl font-bold text-left pl-20 pb-5">
             Administrar todos los atletas
           </h1>
           <button
             onClick={() => setCreateModal(true)}
-            className="h-[36px] bg-[#1b418a] flex items-center p-2.5 rounded-lg text-white text-md leading-none"
+            className="h-[36px] bg-[#1b418a] flex items-center p-2.5 pl-30 rounded-lg text-white text-md leading-none"
           >
             <svg
               fill="#ffffff"
@@ -109,7 +116,7 @@ export default function Athletes({ athletes }) {
             AÑADIR ATLETA
           </button>
         </article>
-        <article className="xl:max-w-5xl flex flex-col gap-2 border bg-white border-neutral-300 shadow-[0px_3px_10px_2px_rgb(0_0_0_/_13%)] px-4 py-2 rounded-lg h-2/3">
+        <article className="xl:max-w-5xl gap-2 border bg-white border-neutral-300 shadow-[0px_3px_10px_2px_rgb(0_0_0_/_13%)] px-4 py-2 rounded-lg h-2/3">
           <DataGrid
             rows={athletes}
             columns={columns}
@@ -121,6 +128,7 @@ export default function Athletes({ athletes }) {
             pageSizeOptions={[5, 10, 25]}
             checkboxSelection={false}
             disableRowSelection={true}
+            wrapperClassName="sm:w-full lg:w-10/12 xl:w-9/12 mx-auto"
           />
         </article>
       </section>

@@ -1,11 +1,19 @@
 // import axios from 'axios';
 import { useTestimonials } from '@/hooks';
-import { Layout, TestimonialItemDashboard, ButtonCreate, WarnDelete, FormNews, FormModifyNews, Loader } from '@/components/Dashboard';
+import {
+    Layout,
+    TestimonialItemDashboard,
+    ButtonCreate, WarnDelete,
+    FormNews,
+    FormModifyNews,
+    Loader,
+    MessageModal
+} from '@/components/Dashboard';
 import { useEffect, useContext } from 'react';
 import AppContext from '../../../../contexts/AppContext';
 
 export default function Testimonials() {
-    const { testimonials } = useContext(AppContext);
+    const { testimonials, showMessageModal } = useContext(AppContext);
 
     const {
         showModalForm,
@@ -27,7 +35,7 @@ export default function Testimonials() {
         setPostModify,
         stateGlobalTestimonials,
         loading,
-        setLoading
+        setLoading,
     } = useTestimonials();
 
     useEffect(() => {
@@ -47,20 +55,24 @@ export default function Testimonials() {
                     loading ? (
                         <Loader />
                     ) : (
-                        testimonials?.map(testimonial => (
-                            <TestimonialItemDashboard
-                                key={testimonial._id}
-                                title={testimonial.title}
-                                text={testimonial.description}
-                                img={testimonial.picture}
-                                showModalWarn={showModalWarn}
-                                setId={setId}
-                                id={testimonial._id}
-                                showModalModify={showModalModify}
-                                setPostModify={setPostModify}
-                                setModifyTestimony={setModifyTestimony}
-                            />
-                        ))
+                        showMessageModal ? (
+                            <MessageModal />
+                        ) : (
+                            testimonials?.map(testimonial => (
+                                <TestimonialItemDashboard
+                                    key={testimonial._id}
+                                    title={testimonial.title}
+                                    text={testimonial.description}
+                                    img={testimonial.picture}
+                                    showModalWarn={showModalWarn}
+                                    setId={setId}
+                                    id={testimonial._id}
+                                    showModalModify={showModalModify}
+                                    setPostModify={setPostModify}
+                                    setModifyTestimony={setModifyTestimony}
+                                />
+                            ))
+                        )
                     )
                 }
             </section>
