@@ -32,11 +32,9 @@ export function useTestimonials() {
       data && setTestiminials(testimonials.filter((tes) => tes._id !== id));
       setLoading(false);
       setShowMessageModal('Testimonio Eliminado con Exito');
-      console.log(data.msg);
     } catch (error) {
       setLoading(false);
       setShowMessageModal('Ha ocurrido un error');
-      console.log(error);
     }
   };
 
@@ -50,11 +48,9 @@ export function useTestimonials() {
       data && setTestiminials([data.newTestimonial, ...testimonials]);
       setLoading(false);
       setShowMessageModal('Testimonio Creado con Exito');
-      console.log(data.msg);
     } catch (error) {
       setLoading(false);
       setShowMessageModal('Ha ocurrido un error');
-      console.log(error);
     }
   };
 
@@ -74,11 +70,9 @@ export function useTestimonials() {
         setLoading(false);
         setShowMessageModal('Testimonio Editado con Exito');
       }
-      console.log(data.msg);
     } catch (error) {
       setLoading(false);
       setShowMessageModal('Ha ocurrido un error');
-      console.log(error);
     }
   };
 
@@ -97,7 +91,6 @@ export function useTestimonials() {
     } catch (error) {
       setLoading(false);
       setShowMessageModal('Ha ocurrido un error');
-      console.log(error);
     }
   };
 
