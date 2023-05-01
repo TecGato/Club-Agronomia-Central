@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { DataGrid, GridToolbar } from '@mui/x-data-grid';
 import {
   CreateAthlete,
@@ -19,21 +19,24 @@ export default function Athletes({ athletes }) {
   const { handlerDelete } = useAthletes()
   const { row, handleDelete, handleUpdate } = useTableActions(setEditModal, handlerDelete);
 
+  
   const columns = [
-    { field: 'name', headerName: 'Nombre', width: 130 },
-    { field: 'discipline', headerName: 'Disciplina', width: 130 },
-    { field: 'email', headerName: 'Correo Electronico', width: 150 },
+    { field: 'name', headerName: 'Nombre', width: 130, align: 'left' },
+    { field: 'discipline', headerName: 'Disciplina', width: 130, align: 'left' },
+    { field: 'email', headerName: 'Correo Electronico', width: 150, align: 'left' },
     {
       field: 'contact',
       headerName: 'Numero de Contacto',
       type: 'number',
-      width: 170,
+      width: 170, 
+      align: 'left',
     },
     {
       field: 'emergency_name',
       headerName: 'Nombre Contacto de emergencia',
       type: 'number',
       width: 170,
+      align: 'left',
     },
     {
       field: 'emergency_phone',
@@ -41,23 +44,27 @@ export default function Athletes({ athletes }) {
       type: 'number',
       width: 170,
       editable: true,
+      align: 'left',
     },
     {
       field: 'emergency_email',
       headerName: 'Correo de emergencia',
       type: 'number',
       width: 170,
+      align: 'left',
     },
     {
       field: 'date_of_birth',
       headerName: 'Fecha de nacimiento',
       width: 170,
+      align: 'left',
     },
     {
       field: 'actions',
       headerName: 'Acciones',
       type: 'actions',
       width: 150,
+      align: 'left',
       renderCell: (params) => (
         <TableActions
           handleDelete={handleDelete}
