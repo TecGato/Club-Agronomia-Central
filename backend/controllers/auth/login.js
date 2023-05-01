@@ -31,7 +31,7 @@ const login = async (req = request, res = response) => {
     // Generate the JWT
     const token = await generateJWT(user.id);
 
-    const serialized = serialize('myTokenName', token, {
+    const serialized = serialize('authToken', token, {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
       sameSite: 'none',
@@ -39,7 +39,8 @@ const login = async (req = request, res = response) => {
       path: '/',
     });
 
-    res.setHeader('Set-Cookie', serialized);
+    //res.setHeader('Set-Cookie', serialized);
+    res.cookie('authToken', serialized).redirect('/');
 
     return res.status(200).json({
       msg: 'Logged in Successfully',

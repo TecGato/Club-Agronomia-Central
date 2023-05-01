@@ -2,7 +2,7 @@ const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 
 const validateJWT = async (req, res, next) => {
-  const token = req.header('x-token');
+  const token = req.header('authToken');
 
   if (!token) {
     return res.status(401).json({
@@ -30,7 +30,7 @@ const validateJWT = async (req, res, next) => {
     next();
   } catch (error) {
     res.status(401).json({
-      msg: 'Token is not valid', 
+      msg: 'Token is not valid',
     });
   }
 };

@@ -15,7 +15,8 @@ export default function Login() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const response = await axios.post(
-      'http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/auth/login',
+      // 'http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/auth/login',
+      'http://localhost:3001/api/auth/login',
       credentials
     );
     if (response.status === 200) {
@@ -90,14 +91,14 @@ export default function Login() {
           id={'password'}
         />
 
-        <span className="text-neutral-800">
+        {/* <span className="text-neutral-800">
           <Link
             className="text-[#1b418a] dark:text-slate-100 hover:underline ml-1"
-            href="/dashboard/auth/register"
+            href="/auth/register"
           >
             ¿Olvidaste tu contraseña?
           </Link>
-        </span>
+        </span> */}
 
         {/* <Link href="/dashboard"> */}
         <button
