@@ -64,7 +64,7 @@ export function QuinchoCalendarForm({
       if (itsAdmin) {
         try {
           handlerUpdate(data, showCard._id);
-          setShowMessageModal('Evento modificado con Exito');
+          setShowMessageModal('Evento modificado con Éxito');
           setShowModal ? setShowModal(false) : setShowCard(false);
         } catch (error) {
           console.log(error);
@@ -72,7 +72,7 @@ export function QuinchoCalendarForm({
       } else {
         try {
           handlerCreate(data);
-          setShowMessageModal('Evento creado con Exito');
+          setShowMessageModal('Evento creado con Éxito');
           setShowModal ? setShowModal(false) : setShowCard(false);
         } catch (error) {
           setShowMessageModal(error);
@@ -89,7 +89,7 @@ export function QuinchoCalendarForm({
         <div className="relative w-auto my-6 mx-auto max-w-3xl">
           <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
             <div className="flex items-start justify-between p-5 border-b border-solid border-gray-300 rounded-t ">
-              <h6 className="text-2xl font=semibold">Ingresá tus datos</h6>
+              <h6 className="text-2xl font=semibold">Ingresa tus datos</h6>
               <button
                 className="bg-transparent border-0 text-black float-right"
                 onClick={() => {

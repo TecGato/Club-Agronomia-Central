@@ -60,7 +60,7 @@ export function Contributions({ visibleContributions }) {
           />
         </div>
         <div className="mt-8">
-          <p className="lg:text-4xl text-center font-semibold lg:leading-9 dark:text-slate-200 text-gray-800 lg:mb-4 md:mb-2 md:text-3xl text-2xl lg:mb-4 md:mb-1 mb-2">
+          <p className="lg:text-4xl text-center font-semibold lg:leading-9 dark:text-slate-200 text-gray-800 lg:mb-4 md:mb-2 md:text-3xl text-2xl mb-2">
             Ingresa tu monto aqui!
           </p>
           <p className="lg:text-base md:text-base text-sm leading-normal text-center dark:text-slate-100 text-gray-600 ">
@@ -75,7 +75,7 @@ export function Contributions({ visibleContributions }) {
             max={100000}
             value={contribution.price}
             onChange={handleInput}
-            className=" text-gray-700 dark:text-slate-300 text-lg dark:bg-gray-900 tracking-widest lg:text-left md:text-left text-left leading-none text-base py-4 lg:pl-[150px] md:pl-[260px] pl-4 lg:max-w-[400px] lg:w-full md:w-full w-full bg-white border border-gray-300 outline-0"
+            className=" text-gray-700 dark:text-slate-300 text-lg dark:bg-gray-900 tracking-widest lg:text-left md:text-left text-left leading-none py-4 lg:pl-[150px] md:pl-[260px] pl-4 lg:max-w-[400px] lg:w-full md:w-full w-full bg-white border border-gray-300 outline-0"
             placeholder="AR$ 5.000"
           />
         </div>

@@ -8,7 +8,7 @@ export default function Post({post}) {
             title={post.title} 
             image={'https://img.freepik.com/foto-gratis/joven-corredor-atar-cordones_1421-46.jpg?size=626&ext=jpg&ga=GA1.2.1228025790.1681327921&semt=sph'}
         >
-            <div className="mx-4 my-7 py-5 shadow-2xl grid grid-cols-2">
+            <div className="mx-4 my-7 py-5 shadow-2xl grid grid-cols-1 sm:grid-cols-2">
                 <img
                     src={post.picture.secure_url}
                     alt={post.title}
