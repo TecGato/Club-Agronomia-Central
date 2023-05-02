@@ -1,24 +1,56 @@
 import { Layout } from '@/components/Dashboard';
 import MatchesForm from '@/components/Dashboard/Forms/MatchesForm';
+import TableActionsMatches from '@/components/Dashboard/TableActionsMatches';
 import { useState } from 'react';
 import { DataGrid, GridToolbar } from '@mui/x-data-grid';
+import { useMatches } from '@/hooks';
 
-export default function Matches({ data }) {
-  const columns = [
-    { field: 'name', headerName: 'Nombre del Encuentro', width: 130 },
-    { field: 'date', headerName: 'Fecha', width: 130 },
-    { field: 'home_team', headerName: 'Equipo Local', width: 130 },
-    { field: 'away_team', headerName: 'Equipo Visitante', width: 130 },
-    { field: 'discipline', headerName: 'Disciplina', width: 130 },
-  ];
 
-  const rows = [];
+export default function Matches({data}) {
 
-  data.map((match) => {
-    rows.push(match);
-  });
+    const [editModalMatch, setEditModalMatch] = useState(false);//initial state to edit modal
 
-  /*
+    const { handlerDelete } = useMatches() //initial handlerDelete from hooks
+
+    const columns = [
+        { field: 'name', headerName: 'Nombre del Encuentro', width: 130 },
+        { field: 'date', headerName: 'Fecha', width: 130 },
+        { field: 'home_team', headerName: 'Equipo Local', width: 130 },
+        { field: 'away_team', headerName: 'Equipo Visitante', width: 130 },
+        { field: 'discipline', headerName: 'Disciplina', width: 130 },
+        {   field: 'actions',
+            headerName: 'Acciones',
+            type:'actions',
+            width:150,
+            // renderCell:(params)=>{
+            //     <>
+
+            //         <TableActionsMatches
+            //             {...params}
+            //         />
+            //         <h1>borrar</h1>
+
+            //     </>
+            // }
+            // renderCell:()=> <CountButton />,
+            renderCell:(params)=> <TableActionsMatches
+
+                                {...params}
+                                />,
+
+        },
+
+    ];
+
+
+
+    const rows = []
+
+    data.map((match)=>{
+        rows.push(match)
+    })
+
+    /*
 
       */
 
@@ -79,6 +111,7 @@ export default function Matches({ data }) {
       ) : null}
     </Layout>
   );
+
 }
 
 export async function getStaticProps() {

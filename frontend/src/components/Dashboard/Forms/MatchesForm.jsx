@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useMatches, useFormMatches } from '@/hooks';
 
-const initialForm ={
+const initialFormMatches ={
     name:'',
     date:'',
     time:'',
@@ -11,7 +11,7 @@ const initialForm ={
     discipline:'',
 };
 
-const formValidations = {
+const formValidationsMatches = {
     name:[(value) => value.length > 0, 'El nombre del encuentro es obligatorio'],
     date:[(value) => value.length > 0, 'Escoja una fecha para el encuentro'],
     time:[(value) => value.length > 0, 'Escoja una hora para el encuentro'],
