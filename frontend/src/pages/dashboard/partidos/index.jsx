@@ -85,7 +85,7 @@ export default function Matches({data}) {
               Crear nuevo encuentro
             </button>
           </article>
-          <article className="flex flex-col gap-2 border bg-white border-neutral-300 shadow-[0px_3px_10px_2px_rgb(0_0_0_/_13%)] px-4 py-2 rounded-lg max-w-full h-2/3">
+          <article className="flex flex-col gap-2 border bg-white dark:invert dark:shadow-none dark:border-none border-neutral-300 shadow-[0px_3px_10px_2px_rgb(0_0_0_/_13%)] px-4 py-2 rounded-lg max-w-full h-2/3">
             <DataGrid
               rows={rows}
               getRowId={(row) => row._id}
