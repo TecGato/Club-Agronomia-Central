@@ -5,8 +5,7 @@ import AppContext from '../../contexts/AppContext';
 export function useQuincho() {
   const { setReservations, setReservationsDates } = useContext(AppContext);
   const [loading, setLoading] = useState(false);
-  
-  
+
   const getGlobalEvents = async () => {
     try {
       const { data } = await axios.get(
@@ -40,13 +39,12 @@ export function useQuincho() {
       getGlobalDateEvents();
       getGlobalEvents();
     } catch (error) {
-      console.log(error);;
+      console.log(error);
     }
   };
 
-  const handlerUpdate = async (event,id) => {
+  const handlerUpdate = async (event, id) => {
     try {
-      console.log(event);
       const { data } = await axios.put(
         `http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/events/${id}`,
         event
