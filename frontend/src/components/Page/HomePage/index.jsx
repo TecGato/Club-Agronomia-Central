@@ -19,28 +19,15 @@ export function HomePage() {
         const offset = viewportHeight / 2
 
         if (videoTop < scrollPosition + viewportHeight - offset && videoTop + videoHeight > scrollPosition + offset) {
-          // Video is in view, add blur class
           video.classList.remove('blur')
         } else {
-          // Video is out of view, remove blur class
           video.classList.add('blur')
         }
       }
     }
-
-  //   function adjustBackgroundOpacity() {
-  //     const scrollTop = document.documentElement.scrollTop;
-  //     const scrollHeight = document.documentElement.scrollHeight;
-  //     const clientHeight = document.documentElement.clientHeight;
-  //     const scrollPercent = (scrollTop / (scrollHeight - clientHeight)) * 100;
-  //     const div = document.querySelector('.contenido');
-  //     div.style.opacity = (scrollPercent+40) / 100;
-  // }
   
     window.addEventListener('scroll', handleScroll)
-    // window.addEventListener('load', adjustBackgroundOpacity);
-    // window.addEventListener('resize', adjustBackgroundOpacity);
-    // window.addEventListener('scroll', adjustBackgroundOpacity);
+
     return () => window.removeEventListener('scroll', handleScroll)
   }, []);
 
