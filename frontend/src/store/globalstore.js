@@ -28,12 +28,11 @@ const useStore = create((set, get) => ({
         `http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/directors/${props.id}`,
         props
       );
-       get().setDirectiva()
+      get().setDirectiva();
     } catch (error) {
       console.log(error);
     }
-  }
-
+  },
   modifyAtletas: (data) =>
     set((state) => ({
       ...state,
