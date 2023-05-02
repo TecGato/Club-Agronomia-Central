@@ -49,7 +49,6 @@ export const CreateAthlete = ({ setCreateModal }) => {
   const { handlerCreate } = useAthletes();
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formState);
     handlerCreate(formState);
     setCreateModal(false);
   };

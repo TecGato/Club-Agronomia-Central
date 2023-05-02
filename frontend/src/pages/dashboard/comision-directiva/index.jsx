@@ -19,9 +19,9 @@ export default function SteeringCommittee() {
     setEdit(!edit);
   };
 
-    const presidents = directives?.slice(0,2);
-    const otherDirectives = directives?.slice(2,5);
-    
+  const presidents = directives?.slice(0, 2);
+  const otherDirectives = directives?.slice(2, 5);
+
 
   return (
     <Layout>

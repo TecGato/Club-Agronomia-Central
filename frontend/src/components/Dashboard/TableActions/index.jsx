@@ -5,6 +5,7 @@ export const TableActions = ({
   handleDelete,
   handleDetail,
   handleUpdate,
+  setLoading
 }) => {
   return (
     <Box>
@@ -45,6 +46,7 @@ export const TableActions = ({
         <IconButton
           onClick={() => {
             handleDelete(row);
+            setLoading(true);
           }}
         >
           <svg
