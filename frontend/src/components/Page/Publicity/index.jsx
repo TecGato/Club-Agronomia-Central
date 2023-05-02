@@ -13,7 +13,9 @@ export function Publicity() {
   const thirdNextItem = items[thirdNextIndex];
 
   const getAds = async () => {
-    const { data } = await axios.get('http://localhost:3001/api/ads');
+    const { data } = await axios.get(
+      'http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/ads'
+    );
     setitems(data);
   };
   useEffect(() => {
