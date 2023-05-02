@@ -308,7 +308,7 @@ export const routes = [
   },
   {
     pathName: '/dashboard/comision-directiva',
-    name: 'Comision directiva',
+    name: 'Comisión directiva',
     icon: (
       <svg
         viewBox="0 0 24 24"

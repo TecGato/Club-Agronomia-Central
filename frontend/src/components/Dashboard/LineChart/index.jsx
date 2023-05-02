@@ -83,7 +83,7 @@ export const LineChart = () => {
             "
     >
       <div className="flex justify-between">
-        <p className="text-lg text-center  font-medium">Numero de Reservas</p>
+        <p className="text-lg text-center  font-medium">Número de Reservas</p>
         <select
           onChange={handleChange}
           name=""

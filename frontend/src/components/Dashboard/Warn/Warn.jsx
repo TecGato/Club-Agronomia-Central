@@ -16,9 +16,9 @@ export function Warn({ handlerDelete, showModalWarn, showWarn, setLoading }) {
             />
           </svg>
           <p className="text-gray-900">
-            ¿Esta Seguro que desea eliminar esta noticia?
+            ¿Estás seguro que deseas eliminar esta noticia?
             <br />
-            Esta accion es irreversible.
+            Esta acción es irreversible.
           </p>
         </div>
         <div className="flex justify-center items-center">
@@ -30,7 +30,7 @@ export function Warn({ handlerDelete, showModalWarn, showWarn, setLoading }) {
               setLoading(true);
             }}
           >
-            Si
+            Sí
           </button>
           <button
             className="bg-[#1b418a] m-4 hover:hover:bg-[#10306b] text-white font-bold py-2 px-4 rounded"

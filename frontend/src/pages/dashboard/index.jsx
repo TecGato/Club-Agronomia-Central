@@ -48,10 +48,10 @@ export default function Dashboard() {
     <Layout>
       <div
         className="w-full min-h-screen grid grid-cols-2 gap-2 justify-self-center items-center xl:w-11/12 sm:w-5/6 p-5
-    sm:justify-items-center
-    lg:grid-cols-3
-    xl:grid-cols-4
-    "
+      sm:justify-items-center
+      lg:grid-cols-3
+      xl:grid-cols-4
+      "
       >
         <InfoItem
           icon={
@@ -108,7 +108,7 @@ export default function Dashboard() {
               </g>
             </svg>
           }
-          title={'Jugadores de Escuelita de Futbol'}
+          title={'Jugadores de Escuelita de Fútbol'}
           number={escuelitaFutbol.length}
         />
         <InfoItem
@@ -243,7 +243,7 @@ export default function Dashboard() {
               </g>
             </svg>
           }
-          title={'Jugadores de Futbol Infantil'}
+          title={'Jugadores de Fútbol Infantil'}
           number={futbolInfantil.length}
         />
         <InfoItem
@@ -272,7 +272,7 @@ export default function Dashboard() {
               </g>
             </svg>
           }
-          title={'Jugadores de Taekwondo'}
+          title={'Taekwondokas'}
           number={taekwondo.length}
         />
         <InfoItem
