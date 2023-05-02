@@ -2,7 +2,7 @@ import React from "react";
 
 export function Donation({ visibleContributions }) {
     return (
-        <div className='grid justify-items-center pt-5'>
+        <div className='grid justify-items-center pt-5 px-0 mx-0'>
         <div
             style={{ backgroundImage: `url(/donation-img/banner-donation2.jpg)` }}
             className="bg-center lg:max-w-5xl bg-cover m-2 max-w-[100%] rounded-lg"

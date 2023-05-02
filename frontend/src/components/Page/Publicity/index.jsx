@@ -27,7 +27,7 @@ export function Publicity() {
   }, [items]);
 
   return (
-    <div className="z-10 m-4 p-5 flex flex-wrap justify-center">
+    <div className="z-10 p-5 flex flex-wrap justify-center">
       <div className="shadow-lg justify-center md:my-5 mx-1 relative">
         <div className="w-56 h-36 overflow-hidden">
           <img

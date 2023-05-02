@@ -24,8 +24,8 @@ export function Layout({ children, image, title }) {
 
         <div
           className={`w-full ${
-            pathname === '/' ? '' : 'lg:max-w-5xl'
-          }  mx-auto`}
+            pathname === '/' ? '' : 'lg:max-w-5xl mx-auto'
+          } `}
         >
           {children}
         </div>
