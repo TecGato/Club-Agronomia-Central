@@ -1,22 +1,35 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { DataGrid, GridToolbar } from '@mui/x-data-grid';
+import AppContext from '../../../../contexts/AppContext';
 import {
   CreateAthlete,
   EditAthlete,
   Layout,
   ModalTable,
   TableActions,
+  Loader,
+  MessageModal,
 } from '@/components/Dashboard';
 import { useAthletes, useTableActions } from '@/hooks';
+import useStore from '@/store/globalstore';
+import { LogarithmicScale } from 'chart.js';
 
-export default function Athletes({ athletes }) {
+export default function Athletes() {
+  const { atletas } = useStore();
+  const { showMessageModal } = useContext(AppContext);
+  const { handlerDelete, getAthletes, loading, setLoading } = useAthletes();
+
+  useEffect(() => {
+    getAthletes();
+  }, []);
+
   const [editModal, setEditModal] = useState(false);
   const [createModal, setCreateModal] = useState(false);
   const [paginationModel, setPaginationModel] = useState({
     pageSize: 10,
     page: 0,
   });
-  const { handlerDelete } = useAthletes();
+
   const { row, handleDelete, handleUpdate } = useTableActions(
     setEditModal,
     handlerDelete
@@ -79,6 +92,7 @@ export default function Athletes({ athletes }) {
       align: 'left',
       renderCell: (params) => (
         <TableActions
+          setLoading={setLoading}
           handleDelete={handleDelete}
           handleUpdate={handleUpdate}
           {...params}
@@ -128,7 +142,7 @@ export default function Athletes({ athletes }) {
         </article>
         <article className="xl:max-w-5xl gap-2 border bg-white border-neutral-300 shadow-[0px_3px_10px_2px_rgb(0_0_0_/_13%)] px-4 py-2 rounded-lg h-2/3">
           <DataGrid
-            rows={athletes}
+            rows={atletas}
             columns={columns}
             slots={{
               toolbar: GridToolbar,
@@ -142,6 +156,8 @@ export default function Athletes({ athletes }) {
           />
         </article>
       </section>
+      {loading && <Loader />}
+      {showMessageModal && <MessageModal />}
       {editModal && (
         <ModalTable>
           <EditAthlete row={row} setEditModal={setEditModal} />
@@ -154,14 +170,4 @@ export default function Athletes({ athletes }) {
       )}
     </Layout>
   );
-}
-
-export async function getServerSideProps() {
-  const res = await fetch('http://localhost:3001/api/athletes');
-  const athletes = await res.json();
-  return {
-    props: {
-      athletes,
-    },
-  };
 }
