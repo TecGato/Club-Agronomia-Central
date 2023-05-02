@@ -5,14 +5,14 @@ export  function useMerchandising() {
   const { setShowMessageModal } = useContext(AppContext);
   const [products, setProducts] = useState();
   const getProducts = async () => {
-    const res = await fetch('http://localhost:3001/api/products');
+    const res = await fetch('http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/products');
     const products = await res.json();
     return setProducts(products);
   };
     const handlerDelete = async (id) => {
         try {
           await axios.delete(
-            `http://localhost:3001/api/products/${id}`
+            `http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/products/${id}`
           );
           setShowMessageModal('Producto eliminado con éxito')
           getProducts()
@@ -24,7 +24,7 @@ export  function useMerchandising() {
       const handlerCreate = async (product) => {
         try {
           const { data } = await axios.post(
-            `http://localhost:3001/api/products`,
+            `http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/products`,
             product
           );
           setShowMessageModal('Producto agregado con éxito')
@@ -37,7 +37,7 @@ export  function useMerchandising() {
       const handlerModify = async (post) => {
         try {
           const { data } = await axios.put(
-            `http://localhost:3001/api/products/${post.id}`,
+            `http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/products/${post.id}`,
             post
           );
           setShowMessageModal('Producto actualizado con éxito')
