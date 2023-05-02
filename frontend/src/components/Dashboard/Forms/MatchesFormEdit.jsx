@@ -148,12 +148,12 @@ export default function MatchesFormEdit({setEditModalMatch, row}){
             <button
                 type="submit"
                 className="bg-blue-700 hover:bg-blue-800 text-white font-semibold py-2 px-4 rounded w-1/8 self-center mt-2"
-                onClick={()=>{
-                    if (setEditModalMatch) {
-                        setEditModalMatch(false)
-                  }
+                // onClick={()=>{
+                //     if (setEditModalMatch) {
+                //         setEditModalMatch(false)
+                //   }
 
-                }}
+                // }}
             >
                 Editar
             </button>

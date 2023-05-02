@@ -29,11 +29,14 @@ export function useMatches(){
 
             if(data){
                 const updateMatches = [...matches];
-                const { id } =data.match._id;
+                // console.log(updateMatches);
+                const id =data.match._id;
+                // console.log(id);
                 const index = updateMatches.findIndex((m)=>m._id ===id);
                 updateMatches[index] = data.match;
-                modifyMatches(updateMatches);
 
+                modifyMatches(updateMatches);
+                // console.log(data)
             }
         } catch (error) {
             throw new Error(error.message)

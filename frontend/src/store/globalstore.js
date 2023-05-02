@@ -86,11 +86,14 @@ const useStore = create((set, get) => ({
     );
     set((state) => ({ ...state, matches: data }));
   },
-  modifyMatches: (data) =>
-  set((state) => ({
-    ...state,
-    matches: data,
-  })),
+  modifyMatches: (data) =>{
+
+    set((state) => ({
+      ...state,
+      matches: data,
+    }))
+    // console.log(get().matches)
+  },
 
 }));
 
