@@ -7,7 +7,11 @@ export default function TableActionsMatches ({row, handleDelete, handleUpdate, s
 
             <Tooltip title="Editar Encuentro">
 
-                <IconButton>
+                <IconButton
+                    onClick={()=>{
+                        handleUpdate(row);
+                    }}
+                >
 
                     <svg
                         width="20px"
