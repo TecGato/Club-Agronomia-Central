@@ -3,6 +3,7 @@ import { validate } from './CalendarFormValidation';
 import { useQuincho } from '@/hooks';
 import { Warn } from '@/components/Dashboard/Warn/Warn';
 import AppContext from '../../../../contexts/AppContext';
+import useStore from '@/store/globalstore';
 
 export function QuinchoCalendarForm({
   setShowModal,
@@ -10,10 +11,14 @@ export function QuinchoCalendarForm({
   setShowCard,
   showCard,
 }) {
-  const { handlerDelete, handlerCreate, handlerUpdate, setLoading } =
-    useQuincho();
-  const { reservations, setShowMessageModal, showMessageModal } =
-    useContext(AppContext);
+  const handlerCreate = useStore((state) => state.addDate);
+  const handlerUpdate = useStore((state) => state.updateDate);
+  const handlerDelete = useStore((state) => state.deleteDate);
+  const reservations = useStore((state) => state.reservas);
+
+  const { setLoading } = useQuincho();
+
+  const { setShowMessageModal } = useContext(AppContext);
   const [showWarn, setShowWarn] = useState(false);
   const [data, setData] = useState({
     client: itsAdmin ? showCard.client : '',

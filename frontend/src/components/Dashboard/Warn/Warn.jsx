@@ -18,7 +18,7 @@ export function Warn({ handlerDelete, showModalWarn, showWarn, setLoading }) {
           <p className="text-gray-900">
             ¿Esta Seguro que desea eliminar esta noticia?
             <br />
-            Esta accion es irreversible.
+            Esta acción es irreversible.
           </p>
         </div>
         <div className="flex justify-center items-center">

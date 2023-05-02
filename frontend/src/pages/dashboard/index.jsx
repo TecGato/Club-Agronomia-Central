@@ -12,6 +12,7 @@ import useStore from '@/store/globalstore';
 import { useEffect } from 'react';
 
 export default function Dashboard() {
+  const directiva = useStore((state) => state.directiva);
   const setDirectiva = useStore((state) => state.setDirectiva);
   const setAtletas = useStore((state) => state.setAtletas);
   const setReservas = useStore((state) => state.setReservas);
@@ -39,9 +40,9 @@ export default function Dashboard() {
   );
 
   useEffect(() => {
-    setAtletas();
-    setReservas();
-    setDirectiva();
+    if (atletas.length === 0) setAtletas();
+    if (reservas.length === 0) setReservas();
+    if (directiva.length === 0) setDirectiva();
   }, []);
 
   return (
