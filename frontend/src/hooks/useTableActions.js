@@ -13,7 +13,6 @@ export const useTableActions = (setEditModal, handlerDelete) => {
 
   return {
     row,
-
     handleDelete,
     handleUpdate,
   };

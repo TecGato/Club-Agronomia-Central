@@ -7,7 +7,7 @@ export function QuinchoCardDetail({ detail, setShowCard, showCard }) {
             <p className="text-1xl font=semibold mr-6">
               Información del Evento
             </p>
-            <span class="ml-2 font-medium leading-none truncate" />
+            <span className="ml-2 font-medium leading-none truncate" />
             <button
               className="bg-transparent border-0 text-black float-right"
               onClick={() => setShowCard(false)}

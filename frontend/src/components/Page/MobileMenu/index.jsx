@@ -4,8 +4,8 @@ import { IconMobileMenu } from './icon';
 import Darkmode from '@/components/Darkmode';
 
 export function MobileMenu({ openMenu }) {
-    const [clubOpen, setClubOpen] = useState(false);
-    const [sportsOpen, setSportsOpen] = useState(false);
+  const [clubOpen, setClubOpen] = useState(false);
+  const [sportsOpen, setSportsOpen] = useState(false);
 
     return (
         <section

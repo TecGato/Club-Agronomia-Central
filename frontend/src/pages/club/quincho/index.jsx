@@ -5,7 +5,7 @@ import image from '../../../../public/history-img/Prueba.png';
 export default function Quincho() {
   return (
     <>
-      <Layout title={'Disponibilidad Quincho'} image={image}>
+      <Layout title={'Disponibilidad del Quincho'} image={image}>
         <QuinchoCalendarContainer />
       </Layout>
     </>
