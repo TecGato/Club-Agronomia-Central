@@ -167,7 +167,7 @@ export function QuinchoCalendarContainer({ itsAdmin = false }) {
                   className="flex flex-col items-center justify-center w-full h-full text-sm border border-gray-200 truncate"
                 >
                   {i + 1}
-                  {reservationsDates.map((dateEv) => {
+                  {reservationsDates.map((dateEv, index) => {
                     return (
                       <QuinchoCalendarDay
                         day={i + 1}
