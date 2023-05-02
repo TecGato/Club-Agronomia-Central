@@ -1,6 +1,6 @@
 import { Box, Tooltip, IconButton } from '@mui/material';
 //{ row, handleDeleteM, handleUpdateM, handleDetailM}
-export default function TableActionsMatches (){
+export default function TableActionsMatches ({row, handleDelete, handleUpdate, setLoading }){
 
     return(
            <Box>
@@ -41,7 +41,12 @@ export default function TableActionsMatches (){
 
             <Tooltip title="Eliminar Encuentro">
 
-                <IconButton>
+                <IconButton
+                    onClick={()=>{
+                        handleDelete(row);
+                        setLoading(true);
+                    }}
+                >
 
                     <svg
                         width="20px"
