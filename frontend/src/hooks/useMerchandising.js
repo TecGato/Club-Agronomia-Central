@@ -1,13 +1,23 @@
 import axios from "axios";
-
+import AppContext from "../../contexts/AppContext";
+import { useContext, useState } from "react";
 export  function useMerchandising() {
+  const { setShowMessageModal } = useContext(AppContext);
+  const [products, setProducts] = useState();
+  const getProducts = async () => {
+    const res = await fetch('http://localhost:3001/api/products');
+    const products = await res.json();
+    return setProducts(products);
+  };
     const handlerDelete = async (id) => {
         try {
           await axios.delete(
             `http://localhost:3001/api/products/${id}`
           );
+          setShowMessageModal('Producto eliminado con éxito')
+          getProducts()
         } catch (error) {
-          console.log(error);
+          setShowMessageModal(`Ha ocurrido un error: ${error} `)
         }
       };
     
@@ -17,9 +27,10 @@ export  function useMerchandising() {
             `http://localhost:3001/api/products`,
             product
           );
-          console.log(data.msg);
+          setShowMessageModal('Producto agregado con éxito')
+          getProducts()
         } catch (error) {
-          console.log(error);
+          setShowMessageModal(`Ha ocurrido un error: ${error} `)
         }
       };
     
@@ -29,9 +40,10 @@ export  function useMerchandising() {
             `http://localhost:3001/api/products/${post.id}`,
             post
           );
-          console.log(data.msg);
+          setShowMessageModal('Producto actualizado con éxito')
+          getProducts()
         } catch (error) {
-          console.log(error);
+          setShowMessageModal(`Ha ocurrido un error: ${error} `)
         }
       };
     
@@ -39,5 +51,7 @@ export  function useMerchandising() {
         handlerDelete,
         handlerCreate,
         handlerModify,
+        getProducts,
+        products
       };
 }
