@@ -4,7 +4,20 @@ import insta from '../../../../public/contact-img/insta.svg';
 import face from '../../../../public/contact-img/face.svg';
 import twitter from '../../../../public/contact-img/twitter.svg';
 import Image from 'next/image';
-export default function Chess({ data }) {
+import useStore from '@/store/globalstore';
+import { useEffect } from 'react';
+import { useMatches } from '@/hooks';
+
+export default function Chess() {
+
+  const { matches } = useStore();
+
+  const { getMatches } = useMatches();
+
+  useEffect(()=>{
+    getMatches();
+  }, [])
+
   return (
     <Layout
       title="Club De Ajedrez Zugzwang"
@@ -120,7 +133,7 @@ export default function Chess({ data }) {
       </div>
 
       <MatchesInfo
-        data={data}
+        matches={matches}
         classname={
           'bg-indigo-100 dark:bg-[#2C2C2C]  w-full h-full flex items-center'
         }
@@ -130,17 +143,3 @@ export default function Chess({ data }) {
   );
 }
 
-export async function getStaticProps() {
-  try {
-    const res = await fetch(
-      'http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/matches'
-    );
-    const data = await res.json();
-
-    return {
-      props: { data: data },
-    };
-  } catch (error) {
-    return { error: error.message };
-  }
-}

@@ -19,8 +19,9 @@ export function MatchesInfo(props) {
                       />
                     </div>
                     <div className="space-y-10">
-                      <div className="font-bold text-xl mb-2 mt-5">
-                        {props.data[0].home_team}
+                      <div className="font-bold text-xl mb-2 ">
+                        {console.log(props.matches)}
+                        {props.matches[0].home_team}
                       </div>
                     </div>
                   </div>
@@ -38,14 +39,14 @@ export function MatchesInfo(props) {
                       </div>
 
                       <p id="data" className="text-base">
-                        {props.data[0].date}
+                        {props.matches[0].date}
                       </p>
                       <div className="font-bold text-xl mb-2">
-                        {props.data[0].time}
+                        {props.matches[0].time}
                       </div>
 
                       <p id="stadium" className="text-base">
-                        {props.data[0].discipline}
+                        {props.matches[0].discipline}
                       </p>
                     </div>
                   </div>
@@ -69,7 +70,7 @@ export function MatchesInfo(props) {
                     </div>
                     <div className="space-y-5">
                       <div className="font-bold text-xl mb-2">
-                        {props.data[0].away_team}
+                        {props.matches[0].away_team}
                       </div>
                     </div>
                   </div>
