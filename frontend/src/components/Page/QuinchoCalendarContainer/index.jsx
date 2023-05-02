@@ -193,23 +193,23 @@ export function QuinchoCalendarContainer({ data, itsAdmin = false }) {
               );
             })}
           </div>
-          <h3>Indicadores de la reserva</h3>
+          <h3>Indicadores de Reserva</h3>
           <button className="flex items-center flex-shrink-0 h-5 px-1 text-xs">
             <span className="flex-shrink-0 w-2 h-2 bg-gray-500 rounded-full"></span>
             <span className="ml-2 font-medium leading-none truncate">
-              Reservas solicitadas
+              Reservas solicitadas.
             </span>
           </button>
           <button className="flex items-center flex-shrink-0 h-5 px-1 text-xs ">
             <span className="flex-shrink-0 w-2 h-2 bg-yellow-500 rounded-full"></span>
             <span className="ml-2 font-medium leading-none truncate">
-              Reservas Solicitadas y confirmadas
+              Reservas solicitadas y confirmadas.
             </span>
           </button>
           <button className="flex items-center flex-shrink-0 h-5 px-1 text-xs ">
             <span className="flex-shrink-0 w-2 h-2 bg-green-500 rounded-full"></span>
             <span className="ml-2 font-medium leading-none truncate">
-              Reservas Solicitadas, confirmadas y pagadas
+              Reservas solicitadas, confirmadas y pagadas.
             </span>
           </button>
           {/* MODAL */}

@@ -21,7 +21,7 @@ export function Navbar() {
         <NavLink text={'Testimonios'} link={'/testimonios'} />
         <NavLink text={'Noticias'} link={'/noticias'} />
         <NavLink text={'Merchandising'} link={'/merchandising'} />
-        <NavLink text={'Contáctanos'} link={'/contacto'} />
+        <NavLink text={'Contactanos'} link={'/contacto'} />
       </ul>
       <div
         className={`w-10 h-10 lg:h-auto relative ${

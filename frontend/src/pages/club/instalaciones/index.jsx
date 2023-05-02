@@ -91,7 +91,7 @@ export default function Instalations() {
                 Si estás buscando un lugar para disfrutar de ricas comidas en un
                 ambiente cálido y familiar, nuestro buffet es la opción ideal.
                 Estamos abiertos de lunes a sábado desde las 8 de la mañana
-                hasta las 12 de la noche, y ofrecemos una gran variedad de
+                hasta las 12 de la noche y ofrecemos una gran variedad de
                 opciones para desayunos, almuerzos y cenas. Además, contamos con
                 un espacio completamente climatizado, lo que lo hace perfecto
                 para disfrutar de una comida en cualquier momento del año. ¡Te
@@ -112,7 +112,7 @@ export default function Instalations() {
                 QUINCHO
               </div>
               <p className="block mt-6 text-lg leading-tight font-medium dark:text-slate-100 text-gray-800">
-                Lugar preparado para distintos tipos de eventos..
+                Lugar preparado para distintos tipos de eventos
               </p>
               <p className="mt-6 dark:text-slate-200 text-slate-500 text-justify">
                 En nuestra sede, tenemos un quincho cerrado de 50 metros
@@ -134,13 +134,13 @@ export default function Instalations() {
             </div>
             <div className="p-8 w-[100%]">
               <div className=" text-center tracking-wide text-2xl text-blue-500 font-semibold lg:text-left">
-                SALON DE FIESTAS
+                SALÓN DE FIESTAS
               </div>
               <p className="block mt-6 text-lg leading-tight font-medium dark:text-slate-100 text-gray-800">
-                Salón exclusivo para eventos memorables.
+                Salón exclusivo para eventos memorables
               </p>
               <p className="mt-6 text-slate-500 dark:text-slate-200 text-justify">
-                Festejá tu evento en Agronomía Central. El lugar más destacado y
+                Festejá tu evento en Agronomía Central, el lugar más destacado y
                 con trayectoria en Parque Chas por más de 30 años. Contamos con
                 instalaciones adaptables para eventos de hasta 120 personas,
                 equipado con barra de tragos, cocina industrial, cabina de DJ y
@@ -148,7 +148,7 @@ export default function Instalations() {
                 cumpleaños, casamientos o cualquier otra celebración, nosotros
                 lo hacemos posible. Acercate a visitarnos de lunes a viernes de
                 18 a 20 hs en Bauness 958 CABA. Si querés más información,
-                escribinos a clubagronomiacentral@gmail.com al 4524-2225.
+                escribinos a clubagronomiacentral@gmail.com o al 4524-2225.
               </p>
             </div>
           </div>
@@ -206,12 +206,12 @@ export default function Instalations() {
                 CANCHAS
               </div>
               <p className="block mt-6 text-lg leading-tight font-medium dark:text-slate-100 text-gray-800">
-                Canchas en excelente estado listas para disfrutar.
+                Canchas en excelente estado listas para disfrutar
               </p>
               <p className="mt-6 text-slate-500 dark:text-slate-200 text-justify">
-                En el Club vas a encontrar dos canchas techadas en excelente
+                En el Club, vas a encontrar dos canchas techadas en excelente
                 estado para disfrutar de tu deporte favorito sin importar el
-                clima. Una principal de fútbol 5, y una auxiliar para
+                clima: una principal de fútbol 5, y una auxiliar para
                 entrenamientos. Además, podés alquilar la cancha auxiliar junto
                 con el quincho para festejos infantiles. ¡Vení y disfrutá de una
                 experiencia deportiva única en nuestras cómodas instalaciones!

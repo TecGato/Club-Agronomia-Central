@@ -11,7 +11,7 @@ import Instalaciones from '../../../public/installations-img/instalaciones.jpg';
 export default function Club() {
   const section = [
     [
-      'Comision Directiva',
+      'Comisión Directiva',
       Directiva,
       'Conocé a nuestros directivos',
       'club/comision-directiva',
@@ -19,7 +19,7 @@ export default function Club() {
     [
       'Historia',
       Historia,
-      'Conocé mas acerca de la historia del club',
+      'Conocé más acerca de la historia del club',
       'club/historia',
     ],
     [
