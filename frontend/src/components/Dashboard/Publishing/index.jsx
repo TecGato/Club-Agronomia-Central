@@ -2,7 +2,7 @@ import React from 'react';
 
 export const Publishing = ({ ad, number, name, tel, img, handleEdit, handleDelete }) => {
   return (
-    <article className="w-[48%] lg:w-[32%] h-fit 2xl:w-[20%] bg-white rounded-lg overflow-hidden shadow-lg">
+    <article className="w-[48%] lg:w-[32%] h-fit 2xl:w-[20%] bg-white dark:bg-[#2C2C2C] rounded-lg overflow-hidden shadow-lg">
       <img src={img} alt="" />
       <div className="px-2">
         <p className="text-sm text-neutral-500">Publicidad {number}</p>
