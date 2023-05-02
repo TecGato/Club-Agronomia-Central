@@ -1,10 +1,27 @@
 const { Router } = require('express');
 const { check } = require('express-validator');
-
-const { login, logout, register } = require('../controllers/auth');
+const { getUsers, checkLogin } = require('../controllers/users/getUsers');
+const { login, logout, register } = require('../controllers/auth/index');
 const { validateFields } = require('../middlewares/validate-fields');
+const User = require('../models/User');
 
 const router = Router();
+
+router.get('/users', getUsers);
+router.get('/users/login', checkLogin);
+
+router.delete('/users/:id', async (req, res) => {
+  const { id } = req.params;
+  try {
+    const user = await User.deleteOne({ _id: id });
+    return res.status(200).json({
+      msg: 'User Deleted Successfully',
+      user,
+    });
+  } catch (error) {
+    console.error(error.message);
+  }
+});
 
 router.post('/login', login);
 router.post('/logout', logout);

@@ -1,7 +1,94 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useMatches, useFormMatches } from '@/hooks';
+
+const initialForm ={
+    name:'',
+    date:'',
+    time:'',
+    home_team:'',
+    away_team:'',
+    discipline:'',
+};
+
+const formValidations = {
+    name:[(value) => value.length > 0, 'El nombre del encuentro es obligatorio'],
+    date:[(value) => value.length > 0, 'Escoja una fecha para el encuentro'],
+    time:[(value) => value.length > 0, 'Escoja una hora para el encuentro'],
+    home_team:[(value) => value.length > 0, 'Escriba el nombre del equipo local'],
+    away_team:[(value) => value.length > 0, 'Escriba el nombre del equipo local'],
+
+}
+
 
 export default function MatchesForm({setShowModalMatches}){
+
+    // const {name, date, time, home_team, away_team} = useFormMatches(initialForm)
+    // const name='';
+    // const date='';
+    // const time='';
+    // const home_team='';
+    // const away_team='';
+    // const discipline='';
+
+    //Post variable and url try
+    const { handlerCreate } = useMatches();
+
+    const handleSubmit = async (event)=>{
+        event.preventDefault();
+
+        const dataPost={
+            name: event.target.name.value,
+            date: event.target.date.value,
+            time: event.target.time.value,
+            home_team: event.target.home_team.value,
+            away_team: event.target.away_team.value,
+            discipline: event.target.discipline.value
+        }
+
+        handlerCreate(dataPost);
+        setShowModalMatches(false);
+        // const JSONdata = JSON.stringify(data)
+        // try{
+        //     const { data }=await axios.post(
+        //         'http://localhost:3001/api/matches', dataPost
+        //     );
+        //     setShowModalMatches(false);
+        //     return data;
+        // }catch(error){
+        //     setShowModalMatches(false);
+        //     throw new Error(error.message)
+        // }
+
+
+        // const response =await axios.post('http://localhost:3001/api/matches', data);
+
+        // const response =await axios.post('http://localhost:3001/api/matches', {
+        //     name: event.target.name.value,
+        //     date: event.target.date.value,
+        //     time: event.target.time.value,
+        //     home_team: event.target.home_team.value,
+        //     away_team: event.target.away_team.value,
+        //     discipline: event.target.discipline.value
+        // });
+
+        // console.log("Entra")
+        // const result = await response.json()
+        // alert(`Is this your full name: `)
+
+
+
+        // return await response.json();
+        // }catch(error){
+        //     throw new Error(error.message)
+        // }
+
+
+
+    }
+
+
+
 
     return(
         <div className="flex bg-gray-900/80 backdrop-blur-sm justify-center items-center overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
@@ -32,28 +119,108 @@ export default function MatchesForm({setShowModalMatches}){
                 <span className="sr-only">Close modal</span>
             </button>
             </div>
-            <form className="flex flex-col gap-2" >
-            <label className="text-gray-900 text-lg dark:text-slate-100">Nombre del encuentro:</label>
-            <input
-                name="name"
-                type="text"
-                className="border w-full rounded-lg dark:bg-[#1F2123] dark:border-none border-gray-200 p-3 text-sm"
-                placeholder="Nombre"
-                // onChange={"handlerChange"}
-                value={"entrada"}
-            />
-            <label className="text-gray-900 dark:text-slate-100 text-lg">Cargo:</label>
-            <label className="text-gray-900 dark:text-slate-100 text-lg">{"props.position"}</label>
+            <form className="flex flex-col gap-2" onSubmit={handleSubmit}>
+                <label htmlFor="name" className="text-gray-900 text-lg dark:text-slate-100">Nombre del encuentro:</label>
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    className="border w-full rounded-lg dark:bg-[#1F2123] dark:border-none border-gray-200 p-3 text-sm"
+                    // value={""}
+                    // onChange={"handlerChange"}
+                />
 
+                <label htmlFor="home_team" className="text-gray-900 text-lg dark:text-slate-100">Equipo Local:</label>
+                <input
+                    type="text"
+                    id="home_team"
+                    name="home_team"
+                    className="border w-full rounded-lg dark:bg-[#1F2123] dark:border-none border-gray-200 p-3 text-sm"
+                    // onChange={"handlerChange"}
+                    // value={home_team}
+                />
+
+            <label htmlFor="away_team" className="text-gray-900 text-lg dark:text-slate-100">Equipo Visitante:</label>
+            <input
+                type="text"
+                id="away_team"
+                name="away_team"
+                className="border w-full rounded-lg dark:bg-[#1F2123] dark:border-none border-gray-200 p-3 text-sm"
+                // onChange={"handlerChange"}
+                // value={away_team}
+            />
+                <div>
+                    <label
+                    htmlFor="discipline"
+                    className="block mb-2 font-medium text-gray-900 text-lg text-left"
+                    >
+                    Disciplina:
+                    </label>
+                    <select
+                    type="text"
+                    id="discipline"
+                    name="discipline"
+                    className="block w-full p-3 rounded-lg bg-[#eff2f7] border border-neutral-400 placeholder-neutral-500 text-neutral-800 outline-none
+                focus:outline-none focus:border-[#3264c0] focus:ring-1 focus:ring-[#3264c0] transition-all duration-200"
+                    // value={discipline}
+                    // onChange={"onInputChange"}
+                    >
+                    <option value="Ajedrez" key="Ajedrez">
+                        Ajedrez
+                    </option>
+                    <option value="Fútbol Infantil" key="Fútbol Infantil">
+                        Fútbol Infantil
+                    </option>
+                    <option value="Futsal" key="Futsal">
+                        Futsal
+                    </option>
+                    <option value="Futsal Femenino" key="Futsal Femenino">
+                        Futsal Femenino
+                    </option>
+                    <option value="Taekwondo" key="Taekwondo">
+                        Taekwondo
+                    </option>
+                    <option value="Escuelita de Fútbol" key="Escuelita de Fútbol">
+                        Escuelita de Fútbol
+                    </option>
+                    </select>
+            </div>
+
+            <label htmlFor="date" className="block mb-2 font-medium text-gray-900 text-lg text-left">Fecha del evento:</label>
+
+                <input
+                    className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
+                    id="date"
+                    name="date"
+                    type="date"
+                    // onChange={"handleChange"}
+                    // value={date}
+                />
+
+
+
+            <label htmlFor="time" className="block mb-2 font-medium text-gray-900 text-lg text-left">Hora del evento:</label>
+
+            <input
+                className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
+                type="time"
+                id="time"
+                name="time"
+                min="09:00"
+                max="18:00" required
+                // value={time}
+                >
+
+            </input>
             <button
                 type="submit"
-                className="bg-blue-700 hover:bg-blue-800 text-white font-semibold py-2 px-4 rounded w-1/8 self-center"
-                onClick={()=>{
-                    if (setShowModalMatches) {
-                        setShowModalMatches(false)
-                  }
+                className="bg-blue-700 hover:bg-blue-800 text-white font-semibold py-2 px-4 rounded w-1/8 self-center mt-2"
+                // onClick={()=>{
+                //     if (setShowModalMatches) {
+                //         setShowModalMatches(false)
+                // }
 
-                }}
+                // }}
             >
                 Crear nuevo encuentro
             </button>

@@ -52,30 +52,28 @@ export default function Testimonials() {
             </div>
             <section className="grid grid-cols-1 lg:grid-cols-3 justify-items-center py-10 px-5 gap-5 w-full h-full">
                 {
-                    loading ? (
-                        <Loader />
-                    ) : (
-                        showMessageModal ? (
-                            <MessageModal />
-                        ) : (
-                            testimonials?.map(testimonial => (
-                                <TestimonialItemDashboard
-                                    key={testimonial._id}
-                                    title={testimonial.title}
-                                    text={testimonial.description}
-                                    img={testimonial.picture}
-                                    showModalWarn={showModalWarn}
-                                    setId={setId}
-                                    id={testimonial._id}
-                                    showModalModify={showModalModify}
-                                    setPostModify={setPostModify}
-                                    setModifyTestimony={setModifyTestimony}
-                                />
-                            ))
-                        )
-                    )
+                    testimonials?.map(testimonial => (
+                        <TestimonialItemDashboard
+                            key={testimonial._id}
+                            title={testimonial.title}
+                            text={testimonial.description}
+                            img={testimonial.picture}
+                            showModalWarn={showModalWarn}
+                            setId={setId}
+                            id={testimonial._id}
+                            showModalModify={showModalModify}
+                            setPostModify={setPostModify}
+                            setModifyTestimony={setModifyTestimony}
+                        />
+                    ))
                 }
             </section>
+            {loading && (
+                <Loader />
+            )}
+            {showMessageModal && (
+                <MessageModal />
+            )}
             {showWarn && (
                 <WarnDelete
                     handlerDelete={handlerDelete}

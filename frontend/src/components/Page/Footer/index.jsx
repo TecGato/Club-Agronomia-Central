@@ -9,7 +9,12 @@ export function Footer() {
         <SocialIcons className="row-span-3" />
         <span className="row-span-1 p-0">© 2023 Club Agronomía Central.</span>
         <span className="row-span-1 p-0">Todos los derechos reservados.</span>
-        <Link href='/dashboard/auth/login' className='text-gray-400 font-bold text-base hover:text-[#3264c0]'>Login</Link>
+        <Link
+          href="/dashboard/auth/login"
+          className="text-gray-400 font-bold text-base hover:text-[#3264c0]"
+        >
+          Login
+        </Link>
       </div>
     </footer>
   );

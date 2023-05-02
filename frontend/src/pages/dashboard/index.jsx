@@ -49,10 +49,10 @@ export default function Dashboard() {
     <Layout>
       <div
         className="w-full min-h-screen grid grid-cols-2 gap-2 justify-self-center items-center xl:w-11/12 sm:w-5/6 p-5
-    sm:justify-items-center
-    lg:grid-cols-3
-    xl:grid-cols-4
-    "
+      sm:justify-items-center
+      lg:grid-cols-3
+      xl:grid-cols-4
+      "
       >
         <InfoItem
           icon={
@@ -63,11 +63,11 @@ export default function Dashboard() {
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
               <g
                 id="SVGRepo_tracerCarrier"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               ></g>
               <g id="SVGRepo_iconCarrier">
                 {' '}
@@ -75,8 +75,8 @@ export default function Dashboard() {
                   d="M29 14C31.7614 14 34 11.7614 34 9C34 6.23858 31.7614 4 29 4C26.2386 4 24 6.23858 24 9C24 11.7614 26.2386 14 29 14Z"
                   fill="#2F88FF"
                   stroke="#1b418a"
-                  stroke-width="4"
-                  stroke-miterlimit="2"
+                  strokeWidth="4"
+                  strokeMiterlimit="2"
                 ></path>{' '}
                 <path
                   d="M19 46C20.6569 46 22 44.6569 22 43C22 41.3431 20.6569 40 19 40C17.3431 40 16 41.3431 16 43C16 44.6569 17.3431 46 19 46Z"
@@ -85,31 +85,31 @@ export default function Dashboard() {
                 <path
                   d="M24.38 18.91L20 27L27.31 33.02C27.62 33.26 27.84 33.59 27.97 33.96L31 44"
                   stroke="#1b418a"
-                  stroke-width="4"
-                  stroke-miterlimit="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="4"
+                  strokeMiterlimit="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 ></path>{' '}
                 <path
                   d="M20 27L14.51 34.64C13.97 35.43 12.95 35.73 12.07 35.36L4 32"
                   stroke="#1b418a"
-                  stroke-width="4"
-                  stroke-miterlimit="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="4"
+                  strokeMiterlimit="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 ></path>{' '}
                 <path
                   d="M42 24H35C34.64 24 34.28 23.91 33.96 23.73L30.75 21.92C26.74 19.57 22.35 17.96 17.78 17.14L14.56 16.57C14.11 16.49 13.64 16.57 13.24 16.79L7 20"
                   stroke="#1b418a"
-                  stroke-width="4"
-                  stroke-miterlimit="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="4"
+                  strokeMiterlimit="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 ></path>{' '}
               </g>
             </svg>
           }
-          title={'Jugadores de Escuelita de Futbol'}
+          title={'Jugadores de Escuelita de Fútbol'}
           number={escuelitaFutbol.length}
         />
         <InfoItem
@@ -123,11 +123,11 @@ export default function Dashboard() {
               xmlns="http://www.w3.org/2000/svg"
               stroke="#1b418a"
             >
-              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
               <g
                 id="SVGRepo_tracerCarrier"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               ></g>
               <g id="SVGRepo_iconCarrier">
                 {' '}
@@ -244,7 +244,7 @@ export default function Dashboard() {
               </g>
             </svg>
           }
-          title={'Jugadores de Futbol Infantil'}
+          title={'Jugadores de Fútbol Infantil'}
           number={futbolInfantil.length}
         />
         <InfoItem
@@ -273,7 +273,7 @@ export default function Dashboard() {
               </g>
             </svg>
           }
-          title={'Jugadores de Taekwondo'}
+          title={'Taekwondokas'}
           number={taekwondo.length}
         />
         <InfoItem
@@ -364,11 +364,11 @@ export default function Dashboard() {
               xmlns="http://www.w3.org/2000/svg"
               fill="#000000"
             >
-              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
               <g
                 id="SVGRepo_tracerCarrier"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               ></g>
               <g id="SVGRepo_iconCarrier">
                 <path

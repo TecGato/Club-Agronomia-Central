@@ -213,7 +213,7 @@ export function QuinchoCalendarForm({
                       Horario de Reserva
                     </label>
                     <div
-                      class="relative"
+                      className="relative"
                       // flex justify-center text-lg border rounded-md shadow-lg p-2
                     >
                       <select
@@ -275,7 +275,7 @@ export function QuinchoCalendarForm({
                   <div className="flex flex-wrap -mx-3 mb-2">
                     <div className="w-full px-3">
                       <label
-                        class="block uppercase tracking-wide text-gray-700 text-xs font-bold"
+                        className="block uppercase tracking-wide text-gray-700 text-xs font-bold"
                         htmlFor="grid-state"
                       >
                         Estado de la reserva
