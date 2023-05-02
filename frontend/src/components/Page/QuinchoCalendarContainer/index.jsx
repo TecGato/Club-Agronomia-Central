@@ -81,11 +81,11 @@ export function QuinchoCalendarContainer({ data, itsAdmin = false }) {
         <Loader />
       ) : (
         <>
-          <div class="flex items-center mt-4">
-            <div class="flex ml-6">
+          <div className="flex items-center mt-4">
+            <div className="flex ml-6">
               <button>
                 <svg
-                  class="w-6 h-6"
+                  className="w-6 h-6"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
@@ -93,16 +93,16 @@ export function QuinchoCalendarContainer({ data, itsAdmin = false }) {
                   onClick={prevMonth}
                 >
                   <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
                     d="M15 19l-7-7 7-7"
                   />
                 </svg>
               </button>
               <button>
                 <svg
-                  class="w-6 h-6"
+                  className="w-6 h-6"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
@@ -110,55 +110,55 @@ export function QuinchoCalendarContainer({ data, itsAdmin = false }) {
                   onClick={nextMonth}
                 >
                   <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
                     d="M9 5l7 7-7 7"
                   />
                 </svg>
               </button>
             </div>
-            <h2 class="ml-2 text-xl font-bold leading-none">
+            <h2 className="ml-2 text-xl font-bold leading-none">
               {months[month]}, {year}
             </h2>
           </div>
           {/* Encabezado del calendario mensual */}
           <div
             key="EncabezadoDias"
-            class="grid justify-items-center grid-cols-7 mt-4 border-t-4 border-indigo-500"
+            className="grid justify-items-center grid-cols-7 mt-4 border-t-4 border-indigo-500"
           >
-            <div key="LUN" class="pl-1 text-sm">
+            <div key="LUN" className="pl-1 text-sm">
               LUN
             </div>
-            <div key="MAR" class="pl-1 text-sm">
+            <div key="MAR" className="pl-1 text-sm">
               MAR
             </div>
-            <div key="MIE" class="pl-1 text-sm">
+            <div key="MIE" className="pl-1 text-sm">
               MIE
             </div>
-            <div key="JUE" class="pl-1 text-sm">
+            <div key="JUE" className="pl-1 text-sm">
               JUE
             </div>
-            <div key="VIE" class="pl-1 text-sm">
+            <div key="VIE" className="pl-1 text-sm">
               VIE
             </div>
-            <div key="SAB" class="pl-1 text-sm">
+            <div key="SAB" className="pl-1 text-sm">
               SAB
             </div>
-            <div key="DOM" class="pl-1 text-sm">
+            <div key="DOM" className="pl-1 text-sm">
               DOM
             </div>
           </div>
           {/* Contenedor principal */}
           <div
             key="ContenedorPrincipal"
-            class="grid flex-grow w-full h-auto grid-cols-7 grid-rows-5 gap-px pt-px mt-1 "
+            className="grid flex-grow w-full h-auto grid-cols-7 grid-rows-5 gap-px pt-px mt-1 "
           >
             {Array.from({ length: firstDayofMonth.getDay() - 1 }).map(
               (_, i) => (
                 <div
                   key={i}
-                  class="flex items-center justify-center w-full h-full text-sm text-gray-400"
+                  className="flex items-center justify-center w-full h-full text-sm text-gray-400"
                 >
                   {lastdayPreviousMonth.getDate() -
                     firstDayofMonth.getDay() +
@@ -168,17 +168,14 @@ export function QuinchoCalendarContainer({ data, itsAdmin = false }) {
             )}
             {Array.from({ length: lastDay.getDate() }).map((_, i) => {
               return (
-                <>
-                  <div
-                    key={i}
-                    className="flex flex-col items-center justify-center w-full h-full text-sm border border-gray-200 truncate"
-                  >
+                <div key={i}>
+                  <div className="flex flex-col items-center justify-center w-full h-full text-sm border border-gray-200 truncate">
                     {i + 1}
-                    {reservationsDates.map((dateEv) => {
+                    {reservationsDates.map((dateEv, index) => {
                       return (
                         <QuinchoCalendarDay
                           day={i + 1}
-                          key={dateEv.date}
+                          key={index}
                           dateCard={dateEv.date}
                           eventArray={reservations.filter(
                             (dateE) => dateE.date === dateEv.date
@@ -192,26 +189,26 @@ export function QuinchoCalendarContainer({ data, itsAdmin = false }) {
                       );
                     })}
                   </div>
-                </>
+                </div>
               );
             })}
           </div>
           <h3>Indicadores de la reserva</h3>
-          <button class="flex items-center flex-shrink-0 h-5 px-1 text-xs">
-            <span class="flex-shrink-0 w-2 h-2 bg-gray-500 rounded-full"></span>
-            <span class="ml-2 font-medium leading-none truncate">
+          <button className="flex items-center flex-shrink-0 h-5 px-1 text-xs">
+            <span className="flex-shrink-0 w-2 h-2 bg-gray-500 rounded-full"></span>
+            <span className="ml-2 font-medium leading-none truncate">
               Reservas solicitadas
             </span>
           </button>
-          <button class="flex items-center flex-shrink-0 h-5 px-1 text-xs ">
-            <span class="flex-shrink-0 w-2 h-2 bg-yellow-500 rounded-full"></span>
-            <span class="ml-2 font-medium leading-none truncate">
+          <button className="flex items-center flex-shrink-0 h-5 px-1 text-xs ">
+            <span className="flex-shrink-0 w-2 h-2 bg-yellow-500 rounded-full"></span>
+            <span className="ml-2 font-medium leading-none truncate">
               Reservas Solicitadas y confirmadas
             </span>
           </button>
-          <button class="flex items-center flex-shrink-0 h-5 px-1 text-xs ">
-            <span class="flex-shrink-0 w-2 h-2 bg-green-500 rounded-full"></span>
-            <span class="ml-2 font-medium leading-none truncate">
+          <button className="flex items-center flex-shrink-0 h-5 px-1 text-xs ">
+            <span className="flex-shrink-0 w-2 h-2 bg-green-500 rounded-full"></span>
+            <span className="ml-2 font-medium leading-none truncate">
               Reservas Solicitadas, confirmadas y pagadas
             </span>
           </button>

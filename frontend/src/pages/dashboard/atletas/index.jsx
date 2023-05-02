@@ -16,19 +16,31 @@ export default function Athletes({ athletes }) {
     pageSize: 10,
     page: 0,
   });
-  const { handlerDelete } = useAthletes()
-  const { row, handleDelete, handleUpdate } = useTableActions(setEditModal, handlerDelete);
+  const { handlerDelete } = useAthletes();
+  const { row, handleDelete, handleUpdate } = useTableActions(
+    setEditModal,
+    handlerDelete
+  );
 
-  
   const columns = [
     { field: 'name', headerName: 'Nombre', width: 130, align: 'left' },
-    { field: 'discipline', headerName: 'Disciplina', width: 130, align: 'left' },
-    { field: 'email', headerName: 'Correo Electronico', width: 150, align: 'left' },
+    {
+      field: 'discipline',
+      headerName: 'Disciplina',
+      width: 130,
+      align: 'left',
+    },
+    {
+      field: 'email',
+      headerName: 'Correo Electronico',
+      width: 150,
+      align: 'left',
+    },
     {
       field: 'contact',
       headerName: 'Numero de Contacto',
       type: 'number',
-      width: 170, 
+      width: 170,
       align: 'left',
     },
     {
@@ -76,9 +88,7 @@ export default function Athletes({ athletes }) {
   ];
   return (
     <Layout>
-      <section
-        className={`w-full min-h-screen m-4`}
-      >
+      <section className={`w-full min-h-screen m-4`}>
         <article className="p-5">
           <h1 className="md:text-xl lg:text-3xl font-bold text-left pl-20 pb-5">
             Administrar todos los atletas
@@ -103,8 +113,8 @@ export default function Athletes({ athletes }) {
                 strokeLinejoin="round"
               ></g>
               <g id="SVGRepo_iconCarrier">
-                <g dataName="Layer 2">
-                  <g dataName="person-add">
+                <g data-name="Layer 2">
+                  <g data-name="person-add">
                     <rect width="24" height="24" opacity="0"></rect>
                     <path d="M21 6h-1V5a1 1 0 0 0-2 0v1h-1a1 1 0 0 0 0 2h1v1a1 1 0 0 0 2 0V8h1a1 1 0 0 0 0-2z"></path>
                     <path d="M10 11a4 4 0 1 0-4-4 4 4 0 0 0 4 4z"></path>

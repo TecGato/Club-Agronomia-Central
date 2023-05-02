@@ -12,7 +12,7 @@ export function Navbar() {
   return (
     <header className="w-full h-14 fixed z-50 bg-blue-900 backdrop-filter backdrop-blur-lg bg-opacity-50 duration-500 flex justify-between items-center shadow-xl px-3">
       <img src="/logo.png" className="w-12" alt="logo" />
-      <p className="text-slate-100 text-lg lg:hidden">Club Agronomia Central</p>
+      <p className="text-slate-100 text-lg lg:hidden">Club Agronomía Central</p>
 
       <ul className="gap-4 hidden lg:flex">
         <NavLink text={'Inicio'} link={'/'} />

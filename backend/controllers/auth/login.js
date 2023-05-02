@@ -39,8 +39,7 @@ const login = async (req = request, res = response) => {
       path: '/',
     });
 
-    //res.setHeader('Set-Cookie', serialized);
-    res.cookie('authToken', serialized).redirect('/');
+    res.setHeader('Set-Cookie', serialized);
 
     return res.status(200).json({
       msg: 'Logged in Successfully',

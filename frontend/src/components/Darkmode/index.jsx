@@ -19,7 +19,11 @@ export default function Darkmode() {
       }}
     >
       <div className="w-6">
-        {dark === 1 ? <Image src={IconDark} /> : <Image src={IconLight} />}
+        {dark === 1 ? (
+          <Image src={IconDark} alt="Dark mode" />
+        ) : (
+          <Image src={IconLight} alt="Light mode" />
+        )}
       </div>
     </button>
   );
