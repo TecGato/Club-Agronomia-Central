@@ -1,39 +1,64 @@
 import { Layout } from '@/components/Dashboard';
 import MatchesForm from '@/components/Dashboard/Forms/MatchesForm';
-import { useState } from 'react';
+import TableActionsMatches from '@/components/Dashboard/TableActionsMatches';
+import { useState, useEffect, useContext } from 'react';
 import { DataGrid, GridToolbar } from '@mui/x-data-grid';
+import { useMatches } from '@/hooks';
+import useStore from '@/store/globalstore';
+import { useMatchesActions } from '@/hooks/useMatchesActions';
 
-export default function Matches({ data }) {
-  const columns = [
-    { field: 'name', headerName: 'Nombre del Encuentro', width: 130 },
-    { field: 'date', headerName: 'Fecha', width: 130 },
-    { field: 'home_team', headerName: 'Equipo Local', width: 130 },
-    { field: 'away_team', headerName: 'Equipo Visitante', width: 130 },
-    { field: 'discipline', headerName: 'Disciplina', width: 130 },
-  ];
+export default function Matches() {
 
-  const rows = [];
+    const { matches } = useStore(); //
+    //showmessagemodaldelete
+    const { handlerDelete, getMatches, loading, setLoading } = useMatches() //initial handlerDelete from hooks
 
-  data.map((match) => {
-    rows.push(match);
-  });
+    useEffect(()=>{
+        getMatches();
+    }, [])
 
-  /*
+    const [editModalMatch, setEditModalMatch] = useState(false);//initial state to edit modal
+    const [showModalMatches, setShowModalMatches] = useState(false);//Declare an initial state of the form modal to create matches
+    const [paginationModel, setPaginationModel] = useState({
+        pageSize: 10,
+        page: 0,
+    });
 
-      */
+    const { row, handleDelete, handleUpdate } = useMatchesActions(setEditModalMatch, handlerDelete);
 
-  const [paginationModel, setPaginationModel] = useState({
-    pageSize: 10,
-    page: 0,
-  });
 
-  const onEdit = (selectionModel) => {
-    // console.log(selectionModel);
-    // console.log('dw');
-  };
 
-  //Declare an initial state of the form modal in matches
-  const [showModalMatches, setShowModalMatches] = useState(false);
+    const columns = [
+        { field: 'name', headerName: 'Nombre del Encuentro', width: 130 },
+        { field: 'date', headerName: 'Fecha', width: 130 },
+        { field: 'home_team', headerName: 'Equipo Local', width: 130 },
+        { field: 'away_team', headerName: 'Equipo Visitante', width: 130 },
+        { field: 'discipline', headerName: 'Disciplina', width: 130 },
+        {   field: 'actions',
+            headerName: 'Acciones',
+            type:'actions',
+            width:150,
+
+            renderCell:(params)=> <TableActionsMatches
+                                setLoading={setLoading}
+                                handleDelete={handleDelete}
+                                handleUpdate={handleUpdate}
+                                {...params}
+                                />,
+
+        },
+
+    ];
+
+
+
+    const rows = []
+
+    matches.map((match)=>{
+        rows.push(match)
+    })
+
+
 
   return (
     <Layout>
@@ -53,7 +78,7 @@ export default function Matches({ data }) {
               Crear nuevo encuentro
             </button>
           </article>
-          <article className="flex flex-col gap-2 border bg-white border-neutral-300 shadow-[0px_3px_10px_2px_rgb(0_0_0_/_13%)] px-4 py-2 rounded-lg max-w-full h-2/3">
+          <article className="flex flex-col gap-2 border bg-white dark:invert dark:shadow-none dark:border-none border-neutral-300 shadow-[0px_3px_10px_2px_rgb(0_0_0_/_13%)] px-4 py-2 rounded-lg max-w-full h-2/3">
             <DataGrid
               rows={rows}
               getRowId={(row) => row._id}
@@ -65,7 +90,7 @@ export default function Matches({ data }) {
               onPaginationModelChange={setPaginationModel}
               pageSizeOptions={[5, 10, 25]}
               checkboxSelection
-              onRowSelectionModelChange={onEdit}
+
               disableMultipleRowSelection
             />
           </article>
@@ -79,19 +104,6 @@ export default function Matches({ data }) {
       ) : null}
     </Layout>
   );
+
 }
 
-export async function getStaticProps() {
-  try {
-    const res = await fetch(
-      'http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/matches'
-    );
-    const data = await res.json();
-
-    return {
-      props: { data: data },
-    };
-  } catch (error) {
-    return { error: error.message };
-  }
-}
