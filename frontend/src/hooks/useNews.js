@@ -16,11 +16,9 @@ export function useNews() {
       data && setNewsGlobal(newsGlobal.filter((tes) => tes._id !== id));
       setLoading(false);
       setShowMessageModal('Noticia Eliminada con Exito');
-      console.log(data.msg);
     } catch (error) {
       setLoading(false);
       setShowMessageModal('Ha ocurrido un error');
-      console.log(error);
     }
   };
 
@@ -34,11 +32,9 @@ export function useNews() {
       data && setNewsGlobal([data.newPost, ...newsGlobal]);
       setLoading(false);
       setShowMessageModal('Noticia Creada con Exito');
-      console.log(data.msg);
     } catch (error) {
       setLoading(false);
       setShowMessageModal('Ha ocurrido un error');
-      console.log(error);
     }
   };
 
@@ -58,11 +54,9 @@ export function useNews() {
         setLoading(false);
         setShowMessageModal('Noticia Editada con Exito');
       }
-      console.log(data.msg);
     } catch (error) {
       setLoading(false);
       setShowMessageModal('Ha ocurrido un error');
-      console.log(error);
     }
   };
 
@@ -81,7 +75,6 @@ export function useNews() {
     } catch (error) {
       setLoading(false);
       setShowMessageModal('Ha ocurrido un error');
-      console.log(error);
     }
   };
 

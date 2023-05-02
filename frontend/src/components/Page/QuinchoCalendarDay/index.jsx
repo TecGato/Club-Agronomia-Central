@@ -9,8 +9,8 @@ export function QuinchoCalendarDay(props) {
   };
   return (
     <div>
-      <div class="relative flex flex-col bg-white group">
-        <div class="relative flex flex-col bg-white group">
+      <div className="relative flex flex-col bg-white group">
+        <div className="relative flex flex-col bg-white group">
           {parseInt(props.dateCard.slice(5, 7)) === props.month &&
           parseInt(props.dateCard.slice(0, 4)) === props.year &&
           parseInt(props.dateCard.slice(8, 10)) === props.day ? (
@@ -19,16 +19,16 @@ export function QuinchoCalendarDay(props) {
                 ? props.eventArray.map((detail, index) => {
                     return (
                       <div key={index}>
-                        <div class="flex flex-col px-1 py-1 overflow-auto">
+                        <div className="flex flex-col px-1 py-1 overflow-auto">
                           <button
-                            class="flex items-center flex-shrink-0 h-5 px-1 text-xs hover:bg-gray-200"
+                            className="flex items-center flex-shrink-0 h-5 px-1 text-xs hover:bg-gray-200"
                             onClick={() => props.setShowCard(detail)}
                           >
-                            <span class={eventstates[detail.state]}></span>
-                            <span class=" hidden md:flex ml-2 font-light leading-none">
+                            <span className={eventstates[detail.state]}></span>
+                            <span className=" hidden md:flex ml-2 font-light leading-none">
                               {detail.beg_time}
                             </span>
-                            <span class=" hidden md:flex ml-2 font-medium leading-none truncate">
+                            <span className=" hidden md:flex ml-2 font-medium leading-none truncate">
                               {detail.description.slice(0, 15)}
                             </span>
                           </button>

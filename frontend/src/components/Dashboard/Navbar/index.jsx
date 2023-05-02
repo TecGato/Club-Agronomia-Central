@@ -28,7 +28,7 @@ export const Navbar = ({ openNavbar }) => {
       <div>
         <div className="flex gap-2 mb-5">
           <img className="w-11" src="/logo.png" alt="" />
-          <p className="text-white">Club Agronomia Central</p>
+          <p className="text-white">Club Agronomía Central</p>
         </div>
         <div className="flex flex-col gap-1">
           {routes.map(({ icon, pathName, name }) => (
