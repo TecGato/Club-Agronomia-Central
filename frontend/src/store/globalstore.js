@@ -5,6 +5,7 @@ const useStore = create((set, get) => ({
   reservas: [],
   directiva: [],
   dates: [],
+  matches:[],
 
   setAtletas: async () => {
     const { data } = await axios.get(
@@ -79,6 +80,18 @@ const useStore = create((set, get) => ({
       get().setReservas();
     } catch (error) {}
   },
+  setMatches: async () => {
+    const { data } = await axios.get(
+      'http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/matches'
+    );
+    set((state) => ({ ...state, matches: data }));
+  },
+  modifyMatches: (data) =>
+  set((state) => ({
+    ...state,
+    matches: data,
+  })),
+
 }));
 
 export default useStore;

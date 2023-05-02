@@ -1,16 +1,34 @@
 import { Layout } from '@/components/Dashboard';
 import MatchesForm from '@/components/Dashboard/Forms/MatchesForm';
+import MatchesFormEdit from '@/components/Dashboard/Forms/MatchesFormEdit';
 import TableActionsMatches from '@/components/Dashboard/TableActionsMatches';
-import { useState } from 'react';
+
+import { useState, useEffect, useContext } from 'react';
 import { DataGrid, GridToolbar } from '@mui/x-data-grid';
 import { useMatches } from '@/hooks';
+import useStore from '@/store/globalstore';
+import { useMatchesActions } from '@/hooks/useMatchesActions';
 
+export default function Matches() {
 
-export default function Matches({data}) {
+    const { matches } = useStore(); //
+    //showmessagemodaldelete
+    const { handlerDelete, getMatches, loading, setLoading } = useMatches() //initial handlerDelete from hooks
+
+    useEffect(()=>{
+        getMatches();
+    }, [])
 
     const [editModalMatch, setEditModalMatch] = useState(false);//initial state to edit modal
+    const [showModalMatches, setShowModalMatches] = useState(false);//Declare an initial state of the form modal to create matches
+    const [paginationModel, setPaginationModel] = useState({
+        pageSize: 10,
+        page: 0,
+    });
 
-    const { handlerDelete } = useMatches() //initial handlerDelete from hooks
+    const { row, handleDelete, handleUpdate } = useMatchesActions(setEditModalMatch, handlerDelete);
+
+
 
     const columns = [
         { field: 'name', headerName: 'Nombre del Encuentro', width: 130 },
@@ -22,19 +40,11 @@ export default function Matches({data}) {
             headerName: 'Acciones',
             type:'actions',
             width:150,
-            // renderCell:(params)=>{
-            //     <>
 
-            //         <TableActionsMatches
-            //             {...params}
-            //         />
-            //         <h1>borrar</h1>
-
-            //     </>
-            // }
-            // renderCell:()=> <CountButton />,
             renderCell:(params)=> <TableActionsMatches
-
+                                setLoading={setLoading}
+                                handleDelete={handleDelete}
+                                handleUpdate={handleUpdate}
                                 {...params}
                                 />,
 
@@ -46,26 +56,11 @@ export default function Matches({data}) {
 
     const rows = []
 
-    data.map((match)=>{
+    matches.map((match)=>{
         rows.push(match)
     })
 
-    /*
 
-      */
-
-  const [paginationModel, setPaginationModel] = useState({
-    pageSize: 10,
-    page: 0,
-  });
-
-  const onEdit = (selectionModel) => {
-    // console.log(selectionModel);
-    // console.log('dw');
-  };
-
-  //Declare an initial state of the form modal in matches
-  const [showModalMatches, setShowModalMatches] = useState(false);
 
   return (
     <Layout>
@@ -97,7 +92,7 @@ export default function Matches({data}) {
               onPaginationModelChange={setPaginationModel}
               pageSizeOptions={[5, 10, 25]}
               checkboxSelection
-              onRowSelectionModelChange={onEdit}
+
               disableMultipleRowSelection
             />
           </article>
@@ -109,22 +104,15 @@ export default function Matches({data}) {
           setShowModalMatches={setShowModalMatches}
         />
       ) : null}
+      {editModalMatch?(
+        <MatchesFormEdit
+            editModalMatch={editModalMatch}
+            setEditModalMatch={setEditModalMatch}
+            row={row}
+        />
+      ):null}
     </Layout>
   );
 
 }
 
-export async function getStaticProps() {
-  try {
-    const res = await fetch(
-      'http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/matches'
-    );
-    const data = await res.json();
-
-    return {
-      props: { data: data },
-    };
-  } catch (error) {
-    return { error: error.message };
-  }
-}
