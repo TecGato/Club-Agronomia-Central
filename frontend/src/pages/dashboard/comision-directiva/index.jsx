@@ -1,31 +1,30 @@
 import { Layout } from '@/components/Dashboard';
 import image from '../../../../public/directives-img/directive.svg';
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import FormDirective from '@/components/Dashboard/Forms/DirectiveForm';
+import useStore from '../../../store/globalstore';
+import AppContext from '../../../../contexts/AppContext';
+import { MessageModal } from '@/components/Dashboard';
 
 export default function SteeringCommittee() {
-  const [directives, setDirectives] = useState();
   const [edit, setEdit] = useState(false);
-  const showModalModify = () => {
-    setEdit(false);
-  };
-  const getDirectors = async () => {
-    const res = await fetch(
-      'http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/directors'
-    );
-    const dir = await res.json();
-    return setDirectives(dir);
-  };
+  const directives = useStore((state) => state?.directiva);
+  const setDirectives = useStore((state) => state.setDirectiva);
+  const { showMessageModal } = useContext(AppContext);
   useEffect(() => {
-    getDirectors();
+    directives.length < 1 && setDirectives();
   }, []);
+  const showModalModify = () => {
+    setEdit(!edit);
+  };
 
   const presidents = directives?.slice(0, 2);
   const otherDirectives = directives?.slice(2, 5);
 
   return (
     <Layout>
+      {showMessageModal && <MessageModal />}
       {directives ? (
         <div className="my-10 dark:text-slate-100">
           <div className="  flex gap-6 flex-col items-center text-center ">
@@ -99,11 +98,12 @@ export default function SteeringCommittee() {
                     <button
                       className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-2 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                       onClick={() => {
-                        setEdit({
-                          id: directive._id,
-                          name: directive.name,
-                          position: directive.position,
-                        });
+                        showModalModify(),
+                          setDirectivo({
+                            id: directive._id,
+                            name: directive.name,
+                            position: directive.position,
+                          });
                       }}
                     >
                       Editar

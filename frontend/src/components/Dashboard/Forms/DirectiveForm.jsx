@@ -1,18 +1,10 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-export default function FormDirective({ edit, showModalModify }) {
-  const handlerModify = async (props) => {
-    try {
-      const { data } = await axios.put(
-        `http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/directors/${props.id}`,
-        props
-      );
-      console.log(data.msg);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+import React, { useState, useContext } from 'react';
+import useStore from '../../../store/globalstore';
+import AppContext from "../../../../contexts/AppContext"
 
+export default function FormDirective({ edit , showModalModify }) {
+  const handlerModify = useStore(state => state?.editDirectiva)
+  const { setShowMessageModal } = useContext(AppContext);
   const [props, setProps] = useState(edit);
   const handlerChange = (event) => {
     setProps({
@@ -25,6 +17,7 @@ export default function FormDirective({ edit, showModalModify }) {
     event.preventDefault();
     handlerModify(props);
     showModalModify()
+    setShowMessageModal('Directivo modificado con Exito')
   };
   return (
     <div className="flex bg-gray-900/80 backdrop-blur-sm justify-center items-center overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
