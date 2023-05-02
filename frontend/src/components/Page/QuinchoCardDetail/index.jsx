@@ -1,4 +1,9 @@
 export function QuinchoCardDetail({ detail, setShowCard, showCard }) {
+  const eventstates = {
+    1: 'flex-shrink-0 w-2 h-2 border border-gray-500 bg-gray-500 rounded-full',
+    2: 'flex-shrink-0 w-2 h-2 border border-yellow-500 bg-yellow-500 rounded-full',
+    3: 'flex-shrink-0 w-2 h-2 border border-green-500 bg-green-500 rounded-full',
+  };
   return (
     <div className="flex justify-center items-center overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none border-solid border-red-300">
       <div className="relative w-auto my-6 mx-auto max-w-3xl">
@@ -16,6 +21,13 @@ export function QuinchoCardDetail({ detail, setShowCard, showCard }) {
             </button>
           </div>
           <div className="relative p-6 flex-auto">
+            <span class={eventstates[showCard.state]}>
+              {showCard.state === 1
+                ? 'Solicitada'
+                : showCard.state === 2
+                ? 'Confirmada'
+                : 'Pagada'}
+            </span>
             <p>Nombre del evento: {showCard.description}</p>
             <p>Fecha del evento: {showCard.date.slice(0, 10)}</p>
             <p>Hora de Inicio: {showCard.beg_time}</p>
