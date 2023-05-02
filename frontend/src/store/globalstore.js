@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import axios from 'axios';
-const useStore = create((set) => ({
+const useStore = create((set, get) => ({
   atletas: [],
   reservas: [],
   directiva: [],
@@ -22,6 +22,17 @@ const useStore = create((set) => ({
     );
     set((state) => ({ ...state, directiva: data }));
   },
+  editDirectiva: async (props) => {
+    try {
+      const { data } = await axios.put(
+        `http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/directors/${props.id}`,
+        props
+      );
+       get().setDirectiva()
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   modifyAtletas: (data) =>
     set((state) => ({
