@@ -129,7 +129,7 @@ export default function Register() {
         </Link>
       </span>
       <div className="relative h-px w-full my-9 bg-zinc-300 before:content-['O'] before:absolute before:top-1/2 before:left-1/2 before:-translate-x-2/4 before:-translate-y-2/4 before:bg-white before:px-4"></div>
-      <GoogleButton title="Registrarme con Google" onClick={signIn} />
+      <GoogleButton title="Registrarme con Google" />
     </AuthLayout>
   );
 }

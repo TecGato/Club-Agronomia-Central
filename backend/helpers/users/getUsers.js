@@ -1,39 +1,49 @@
-// const User = require('../../models/User');
-// const jwt = require('jsonwebtoken');
-// const { serialize } = require('cookie');
+const User = require('../../models/User');
+const jwt = require('jsonwebtoken');
+const { serialize } = require('cookie');
 
-// const getUser = async (userInfo) => {
-//   try {
-//     const user = await User.find({ email: userInfo.email });
-//     if (!user) {
-//       throw new Error("The user doesn't exist");
-//     }
+const getAllUsers = async () => {
+  try {
+    const users = await User.find();
+    return users;
+  } catch (error) {
+    console.error(error.message);
+  }
+};
 
-//     if (user.password === userInfo.password) {
-//       const token = jwt.sign(
-//         {
-//           exp: Math.floor(Date.now() / 1000) + 60 * 60 * 24 * 30,
-//           email: user.email,
-//           username: user.name,
-//         },
-//         'token'
-//       );
+const getUser = async (userInfo) => {
+  try {
+    const user = await User.find({ email: userInfo.email });
+    if (!user) {
+      throw new Error("The user doesn't exist");
+    }
 
-//       const serialized = serialize('myTokenName', token, {
-//         httpOnly: true,
-//         secure: process.env.NODE_ENV === 'production',
-//         sameSite: 'none',
-//         maxAge: 1000 * 60 * 60 * 24 * 30,
-//         path: '/',
-//       });
+    if (user.password === userInfo.password) {
+      const token = jwt.sign(
+        {
+          exp: Math.floor(Date.now() / 1000) + 60 * 60 * 24 * 30,
+          email: user.email,
+          username: user.name,
+        },
+        'token'
+      );
 
-//       return serialized;
-//     }
-//   } catch (error) {
-//     console.error(error.message);
-//   }
-// };
+      const serialized = serialize('myTokenName', token, {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === 'production',
+        sameSite: 'none',
+        maxAge: 1000 * 60 * 60 * 24 * 30,
+        path: '/',
+      });
 
-// module.exports = {
-//   getUser,
-// };
+      return serialized;
+    }
+  } catch (error) {
+    console.error(error.message);
+  }
+};
+
+module.exports = {
+  getUser,
+  getAllUsers,
+};

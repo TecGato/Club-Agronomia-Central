@@ -33,12 +33,13 @@ export const NextReservations = () => {
         <p>Hora Inicio</p>
       </div>
       <section className="w-full h-auto flex flex-col gap-2 ">
-        {reservas.map((reserva) => {
+        {reservas.map((reserva, index) => {
           return (
             <PreviewItem
               columnOne={reserva.description}
               columnTwo={reserva.date}
               columnThree={reserva.beg_time}
+              key={index}
             />
           );
         })}

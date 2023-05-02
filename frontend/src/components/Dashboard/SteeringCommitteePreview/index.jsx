@@ -12,11 +12,12 @@ export const SteeringCommitteePreview = () => {
       >
         <p className="text-lg text-center  font-medium">Comisión directiva</p>
         <div className="w-full grid grid-cols-2 gap-2 xl:grid-cols-1 xl:overflow-y-auto">
-          {directives?.map((directive) => {
+          {directives?.map((directive, index) => {
             return (
               <Administrative
                 name={directive.name}
                 position={directive.position}
+                key={index}
               />
             );
           })}
