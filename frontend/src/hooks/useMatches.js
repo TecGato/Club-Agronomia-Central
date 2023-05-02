@@ -14,7 +14,9 @@ export function useMatches(){
             const { data }=await axios.post(
                 'http://localhost:3001/api/matches', match
             );
-            return data;
+            if(data){
+                await modifyMatches([data.newMatch,...matches])
+            }
         }catch(error){
             throw new Error(error.message)
         }
@@ -29,14 +31,11 @@ export function useMatches(){
 
             if(data){
                 const updateMatches = [...matches];
-                // console.log(updateMatches);
                 const id =data.match._id;
-                // console.log(id);
                 const index = updateMatches.findIndex((m)=>m._id ===id);
                 updateMatches[index] = data.match;
-
                 modifyMatches(updateMatches);
-                // console.log(data)
+
             }
         } catch (error) {
             throw new Error(error.message)
@@ -49,7 +48,14 @@ export function useMatches(){
             const { data } = await axios.delete(
                 `http://localhost:3001/api/matches/${_id}`
             );
+
+            if(data.msg){
+                const updateMatches = [...matches].filter((m)=>m._id !==_id);
+                modifyMatches(updateMatches);
+            }
+            setLoading(false);
         } catch (error) {
+            setLoading(false);
             throw new Error(error.message)
         }
         };
