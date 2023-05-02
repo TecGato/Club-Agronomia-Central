@@ -21,9 +21,12 @@ export default function SteeringCommittee({ props }) {
       {directives ? (
         <div className="my-10 dark:text-slate-100">
           <div className="  flex gap-6 flex-col items-center text-center ">
-            {presidents?.map((president) => {
+            {presidents?.map((president, index) => {
               return (
-                <div className=" w-[40%] lg:w-[20%] bg-white dark:bg-[#353434b4] shadow-lg flex flex-col items-center rounded-lg py-2">
+                <div
+                  className=" w-[40%] lg:w-[20%] bg-white dark:bg-[#353434b4] shadow-lg flex flex-col items-center rounded-lg py-2"
+                  key={index}
+                >
                   <div className="w-20 h-20 flex justify-center items-center bg-[#eff2f7] rounded-full">
                     <Image src={image} alt={president.name} className="h-16 " />
                   </div>
@@ -34,9 +37,12 @@ export default function SteeringCommittee({ props }) {
             })}
           </div>
           <div className=" flex flex-col items-center lg:flex-row lg:justify-center gap-6 ">
-            {otherDirectives?.map((directive) => {
+            {otherDirectives?.map((directive, index) => {
               return (
-                <div className=" text-center mt-4 w-[40%] lg:w-[20%] bg-white dark:bg-[#353434b4] shadow-lg flex flex-col items-center rounded-lg py-2">
+                <div
+                  className=" text-center mt-4 w-[40%] lg:w-[20%] bg-white dark:bg-[#353434b4] shadow-lg flex flex-col items-center rounded-lg py-2"
+                  key={index}
+                >
                   <div className="w-20 h-20 flex justify-center items-center bg-[#eff2f7] rounded-full">
                     <Image src={image} alt={directive.name} className="h-16 " />
                   </div>
