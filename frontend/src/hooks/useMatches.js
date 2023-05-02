@@ -12,7 +12,7 @@ export function useMatches(){
     const handlerCreate = async (match)=>{
         try{
             const { data }=await axios.post(
-                'http://localhost:3001/api/matches', match
+                'http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/matches', match
             );
             if(data){
                 await modifyMatches([data.newMatch,...matches])
@@ -25,7 +25,7 @@ export function useMatches(){
     const handlerModify = async (match) => {
         try {
             const { data } = await axios.put(
-            `http://localhost:3001/api/matches/${match._id}`,
+            `http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/matches/${match._id}`,
             match
             );
 
@@ -46,7 +46,7 @@ export function useMatches(){
     const handlerDelete = async (_id) => {
         try {
             const { data } = await axios.delete(
-                `http://localhost:3001/api/matches/${_id}`
+                `http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/matches/${_id}`
             );
 
             if(data.msg){

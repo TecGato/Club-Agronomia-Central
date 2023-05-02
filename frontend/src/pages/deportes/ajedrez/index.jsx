@@ -4,19 +4,7 @@ import insta from '../../../../public/contact-img/insta.svg';
 import face from '../../../../public/contact-img/face.svg';
 import twitter from '../../../../public/contact-img/twitter.svg';
 import Image from 'next/image';
-import useStore from '@/store/globalstore';
-import { useEffect } from 'react';
-import { useMatches } from '@/hooks';
-
-export default function Chess() {
-
-  const { matches } = useStore();
-
-  const { getMatches } = useMatches();
-
-  useEffect(()=>{
-    getMatches();
-  }, [])
+export default function Chess({data}) {
 
   return (
     <Layout
@@ -133,7 +121,7 @@ export default function Chess() {
       </div>
 
       <MatchesInfo
-        matches={matches}
+        data={data}
         classname={
           'bg-indigo-100 dark:bg-[#2C2C2C]  w-full h-full flex items-center'
         }
@@ -143,3 +131,17 @@ export default function Chess() {
   );
 }
 
+export async function getStaticProps() {
+  try {
+  const res = await fetch('http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/matches');
+  const data = await res.json();
+
+
+  return {
+  props: { data: data },
+  revalidate: 3600,
+  };
+  } catch (error) {
+    return { error: error.message };
+  }
+}
