@@ -1,17 +1,18 @@
-import { Layout } from '@/components/Dashboard';
+import { Layout, MessageModal } from '@/components/Dashboard';
 import { Warn } from '@/components/Dashboard/Warn/Warn';
-import Image from 'next/image';
+import AppContext from '../../../../contexts/AppContext';
 import { useMerchandising } from '@/hooks/useMerchandising';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { NewProduct } from '@/components/Dashboard/Forms/NewProduct';
 import { EditProduct } from '@/components/Dashboard/Forms/EditProduct';
 
 export default function Merchandising() {
-  const [products, setProducts] = useState();
   const [showModify, setShowModify] = useState(false);
   const [showWarn, setShowWarn] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [showForm, setShowForm] = useState(false);
-  const { handlerDelete, handlerCreate, handlerModify } = useMerchandising();
+  const { showMessageModal } = useContext(AppContext);
+  const { handlerDelete, handlerCreate, handlerModify, getProducts, products } = useMerchandising();
 
   const showModalModify = () => {
     setShowModify(false);
@@ -23,14 +24,10 @@ export default function Merchandising() {
     setShowWarn(false);
   };
 
-  const getProducts = async () => {
-    const res = await fetch('http://localhost:3001/api/products');
-    const products = await res.json();
-    return setProducts(products);
-  };
+
   useEffect(() => {
-    getProducts();
-  }, [products]);
+    !products?.length && getProducts();
+  }, []);
   return (
     <Layout>
       <div className="m-4 dark:text-slate-100">
@@ -70,14 +67,14 @@ export default function Merchandising() {
           {products?.map((product, index) => {
             return (
               <div
-                className="max-w-[280px]  shadow-lg dark:bg-[#353434b4]"
+                className="max-w-[280px] h-[420px]  shadow-lg dark:bg-[#353434b4]"
                 key={index}
               >
                 <img
                   src={product?.picture?.secure_url}
                   loading="lazy"
                   alt={product.title}
-                  className="lg:h-[55%]"
+                  className="h-[55%] my-0 mx-auto"
                 />
 
                 <div className="px-6 py-3">
@@ -160,6 +157,7 @@ export default function Merchandising() {
           })}
         </div>
       </div>
+      {showMessageModal && <MessageModal />}
       {showForm && (
         <NewProduct
           showModalForm={showModalForm}
@@ -170,6 +168,7 @@ export default function Merchandising() {
         <Warn
           handlerDelete={handlerDelete}
           showModalWarn={showModalWarn}
+          setLoading={setLoading}
           showWarn={showWarn}
         />
       )}

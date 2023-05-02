@@ -140,7 +140,7 @@ export default function Athletes() {
             AÑADIR ATLETA
           </button>
         </article>
-        <article className="xl:max-w-5xl gap-2 border bg-white border-neutral-300 shadow-[0px_3px_10px_2px_rgb(0_0_0_/_13%)] px-4 py-2 rounded-lg h-2/3">
+        <article className="xl:max-w-5xl gap-2 border bg-white dark:invert dark:border-none dark:shadow-none border-neutral-300 shadow-[0px_3px_10px_2px_rgb(0_0_0_/_13%)] px-4 py-2 rounded-lg h-2/3">
           <DataGrid
             rows={atletas}
             columns={columns}
