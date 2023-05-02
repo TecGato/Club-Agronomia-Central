@@ -16,7 +16,7 @@ export const EditAthlete = ({ setEditModal, row }) => {
   const { handlerModify } = useAthletes();
   const handleSubmit = (e) => {
     e.preventDefault();
-    handlerModify({id: row.id, ...formState});
+    handlerModify({ id: row.id, ...formState });
     setEditModal(false);
   };
   return (

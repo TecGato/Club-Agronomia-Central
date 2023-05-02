@@ -11,7 +11,8 @@ export function useTestimonials() {
   const [modifyTestimony, setModifyTestimony] = useState(false);
   const [postModify, setPostModify] = useState();
   const [loading, setLoading] = useState(false);
-  const { testimonials, setTestiminials, setShowMessageModal } = useContext(AppContext);
+  const { testimonials, setTestiminials, setShowMessageModal } =
+    useContext(AppContext);
 
   const showModalForm = () => {
     setShowForm(!showForm);
