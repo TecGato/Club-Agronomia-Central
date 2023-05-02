@@ -1,6 +1,8 @@
 import { Layout } from '@/components/Dashboard';
 import MatchesForm from '@/components/Dashboard/Forms/MatchesForm';
+import MatchesFormEdit from '@/components/Dashboard/Forms/MatchesFormEdit';
 import TableActionsMatches from '@/components/Dashboard/TableActionsMatches';
+
 import { useState, useEffect, useContext } from 'react';
 import { DataGrid, GridToolbar } from '@mui/x-data-grid';
 import { useMatches } from '@/hooks';
@@ -102,6 +104,13 @@ export default function Matches() {
           setShowModalMatches={setShowModalMatches}
         />
       ) : null}
+      {editModalMatch?(
+        <MatchesFormEdit
+            editModalMatch={editModalMatch}
+            setEditModalMatch={setEditModalMatch}
+            row={row}
+        />
+      ):null}
     </Layout>
   );
 

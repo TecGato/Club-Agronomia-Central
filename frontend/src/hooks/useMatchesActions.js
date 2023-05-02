@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
-export const useMatchesActions = (setEditModal, handlerDelete) => {
-  const [row, setRow] = useState();
+export const useMatchesActions = (setEditModalMatch, handlerDelete) => {
+  const [row, setRow] = useState({});
 
   const handleDelete = (match) => {
-    console.log(match)
+
     handlerDelete(match._id);
 
   };

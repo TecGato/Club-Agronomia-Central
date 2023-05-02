@@ -5,7 +5,7 @@ import AppContext from '../../contexts/AppContext';
 
 export function useMatches(){
 
-    const { matches, setMatches } = useStore();
+    const { matches, setMatches, modifyMatches } = useStore();
 
     const [loading, setLoading] = useState(false);
 
@@ -23,10 +23,18 @@ export function useMatches(){
     const handlerModify = async (match) => {
         try {
             const { data } = await axios.put(
-            `http://localhost:3001/api/matches/${match.id}`,
+            `http://localhost:3001/api/matches/${match._id}`,
             match
             );
-            return data;
+
+            if(data){
+                const updateMatches = [...matches];
+                const { id } =data.match._id;
+                const index = updateMatches.findIndex((m)=>m._id ===id);
+                updateMatches[index] = data.match;
+                modifyMatches(updateMatches);
+
+            }
         } catch (error) {
             throw new Error(error.message)
         }
