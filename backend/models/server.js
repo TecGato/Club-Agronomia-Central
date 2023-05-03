@@ -1,6 +1,8 @@
 const express = require('express');
 const cors = require('cors');
 const { connectionDB } = require('../database/mongo');
+require('dotenv').config();
+const { CORS_ORIGIN } = process.env;
 
 class Server {
   constructor() {
@@ -37,7 +39,7 @@ class Server {
     this.app.use(
       cors({
         credentials: true,
-        origin: 'https://club-agronomia-central-24k7vlfa8-brycot.vercel.app',
+        origin: CORS_ORIGIN ? CORS_ORIGIN : 'http://localhost:3000',
       })
     );
 
