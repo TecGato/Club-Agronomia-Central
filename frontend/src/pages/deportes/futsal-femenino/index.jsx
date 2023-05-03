@@ -103,7 +103,7 @@ export default function FutFem({ data }) {
 export async function getStaticProps() {
   try {
     const res = await fetch(
-      'http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/matches'
+      'https://club-agronomia-central-production.up.railway.app//api/matches'
     );
     const data = await res.json();
 

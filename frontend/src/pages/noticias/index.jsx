@@ -46,12 +46,12 @@ export default function Posts({ posts }) {
                     loading="lazy"
                     className="col-span-1 p-5 sm:order-2"
                   />
-                  <div className='sm:col-span-1 sm:grid sm:grid-row-2 sm:order-1'>
-                  <h3 className='text-3xl place-self-center text-center font-bold text-gray-700 dark:text-slate-100 pt-5 px-5 pb-0 sm:row-span-1'>
+                  <div className="sm:col-span-1 sm:grid sm:grid-row-2 sm:order-1">
+                    <h3 className="text-3xl place-self-center text-center font-bold text-gray-700 dark:text-slate-100 pt-5 px-5 pb-0 sm:row-span-1">
                       {mainNews.title}
                     </h3>
-                    <p className='text-base text-gray-700 dark:text-slate-300 leading-6 pt-0 px-5 pb-5 mb-5 sm:row-span-1'>
-                      {mainNews.description.slice(0, 280)+'...'}
+                    <p className="text-base text-gray-700 dark:text-slate-300 leading-6 pt-0 px-5 pb-5 mb-5 sm:row-span-1">
+                      {mainNews.description.slice(0, 280) + '...'}
                     </p>
                   </div>
                 </div>
@@ -105,7 +105,7 @@ export default function Posts({ posts }) {
 
 export async function getStaticProps() {
   const res = await fetch(
-    'http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/posts'
+    'https://club-agronomia-central-production.up.railway.app//api/posts'
   );
   const posts = await res.json();
   return {

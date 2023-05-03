@@ -27,8 +27,8 @@ export function useTestimonials() {
   const handlerDelete = async (id) => {
     try {
       const { data } = await axios.delete(
-        // `http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/testimonials/${id}`
-        `http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/testimonials/${id}`
+        // `https://club-agronomia-central-production.up.railway.app//api/testimonials/${id}`
+        `https://club-agronomia-central-production.up.railway.app//api/testimonials/${id}`
       );
       data && setTestiminials(testimonials.filter((tes) => tes._id !== id));
       setLoading(false);
@@ -42,8 +42,8 @@ export function useTestimonials() {
   const handlerCreate = async (post) => {
     try {
       const { data } = await axios.post(
-        // `http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/testimonials`,
-        `http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/testimonials`,
+        // `https://club-agronomia-central-production.up.railway.app//api/testimonials`,
+        `https://club-agronomia-central-production.up.railway.app//api/testimonials`,
         post
       );
       data && setTestiminials([data.newTestimonial, ...testimonials]);
@@ -58,8 +58,8 @@ export function useTestimonials() {
   const handlerModify = async (post) => {
     try {
       const { data } = await axios.put(
-        // `http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/testimonials/${post.id}`,
-        `http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/testimonials/${post.id}`,
+        // `https://club-agronomia-central-production.up.railway.app//api/testimonials/${post.id}`,
+        `https://club-agronomia-central-production.up.railway.app//api/testimonials/${post.id}`,
         post
       );
       if (data) {
@@ -82,8 +82,8 @@ export function useTestimonials() {
       if (testimonials.length === 0) {
         setLoading(true);
         const res = await axios.get(
-          // 'http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/testimonials'
-          'http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/testimonials'
+          // 'https://club-agronomia-central-production.up.railway.app//api/testimonials'
+          'https://club-agronomia-central-production.up.railway.app//api/testimonials'
         );
         const response = res.data.reverse();
         setTestiminials(response);

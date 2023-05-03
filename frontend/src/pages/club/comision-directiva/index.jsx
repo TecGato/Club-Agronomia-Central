@@ -62,7 +62,7 @@ export default function SteeringCommittee({ props }) {
 
 export async function getStaticProps() {
   const res = await fetch(
-    'http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/directors'
+    'https://club-agronomia-central-production.up.railway.app//api/directors'
   );
   const props = await res.json();
   return {
