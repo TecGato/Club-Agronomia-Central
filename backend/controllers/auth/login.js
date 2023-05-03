@@ -41,7 +41,9 @@ const login = async (req = request, res = response) => {
 
     res.cookie(serialized);
 
-    return res.status(200).json('Logged in Successfully');
+    return res.status(200).json({
+      msg: 'Logged in Successfully',
+    });
   } catch (error) {
     return res.status(500).json({
       msg: 'Contact with administrator',

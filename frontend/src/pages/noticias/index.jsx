@@ -31,7 +31,7 @@ export default function Posts({ posts }) {
               type="text"
               placeholder="Buscar noticias..."
               onChange={(e) => setFilter(e.target.value)}
-              className="absolute top-0 right-0 max-w-xs px-4 py-2 ring rounded-md hover:bg-sky-100 focus:outline-none focus:ring focus:ring-indigo-300"
+              className="absolute top-0 right-0 max-w-xs px-4 py-2 ring rounded-md hover:bg-sky-100 dark:bg-[#2C2C2C] focus:outline-none focus:ring focus:ring-indigo-300"
             />
 
             <div className="mt-7 pt-7 flex flex-wrap justify-center">
