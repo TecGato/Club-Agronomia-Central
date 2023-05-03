@@ -3,56 +3,55 @@
 
 export function MatchesTable(props){
     return(
-        <div>
-            <div class="flex flex-row items-center justify-center ">
-                <table class="border-collapse text-center text-sm text-gray-500">
-                    <thead class="bg-gray-50">
-                    <tr>
-                        <th scope="col" class="px-6 py-4 font-medium text-gray-900">Nombre del Encuentro</th>
-                        <th scope="col" class="px-6 py-4 font-medium text-gray-900">Fecha</th>
-                        <th scope="col" class="px-6 py-4 font-medium text-gray-900">Equipo Local</th>
-                        <th scope="col" class="px-6 py-4 font-medium text-gray-900">Equipo Visitante</th>
-                        <th scope="col" class="px-6 py-4 font-medium text-gray-900">Disciplina</th>
-                        <th scope="col" class="px-6 py-4 font-medium text-gray-900"></th>
-                    </tr>
+
+          <div class="inline-block rounded-lg border shadow-2xl bg-gray-200 mb-4">
+                <table class="table-auto text-sm text-left text-gray-500 dark:text-gray-400 ">
+                    <thead class="text-xs text-gray-700 uppercase dark:bg-gray-700 dark:text-gray-400">
+                        <tr>
+                            <th scope="col" class="px-6 py-3">
+                                Nombre del encuentro
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Fecha
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Equipo Local
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Equipo Visitante
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Disciplina
+                            </th>
+                        </tr>
                     </thead>
-                    <tbody class="divide-y divide-gray-100 border-t border-gray-100">
-                    <tr >
-                        <th class="flex gap-3 px-6 py-4 font-normal text-gray-900">
+                    <tbody>
 
-                        <div class="text-sm">
-                            <div class="font-medium text-gray-700">{"props.data[0].name"}</div>
+                        {props.matches?props.matches.slice(0,5).map((m)=>{
 
-                        </div>
-                        </th>
-                        <td class="px-6 py-4">
-                        <span
-                            class="inline-flex items-center gap-1 rounded-full bg-green-50 px-2 py-1 text-xs font-semibold text-green-600"
-                        >
-                            <span class="h-1.5 w-1.5 rounded-full bg-green-600"></span>
-                            {"props.data[0].date"}
-                        </span>
-                        </td>
-                        <td class="px-6 py-4">{"props.data[0].home_team"}</td>
-                        <td class="px-6 py-4">{"props.data[0].away_team"}</td>
-                        <td class="px-6 py-4">
-                        <div class="flex gap-2">
-                            <span
-                            class="inline-flex items-center gap-1 rounded-full bg-blue-50 px-2 py-1 text-xs font-semibold text-blue-600"
-                            >
-                            {"props.data[0].discipline"}
-                            </span>
-
-                        </div>
-                        </td>
-
-
-                    </tr>
-
+                                return (
+                                    <tr class="   dark:bg-gray-800  dark:hover:bg-gray-600">
+                                        <td class="px-6 py-4 font-medium text-black-700 dark:text-white">
+                                            {m.name}
+                                        </td>
+                                        <td class="px-6 py-4">
+                                            {m.date}
+                                        </td>
+                                        <td class="px-6 py-4">
+                                            {m.home_team}
+                                        </td>
+                                        <td class="px-6 py-4">
+                                            {m.away_team}
+                                        </td>
+                                        <td class="px-6 py-4">
+                                            {m.discipline}
+                                        </td>
+                                    </tr>
+                                )
+                        }
+                        ):null}
                     </tbody>
                 </table>
-                </div>
-
 
         </div>
     )
