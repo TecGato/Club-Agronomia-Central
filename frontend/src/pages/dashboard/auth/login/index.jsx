@@ -17,7 +17,8 @@ export default function Login() {
     const response = await axios.post(
       // 'https://club-agronomia-central-production.up.railway.app/api/auth/login',
       'http://localhost:3001/api/auth/login',
-      credentials
+      credentials,
+      { withCredentials: true, credentials: 'include' }
     );
     if (response.status === 200) {
       router.push('/dashboard');

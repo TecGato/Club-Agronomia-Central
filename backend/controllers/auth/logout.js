@@ -3,16 +3,7 @@ const { verify } = require('jsonwebtoken');
 const { serialize } = require('cookie');
 
 const logout = async (req = request, res = response) => {
-  const { authToken } = req.cookies;
-
-  if (!authToken) {
-    return res.status(401).json({
-      msg: 'No token',
-    });
-  }
-
   try {
-    verify(authToken, process.env.SECRETORPRIVATEKEY);
     const serialized = serialize('authToken', null, {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
@@ -21,7 +12,7 @@ const logout = async (req = request, res = response) => {
       path: '/',
     });
 
-    res.setHeader('Set-Cookie', serialized);
+    res.cookie(serialized);
 
     return res.status(200).json({
       msg: 'Logged out Successfully',
