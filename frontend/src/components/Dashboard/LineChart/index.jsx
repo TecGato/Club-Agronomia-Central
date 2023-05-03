@@ -78,7 +78,7 @@ export const LineChart = () => {
     <div
       className="w-full col-span-2 dark:bg-[#2C2C2C] dark:border-none
       dark:text-slate-100 bg-white border border-neutral-300 shadow-[0px_3px_10px_2px_rgb(0_0_0_/_13%)] px-4 py-2 rounded-lg relative
-            lg:col-span-3 xl:col-span-2
+            lg:col-span-3 xl:col-span-2 xl:h-full
             flex flex-col justify-between
             "
     >

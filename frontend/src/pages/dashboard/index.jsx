@@ -51,7 +51,7 @@ export default function Dashboard() {
   return (
     <Layout>
       <div
-        className="w-full min-h-screen grid grid-cols-2 gap-2 justify-self-center items-center xl:w-11/12 sm:w-5/6 p-5
+        className="w-full grid grid-cols-2 gap-2 justify-self-center items-center xl:w-11/12 sm:w-5/6 p-5 pb-16
       sm:justify-items-center
       lg:grid-cols-3
       xl:grid-cols-4
@@ -389,7 +389,9 @@ export default function Dashboard() {
 
         <LineChart />
         <InfoItem
-          className=""
+          className="
+            xl:row-start-3 xl:col-start-2
+          "
           icon={
             <svg
               viewBox="0 0 24 24"
@@ -423,7 +425,9 @@ export default function Dashboard() {
           number={reservas.length}
         />
         <InfoItem
-          className=""
+          className="
+          xl:col-start-4 xl:row-start-5
+          "
           icon={
             <svg
               viewBox="0 0 24 24"
