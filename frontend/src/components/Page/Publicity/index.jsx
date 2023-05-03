@@ -14,7 +14,7 @@ export function Publicity() {
 
   const getAds = async () => {
     const { data } = await axios.get(
-      'https://club-agronomia-central-production.up.railway.app//api/ads'
+      'https://club-agronomia-central-production.up.railway.app/api/ads'
     );
     setitems(data);
   };

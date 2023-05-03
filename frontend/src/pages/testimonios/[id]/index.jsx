@@ -35,7 +35,7 @@ export default function Testimony({ testimonials }) {
 
 export async function getStaticPaths() {
   const response = await fetch(
-    'https://club-agronomia-central-production.up.railway.app//api/testimonials'
+    'https://club-agronomia-central-production.up.railway.app/api/testimonials'
   );
   const testimonials = await response.json();
 
@@ -51,7 +51,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const res = await fetch(
-    `https://club-agronomia-central-production.up.railway.app//api/testimonials/${params.id}`
+    `https://club-agronomia-central-production.up.railway.app/api/testimonials/${params.id}`
   );
   const testimonials = await res.json();
 

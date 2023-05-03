@@ -9,28 +9,28 @@ const useStore = create((set, get) => ({
 
   setAtletas: async () => {
     const { data } = await axios.get(
-      'https://club-agronomia-central-production.up.railway.app//api/athletes'
+      'https://club-agronomia-central-production.up.railway.app/api/athletes'
     );
     set((state) => ({ ...state, atletas: data.reverse() }));
   },
   setReservas: async () => {
     try {
       const { data } = await axios.get(
-        'https://club-agronomia-central-production.up.railway.app//api/events'
+        'https://club-agronomia-central-production.up.railway.app/api/events'
       );
       set((state) => ({ ...state, reservas: data }));
     } catch (error) {}
   },
   setDirectiva: async () => {
     const { data } = await axios.get(
-      'https://club-agronomia-central-production.up.railway.app//api/directors'
+      'https://club-agronomia-central-production.up.railway.app/api/directors'
     );
     set((state) => ({ ...state, directiva: data }));
   },
   editDirectiva: async (props) => {
     try {
       const { data } = await axios.put(
-        `https://club-agronomia-central-production.up.railway.app//api/directors/${props.id}`,
+        `https://club-agronomia-central-production.up.railway.app/api/directors/${props.id}`,
         props
       );
       get().setDirectiva();
@@ -46,7 +46,7 @@ const useStore = create((set, get) => ({
   setDates: async () => {
     try {
       const { data } = await axios.get(
-        'https://club-agronomia-central-production.up.railway.app//api/dateevents'
+        'https://club-agronomia-central-production.up.railway.app/api/dateevents'
       );
       set((state) => ({ ...state, dates: data }));
     } catch (error) {}
@@ -54,7 +54,7 @@ const useStore = create((set, get) => ({
   addDate: async (date) => {
     try {
       const { data } = await axios.post(
-        'https://club-agronomia-central-production.up.railway.app//api/events',
+        'https://club-agronomia-central-production.up.railway.app/api/events',
         date
       );
       get().setDates();
@@ -64,7 +64,7 @@ const useStore = create((set, get) => ({
   updateDate: async (date, id) => {
     try {
       const { data } = await axios.put(
-        `https://club-agronomia-central-production.up.railway.app//api/events/${id}`,
+        `https://club-agronomia-central-production.up.railway.app/api/events/${id}`,
         date
       );
       get().setDates();
@@ -74,7 +74,7 @@ const useStore = create((set, get) => ({
   deleteDate: async (id) => {
     try {
       const { data } = await axios.delete(
-        `https://club-agronomia-central-production.up.railway.app//api/events/${id}`
+        `https://club-agronomia-central-production.up.railway.app/api/events/${id}`
       );
       get().setDates();
       get().setReservas();

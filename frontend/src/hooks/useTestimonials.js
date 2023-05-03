@@ -27,8 +27,8 @@ export function useTestimonials() {
   const handlerDelete = async (id) => {
     try {
       const { data } = await axios.delete(
-        // `https://club-agronomia-central-production.up.railway.app//api/testimonials/${id}`
-        `https://club-agronomia-central-production.up.railway.app//api/testimonials/${id}`
+        // `https://club-agronomia-central-production.up.railway.app/api/testimonials/${id}`
+        `https://club-agronomia-central-production.up.railway.app/api/testimonials/${id}`
       );
       data && setTestiminials(testimonials.filter((tes) => tes._id !== id));
       setLoading(false);
@@ -42,8 +42,8 @@ export function useTestimonials() {
   const handlerCreate = async (post) => {
     try {
       const { data } = await axios.post(
-        // `https://club-agronomia-central-production.up.railway.app//api/testimonials`,
-        `https://club-agronomia-central-production.up.railway.app//api/testimonials`,
+        // `https://club-agronomia-central-production.up.railway.app/api/testimonials`,
+        `https://club-agronomia-central-production.up.railway.app/api/testimonials`,
         post
       );
       data && setTestiminials([data.newTestimonial, ...testimonials]);
@@ -58,8 +58,8 @@ export function useTestimonials() {
   const handlerModify = async (post) => {
     try {
       const { data } = await axios.put(
-        // `https://club-agronomia-central-production.up.railway.app//api/testimonials/${post.id}`,
-        `https://club-agronomia-central-production.up.railway.app//api/testimonials/${post.id}`,
+        // `https://club-agronomia-central-production.up.railway.app/api/testimonials/${post.id}`,
+        `https://club-agronomia-central-production.up.railway.app/api/testimonials/${post.id}`,
         post
       );
       if (data) {
@@ -82,8 +82,8 @@ export function useTestimonials() {
       if (testimonials.length === 0) {
         setLoading(true);
         const res = await axios.get(
-          // 'https://club-agronomia-central-production.up.railway.app//api/testimonials'
-          'https://club-agronomia-central-production.up.railway.app//api/testimonials'
+          // 'https://club-agronomia-central-production.up.railway.app/api/testimonials'
+          'https://club-agronomia-central-production.up.railway.app/api/testimonials'
         );
         const response = res.data.reverse();
         setTestiminials(response);

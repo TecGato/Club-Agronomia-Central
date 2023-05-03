@@ -33,7 +33,7 @@ export const useContributions = () => {
     setClick(true);
     try {
       const response = await axios.post(
-        'https://club-agronomia-central-production.up.railway.app//api/donations',
+        'https://club-agronomia-central-production.up.railway.app/api/donations',
         contribution
       );
       setPreferenceID(response.data.global);

@@ -110,7 +110,7 @@ export default function FutInF({ data }) {
 export async function getStaticProps() {
   try {
     const res = await fetch(
-      'https://club-agronomia-central-production.up.railway.app//api/matches'
+      'https://club-agronomia-central-production.up.railway.app/api/matches'
     );
     const data = await res.json();
 

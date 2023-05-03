@@ -11,7 +11,7 @@ export function useMatches() {
   const handlerCreate = async (match) => {
     try {
       const { data } = await axios.post(
-        'https://club-agronomia-central-production.up.railway.app//api/matches',
+        'https://club-agronomia-central-production.up.railway.app/api/matches',
         match
       );
       if (data) {
@@ -25,7 +25,7 @@ export function useMatches() {
   const handlerModify = async (match) => {
     try {
       const { data } = await axios.put(
-        `https://club-agronomia-central-production.up.railway.app//api/matches/${match._id}`,
+        `https://club-agronomia-central-production.up.railway.app/api/matches/${match._id}`,
         match
       );
 
@@ -44,7 +44,7 @@ export function useMatches() {
   const handlerDelete = async (_id) => {
     try {
       const { data } = await axios.delete(
-        `https://club-agronomia-central-production.up.railway.app//api/matches/${_id}`
+        `https://club-agronomia-central-production.up.railway.app/api/matches/${_id}`
       );
 
       if (data.msg) {

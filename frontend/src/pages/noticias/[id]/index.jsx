@@ -26,7 +26,7 @@ export default function Post({ post }) {
 
 export async function getStaticPaths() {
   const response = await fetch(
-    'https://club-agronomia-central-production.up.railway.app//api/posts'
+    'https://club-agronomia-central-production.up.railway.app/api/posts'
   );
   const posts = await response.json();
 
@@ -40,7 +40,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const response = await fetch(
-    `https://club-agronomia-central-production.up.railway.app//api/posts/${params.id}`
+    `https://club-agronomia-central-production.up.railway.app/api/posts/${params.id}`
   );
   const post = await response.json();
 

@@ -11,7 +11,7 @@ export function useAthletes() {
   const handlerDelete = async (id) => {
     try {
       const { data } = await axios.delete(
-        `https://club-agronomia-central-production.up.railway.app//api/athletes/${id}`
+        `https://club-agronomia-central-production.up.railway.app/api/athletes/${id}`
       );
       if (data.msg) {
         const updateAtletas = [...atletas].filter((atle) => atle.id !== id);
@@ -28,7 +28,7 @@ export function useAthletes() {
   const handlerCreate = async (athlete) => {
     try {
       const { data } = await axios.post(
-        `https://club-agronomia-central-production.up.railway.app//api/athletes`,
+        `https://club-agronomia-central-production.up.railway.app/api/athletes`,
         athlete
       );
       if (data) {
@@ -43,7 +43,7 @@ export function useAthletes() {
   const handlerModify = async (athlete) => {
     try {
       const { data } = await axios.put(
-        `https://club-agronomia-central-production.up.railway.app//api/athletes/${athlete.id}`,
+        `https://club-agronomia-central-production.up.railway.app/api/athletes/${athlete.id}`,
         athlete
       );
       if (data) {
