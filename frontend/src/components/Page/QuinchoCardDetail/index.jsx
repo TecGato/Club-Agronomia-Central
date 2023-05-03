@@ -7,7 +7,7 @@ export function QuinchoCardDetail({ detail, setShowCard, showCard }) {
   return (
     <div className="flex justify-center items-center overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none border-solid border-red-300">
       <div className="relative w-auto my-6 mx-auto max-w-3xl">
-        <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
+        <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white dark:bg-[#171717] dark:border-none outline-none focus:outline-none">
           <div className="flex items-start justify-between p-5 border-b border-solid border-gray-300 rounded-t ">
             <p className="text-1xl font=semibold mr-6">
               Información del Evento
@@ -21,7 +21,7 @@ export function QuinchoCardDetail({ detail, setShowCard, showCard }) {
             </button>
           </div>
           <div className="relative p-6 flex-auto">
-            <span class={eventstates[showCard.state]}>
+            <span class={`dark:text-black ${eventstates[showCard.state]}`}>
               {showCard.state === 1
                 ? 'Solicitada'
                 : showCard.state === 2

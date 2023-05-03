@@ -3,14 +3,20 @@ import Link from 'next/link';
 import { Banner, Contributions, Donation, Publicity } from '..';
 import Quincho from '../../../../public/installations-img/Imagen4.jpg';
 import Image from 'next/image';
+import useStore from '@/store/globalstore';
+import { MatchesTable } from '@/components/Dashboard/MatchesTable';
+import { useMatches } from '@/hooks';
 
 export function HomePage() {
+  const { matches } = useStore();
+  const { getMatches } =useMatches();
   const [donate, setDonate] = useState(false);
   const visibleContributions = () => {
     setDonate(!donate);
   };
 
   useEffect(() => {
+    getMatches();
     function handleScroll() {
       const video = document.querySelector('video');
 
@@ -138,6 +144,23 @@ export function HomePage() {
         {donate ? (
           <Contributions visibleContributions={visibleContributions} />
         ) : null}
+        <br className="lg:my-5 lg:py-5" />
+        <h2 className="text-4xl text-slate-100 font-bold">
+                Próximos encuentros deportivos
+        </h2>
+        <br className="lg:my-5 lg:py-5" />
+        <MatchesTable
+          matches={matches.sort((a,b)=>{
+            return b.date-a.date;
+            })}
+        />
+        <br className="lg:my-5 lg:py-5 m-4" />
+        <Link
+                  href="/deportes"
+                  className="text-neutral-800 bg-[#d3d0d0] rounded-lg py-2 px-3 mt-5 shadow-lg hover:scale-105 transition ease-in-out"
+                >
+                  Ver todos
+        </Link>
         <br className="lg:my-5 lg:py-5" />
         <hr className="lg:mt-5 lg:pt-5 border-gray-500" />
         <Publicity />
