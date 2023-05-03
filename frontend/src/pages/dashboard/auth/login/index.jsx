@@ -17,7 +17,8 @@ export default function Login() {
     const response = await axios.post(
       // 'http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/auth/login',
       'http://localhost:3001/api/auth/login',
-      credentials
+      credentials,
+      { withCredentials: true, credentials: 'include' }
     );
     if (response.status === 200) {
       router.push('/dashboard');
