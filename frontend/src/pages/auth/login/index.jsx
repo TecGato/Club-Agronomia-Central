@@ -110,7 +110,7 @@ export default function Login() {
         </button>
         {/* </Link> */}
       </form>
-      <span className="text-neutral-800 dark:text-slate-100">
+      {/* <span className="text-neutral-800 dark:text-slate-100">
         ¿Aún no tenés una cuenta?
         <Link
           className="text-[#1b418a] dark:text-slate-100 hover:underline ml-1"
@@ -118,7 +118,7 @@ export default function Login() {
         >
           Registrate
         </Link>
-      </span>
+      </span> */}
       <div className="relative h-px w-full my-9 bg-zinc-300 before:content-['O'] dark:before:bg-[#2d2c2d] dark:text-slate-100 before:absolute before:top-1/2 before:left-1/2 before:-translate-x-2/4 before:-translate-y-2/4 before:bg-white before:px-4"></div>
       <GoogleButton title="Iniciar sesión con Google" />
     </AuthLayout>

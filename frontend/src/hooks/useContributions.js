@@ -32,10 +32,7 @@ export const useContributions = () => {
   const handleClick = async () => {
     setClick(true);
     try {
-      const response = await axios.post(
-        'https://club-agronomia-central-production.up.railway.app/api/donations',
-        contribution
-      );
+      const response = await axios.post('/donations', contribution);
       setPreferenceID(response.data.global);
     } catch (error) {
       setErrors({

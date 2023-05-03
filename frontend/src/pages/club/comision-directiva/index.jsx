@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
-import axios from 'axios';
 import { Layout } from '@/components/Page';
 import image from '../../../../public/directives-img/directive.svg';
 

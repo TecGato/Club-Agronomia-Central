@@ -19,6 +19,7 @@ class Server {
     this.productsPath = '/api/products';
     this.subscriptionsPath = '/api/subscriptions';
     this.testimonialsPath = '/api/testimonials';
+    this.usersPath = '/api/users';
     // Connect to Data Base
     this.connectToDB();
     // Middlewares
@@ -36,7 +37,7 @@ class Server {
     this.app.use(
       cors({
         credentials: true,
-        origin: '*',
+        origin: 'http://localhost:3000',
       })
     );
 
@@ -63,6 +64,7 @@ class Server {
     this.app.use(this.productsPath, require('../routes/products'));
     this.app.use(this.subscriptionsPath, require('../routes/subscriptions'));
     this.app.use(this.testimonialsPath, require('../routes/testimonials'));
+    this.app.use(this.usersPath, require('../routes/users'));
   }
 
   listen() {

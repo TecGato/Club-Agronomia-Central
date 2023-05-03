@@ -1,18 +1,15 @@
 const { Router } = require('express');
-const {
-  getDirectors,
-  getById,
-} = require('../controllers/directors/getDirectors');
+const { getDirectors } = require('../controllers/directors/getDirectors');
 const { createDirector } = require('../controllers/directors/postDirectors');
 const { updateDirector } = require('../controllers/directors/putDirectors');
 const { deleteById } = require('../controllers/directors/deleteDirectors');
+const { validateJWT } = require('../middlewares/validate-jwt');
 
 const router = Router();
 
 router.get('/', getDirectors);
-router.get('/:id', getById);
-router.post('/', createDirector);
-router.put('/:id', updateDirector);
-router.delete('/:id', deleteById);
+router.post('/', validateJWT, createDirector);
+router.put('/:id', validateJWT, updateDirector);
+router.delete('/:id', validateJWT, deleteById);
 
 module.exports = router;

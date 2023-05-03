@@ -1,7 +1,6 @@
 import axios from 'axios';
-import { useState, useContext } from 'react';
+import { useState } from 'react';
 import useStore from '@/store/globalstore';
-import AppContext from '../../contexts/AppContext';
 
 export function useMatches() {
   const { matches, setMatches, modifyMatches } = useStore();
@@ -10,10 +9,9 @@ export function useMatches() {
 
   const handlerCreate = async (match) => {
     try {
-      const { data } = await axios.post(
-        'https://club-agronomia-central-production.up.railway.app/api/matches',
-        match
-      );
+      const { data } = await axios.post('/matches', match, {
+        withCredentials: true,
+      });
       if (data) {
         await modifyMatches([data.newMatch, ...matches]);
       }
@@ -24,10 +22,9 @@ export function useMatches() {
 
   const handlerModify = async (match) => {
     try {
-      const { data } = await axios.put(
-        `https://club-agronomia-central-production.up.railway.app/api/matches/${match._id}`,
-        match
-      );
+      const { data } = await axios.put(`/matches/${match._id}`, match, {
+        withCredentials: true,
+      });
 
       if (data) {
         const updateMatches = [...matches];
@@ -43,9 +40,9 @@ export function useMatches() {
 
   const handlerDelete = async (_id) => {
     try {
-      const { data } = await axios.delete(
-        `https://club-agronomia-central-production.up.railway.app/api/matches/${_id}`
-      );
+      const { data } = await axios.delete(`/matches/${_id}`, {
+        withCredentials: true,
+      });
 
       if (data.msg) {
         const updateMatches = [...matches].filter((m) => m._id !== _id);
