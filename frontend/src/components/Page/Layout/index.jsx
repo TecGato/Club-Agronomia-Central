@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { Banner, Navbar, Footer, HeaderTitle } from '..';
+import { Navbar, Footer, HeaderTitle } from '..';
 import { ClubIconSVG as ClubIconSVG } from '..';
 import { WhatsAppWidget } from 'react-whatsapp-widget';
 import 'react-whatsapp-widget/dist/index.css';
@@ -24,8 +24,8 @@ export function Layout({ children, image, title }) {
 
         <div
           className={`w-full ${
-            pathname === '/' ? '' : 'lg:max-w-5xl mx-auto'
-          } `}
+            pathname === '/' ? '' : 'lg:max-w-5xl'
+          }  mx-auto`}
         >
           {children}
         </div>
