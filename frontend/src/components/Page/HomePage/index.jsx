@@ -5,11 +5,13 @@ import Quincho from '../../../../public/installations-img/Imagen4.jpg';
 import Image from 'next/image';
 import useStore from '@/store/globalstore';
 import { MatchesTable } from '@/components/Dashboard/MatchesTable';
-import { useMatches } from '@/hooks';
+import { useMatches, useDates } from '@/hooks';
 
 export function HomePage() {
   const { matches } = useStore();
   const { getMatches } =useMatches();
+  const { nextDates } = useDates();
+  const showMatches = nextDates(matches, 5);
   const [donate, setDonate] = useState(false);
   const visibleContributions = () => {
     setDonate(!donate);
@@ -146,9 +148,7 @@ export function HomePage() {
         <br className="lg:my-5 lg:py-5" />
         <div className='overflow-y-auto'>
         <MatchesTable
-          matches={matches.sort((a,b)=>{
-            return b.date-a.date;
-            })}
+          matches={showMatches}
         />
         </div>
         <br className="lg:my-5 lg:py-5 m-4" />

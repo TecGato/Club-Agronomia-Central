@@ -4,7 +4,21 @@ import insta from '../../../../public/contact-img/insta.svg';
 import face from '../../../../public/contact-img/face.svg';
 import twitter from '../../../../public/contact-img/twitter.svg';
 import Image from 'next/image';
-export default function Chess({ data }) {
+import { useMatches, useDates } from '@/hooks';
+import useStore from '@/store/globalstore';
+import { useState, useEffect } from 'react';
+
+export default function Chess({data}) {
+
+  const { nextDates } = useDates();
+  const showMatches = nextDates(data.filter(m=>m.discipline==='Ajedrez'),1)
+
+  // const { matches } = useStore();
+  // const { getMatches } = useMatches();
+  // useEffect(()=>{
+  //   getMatches();
+  // }, [])
+
   return (
     <Layout
       title="Club De Ajedrez Zugzwang"
@@ -118,16 +132,102 @@ export default function Chess({ data }) {
           </a>
         </div>
       </div>
-
+      {
+        showMatches.length===0? <div className="flex flex-row items-center justify-center mt-8">
+                  <p className="pl-2">No hay próximos encuentros programados para esta disciplina</p>
+          </div>:
       <MatchesInfo
-        data={data}
+        data={showMatches}
+        iconOne={ <svg
+              height={60}
+              width={60}
+              version="1.1"
+              id="_x32_"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlnsXlink="http://www.w3.org/1999/xlink"
+              viewBox="0 0 512 512"
+              xmlSpace="preserve"
+              fill="#1b418a"
+            >
+              <g id="SVGRepo_bgCarrier" strokeWidth={0} />
+              <g
+                id="SVGRepo_tracerCarrier"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <g id="SVGRepo_iconCarrier">
+                <style
+                  type="text/css"
+                  dangerouslySetInnerHTML={{
+                    __html: ' .st0{fill:#1b418a;} ',
+                  }}
+                />
+                <g>
+                  <path
+                    className="st0"
+                    d="M256,161.408c44.568,0,80.71-36.13,80.71-80.698C336.71,36.142,300.567,0,256,0 c-44.568,0-80.698,36.142-80.698,80.71C175.302,125.278,211.431,161.408,256,161.408z"
+                  />
+                  <path
+                    className="st0"
+                    d="M113.114,431.973h285.783c0,0,16.267-3.756,16.267-22.57c0-28.216-50.702-46.641-63.92-56.664 c-61.577-46.726-57.334-145.58,18.023-145.58v-29.74H142.745v29.74c75.345,0,79.588,98.854,18.01,145.58 c-13.218,10.023-63.92,28.448-63.92,56.664C96.836,428.217,113.114,431.973,113.114,431.973z"
+                  />
+                  <polygon
+                    className="st0"
+                    points="113.114,451.8 97.544,478.028 97.544,512 414.456,512 414.456,478.028 398.897,451.8 "
+                  />
+                </g>
+              </g>
+            </svg>}
+
+          iconTwo={ <svg
+              height={60}
+              width={60}
+              version="1.1"
+              id="_x32_2"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlnsXlink="http://www.w3.org/1999/xlink"
+              viewBox="0 0 512 512"
+              xmlSpace="preserve"
+              fill="#1b418a"
+            >
+              <g id="SVGRepo_bgCarrier2" strokeWidth={0} />
+              <g
+                id="SVGRepo_tracerCarrier2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <g id="SVGRepo_iconCarrier2">
+                <style
+                  type="text/css"
+                  dangerouslySetInnerHTML={{
+                    __html: ' .st1{fill:#fb923c;} ',
+                  }}
+                />
+                <g>
+                  <path
+                    className="st1"
+                    d="M256,161.408c44.568,0,80.71-36.13,80.71-80.698C336.71,36.142,300.567,0,256,0 c-44.568,0-80.698,36.142-80.698,80.71C175.302,125.278,211.431,161.408,256,161.408z"
+                  />
+                  <path
+                    className="st1"
+                    d="M113.114,431.973h285.783c0,0,16.267-3.756,16.267-22.57c0-28.216-50.702-46.641-63.92-56.664 c-61.577-46.726-57.334-145.58,18.023-145.58v-29.74H142.745v29.74c75.345,0,79.588,98.854,18.01,145.58 c-13.218,10.023-63.92,28.448-63.92,56.664C96.836,428.217,113.114,431.973,113.114,431.973z"
+                  />
+                  <polygon
+                    className="st1"
+                    points="113.114,451.8 97.544,478.028 97.544,512 414.456,512 414.456,478.028 398.897,451.8 "
+                  />
+                </g>
+              </g>
+            </svg>}
+
         classname={
           'bg-indigo-100 dark:bg-[#2C2C2C]  w-full h-full flex items-center'
         }
-      />
+      />}
     </Layout>
   );
 }
+
 
 export async function getStaticProps() {
   try {
