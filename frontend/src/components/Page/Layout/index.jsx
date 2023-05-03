@@ -29,7 +29,7 @@ export function Layout({ children, image, title }) {
         >
           {children}
         </div>
-        <div className='dark:text-black'>
+        <div className='dark:text-black z-50 absolute'>
         <WhatsAppWidget
           CompanyIcon={ClubIconSVG}
           phoneNumber="584149056161"
