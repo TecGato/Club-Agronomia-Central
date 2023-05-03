@@ -4,7 +4,8 @@ import insta from '../../../../public/contact-img/insta.svg';
 import face from '../../../../public/contact-img/face.svg';
 import twitter from '../../../../public/contact-img/twitter.svg';
 import Image from 'next/image';
-export default function Chess({ data }) {
+export default function Chess({data}) {
+
   return (
     <Layout
       title="Club De Ajedrez Zugzwang"
@@ -132,14 +133,14 @@ export default function Chess({ data }) {
 
 export async function getStaticProps() {
   try {
-    const res = await fetch(
-      'http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/matches'
-    );
-    const data = await res.json();
+  const res = await fetch('http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/matches');
+  const data = await res.json();
 
-    return {
-      props: { data: data },
-    };
+
+  return {
+  props: { data: data },
+  revalidate: 3600,
+  };
   } catch (error) {
     return { error: error.message };
   }
