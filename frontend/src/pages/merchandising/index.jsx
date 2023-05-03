@@ -1,8 +1,8 @@
 import { Layout } from '@/components/Page';
 
-export default function Merchandising({props}) {
-  const products = props
-  
+export default function Merchandising({ props }) {
+  const products = props;
+
   return (
     <Layout
       title={'Merchandising'}
@@ -43,13 +43,14 @@ export default function Merchandising({props}) {
   );
 }
 export async function getStaticProps() {
-  const res = await fetch('http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/products');
+  const res = await fetch(
+    'https://club-agronomia-central-production.up.railway.app/api/products'
+  );
   const props = await res.json();
   return {
     props: {
-      props
+      props,
     },
-  revalidate: 3600,
-}
-
+    revalidate: 3600,
+  };
 }

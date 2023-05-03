@@ -386,7 +386,7 @@ export default function Dashboard() {
 
         <LineChart />
         <InfoItem
-          className="lg:row-start-5"
+          className=""
           icon={
             <svg
               viewBox="0 0 24 24"
@@ -420,7 +420,7 @@ export default function Dashboard() {
           number={reservas.length}
         />
         <InfoItem
-          className="lg:row-start-6 xl:row-start-5"
+          className=""
           icon={
             <svg
               viewBox="0 0 24 24"

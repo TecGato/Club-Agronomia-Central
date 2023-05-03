@@ -5,7 +5,10 @@ const {
 } = require('../../helpers/posts/getPosts.js');
 
 const getPosts = async (req, res) => {
+  const token = req.header("cookie")
+  
   const { title } = req.query;
+  
   try {
     const posts = title ? await getPostsByTitle(title) : await getAllPosts();
     return res.status(200).json(posts);

@@ -26,6 +26,8 @@ export function HomePage() {
           videoTop + videoHeight > scrollPosition + offset
         ) {
           video.classList.remove('blur');
+        } else if (scrollPosition === videoTop) {
+          video.classList.remove('blur');
         } else {
           video.classList.add('blur');
         }
@@ -47,37 +49,43 @@ export function HomePage() {
               <h2 className="text-4xl text-slate-100 font-bold">
                 Algunas de Nuestras Disciplinas
               </h2>
-              <article className="flex flex-wrap gap-1 mt-2">
-                <div className="w-[33%] h-32 overflow-hidden rounded-lg relative shadow-lg">
-                  <div className="w-full h-full bg-gradient-to-r from-neutral-950 to-transparent absolute flex items-end p-2">
-                    <p className="text-3xl text-white font-normal">Ajedrez</p>
-                  </div>
-                  <img
-                    src="https://img.freepik.com/fotos-premium/visualizacion-figurativa-idea-estrategia-empresarial-forma-juego-ajedrez_124507-32323.jpg?size=626&ext=jpg&ga=GA1.1.1228025790.1681327921&semt=sph"
-                    alt=""
-                  />
+              <article className="flex flex-wrap justify-center gap-1 mt-2">
+                <div className="w-1/3 aspect-w-1 aspect-h-1 sm:w-[33%] sm:h-32 overflow-hidden rounded-lg relative shadow-lg">
+                  <Link href='/deportes/futbol-infantil'>
+                    <div className="w-full h-full bg-gradient-to-r from-neutral-950 to-transparent absolute flex items-end p-2">
+                      <p className="sm:text-3xl text-white font-normal tracking-wide">Fútbol infantil</p>
+                    </div>
+                    <img
+                      src="https://img.freepik.com/fotos-premium/nino-nino-preparandose-tiro-baloncesto-nino-posando-pelota-baloncesto_265223-81031.jpg?size=626&ext=jpg&ga=GA1.1.1228025790.1681327921&semt=ais"
+                      alt="Fútbol infantil"
+                    />
+                  </Link>
                 </div>
 
-                <div className="w-[33%] h-32 overflow-hidden rounded-lg relative shadow-lg">
-                  <div className="w-full h-full bg-gradient-to-r from-neutral-950 to-transparent absolute flex items-end p-2">
-                    <p className="text-3xl text-white font-normal">
-                      Futsal Femenino
-                    </p>
-                  </div>
-                  <img
-                    src="https://img.freepik.com/foto-gratis/piernas-cultivo-pateando-pelota-sobre-hierba_23-2147817394.jpg?size=626&ext=jpg&ga=GA1.1.1228025790.1681327921&semt=sph"
-                    alt=""
-                  />
+                <div className="w-1/3 aspect-w-1 aspect-h-1 sm:w-[33%] sm:h-32 overflow-hidden rounded-lg relative shadow-lg">
+                  <Link href='/deportes/futsal-femenino'>
+                    <div className="w-full h-full bg-gradient-to-r from-neutral-950 to-transparent absolute flex items-end p-2">
+                      <p className="sm:text-3xl text-white font-normal">
+                        Futsal Femenino
+                      </p>
+                    </div>
+                    <img
+                      src="https://img.freepik.com/foto-gratis/piernas-cultivo-pateando-pelota-sobre-hierba_23-2147817394.jpg?size=626&ext=jpg&ga=GA1.1.1228025790.1681327921&semt=sph"
+                      alt="Futsal Femenino"
+                    />
+                  </Link>
                 </div>
 
-                <div className="w-[33%] h-32 overflow-hidden rounded-lg relative shadow-lg">
-                  <div className="w-full h-full bg-gradient-to-r from-neutral-950 to-transparent absolute flex items-end p-2">
-                    <p className="text-3xl text-white font-normal">Taekwondo</p>
-                  </div>
-                  <img
-                    src="https://cdn.shopify.com/s/files/1/0646/4097/files/Reglas_del_Taekwondo_2048x2048.jpg?v=1657541457"
-                    alt=""
-                  />
+                <div className="w-1/3 aspect-w-1 aspect-h-1 sm:w-[33%] sm:h-32 overflow-hidden rounded-lg relative shadow-lg">
+                  <Link href='/deportes/taekwondo'>
+                    <div className="w-full h-full bg-gradient-to-r from-neutral-950 to-transparent absolute flex items-end p-2">
+                      <p className="sm:text-3xl text-white font-normal">Taekwondo</p>
+                    </div>
+                    <img
+                      src="https://cdn.shopify.com/s/files/1/0646/4097/files/Reglas_del_Taekwondo_2048x2048.jpg?v=1657541457"
+                      alt="Taekwondo"
+                    />
+                  </Link>
                 </div>
               </article>
             </article>
@@ -90,14 +98,14 @@ export function HomePage() {
           </section>
           <section className="my-10">
             <div className="flex">
-              <article className="w-1/2 flex flex-col justify-center items-start">
+              <article className="w-1/2 flex flex-col justify-center items-start mx-4">
                 <h2 className="text-4xl text-left text-slate-100 font-bold mb-3">
                   Pasa un buen rato en nuestro quincho
                 </h2>
-                <p className="text-slate-100">
+                <p className="text-slate-100 text-left">
                   Alquila en el horario de 11hs a 17hs o 19hs a 02hs
                 </p>
-                <p className="text-slate-100">
+                <p className="text-slate-100 text-left">
                   Para asados, reuniones familiares y mucho mas!
                 </p>
                 <Link
@@ -114,13 +122,13 @@ export function HomePage() {
           </section>
           <br className="lg:my-5 lg:py-5" />
           <section className='flex gap-1'>
-            <article>
+            <article className='m-2'>
               <h2 className="text-4xl text-center text-slate-100 font-bold mb-3">Nuestra Misión</h2>
-              <p className="text-slate-100">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas enim quod quasi consequatur, quam perferendis, commodi consequuntur perspiciatis adipisci totam nesciunt ex optio pariatur sed ratione voluptatibus debitis eaque dignissimos!</p>
+              <p className="text-slate-100">Ser un club de que ofrezca una variedad de actividades deportivas y recreativas, acordes a  las necesidades del barrio, para fomentar una mejor calidad de vida</p>
             </article>
-            <article>
+            <article className='m-2'>
               <h2 className="text-4xl text-center text-slate-100 font-bold mb-3">Nuestra Visión</h2>
-              <p className="text-slate-100">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas enim quod quasi consequatur, quam perferendis, commodi consequuntur perspiciatis adipisci totam nesciunt ex optio pariatur sed ratione voluptatibus debitis eaque dignissimos!</p>
+              <p className="text-slate-100">Ser reconocidos como una institucion deportiva de referencia en el barrio con una amplia trayectoria pero con una vision de futuro caracterizada por la innovacion y el compromiso constante</p>
             </article>
           </section>
           <br className="lg:my-5 lg:py-5" />

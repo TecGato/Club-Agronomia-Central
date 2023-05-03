@@ -13,11 +13,13 @@ export default function PaginadePubli() {
   const [ads, setAds] = useState([]);
   const [editModal, setEditModal] = useState(false);
   const [createModal, setCreateModal] = useState(false);
-  const [deleteModal, setDeleteModal] = useState(false)
+  const [deleteModal, setDeleteModal] = useState(false);
   const [adToEdit, setAdToEdit] = useState({});
 
   const getAds = async () => {
-    const { data } = await axios.get('http://localhost:3001/api/ads');
+    const { data } = await axios.get(
+      'https://club-agronomia-central-production.up.railway.app/api/ads'
+    );
     setAds(data);
   };
   const handleEdit = (ad) => {
@@ -35,7 +37,7 @@ export default function PaginadePubli() {
       contact: ad.contact,
     });
     setDeleteModal(true);
-  }
+  };
   useEffect(() => {
     getAds();
   }, []);
@@ -109,7 +111,11 @@ export default function PaginadePubli() {
       )}
       {deleteModal && (
         <ModalTable>
-          <DeleteAd setDeleteModal={setDeleteModal} getAds={getAds} id={adToEdit.id}/>
+          <DeleteAd
+            setDeleteModal={setDeleteModal}
+            getAds={getAds}
+            id={adToEdit.id}
+          />
         </ModalTable>
       )}
     </Layout>

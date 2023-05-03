@@ -9,7 +9,10 @@ export const Navbar = ({ openNavbar }) => {
 
   const logOut = async () => {
     try {
-      await axios.post('/api/auth/logout');
+      await axios.post('http://localhost:3001/api/auth/logout', null, {
+        withCredentials: true,
+        credentials: 'include',
+      });
       router.push('/');
     } catch (error) {
       console.error(error.message);
@@ -19,7 +22,7 @@ export const Navbar = ({ openNavbar }) => {
 
   return (
     <nav
-      className={`w-60 h-screen bg-neutral-900 flex flex-col justify-between items-center gap-1 py-7 px-4 z-50 ${
+      className={`w-60 h-screen bg-neutral-900 flex flex-col justify-between overflow-y-scroll lg:overflow-hidden items-center gap-1 py-7 px-4 z-50 ${
         openNavbar
           ? 'translate-x-0 pt-16 fixed top-0'
           : '-translate-x-full absolute'
@@ -47,6 +50,7 @@ export const Navbar = ({ openNavbar }) => {
 
       <button
         className={`w-full h-12 flex gap-4 items-center rounded-lg px-2 group cursor-pointer transition-all duration-500 bg-[#1b418a] hover:bg-[#10306b] `}
+        onClick={() => logOut()}
       >
         <svg
           viewBox="0 0 24 24"
@@ -80,11 +84,14 @@ export const Navbar = ({ openNavbar }) => {
             {'{'}' '{'}'}
           </g>
         </svg>
-        <NavLink pathname={'/'} name="Cerrar Sesión" onClick={() => logOut()}>
+        <span className="w-full text-white text-start text-md">
+          Cerrar Sesión
+        </span>
+        {/* <NavLink pathname={'/'} name="Cerrar Sesión" onClick={() => logOut()}>
           <span className="w-full text-white text-start text-md">
             Cerrar Sesión
           </span>
-        </NavLink>
+        </NavLink> */}
       </button>
     </nav>
   );
