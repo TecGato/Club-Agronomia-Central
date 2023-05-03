@@ -114,7 +114,7 @@ export default function Login() {
         ¿Aún no tenés una cuenta?
         <Link
           className="text-[#1b418a] dark:text-slate-100 hover:underline ml-1"
-          href="/dashboard/auth/register"
+          href="/auth/register"
         >
           Registrate
         </Link>

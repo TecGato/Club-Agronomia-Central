@@ -62,7 +62,8 @@ export function useNews() {
       if (newsGlobal.length === 0) {
         setLoading(true);
         const res = await axios.get(
-          'https://club-agronomia-central-production.up.railway.app/api/posts'
+          // 'https://club-agronomia-central-production.up.railway.app/api/posts'
+          'http://localhost:3001/api/posts', { withCredentials: true}
         );
         const response = res.data;
         setNewsGlobal(response);
