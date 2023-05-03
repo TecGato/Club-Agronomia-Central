@@ -12,9 +12,11 @@ export function useMatches(){
     const handlerCreate = async (match)=>{
         try{
             const { data }=await axios.post(
-                'http://localhost:3001/api/matches', match
+                'http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/matches', match
             );
-            return data;
+            if(data){
+                await modifyMatches([data.newMatch,...matches])
+            }
         }catch(error){
             throw new Error(error.message)
         }
@@ -23,13 +25,13 @@ export function useMatches(){
     const handlerModify = async (match) => {
         try {
             const { data } = await axios.put(
-            `http://localhost:3001/api/matches/${match._id}`,
+            `http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/matches/${match._id}`,
             match
             );
 
             if(data){
                 const updateMatches = [...matches];
-                const { id } =data.match._id;
+                const id =data.match._id;
                 const index = updateMatches.findIndex((m)=>m._id ===id);
                 updateMatches[index] = data.match;
                 modifyMatches(updateMatches);
@@ -44,9 +46,16 @@ export function useMatches(){
     const handlerDelete = async (_id) => {
         try {
             const { data } = await axios.delete(
-                `http://localhost:3001/api/matches/${_id}`
+                `http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/matches/${_id}`
             );
+
+            if(data.msg){
+                const updateMatches = [...matches].filter((m)=>m._id !==_id);
+                modifyMatches(updateMatches);
+            }
+            setLoading(false);
         } catch (error) {
+            setLoading(false);
             throw new Error(error.message)
         }
         };

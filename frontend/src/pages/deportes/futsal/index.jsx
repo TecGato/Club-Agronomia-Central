@@ -123,6 +123,7 @@ export async function getStaticProps() {
 
     return {
       props: { data: data },
+      revalidate: 3600,
     };
   } catch (error) {
     return { error: error.message };

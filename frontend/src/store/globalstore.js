@@ -81,16 +81,22 @@ const useStore = create((set, get) => ({
     } catch (error) {}
   },
   setMatches: async () => {
-    const { data } = await axios.get(
-      'http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/matches'
-    );
-    set((state) => ({ ...state, matches: data }));
+    try{
+
+      const { data } = await axios.get(
+        'http://localhost:3001/api/matches'
+      );
+      set((state) => ({ ...state, matches: data }));
+    }catch (error) {}
   },
-  modifyMatches: (data) =>
-  set((state) => ({
-    ...state,
-    matches: data,
-  })),
+  modifyMatches: (data) =>{
+
+    set((state) => ({
+      ...state,
+      matches: data,
+    }))
+    // console.log(get().matches)
+  },
 
 }));
 
