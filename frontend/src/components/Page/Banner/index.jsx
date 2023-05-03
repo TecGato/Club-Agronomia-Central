@@ -3,7 +3,7 @@ export function Banner() {
     <div className="">
       <div className="relative pb-52 sm:pb-96 lg:pb-0 lg:h-screen">
         <video
-          className="absolute top-0 left-0 w-full object-cover z-10 max-h-full dark:opacity-60"
+          className="absolute top-0 left-0 w-full object-cover z-10 h-full dark:opacity-60"
           autoPlay
           loop
           muted
