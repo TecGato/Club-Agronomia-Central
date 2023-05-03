@@ -101,6 +101,7 @@ export const BarChart = () => {
       className="w-full col-span-2 bg-white border border-neutral-300 dark:bg-[#2C2C2C] dark:border-none
             dark:text-slate-100 shadow-[0px_3px_10px_2px_rgb(0_0_0_/_13%)] px-4 py-2 rounded-lg relative
             lg:col-span-3
+            xl:h-full xl:row-span-2
             flex flex-col justify-between
             "
     >
