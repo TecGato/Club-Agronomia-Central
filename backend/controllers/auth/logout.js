@@ -1,5 +1,4 @@
 const { response, request } = require('express');
-const { verify } = require('jsonwebtoken');
 const { serialize } = require('cookie');
 
 const logout = async (req = request, res = response) => {
