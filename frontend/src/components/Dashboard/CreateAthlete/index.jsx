@@ -53,7 +53,7 @@ export const CreateAthlete = ({ setCreateModal }) => {
     setCreateModal(false);
   };
   return (
-    <div className="min-w-min flex flex-col justify-start  items-start gap-4 border bg-white dark:bg-[#171717] dark:border-none border-neutral-300 shadow-[0px_3px_10px_2px_rgb(0_0_0_/_13%)] px-4 py-2 rounded-lg ">
+    <div className="min-w-min flex flex-col justify-start overflow-y-scroll items-start gap-4 border bg-white dark:bg-[#171717] dark:border-none border-neutral-300 shadow-[0px_3px_10px_2px_rgb(0_0_0_/_13%)] px-4 py-2 rounded-lg ">
       <div className="w-full flex flex-row justify-between items-center">
         <p className="text-3xl font-medium ">Añadir Atleta</p>
         <div className="flex">

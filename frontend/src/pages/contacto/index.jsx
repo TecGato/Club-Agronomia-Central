@@ -37,7 +37,7 @@ export default function Contact() {
           </div>
           <div className="flex gap-2">
             <Image src={mail} className="w-6" alt="correo" />
-            <p>agronomiacentralok@gmail.com</p>
+            <p className="truncate">agronomiacentralok@gmail.com</p>
           </div>
           <div className="flex gap-5">
             <a
