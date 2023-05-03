@@ -8,9 +8,7 @@ export function useQuincho() {
 
   const getGlobalEvents = async () => {
     try {
-      const { data } = await axios.get(
-        'https://club-agronomia-central-production.up.railway.app/api/events'
-      );
+      const { data } = await axios.get('/events');
       setReservations(data);
       setLoading(false);
     } catch (error) {
@@ -20,9 +18,7 @@ export function useQuincho() {
 
   const getGlobalDateEvents = async () => {
     try {
-      const { data } = await axios.get(
-        'https://club-agronomia-central-production.up.railway.app/api/dateevents'
-      );
+      const { data } = await axios.get('/dateevents');
       setReservationsDates(data);
       setLoading(false);
     } catch (error) {
@@ -32,10 +28,7 @@ export function useQuincho() {
 
   const handlerCreate = async (event) => {
     try {
-      const { data } = await axios.post(
-        'https://club-agronomia-central-production.up.railway.app/api/events',
-        event
-      );
+      const { data } = await axios.post('/events', event);
       getGlobalDateEvents();
       getGlobalEvents();
     } catch (error) {
@@ -45,10 +38,9 @@ export function useQuincho() {
 
   const handlerUpdate = async (event, id) => {
     try {
-      const { data } = await axios.put(
-        `https://club-agronomia-central-production.up.railway.app/api/events/${id}`,
-        event
-      );
+      const { data } = await axios.put(`/events/${id}`, event, {
+        withCredentials: true,
+      });
       getGlobalDateEvents();
       getGlobalEvents();
     } catch (error) {
@@ -58,9 +50,9 @@ export function useQuincho() {
 
   const handlerDelete = async (id) => {
     try {
-      const { data } = await axios.delete(
-        `https://club-agronomia-central-production.up.railway.app/api/events/${id}`
-      );
+      const { data } = await axios.delete(`/events/${id}`, {
+        withCredentials: true,
+      });
       getGlobalDateEvents();
       getGlobalEvents();
     } catch (error) {

@@ -1,14 +1,14 @@
 const User = require('../../models/User');
 
-const getAllUsers = async () => {
+const deleteUser = async (id) => {
   try {
-    const users = await User.find();
-    return users;
+    const user = await User.deleteOne({ _id: id });
+    return user;
   } catch (error) {
     console.error(error.message);
   }
 };
 
 module.exports = {
-  getAllUsers,
+  deleteUser,
 };
