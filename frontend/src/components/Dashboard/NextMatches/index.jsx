@@ -24,11 +24,12 @@ export const NextMatches = () => {
         <p>Fecha</p>
       </div>
       <section className="w-full h-auto flex flex-col gap-2 ">
-        {showMaches.map((match) => (
+        {showMaches.map((match, index) => (
           <PreviewItem
             columnOne={match.name}
             columnTwo={match.discipline}
             columnThree={match.date}
+            key={index}
           />
         ))}
       </section>
