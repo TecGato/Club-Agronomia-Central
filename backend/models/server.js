@@ -37,7 +37,7 @@ class Server {
     this.app.use(
       cors({
         credentials: true,
-        origin: 'http://localhost:3000',
+        origin: 'https://club-agronomia-central-24k7vlfa8-brycot.vercel.app',
       })
     );
 
@@ -69,7 +69,7 @@ class Server {
 
   listen() {
     this.app.listen(this.port, () => {
-      console.log(`server runing on port: ${this.port}`);
+      console.log(`server running on port: ${this.port}`);
     });
   }
 }

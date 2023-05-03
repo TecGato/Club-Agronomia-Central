@@ -8,7 +8,8 @@ import axios from 'axios';
 
 const theme = createTheme(esES, coreesES);
 
-axios.defaults.baseURL = 'http://localhost:3001/api';
+axios.defaults.baseURL =
+  'https://club-agronomia-central-production.up.railway.app/api';
 
 export default function App({ Component, pageProps }) {
   return (
