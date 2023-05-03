@@ -20,7 +20,7 @@ export const EditAthlete = ({ setEditModal, row }) => {
     setEditModal(false);
   };
   return (
-    <div className="min-w-min flex flex-col justify-start  items-start gap-4 border bg-white border-neutral-300 shadow-[0px_3px_10px_2px_rgb(0_0_0_/_13%)] px-4 py-2 rounded-lg ">
+    <div className="min-w-min flex flex-col justify-start overflow-y-scroll items-start gap-4 border bg-white border-neutral-300 shadow-[0px_3px_10px_2px_rgb(0_0_0_/_13%)] px-4 py-2 rounded-lg ">
       <div className="w-full flex flex-row justify-between items-center">
         <p className="text-3xl font-medium text-neutral-800">Añadir Atleta</p>
         <div className="flex">
@@ -96,10 +96,16 @@ export const EditAthlete = ({ setEditModal, row }) => {
               <option value="Taekwondo" key="Taekwondo">
                 Taekwondo
               </option>
-              <option value="Centro de Entrenamiento" key="Centro de Entrenamiento">
+              <option
+                value="Centro de Entrenamiento"
+                key="Centro de Entrenamiento"
+              >
                 Centro de Entrenamiento
               </option>
-              <option value="Entrenamiento de Arqueros" key="Entrenamiento de Arqueros">
+              <option
+                value="Entrenamiento de Arqueros"
+                key="Entrenamiento de Arqueros"
+              >
                 Entrenamiento de Arqueros
               </option>
               <option value="Escuelita de Fútbol" key="Escuelita de Fútbol">
