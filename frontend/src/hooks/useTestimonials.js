@@ -26,9 +26,9 @@ export function useTestimonials() {
 
   const handlerDelete = async (id) => {
     try {
-      const { data } = await axios.delete(
-        `https://club-agronomia-central-production.up.railway.app/api/testimonials/${id}`
-      );
+      const { data } = await axios.delete(`/testimonials/${id}`, {
+        withCredentials: true,
+      });
       data && setTestiminials(testimonials.filter((tes) => tes._id !== id));
       setLoading(false);
       setShowMessageModal('Testimonio Eliminado con Exito');
@@ -40,10 +40,9 @@ export function useTestimonials() {
 
   const handlerCreate = async (post) => {
     try {
-      const { data } = await axios.post(
-        `https://club-agronomia-central-production.up.railway.app/api/testimonials`,
-        post
-      );
+      const { data } = await axios.post(`/testimonials`, post, {
+        withCredentials: true,
+      });
       data && setTestiminials([data.newTestimonial, ...testimonials]);
       setLoading(false);
       setShowMessageModal('Testimonio Creado con Exito');
@@ -55,10 +54,9 @@ export function useTestimonials() {
 
   const handlerModify = async (post) => {
     try {
-      const { data } = await axios.put(
-        `https://club-agronomia-central-production.up.railway.app/api/testimonials/${post.id}`,
-        post
-      );
+      const { data } = await axios.put(`/testimonials/${post.id}`, post, {
+        withCredentials: true,
+      });
       if (data) {
         const updateTestimonial = [...testimonials];
         const id = data.testimonial._id;
@@ -78,10 +76,7 @@ export function useTestimonials() {
     try {
       if (testimonials.length === 0) {
         setLoading(true);
-        const res = await axios.get(
-          // 'https://club-agronomia-central-production.up.railway.app/api/testimonials'
-          'http://localhost:3001/api/testimonials',{ withCredentials: true}
-        );
+        const res = await axios.get('/testimonials');
         const response = res.data.reverse();
         setTestiminials(response);
         setLoading(false);

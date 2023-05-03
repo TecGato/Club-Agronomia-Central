@@ -8,31 +8,24 @@ const useStore = create((set, get) => ({
   matches: [],
 
   setAtletas: async () => {
-    const { data } = await axios.get(
-      'https://club-agronomia-central-production.up.railway.app/api/athletes'
-    );
+    const { data } = await axios.get('/athletes', { withCredentials: true });
     set((state) => ({ ...state, atletas: data.reverse() }));
   },
   setReservas: async () => {
     try {
-      const { data } = await axios.get(
-        'https://club-agronomia-central-production.up.railway.app/api/events'
-      );
+      const { data } = await axios.get('/events');
       set((state) => ({ ...state, reservas: data }));
     } catch (error) {}
   },
   setDirectiva: async () => {
-    const { data } = await axios.get(
-      'https://club-agronomia-central-production.up.railway.app/api/directors'
-    );
+    const { data } = await axios.get('/directors');
     set((state) => ({ ...state, directiva: data }));
   },
   editDirectiva: async (props) => {
     try {
-      const { data } = await axios.put(
-        `https://club-agronomia-central-production.up.railway.app/api/directors/${props.id}`,
-        props
-      );
+      const { data } = await axios.put(`/directors/${props.id}`, props, {
+        withCredentials: true,
+      });
       get().setDirectiva();
     } catch (error) {
       console.log(error);
@@ -45,44 +38,40 @@ const useStore = create((set, get) => ({
     })),
   setDates: async () => {
     try {
-      const { data } = await axios.get(
-        'https://club-agronomia-central-production.up.railway.app/api/dateevents'
-      );
+      const { data } = await axios.get('/dateevents');
       set((state) => ({ ...state, dates: data }));
     } catch (error) {}
   },
   addDate: async (date) => {
     try {
-      const { data } = await axios.post(
-        'https://club-agronomia-central-production.up.railway.app/api/events',
-        date
-      );
+      const { data } = await axios.post('/events', date, {
+        withCredentials: true,
+      });
       get().setDates();
       get().setReservas();
     } catch (error) {}
   },
   updateDate: async (date, id) => {
     try {
-      const { data } = await axios.put(
-        `https://club-agronomia-central-production.up.railway.app/api/events/${id}`,
-        date
-      );
+      const { data } = await axios.put(`/events/${id}`, date, {
+        withCredentials: true,
+      });
       get().setDates();
       get().setReservas();
     } catch (error) {}
   },
   deleteDate: async (id) => {
     try {
-      const { data } = await axios.delete(
-        `https://club-agronomia-central-production.up.railway.app/api/events/${id}`
-      );
+      const { data } = await axios.delete(`/events/${id}`, {
+        withCredentials: true,
+      });
       get().setDates();
       get().setReservas();
     } catch (error) {}
   },
   setMatches: async () => {
     try {
-      const { data } = await axios.get('http://localhost:3001/api/matches');
+      const { data } = await axios.get('/matches');
       set((state) => ({ ...state, matches: data }));
     } catch (error) {}
   },
@@ -91,7 +80,6 @@ const useStore = create((set, get) => ({
       ...state,
       matches: data,
     }));
-    // console.log(get().matches)
   },
 }));
 

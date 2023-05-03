@@ -87,11 +87,6 @@ export const Navbar = ({ openNavbar }) => {
         <span className="w-full text-white text-start text-md">
           Cerrar Sesión
         </span>
-        {/* <NavLink pathname={'/'} name="Cerrar Sesión" onClick={() => logOut()}>
-          <span className="w-full text-white text-start text-md">
-            Cerrar Sesión
-          </span>
-        </NavLink> */}
       </button>
     </nav>
   );

@@ -4,8 +4,11 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { esES } from '@mui/x-data-grid';
 import { esES as coreesES } from '@mui/material/locale';
 import { AppContextProvider } from '../../contexts/AppContext';
+import axios from 'axios';
 
 const theme = createTheme(esES, coreesES);
+
+axios.defaults.baseURL = 'http://localhost:3001/api';
 
 export default function App({ Component, pageProps }) {
   return (

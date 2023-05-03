@@ -3,9 +3,8 @@ import { Box, IconButton, Tooltip } from '@mui/material';
 export const TableActions = ({
   row,
   handleDelete,
-  handleDetail,
   handleUpdate,
-  setLoading
+  setLoading,
 }) => {
   return (
     <Box>

@@ -9,9 +9,9 @@ export function useNews() {
 
   const handlerDelete = async (id) => {
     try {
-      const { data } = await axios.delete(
-        `https://club-agronomia-central-production.up.railway.app/api/posts/${id}`
-      );
+      const { data } = await axios.delete(`/posts/${id}`, {
+        withCredentials: true,
+      });
       data && setNewsGlobal(newsGlobal.filter((tes) => tes._id !== id));
       setLoading(false);
       setShowMessageModal('Noticia Eliminada con Éxito');
@@ -23,10 +23,9 @@ export function useNews() {
 
   const handlerCreate = async (post) => {
     try {
-      const { data } = await axios.post(
-        `https://club-agronomia-central-production.up.railway.app/posts`,
-        post
-      );
+      const { data } = await axios.post('/posts', post, {
+        withCredentials: true,
+      });
       data && setNewsGlobal([data.newPost, ...newsGlobal]);
       setLoading(false);
       setShowMessageModal('Noticia Creada con Éxito');
@@ -38,10 +37,9 @@ export function useNews() {
 
   const handlerModify = async (post) => {
     try {
-      const { data } = await axios.put(
-        `https://club-agronomia-central-production.up.railway.app/api/posts/${post.id}`,
-        post
-      );
+      const { data } = await axios.put(`/posts/${post.id}`, post, {
+        withCredentials: true,
+      });
       if (data) {
         const updateNews = [...newsGlobal];
         const id = data.post._id;
@@ -61,10 +59,7 @@ export function useNews() {
     try {
       if (newsGlobal.length === 0) {
         setLoading(true);
-        const res = await axios.get(
-          // 'https://club-agronomia-central-production.up.railway.app/api/posts'
-          'http://localhost:3001/api/posts', { withCredentials: true}
-        );
+        const res = await axios.get('/posts');
         const response = res.data;
         setNewsGlobal(response);
         setLoading(false);

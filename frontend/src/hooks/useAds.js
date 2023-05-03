@@ -3,9 +3,9 @@ import axios from 'axios';
 export function useAds() {
   const handlerDelete = async (id) => {
     try {
-      const { data } = await axios.delete(
-        `http://localhost:3001/api/ads/${id}`
-      );
+      const { data } = await axios.delete(`/ads/${id}`, {
+        withCredentials: true,
+      });
     } catch (error) {
       console.log(error);
     }
@@ -13,10 +13,9 @@ export function useAds() {
 
   const handlerCreate = async (ad) => {
     try {
-      const { data } = await axios.post(
-        `http://localhost:3001/api/ads`,
-        ad
-      );
+      const { data } = await axios.post('/ads', ad, {
+        withCredentials: true,
+      });
       return data;
     } catch (error) {
       console.log(error);
@@ -25,10 +24,9 @@ export function useAds() {
 
   const handlerModify = async (ad) => {
     try {
-      const { data } = await axios.put(
-        `http://localhost:3001/api/ads/${ad.id}`,
-        ad
-      );
+      const { data } = await axios.put(`/ads/${ad.id}`, ad, {
+        withCredentials: true,
+      });
       return data;
     } catch (error) {
       console.log(error);
