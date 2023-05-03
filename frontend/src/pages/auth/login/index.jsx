@@ -19,6 +19,7 @@ export default function Login() {
       credentials: 'include',
     });
     if (response.status === 200) {
+      console.log('llegue aqui mamahuevo');
       router.push('/dashboard');
     }
   };
