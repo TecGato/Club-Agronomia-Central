@@ -11,14 +11,14 @@ export function useAthletes() {
   const handlerDelete = async (id) => {
     try {
       const { data } = await axios.delete(
-        `http://localhost:3001/api/athletes/${id}`
+        `https://club-agronomia-central-production.up.railway.app/api/athletes/${id}`
       );
       if (data.msg) {
         const updateAtletas = [...atletas].filter((atle) => atle.id !== id);
         modifyAtletas(updateAtletas);
       }
       setLoading(false);
-      setShowMessageModal('Atleta Eliminado con Exito');
+      setShowMessageModal('Atleta Eliminado con Éxito');
     } catch (error) {
       setLoading(false);
       setShowMessageModal('Ha ocurrido un error');
@@ -28,13 +28,13 @@ export function useAthletes() {
   const handlerCreate = async (athlete) => {
     try {
       const { data } = await axios.post(
-        `http://localhost:3001/api/athletes`,
+        `https://club-agronomia-central-production.up.railway.app/api/athletes`,
         athlete
       );
       if (data) {
         await modifyAtletas([data.newAthlete, ...atletas]);
       }
-      setShowMessageModal('Atleta Añadido con Exito');
+      setShowMessageModal('Atleta Añadido con Éxito');
     } catch (error) {
       setShowMessageModal('Ha ocurrido un error');
     }
@@ -43,7 +43,7 @@ export function useAthletes() {
   const handlerModify = async (athlete) => {
     try {
       const { data } = await axios.put(
-        `http://localhost:3001/api/athletes/${athlete.id}`,
+        `https://club-agronomia-central-production.up.railway.app/api/athletes/${athlete.id}`,
         athlete
       );
       if (data) {
@@ -52,7 +52,7 @@ export function useAthletes() {
         const index = updateAtletas.findIndex((atle) => atle.id === id);
         updateAtletas[index] = data.athlete;
         modifyAtletas(updateAtletas);
-        setShowMessageModal('Atleta Editado con Exito');
+        setShowMessageModal('Atleta Editado con Éxito');
       }
     } catch (error) {
       setShowMessageModal('Ha ocurrido un error');

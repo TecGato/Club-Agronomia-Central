@@ -10,12 +10,11 @@ export function useNews() {
   const handlerDelete = async (id) => {
     try {
       const { data } = await axios.delete(
-        // `http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/posts/${id}`
-        `http://localhost:3001/api/posts/${id}`
+        `https://club-agronomia-central-production.up.railway.app/api/posts/${id}`
       );
       data && setNewsGlobal(newsGlobal.filter((tes) => tes._id !== id));
       setLoading(false);
-      setShowMessageModal('Noticia Eliminada con Exito');
+      setShowMessageModal('Noticia Eliminada con Éxito');
     } catch (error) {
       setLoading(false);
       setShowMessageModal('Ha ocurrido un error');
@@ -25,13 +24,12 @@ export function useNews() {
   const handlerCreate = async (post) => {
     try {
       const { data } = await axios.post(
-        // `http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/posts`,
-        `http://localhost:3001/api/posts`,
+        `https://club-agronomia-central-production.up.railway.app/posts`,
         post
       );
       data && setNewsGlobal([data.newPost, ...newsGlobal]);
       setLoading(false);
-      setShowMessageModal('Noticia Creada con Exito');
+      setShowMessageModal('Noticia Creada con Éxito');
     } catch (error) {
       setLoading(false);
       setShowMessageModal('Ha ocurrido un error');
@@ -41,8 +39,7 @@ export function useNews() {
   const handlerModify = async (post) => {
     try {
       const { data } = await axios.put(
-        // `http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/posts/${post.id}`,
-        `http://localhost:3001/api/posts/${post.id}`,
+        `https://club-agronomia-central-production.up.railway.app/api/posts/${post.id}`,
         post
       );
       if (data) {
@@ -52,7 +49,7 @@ export function useNews() {
         updateNews[index] = data.post;
         setNewsGlobal(updateNews);
         setLoading(false);
-        setShowMessageModal('Noticia Editada con Exito');
+        setShowMessageModal('Noticia Editada con Éxito');
       }
     } catch (error) {
       setLoading(false);
@@ -65,8 +62,7 @@ export function useNews() {
       if (newsGlobal.length === 0) {
         setLoading(true);
         const res = await axios.get(
-          // 'http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/posts'
-          'http://localhost:3001/api/posts'
+          'https://club-agronomia-central-production.up.railway.app/api/posts'
         );
         const response = res.data;
         setNewsGlobal(response);

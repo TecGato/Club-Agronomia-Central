@@ -15,7 +15,7 @@ export default function Login() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const response = await axios.post(
-      // 'http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/auth/login',
+      // 'https://club-agronomia-central-production.up.railway.app/api/auth/login',
       'http://localhost:3001/api/auth/login',
       credentials,
       { withCredentials: true, credentials: 'include' }

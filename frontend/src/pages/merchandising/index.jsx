@@ -1,16 +1,8 @@
 import { Layout } from '@/components/Page';
-import { useEffect, useState } from 'react';
 
-export default function Merchandising() {
-  const [products, setProducts] = useState();
-  const getProducts = async () => {
-    const res = await fetch('http://localhost:3001/api/products');
-    const products = await res.json();
-    return setProducts(products);
-  };
-  useEffect(() => {
-    getProducts();
-  }, [products]);
+export default function Merchandising({ props }) {
+  const products = props;
+
   return (
     <Layout
       title={'Merchandising'}
@@ -22,23 +14,23 @@ export default function Merchandising() {
         {products?.map((product, index) => {
           return (
             <div
-              className="max-w-xs rounded overflow-hidden shadow-lg dark:bg-[#353434b4]"
+              className="max-w-[280px] h-[400px] rounded overflow-hidden shadow-lg dark:bg-[#353434b4]"
               key={index}
             >
               <img
                 src={product?.picture?.secure_url}
                 loading="lazy"
                 alt={product.title}
-                className="lg:h-[68%]"
+                className="h-[60%] my-0 mx-auto "
               />
 
-              <div className="px-6 py-4">
+              <div className="px-6 pb-4 pt-6 ">
                 <div className="font-bold text-xl mb-2">{product.title}</div>
                 <p className="text-gray-700 dark:text-gray-300 text-base">
                   {product.description}
                 </p>
               </div>
-              <div className="px-6 pb-2 text-end ">
+              <div className="px-6 pb-2 pt-4 text-end ">
                 <span className="inline-block bg-gray-200 dark:bg-gray-600 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 dark:text-gray-300 mr-2 mb-2">
                   ${product.price}
                 </span>
@@ -50,14 +42,15 @@ export default function Merchandising() {
     </Layout>
   );
 }
-// export async function getStaticProps() {
-//   const res = await fetch('http://localhost:3001/api/products');
-//   const props = await res.json();
-//   return {
-//     props: {
-//       props
-//     },
-//   revalidate: 3600,
-// }
-
-// }
+export async function getStaticProps() {
+  const res = await fetch(
+    'https://club-agronomia-central-production.up.railway.app/api/products'
+  );
+  const props = await res.json();
+  return {
+    props: {
+      props,
+    },
+    revalidate: 3600,
+  };
+}

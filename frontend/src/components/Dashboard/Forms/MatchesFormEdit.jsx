@@ -1,87 +1,24 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import { useMatches, useFormMatches } from '@/hooks';
+import { useMatches, useForm } from '@/hooks';
 
-const initialFormMatches = {
-  name: '',
-  date: '',
-  time: '',
-  home_team: '',
-  away_team: '',
-  discipline: '',
-};
+export default function MatchesFormEdit({ setEditModalMatch, row }) {
+  //validations
+  const {
+    name,
+    home_team,
+    away_team,
+    discipline,
+    date,
+    time,
+    formState,
+    onInputChange,
+  } = useForm(row);
 
-const formValidationsMatches = {
-  name: [(value) => value.length > 0, 'El nombre del encuentro es obligatorio'],
-  date: [(value) => value.length > 0, 'Escoja una fecha para el encuentro'],
-  time: [(value) => value.length > 0, 'Escoja una hora para el encuentro'],
-  home_team: [
-    (value) => value.length > 0,
-    'Escriba el nombre del equipo local',
-  ],
-  away_team: [
-    (value) => value.length > 0,
-    'Escriba el nombre del equipo local',
-  ],
-};
-
-export default function MatchesForm({ setShowModalMatches }) {
-  // const {name, date, time, home_team, away_team} = useFormMatches(initialForm)
-  // const name='';
-  // const date='';
-  // const time='';
-  // const home_team='';
-  // const away_team='';
-  // const discipline='';
-
-  //Post variable and url try
-  const { handlerCreate } = useMatches();
+  const { handlerModify } = useMatches();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
-    const dataPost = {
-      name: event.target.name.value,
-      date: event.target.date.value,
-      time: event.target.time.value,
-      home_team: event.target.home_team.value,
-      away_team: event.target.away_team.value,
-      discipline: event.target.discipline.value,
-    };
-
-    handlerCreate(dataPost);
-    setShowModalMatches(false);
-    // const JSONdata = JSON.stringify(data)
-    // try{
-    //     const { data }=await axios.post(
-    //         'http://localhost:3001/api/matches', dataPost
-    //     );
-    //     setShowModalMatches(false);
-    //     return data;
-    // }catch(error){
-    //     setShowModalMatches(false);
-    //     throw new Error(error.message)
-    // }
-
-    // const response =await axios.post('http://localhost:3001/api/matches', data);
-
-    // const response =await axios.post('http://localhost:3001/api/matches', {
-    //     name: event.target.name.value,
-    //     date: event.target.date.value,
-    //     time: event.target.time.value,
-    //     home_team: event.target.home_team.value,
-    //     away_team: event.target.away_team.value,
-    //     discipline: event.target.discipline.value
-    // });
-
-    // console.log("Entra")
-    // const result = await response.json()
-    // alert(`Is this your full name: `)
-
-    // return await response.json();
-    // }catch(error){
-    //     throw new Error(error.message)
-    // }
+    handlerModify({ _id: row._id, ...formState });
+    setEditModalMatch(false);
   };
 
   return (
@@ -92,8 +29,8 @@ export default function MatchesForm({ setShowModalMatches }) {
             type="button"
             className="relative text-gray-400 bg-transparent  hover:bg-gray-200 hover:text-gray-900 rounded-full text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white"
             onClick={() => {
-              if (setShowModalMatches) {
-                setShowModalMatches(false);
+              if (setEditModalMatch) {
+                setEditModalMatch(false);
               }
             }}
           >
@@ -124,8 +61,8 @@ export default function MatchesForm({ setShowModalMatches }) {
             id="name"
             name="name"
             className="border w-full rounded-lg dark:bg-[#1F2123] dark:border-none border-gray-200 p-3 text-sm"
-            // value={""}
-            // onChange={"handlerChange"}
+            value={name}
+            onChange={onInputChange}
           />
 
           <label
@@ -139,8 +76,8 @@ export default function MatchesForm({ setShowModalMatches }) {
             id="home_team"
             name="home_team"
             className="border w-full rounded-lg dark:bg-[#1F2123] dark:border-none border-gray-200 p-3 text-sm"
-            // onChange={"handlerChange"}
-            // value={home_team}
+            value={home_team}
+            onChange={onInputChange}
           />
 
           <label
@@ -154,13 +91,13 @@ export default function MatchesForm({ setShowModalMatches }) {
             id="away_team"
             name="away_team"
             className="border w-full rounded-lg dark:bg-[#1F2123] dark:border-none border-gray-200 p-3 text-sm"
-            // onChange={"handlerChange"}
-            // value={away_team}
+            value={away_team}
+            onChange={onInputChange}
           />
           <div>
             <label
               htmlFor="discipline"
-              className="block mb-2 font-medium  text-lg text-left"
+              className="block mb-2 font-medium text-gray-900 text-lg text-left"
             >
               Disciplina:
             </label>
@@ -168,9 +105,9 @@ export default function MatchesForm({ setShowModalMatches }) {
               type="text"
               id="discipline"
               name="discipline"
-              className="block w-full p-3 rounded-lg bg-[#eff2f7] border border-neutral-400 dark:bg-[#1F2123] dark:border-none outline-none
+              className="block w-full p-3 rounded-lg bg-[#eff2f7] border border-neutral-400 placeholder-neutral-500 text-neutral-800 outline-none
                 focus:outline-none focus:border-[#3264c0] focus:ring-1 focus:ring-[#3264c0] transition-all duration-200"
-              // value={discipline}
+              value={discipline}
               // onChange={"onInputChange"}
             >
               <option value="Ajedrez" key="Ajedrez">
@@ -196,48 +133,47 @@ export default function MatchesForm({ setShowModalMatches }) {
 
           <label
             htmlFor="date"
-            className="block mb-2 font-medium  text-lg text-left"
+            className="block mb-2 font-medium text-gray-900 text-lg text-left"
           >
             Fecha del evento:
           </label>
 
           <input
-            className="appearance-none block w-full bg-gray-200 dark:bg-[#1F2123] dark:border-none  border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
+            className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
             id="date"
             name="date"
             type="date"
-            // onChange={"handleChange"}
-            // value={date}
+            value={date}
+            onChange={onInputChange}
           />
 
           <label
             htmlFor="time"
-            className="block mb-2 font-medium  text-lg text-left"
+            className="block mb-2 font-medium text-gray-900 text-lg text-left"
           >
             Hora del evento:
           </label>
 
           <input
-            className="appearance-none block w-full bg-gray-200 dark:bg-[#1F2123] dark:border-none border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
+            className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
             type="time"
             id="time"
             name="time"
             min="09:00"
             max="18:00"
             required
-            // value={time}
+            value={time}
           ></input>
           <button
             type="submit"
             className="bg-blue-700 hover:bg-blue-800 text-white font-semibold py-2 px-4 rounded w-1/8 self-center mt-2"
-            // onClick={()=>{
-            //     if (setShowModalMatches) {
-            //         setShowModalMatches(false)
-            // }
-
+            // onClick={() => {
+            //     if (setEditModalMatch) {
+            //         setEditModalMatch(false);
+            //   }
             // }}
           >
-            Crear nuevo encuentro
+            Editar
           </button>
         </form>
       </div>

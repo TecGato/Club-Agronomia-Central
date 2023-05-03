@@ -20,9 +20,9 @@ export const EditAthlete = ({ setEditModal, row }) => {
     setEditModal(false);
   };
   return (
-    <div className="min-w-min flex flex-col justify-start  items-start gap-4 border bg-white border-neutral-300 shadow-[0px_3px_10px_2px_rgb(0_0_0_/_13%)] px-4 py-2 rounded-lg ">
+    <div className="min-w-min flex flex-col justify-start overflow-y-scroll items-start gap-4 border bg-white dark:border-none dark:shadow-none dark:bg-[#171717]  border-neutral-300 shadow-[0px_3px_10px_2px_rgb(0_0_0_/_13%)] px-4 py-2 rounded-lg ">
       <div className="w-full flex flex-row justify-between items-center">
-        <p className="text-3xl font-medium text-neutral-800">Añadir Atleta</p>
+        <p className="text-3xl font-medium ">Editar Atleta</p>
         <div className="flex">
           <button
             type="button"
@@ -50,7 +50,7 @@ export const EditAthlete = ({ setEditModal, row }) => {
           <div>
             <label
               htmlFor="name"
-              className="block mb-2 font-medium text-gray-900 text-lg text-left"
+              className="block mb-2 font-medium  text-lg text-left"
             >
               Nombre:
             </label>
@@ -58,7 +58,7 @@ export const EditAthlete = ({ setEditModal, row }) => {
               type="text"
               id="name"
               name="name"
-              className="block w-full p-2.5 rounded-lg bg-[#eff2f7] border border-neutral-400 placeholder-neutral-500 text-neutral-800 outline-none
+              className="block w-full p-2.5 rounded-lg bg-[#eff2f7] dark:bg-[#1F2123] dark:border-none border border-neutral-400 outline-none
           focus:outline-none focus:border-[#3264c0] focus:ring-1 focus:ring-[#3264c0] transition-all duration-200"
               value={name}
               onChange={onInputChange}
@@ -68,7 +68,7 @@ export const EditAthlete = ({ setEditModal, row }) => {
           <div>
             <label
               htmlFor="name"
-              className="block mb-2 font-medium text-gray-900 text-lg text-left"
+              className="block mb-2 font-medium  text-lg text-left"
             >
               Disciplina:
             </label>
@@ -76,7 +76,7 @@ export const EditAthlete = ({ setEditModal, row }) => {
               type="text"
               id="discipline"
               name="discipline"
-              className="block w-full p-2.5 rounded-lg bg-[#eff2f7] border border-neutral-400 placeholder-neutral-500 text-neutral-800 outline-none
+              className="block w-full p-2.5 rounded-lg bg-[#eff2f7] dark:bg-[#1F2123] dark:border-none border border-neutral-400  outline-none
           focus:outline-none focus:border-[#3264c0] focus:ring-1 focus:ring-[#3264c0] transition-all duration-200"
               value={discipline}
               onChange={onInputChange}
@@ -96,10 +96,16 @@ export const EditAthlete = ({ setEditModal, row }) => {
               <option value="Taekwondo" key="Taekwondo">
                 Taekwondo
               </option>
-              <option value="Centro de Entrenamiento" key="Centro de Entrenamiento">
+              <option
+                value="Centro de Entrenamiento"
+                key="Centro de Entrenamiento"
+              >
                 Centro de Entrenamiento
               </option>
-              <option value="Entrenamiento de Arqueros" key="Entrenamiento de Arqueros">
+              <option
+                value="Entrenamiento de Arqueros"
+                key="Entrenamiento de Arqueros"
+              >
                 Entrenamiento de Arqueros
               </option>
               <option value="Escuelita de Fútbol" key="Escuelita de Fútbol">
@@ -111,7 +117,7 @@ export const EditAthlete = ({ setEditModal, row }) => {
           <div>
             <label
               htmlFor="email"
-              className="block mb-2 font-medium text-gray-900 text-lg text-left"
+              className="block mb-2 font-medium  text-lg text-left"
             >
               Correo electronico:
             </label>
@@ -119,7 +125,7 @@ export const EditAthlete = ({ setEditModal, row }) => {
               type="text"
               id="email"
               name="email"
-              className="block w-full p-2.5 rounded-lg bg-[#eff2f7] border border-neutral-400 placeholder-neutral-500 text-neutral-800 outline-none
+              className="block w-full p-2.5 rounded-lg bg-[#eff2f7] border border-neutral-400 dark:bg-[#1F2123] dark:border-none outline-none
           focus:outline-none focus:border-[#3264c0] focus:ring-1 focus:ring-[#3264c0] transition-all duration-200"
               value={email}
               onChange={onInputChange}
@@ -129,7 +135,7 @@ export const EditAthlete = ({ setEditModal, row }) => {
           <div>
             <label
               htmlFor="contact"
-              className="block mb-2 font-medium text-gray-900 text-lg text-left"
+              className="block mb-2 font-medium  text-lg text-left"
             >
               Numero de contacto:
             </label>
@@ -137,7 +143,7 @@ export const EditAthlete = ({ setEditModal, row }) => {
               type="text"
               id="contact"
               name="contact"
-              className="block w-full p-2.5 rounded-lg bg-[#eff2f7] border border-neutral-400 placeholder-neutral-500 text-neutral-800 outline-none
+              className="block w-full p-2.5 rounded-lg bg-[#eff2f7] border border-neutral-400 dark:bg-[#1F2123] dark:border-none outline-none
           focus:outline-none focus:border-[#3264c0] focus:ring-1 focus:ring-[#3264c0] transition-all duration-200"
               value={contact}
               onChange={onInputChange}
@@ -147,7 +153,7 @@ export const EditAthlete = ({ setEditModal, row }) => {
           <div>
             <label
               htmlFor="date_of_birth"
-              className="block mb-2 font-medium text-gray-900 text-lg text-left"
+              className="block mb-2 font-medium  text-lg text-left"
             >
               Dia de nacimiento:
             </label>
@@ -155,7 +161,7 @@ export const EditAthlete = ({ setEditModal, row }) => {
               type="date"
               id="date_of_birth"
               name="date_of_birth"
-              className="block w-full p-2.5 rounded-lg bg-[#eff2f7] border border-neutral-400 placeholder-neutral-500 text-neutral-800 outline-none
+              className="block w-full p-2.5 rounded-lg bg-[#eff2f7] border border-neutral-400 dark:bg-[#1F2123] dark:border-none outline-none
           focus:outline-none focus:border-[#3264c0] focus:ring-1 focus:ring-[#3264c0] transition-all duration-200"
               value={date_of_birth}
               onChange={onInputChange}
@@ -172,7 +178,7 @@ export const EditAthlete = ({ setEditModal, row }) => {
           <div>
             <label
               htmlFor="emergency_name"
-              className="block mb-2 text-neutral-800 text-lg text-left"
+              className="block mb-2  text-lg text-left"
             >
               Nombre del contacto de emergencia:
             </label>
@@ -180,7 +186,7 @@ export const EditAthlete = ({ setEditModal, row }) => {
               type="text"
               id="emergency_name"
               name="emergency_name"
-              className="block w-full p-2.5 rounded-lg bg-[#eff2f7] border border-neutral-400 placeholder-neutral-500 text-neutral-800 outline-none
+              className="block w-full p-2.5 rounded-lg bg-[#eff2f7] border border-neutral-400 dark:bg-[#1F2123] dark:border-none outline-none
           focus:outline-none focus:border-[#3264c0] focus:ring-1 focus:ring-[#3264c0] transition-all duration-200"
               value={emergency_name}
               onChange={onInputChange}
@@ -198,7 +204,7 @@ export const EditAthlete = ({ setEditModal, row }) => {
               type="text"
               id="emergency"
               name="emergency_phone"
-              className="block w-full p-2.5 rounded-lg bg-[#eff2f7] border border-neutral-400 placeholder-neutral-500 text-neutral-800 outline-none
+              className="block w-full p-2.5 rounded-lg bg-[#eff2f7] border border-neutral-400 dark:bg-[#1F2123] dark:border-none outline-none
           focus:outline-none focus:border-[#3264c0] focus:ring-1 focus:ring-[#3264c0] transition-all duration-200"
               value={emergency_phone}
               onChange={onInputChange}
@@ -216,7 +222,7 @@ export const EditAthlete = ({ setEditModal, row }) => {
               type="text"
               id="emergency_email"
               name="emergency_email"
-              className="block w-full p-2.5 rounded-lg bg-[#eff2f7] border border-neutral-400 placeholder-neutral-500 text-neutral-800 outline-none
+              className="block w-full p-2.5 rounded-lg bg-[#eff2f7] border border-neutral-400 dark:bg-[#1F2123] dark:border-none outline-none
           focus:outline-none focus:border-[#3264c0] focus:ring-1 focus:ring-[#3264c0] transition-all duration-200"
               value={emergency_email}
               onChange={onInputChange}
@@ -224,7 +230,7 @@ export const EditAthlete = ({ setEditModal, row }) => {
           </div>
         </section>
         <div className="w-full flex items-end">
-          <button className="w-full h-[46px] bg-[#1b418a] p-2.5 rounded-lg text-white text-md">
+          <button className="w-full h-[46px] bg-[#1b418a]  p-2.5 rounded-lg text-white text-md">
             Guardar
           </button>
         </div>
