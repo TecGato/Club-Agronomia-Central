@@ -1,21 +1,12 @@
 import { PreviewItem } from '..';
 import useStore from '@/store/globalstore';
 import Link from 'next/link';
+import { useDates } from '@/hooks';
 
 export const NextReservations = () => {
+  const { nextDates } = useDates();
   const allReservas = useStore((state) => state.reservas);
-  const reservas = allReservas
-    .sort((a, b) => {
-      // ordena las reservas por fecha
-      if (a.date > b.date) {
-        return 1;
-      }
-      if (a.date < b.date) {
-        return -1;
-      }
-      return 0;
-    })
-    .slice(0, 3);
+  const reservas = nextDates(allReservas, 3);
   return (
     <div
       className="col-span-2 w-full h-full flex flex-col bg-white border border-neutral-300 shadow-[0px_3px_10px_2px_rgb(0_0_0_/_13%)] px-4 py-2 pb-4 rounded-lg relative  
