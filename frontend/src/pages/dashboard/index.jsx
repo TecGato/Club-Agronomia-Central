@@ -51,7 +51,7 @@ export default function Dashboard() {
   return (
     <Layout>
       <div
-        className="w-full min-h-screen grid grid-cols-2 gap-2 justify-self-center items-center xl:w-11/12 sm:w-5/6 p-5
+        className="w-full grid grid-cols-2 gap-2 justify-self-center items-center xl:w-11/12 sm:w-5/6 p-5 pb-16
       sm:justify-items-center
       lg:grid-cols-3
       xl:grid-cols-4
