@@ -26,6 +26,8 @@ export function HomePage() {
           videoTop + videoHeight > scrollPosition + offset
         ) {
           video.classList.remove('blur');
+        } else if (scrollPosition === videoTop) {
+          video.classList.remove('blur');
         } else {
           video.classList.add('blur');
         }
