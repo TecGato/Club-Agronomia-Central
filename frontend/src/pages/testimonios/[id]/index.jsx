@@ -35,7 +35,7 @@ export default function Testimony({ testimonials }) {
 
 export async function getStaticPaths() {
   const response = await fetch(
-    'http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/testimonials'
+    'https://club-agronomia-central-production.up.railway.app/api/testimonials'
   );
   const testimonials = await response.json();
 
@@ -51,7 +51,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const res = await fetch(
-    `http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/testimonials/${params.id}`
+    `https://club-agronomia-central-production.up.railway.app/api/testimonials/${params.id}`
   );
   const testimonials = await res.json();
 
