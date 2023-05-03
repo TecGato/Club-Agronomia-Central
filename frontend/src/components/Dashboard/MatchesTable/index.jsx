@@ -29,7 +29,7 @@ export function MatchesTable(props) {
                     className="text-xs text-gray-700 uppercase  dark:text-gray-100"
                     key={index}
                   >
-                    <td className="px-6 py-4 font-medium text-black">
+                    <td className="px-6 py-4 font-medium ">
                       {m.name}
                     </td>
                     <td className="px-6 py-4">{m.date}</td>
