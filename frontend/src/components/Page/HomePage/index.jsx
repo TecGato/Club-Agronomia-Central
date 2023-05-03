@@ -1,5 +1,7 @@
-import { Banner, Contributions, Donation, Publicity } from '..';
 import { useState } from 'react';
+import Link from 'next/link';
+import { Banner, Contributions, Donation, Publicity } from '..';
+import Quincho from '../../../../public/installations-img/Imagen4.jpg';
 
 export function HomePage() {
   const [donate, setDonate] = useState(false);
@@ -7,11 +9,9 @@ export function HomePage() {
     setDonate(!donate);
   };
   return (
-    <div>
+    <div className="flex">
       <Banner />
-      <h1 className="text-3xl dark:text-slate-100 text-gray-800 font-bold underline p-7 lg:mt-5">
-        Bienvenidos
-      </h1>
+
       <Donation visibleContributions={visibleContributions} />
       {donate ? (
         <Contributions visibleContributions={visibleContributions} />
