@@ -7,6 +7,7 @@ export async function middleware(request) {
   if (token === undefined) {
     return NextResponse.redirect(new URL('/auth/login', request.url));
   }
+
   try {
     const { payload } = await jwtVerify(
       token.value,
@@ -14,7 +15,7 @@ export async function middleware(request) {
     );
     return NextResponse.next();
   } catch (error) {
-    console.log('esoy en el error', error);
+    console.error(error.message);
     return NextResponse.redirect(new URL('/auth/login', request.url));
   }
 }
