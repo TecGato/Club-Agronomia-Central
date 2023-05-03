@@ -27,7 +27,6 @@ export function useTestimonials() {
   const handlerDelete = async (id) => {
     try {
       const { data } = await axios.delete(
-        // `https://club-agronomia-central-production.up.railway.app/api/testimonials/${id}`
         `https://club-agronomia-central-production.up.railway.app/api/testimonials/${id}`
       );
       data && setTestiminials(testimonials.filter((tes) => tes._id !== id));
@@ -42,7 +41,6 @@ export function useTestimonials() {
   const handlerCreate = async (post) => {
     try {
       const { data } = await axios.post(
-        // `https://club-agronomia-central-production.up.railway.app/api/testimonials`,
         `https://club-agronomia-central-production.up.railway.app/api/testimonials`,
         post
       );
@@ -58,7 +56,6 @@ export function useTestimonials() {
   const handlerModify = async (post) => {
     try {
       const { data } = await axios.put(
-        // `https://club-agronomia-central-production.up.railway.app/api/testimonials/${post.id}`,
         `https://club-agronomia-central-production.up.railway.app/api/testimonials/${post.id}`,
         post
       );
@@ -83,7 +80,7 @@ export function useTestimonials() {
         setLoading(true);
         const res = await axios.get(
           // 'https://club-agronomia-central-production.up.railway.app/api/testimonials'
-          'https://club-agronomia-central-production.up.railway.app/api/testimonials'
+          'http://localhost:3001/api/testimonials',{ withCredentials: true}
         );
         const response = res.data.reverse();
         setTestiminials(response);

@@ -33,7 +33,15 @@ class Server {
 
   middlewares() {
     // CORS
-    this.app.use(cors());
+    this.app.use(
+      cors({
+        credentials: true,
+        origin: [
+          'http://localhost:3000',
+          'https://club-agronomia-central-henna.vercel.app/',
+        ],
+      })
+    );
 
     // Lectura y parseo del body
     this.app.use(express.json({ limit: '1024mb' }));

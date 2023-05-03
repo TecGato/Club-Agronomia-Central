@@ -123,7 +123,7 @@ export default function Register() {
         ¿Ya tenés una cuenta?
         <Link
           className="text-[#1b418a] hover:underline ml-1"
-          href="/dashboard/auth/login"
+          href="/auth/login"
         >
           Iniciá sesión
         </Link>
