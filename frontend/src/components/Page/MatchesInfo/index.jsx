@@ -12,11 +12,7 @@ export function MatchesInfo(props) {
                 <div className="space-y-10">
                   <div className="px-6 py-4">
                     <div className="px-10 max-w-2xl">
-                      <img
-                        className="w-20 h-20 m-auto"
-                        src="https://1.bp.blogspot.com/-I2CXXftUfwg/Xmk8N-NQ9BI/AAAAAAABX-8/TEL_4B7_aLQpuiRQPm1rrD4OHfmAahlbACLcBGAsYHQ/s1600/Liverpool%2BFC256x.png"
-                        alt="Liverpool"
-                      />
+                      {props.iconOne}
                     </div>
                     <div className="space-y-10">
                       <div className="font-bold text-xl mb-2 ">
@@ -61,11 +57,7 @@ export function MatchesInfo(props) {
                 <div className="space-y-10">
                   <div className="px-6 py-4">
                     <div className="px-10 max-w-2xl">
-                      <img
-                        className="w-20 h-20 m-auto"
-                        src="https://i.pinimg.com/originals/1a/02/f3/1a02f3ad7f2491c89e89aad80b562d89.jpg"
-                        alt="Chelsea"
-                      />
+                      {props.iconTwo}
                     </div>
                     <div className="space-y-5">
                       <div className="font-bold text-xl mb-2">
