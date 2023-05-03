@@ -26,6 +26,8 @@ export function HomePage() {
           videoTop + videoHeight > scrollPosition + offset
         ) {
           video.classList.remove('blur');
+        } else if (scrollPosition === videoTop) {
+          video.classList.remove('blur');
         } else {
           video.classList.add('blur');
         }
@@ -47,10 +49,10 @@ export function HomePage() {
               <h2 className="text-4xl text-slate-100 font-bold">
                 Algunas de Nuestras Disciplinas
               </h2>
-              <article className="flex flex-wrap gap-1 mt-2">
-                <div className="w-[33%] h-32 overflow-hidden rounded-lg relative shadow-lg">
+              <article className="flex flex-wrap justify-center gap-1 mt-2">
+                <div className="w-1/3 aspect-w-1 aspect-h-1 sm:w-[33%] sm:h-32 overflow-hidden rounded-lg relative shadow-lg">
                   <div className="w-full h-full bg-gradient-to-r from-neutral-950 to-transparent absolute flex items-end p-2">
-                    <p className="text-3xl text-white font-normal">Ajedrez</p>
+                    <p className="sm:text-3xl text-white font-normal tracking-wide">Ajedrez</p>
                   </div>
                   <img
                     src="https://img.freepik.com/fotos-premium/visualizacion-figurativa-idea-estrategia-empresarial-forma-juego-ajedrez_124507-32323.jpg?size=626&ext=jpg&ga=GA1.1.1228025790.1681327921&semt=sph"
@@ -58,9 +60,9 @@ export function HomePage() {
                   />
                 </div>
 
-                <div className="w-[33%] h-32 overflow-hidden rounded-lg relative shadow-lg">
+                <div className="w-1/3 aspect-w-1 aspect-h-1 sm:w-[33%] sm:h-32 overflow-hidden rounded-lg relative shadow-lg">
                   <div className="w-full h-full bg-gradient-to-r from-neutral-950 to-transparent absolute flex items-end p-2">
-                    <p className="text-3xl text-white font-normal">
+                    <p className="sm:text-3xl text-white font-normal">
                       Futsal Femenino
                     </p>
                   </div>
@@ -70,9 +72,9 @@ export function HomePage() {
                   />
                 </div>
 
-                <div className="w-[33%] h-32 overflow-hidden rounded-lg relative shadow-lg">
+                <div className="w-1/3 aspect-w-1 aspect-h-1 sm:w-[33%] sm:h-32 overflow-hidden rounded-lg relative shadow-lg">
                   <div className="w-full h-full bg-gradient-to-r from-neutral-950 to-transparent absolute flex items-end p-2">
-                    <p className="text-3xl text-white font-normal">Taekwondo</p>
+                    <p className="sm:text-3xl text-white font-normal">Taekwondo</p>
                   </div>
                   <img
                     src="https://cdn.shopify.com/s/files/1/0646/4097/files/Reglas_del_Taekwondo_2048x2048.jpg?v=1657541457"
@@ -90,14 +92,14 @@ export function HomePage() {
           </section>
           <section className="my-10">
             <div className="flex">
-              <article className="w-1/2 flex flex-col justify-center items-start">
+              <article className="w-1/2 flex flex-col justify-center items-start mx-4">
                 <h2 className="text-4xl text-left text-slate-100 font-bold mb-3">
                   Pasa un buen rato en nuestro quincho
                 </h2>
-                <p className="text-slate-100">
+                <p className="text-slate-100 text-left">
                   Alquila en el horario de 11hs a 17hs o 19hs a 02hs
                 </p>
-                <p className="text-slate-100">
+                <p className="text-slate-100 text-left">
                   Para asados, reuniones familiares y mucho mas!
                 </p>
                 <Link
@@ -114,11 +116,11 @@ export function HomePage() {
           </section>
           <br className="lg:my-5 lg:py-5" />
           <section className='flex gap-1'>
-            <article>
+            <article className='m-2'>
               <h2 className="text-4xl text-center text-slate-100 font-bold mb-3">Nuestra Misión</h2>
               <p className="text-slate-100">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas enim quod quasi consequatur, quam perferendis, commodi consequuntur perspiciatis adipisci totam nesciunt ex optio pariatur sed ratione voluptatibus debitis eaque dignissimos!</p>
             </article>
-            <article>
+            <article className='m-2'>
               <h2 className="text-4xl text-center text-slate-100 font-bold mb-3">Nuestra Visión</h2>
               <p className="text-slate-100">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas enim quod quasi consequatur, quam perferendis, commodi consequuntur perspiciatis adipisci totam nesciunt ex optio pariatur sed ratione voluptatibus debitis eaque dignissimos!</p>
             </article>
