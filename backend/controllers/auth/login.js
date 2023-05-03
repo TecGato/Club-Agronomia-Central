@@ -32,11 +32,12 @@ const login = async (req = request, res = response) => {
     const token = await generateJWT(user.id);
 
     const serialized = serialize('authToken', token, {
-      httpOnly: false,
+      httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
       sameSite: 'none',
       maxAge: 1000 * 60 * 60 * 4,
       path: '/',
+      domain: '.vercel.app',
     });
 
     res.cookie(serialized);
