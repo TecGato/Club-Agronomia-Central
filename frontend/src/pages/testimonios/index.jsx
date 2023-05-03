@@ -24,13 +24,14 @@ export default function Testimonials({ testimonials }) {
       <section className="grid grid-cols-1 lg:grid-cols-3 justify-items-center py-10 px-5 gap-5 w-full h-full">
         {currentItems?.map((testimonial) => (
           <div key={testimonial._id} className='overflow-hidden cursor-pointer hover:scale-105 transition ease-in-out'>
-            {/* <Link href={`/testimonios/${testimonial._id}`} key={testimonial._id}> */}
-            <TestimonialItem
-              title={testimonial.title}
-              text={testimonial.description}
-              img={testimonial.picture.secure_url}
-              id={testimonial._id}
-            />
+            <Link href={`/testimonios/${testimonial._id}`} key={testimonial._id}>
+              <TestimonialItem
+                title={testimonial.title}
+                text={testimonial.description}
+                img={testimonial.picture.secure_url}
+                id={testimonial._id}
+              />
+             </Link>
           </div>
         ))}
       </section>
