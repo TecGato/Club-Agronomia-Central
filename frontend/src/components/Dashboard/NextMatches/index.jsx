@@ -1,6 +1,20 @@
 import { PreviewItem } from '..';
+import useStore from '@/store/globalstore';
 
 export const NextMatches = () => {
+  const matches = useStore((state) => state.matches);
+  const showMaches = matches
+    .sort((a, b) => {
+      // ordena las reservas por fecha
+      if (a.date > b.date) {
+        return 1;
+      }
+      if (a.date < b.date) {
+        return -1;
+      }
+      return 0;
+    })
+    .slice(0, 3);
   return (
     <div
       className="col-span-2 w-full h-full flex flex-col dark:bg-[#2C2C2C] dark:border-none
@@ -18,7 +32,7 @@ export const NextMatches = () => {
       </div>
       <section className="w-full h-auto flex flex-col gap-2 ">
         <PreviewItem
-          columnOne={'AgroVSjairo'}
+          columnOne={'matches'}
           columnTwo={'Futsal'}
           columnThree="2 de Mayo"
         />
