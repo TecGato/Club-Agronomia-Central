@@ -27,6 +27,7 @@ export function HomePage() {
     }
   
     window.addEventListener('scroll', handleScroll)
+
     return () => window.removeEventListener('scroll', handleScroll)
   }, []);
 
