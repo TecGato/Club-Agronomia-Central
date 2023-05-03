@@ -83,7 +83,7 @@ export function useTestimonials() {
         setLoading(true);
         const res = await axios.get(
           // 'http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/testimonials'
-          'http://localhost:3001/api/testimonials'
+          'http://localhost:3001/api/testimonials',{ withCredentials: true}
         );
         const response = res.data.reverse();
         setTestiminials(response);

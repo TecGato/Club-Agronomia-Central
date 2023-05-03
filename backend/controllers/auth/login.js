@@ -39,7 +39,7 @@ const login = async (req = request, res = response) => {
       path: '/',
     });
 
-    res.setHeader('Set-Cookie', serialized);
+    res.cookie(serialized);
 
     return res.status(200).json('Logged in Successfully');
   } catch (error) {
