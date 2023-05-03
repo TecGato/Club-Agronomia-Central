@@ -118,11 +118,11 @@ export function HomePage() {
           <section className='flex gap-1'>
             <article className='m-2'>
               <h2 className="text-4xl text-center text-slate-100 font-bold mb-3">Nuestra Misión</h2>
-              <p className="text-slate-100">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas enim quod quasi consequatur, quam perferendis, commodi consequuntur perspiciatis adipisci totam nesciunt ex optio pariatur sed ratione voluptatibus debitis eaque dignissimos!</p>
+              <p className="text-slate-100">Ser un club de que ofrezca una variedad de actividades deportivas y recreativas, acordes a  las necesidades del barrio, para fomentar una mejor calidad de vida</p>
             </article>
             <article className='m-2'>
               <h2 className="text-4xl text-center text-slate-100 font-bold mb-3">Nuestra Visión</h2>
-              <p className="text-slate-100">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas enim quod quasi consequatur, quam perferendis, commodi consequuntur perspiciatis adipisci totam nesciunt ex optio pariatur sed ratione voluptatibus debitis eaque dignissimos!</p>
+              <p className="text-slate-100">Ser reconocidos como una institucion deportiva de referencia en el barrio con una amplia trayectoria pero con una vision de futuro caracterizada por la innovacion y el compromiso constante</p>
             </article>
           </section>
           <br className="lg:my-5 lg:py-5" />
