@@ -18,7 +18,7 @@ export function Layout({ children, image, title }) {
       <main
         className={`w-full ${
           pathname === '/' ? 'p-0' : 'py-14'
-        } min-h-screen duration-500 dark:!text-white dark:bg-[#171717]`}
+        } min-h-screen duration-500 dark:!text-white dark:bg-[#000000]`}
       >
         {title && <HeaderTitle image={image} title={title} />}
 

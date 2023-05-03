@@ -46,7 +46,7 @@ const disableButton = post !== ShowModify ? false : true;
 
   const stylesButton = () => {
     if (disableButton) {
-      return 'font-semibold self-center text-gray-900 py-2 px-4 rounded w-1/8 border-2 border-gray-300 bg-gray-100 transition duration-300 ease-in-out';
+      return 'font-semibold self-center text-gray-900 py-2 px-4 rounded w-1/8 border-2 border-gray-300 bg-gray-100 transition duration-300 ease-in-out dark:bg-gray-800 dark:text-slate-100 dark:border-none';
     } else {
       return "bg-blue-700 hover:bg-blue-800 text-white font-semibold py-2 px-4 rounded w-1/8 self-center";
     }
@@ -54,7 +54,7 @@ const disableButton = post !== ShowModify ? false : true;
 
   return (
     <div className="flex bg-gray-900/80 backdrop-blur-sm justify-center items-center overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
-      <div className="rounded-xl border bg-gray-50 w-[400px] border-gray-100 p-4 shadow-xl">
+      <div className="rounded-xl border bg-gray-50 dark:bg-[#171717] dark:border-none w-[400px] border-gray-100 p-4 shadow-xl">
 
         <div className='flex'>
           <button type="button" className="relative text-gray-400 bg-transparent  hover:bg-gray-200 hover:text-gray-900 rounded-full text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white"
@@ -66,41 +66,41 @@ const disableButton = post !== ShowModify ? false : true;
         </div>
 
         <form className="flex flex-col gap-2" onSubmit={handlerSubmit}>
-          <label className="text-gray-900 text-lg">Titulo:</label>
+          <label className=" text-lg">Titulo:</label>
           <input
             name="title"
             type="text"
-            className="border w-full rounded-lg border-gray-200 p-3 text-sm"
+            className="border w-full rounded-lg dark:bg-[#1F2123] dark:border-none border-gray-200 p-3 text-sm"
             placeholder="Titulo"
             onChange={handlerChange}
             value={post.title}
           />
-          <label className="text-gray-900 text-lg">Imagen:</label>
+          <label className=" text-lg">Imagen:</label>
           <input
             name="picture"
             type="file"
             accept="image/*"
-            className="block w-full border border-gray-200 shadow-sm rounded-md text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 file:hover:bg-blue-100 cursor-pointer file:cursor-pointer file:border-0 file:bg-gray-100 file:mr-4 file:py-3 file:px-4 hover:bg-blue"
+            className="block w-full border dark:bg-[#2d2e30]  dark:border-none border-gray-200 shadow-sm rounded-md text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 file:hover:bg-blue-100 cursor-pointer file:cursor-pointer file:border-0 file:bg-gray-100 file:mr-4 file:py-3 file:px-4 hover:bg-blue dark:file:bg-[#1F2123] dark:file:text-slate-100 dark:file:border-non"
             placeholder="Imagen"
             onChange={imagenChange}
           />
           {modifyTestimony &&
             <>
-              <label className="text-gray-900 text-lg">Video:</label>
+              <label className=" text-lg">Video:</label>
               <input
                 name="video"
                 type="file"
                 accept="video/*"
-                className="block w-full border border-gray-200 shadow-sm rounded-md text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 file:hover:bg-blue-100 cursor-pointer file:cursor-pointer file:border-0 file:bg-gray-100 file:mr-4 file:py-3 file:px-4 hover:bg-blue focus:border-2"
+                className="block w-full border dark:bg-[#2d2e30]  dark:border-none border-gray-200 shadow-sm rounded-md text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 file:hover:bg-blue-100 cursor-pointer file:cursor-pointer file:border-0 file:bg-gray-100 file:mr-4 file:py-3 file:px-4 hover:bg-blue focus:border-2 dark:file:bg-[#1F2123] dark:file:text-slate-100 dark:file:border-non"
                 placeholder="video"
                 onChange={videoChange}
               />
             </>
           }
-          <label className="text-gray-900 text-lg">Post:</label>
+          <label className=" text-lg">Post:</label>
           <textarea
             name="description"
-            className="border w-full rounded-lg border-gray-200 p-3 text-sm"
+            className="border w-full rounded-lg dark:bg-[#1F2123] dark:border-none border-gray-200 p-3 text-sm"
             placeholder="Contenido"
             onChange={handlerChange}
             value={post.description}
