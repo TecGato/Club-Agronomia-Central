@@ -9,7 +9,7 @@ export default function Escuelita({ data }) {
 
 
   const { nextDates } = useDates();
-  const showMatches = nextDates(data.filter(m=>m.discipline==='Taekwondo'),1)
+  const showMatches = nextDates(data.filter(m=>m.discipline==='Escuelita de Fútbol'),1)
 
   return (
     <Layout

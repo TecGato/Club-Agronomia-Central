@@ -26,13 +26,7 @@ const formValidationsMatches = {
 };
 
 export default function MatchesForm({ setShowModalMatches }) {
-  // const {name, date, time, home_team, away_team} = useFormMatches(initialForm)
-  // const name='';
-  // const date='';
-  // const time='';
-  // const home_team='';
-  // const away_team='';
-  // const discipline='';
+
 
   //Post variable and url try
   const { handlerCreate } = useMatches();
@@ -51,37 +45,7 @@ export default function MatchesForm({ setShowModalMatches }) {
 
     handlerCreate(dataPost);
     setShowModalMatches(false);
-    // const JSONdata = JSON.stringify(data)
-    // try{
-    //     const { data }=await axios.post(
-    //         'http://localhost:3001/api/matches', dataPost
-    //     );
-    //     setShowModalMatches(false);
-    //     return data;
-    // }catch(error){
-    //     setShowModalMatches(false);
-    //     throw new Error(error.message)
-    // }
 
-    // const response =await axios.post('http://localhost:3001/api/matches', data);
-
-    // const response =await axios.post('http://localhost:3001/api/matches', {
-    //     name: event.target.name.value,
-    //     date: event.target.date.value,
-    //     time: event.target.time.value,
-    //     home_team: event.target.home_team.value,
-    //     away_team: event.target.away_team.value,
-    //     discipline: event.target.discipline.value
-    // });
-
-    // console.log("Entra")
-    // const result = await response.json()
-    // alert(`Is this your full name: `)
-
-    // return await response.json();
-    // }catch(error){
-    //     throw new Error(error.message)
-    // }
   };
 
   return (
@@ -188,9 +152,9 @@ export default function MatchesForm({ setShowModalMatches }) {
               <option value="Taekwondo" key="Taekwondo">
                 Taekwondo
               </option>
-              <option value="Escuelita de Fútbol" key="Escuelita de Fútbol">
+              {/* <option value="Escuelita de Fútbol" key="Escuelita de Fútbol">
                 Escuelita de Fútbol
-              </option>
+              </option> */}
             </select>
           </div>
 
