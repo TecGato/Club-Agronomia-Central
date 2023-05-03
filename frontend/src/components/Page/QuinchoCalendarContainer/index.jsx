@@ -158,11 +158,8 @@ export function QuinchoCalendarContainer({ itsAdmin = false }) {
           ))}
           {Array.from({ length: lastDay.getDate() }).map((_, i) => {
             return (
-              <>
-                <div
-                  key={i}
-                  className="flex flex-col items-center justify-center w-full h-full text-sm border border-gray-200 truncate"
-                >
+              <div key={i}>
+                <div className="flex flex-col items-center justify-center w-full h-full text-sm border border-gray-200 truncate">
                   {i + 1}
                   {reservationsDates.map((dateEv, index) => {
                     return (
@@ -182,7 +179,7 @@ export function QuinchoCalendarContainer({ itsAdmin = false }) {
                     );
                   })}
                 </div>
-              </>
+              </div>
             );
           })}
         </div>

@@ -14,7 +14,7 @@ export default function Merchandising({ props }) {
         {products?.map((product, index) => {
           return (
             <div
-              className="max-w-[280px] h-[400px] rounded overflow-hidden shadow-lg dark:bg-[#353434b4]"
+              className="max-w-[280px] h-[400px] rounded-lg overflow-hidden shadow-lg dark:bg-[#353434b4]"
               key={index}
             >
               <img
