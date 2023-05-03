@@ -121,7 +121,7 @@ export function HomePage() {
                   Solicitar Reserva
                 </Link>
               </article>
-              <article className="w-1/2 rounded-lg shadow-lg overflow-hidden">
+              <article className="w-1/2 h-fit rounded-lg shadow-lg overflow-hidden">
                 <Image src={Quincho} alt="Imagen del quincho" />
               </article>
             </div>
@@ -144,11 +144,13 @@ export function HomePage() {
                 Próximos encuentros deportivos
         </h2>
         <br className="lg:my-5 lg:py-5" />
+        <div className='overflow-y-auto'>
         <MatchesTable
           matches={matches.sort((a,b)=>{
             return b.date-a.date;
             })}
         />
+        </div>
         <br className="lg:my-5 lg:py-5 m-4" />
         <Link
                   href="/deportes"
