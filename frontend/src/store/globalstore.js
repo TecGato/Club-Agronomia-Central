@@ -82,7 +82,9 @@ const useStore = create((set, get) => ({
   },
   setMatches: async () => {
     try {
-      const { data } = await axios.get('http://localhost:3001/api/matches');
+      const { data } = await axios.get(
+        'https://club-agronomia-central-production.up.railway.app/api/matches'
+      );
       set((state) => ({ ...state, matches: data }));
     } catch (error) {}
   },
@@ -91,7 +93,6 @@ const useStore = create((set, get) => ({
       ...state,
       matches: data,
     }));
-    // console.log(get().matches)
   },
 }));
 

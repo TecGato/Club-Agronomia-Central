@@ -18,6 +18,8 @@ export default function Dashboard() {
   const setReservas = useStore((state) => state.setReservas);
   const atletas = useStore((state) => state.atletas);
   const reservas = useStore((state) => state.reservas);
+  const matches = useStore((state) => state.matches);
+  const setMatches = useStore((state) => state.setMatches);
   const Ajedrez = atletas.filter((atleta) => atleta.discipline === 'Ajedrez');
   const futbolInfantil = atletas.filter(
     (atleta) => atleta.discipline === 'Fútbol Infantil'
@@ -43,6 +45,7 @@ export default function Dashboard() {
     if (atletas.length === 0) setAtletas();
     if (reservas.length === 0) setReservas();
     if (directiva.length === 0) setDirectiva();
+    if (matches.length === 0) setMatches();
   }, []);
 
   return (
