@@ -19,9 +19,9 @@ export const CreateAd = ({ setCreateModal, getAds }) => {
     setCreateModal(false);
   };
   return (
-    <div className="min-w-min flex flex-col justify-start  items-start gap-4 border bg-white border-neutral-300 shadow-[0px_3px_10px_2px_rgb(0_0_0_/_13%)] px-4 py-2 rounded-lg ">
+    <div className="min-w-min flex flex-col justify-start  items-start gap-4 border bg-white dark:bg-[#171717] dark:border-none border-neutral-300 shadow-[0px_3px_10px_2px_rgb(0_0_0_/_13%)] px-4 py-2 rounded-lg ">
       <div className="w-full flex flex-row justify-between items-center">
-        <p className="text-3xl font-medium text-neutral-800">Añadir anuncio</p>
+        <p className="text-3xl font-medium ">Añadir anuncio</p>
         <div className="flex">
           <button
             type="button"
@@ -49,7 +49,7 @@ export const CreateAd = ({ setCreateModal, getAds }) => {
           <div>
             <label
               htmlFor="name"
-              className="block mb-2 font-medium text-gray-900 text-lg text-left"
+              className="block mb-2 font-medium text-lg text-left"
             >
               Nombre:
             </label>
@@ -59,7 +59,7 @@ export const CreateAd = ({ setCreateModal, getAds }) => {
               name="name"
               value={name}
               onChange={onInputChange}
-              className="block w-full p-2.5 rounded-lg bg-[#eff2f7] border border-neutral-400 placeholder-neutral-500 text-neutral-800 outline-none
+              className="block w-full p-2.5 rounded-lg bg-[#eff2f7] dark:bg-[#1F2123] dark:border-none border border-neutral-400  outline-none
           focus:outline-none focus:border-[#3264c0] focus:ring-1 focus:ring-[#3264c0] transition-all duration-200"
             />
           </div>
@@ -67,7 +67,7 @@ export const CreateAd = ({ setCreateModal, getAds }) => {
           <div>
             <label
               htmlFor="contact"
-              className="block mb-2 font-medium text-gray-900 text-lg text-left"
+              className="block mb-2 font-medium text-lg text-left"
             >
               Numero de telefono:
             </label>
@@ -77,7 +77,7 @@ export const CreateAd = ({ setCreateModal, getAds }) => {
               name="contact"
               value={contact}
               onChange={onInputChange}
-              className="block w-full p-2.5 rounded-lg bg-[#eff2f7] border border-neutral-400 placeholder-neutral-500 text-neutral-800 outline-none
+              className="block w-full p-2.5 rounded-lg bg-[#eff2f7] dark:bg-[#1F2123] dark:border-none border border-neutral-400  outline-none
           focus:outline-none focus:border-[#3264c0] focus:ring-1 focus:ring-[#3264c0] transition-all duration-200"
             />
           </div>
@@ -85,7 +85,7 @@ export const CreateAd = ({ setCreateModal, getAds }) => {
           <div>
             <label
               htmlFor="image"
-              className="block mb-2 font-medium text-gray-900 text-lg text-left"
+              className="block mb-2 font-medium text-lg text-left"
             >
               Imagen del anuncio:
             </label>
@@ -94,8 +94,7 @@ export const CreateAd = ({ setCreateModal, getAds }) => {
               type="file"
               accept="image/*"
               onChange={(e) => handleFileChange(e, setPicture)}
-              className="block w-full p-2.5 rounded-lg bg-[#eff2f7] border border-neutral-400 placeholder-neutral-500 text-neutral-800 outline-none
-          focus:outline-none focus:border-[#3264c0] focus:ring-1 focus:ring-[#3264c0] transition-all duration-200"
+              className="block w-full border dark:bg-[#2d2e30]  dark:border-none border-gray-200 shadow-sm rounded-md text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 file:hover:bg-blue-100 cursor-pointer file:cursor-pointer file:border-0 file:bg-gray-100 file:mr-4 file:py-3 file:px-4 hover:bg-blue dark:file:bg-[#1F2123] dark:file:text-slate-100 dark:file:border-none"
             />
           </div>
           <div className="w-[330px] flex justify-center">
