@@ -48,7 +48,7 @@ export function HomePage() {
   return (
     <div className="">
       <Banner />
-      <div className="contenido w-full pt-80 sm:pt-32 md:pt-40 lg:pt-20 text-center bg-gradient-to-b from-[#397797] to-blue-950">
+      <div className="contenido w-full pt-80 sm:pt-32 md:pt-40 lg:pt-20 text-center dark:bg-gradient-to-b dark:from-[#1f1e1ef5] duration-500 dark:to-[#000000] bg-gradient-to-b from-[#397797] to-blue-950">
         <div className="lg:max-w-5xl m-auto">
           <section className="my-10">
             <article className="mb-7">
@@ -97,7 +97,7 @@ export function HomePage() {
             </article>
             <Link
               href="/deportes"
-              className="text-neutral-800 bg-[#d3d0d0] rounded-lg py-2 px-3 mt-2 shadow-lg hover:scale-105 transition ease-in-out"
+              className="py-4 px-6 mt-4   bg-gray-100 dark:bg-[#171717] hover:fill-slate-100 hover:text-white dark:hover:bg-[#264A72] hover:bg-[#264A72] transition duration-300 ease-in-out text-gray-900 dark:text-slate-100 rounded font-bold text-lg leading-[14px] text-center"
             >
               Ver todas las disciplinas
             </Link>
@@ -116,7 +116,7 @@ export function HomePage() {
                 </p>
                 <Link
                   href="/club/quincho"
-                  className="text-neutral-800 bg-[#d3d0d0] rounded-lg py-2 px-3 mt-2 shadow-lg hover:scale-105 transition ease-in-out"
+                  className="py-4 px-6 mt-4   bg-gray-100 dark:bg-[#171717] hover:fill-slate-100 hover:text-white dark:hover:bg-[#264A72] hover:bg-[#264A72] transition duration-300 ease-in-out text-gray-900 dark:text-slate-100 rounded font-bold text-lg leading-[14px]  text-center"
                 >
                   Solicitar Reserva
                 </Link>
@@ -140,11 +140,6 @@ export function HomePage() {
           <br className="lg:my-5 lg:py-5" />
         <hr className="lg:mt-5 lg:pt-5 border-gray-600" />
         </div>
-        <Donation visibleContributions={visibleContributions} />
-        {donate ? (
-          <Contributions visibleContributions={visibleContributions} />
-        ) : null}
-        <br className="lg:my-5 lg:py-5" />
         <h2 className="text-4xl text-slate-100 font-bold">
                 Próximos encuentros deportivos
         </h2>
@@ -157,10 +152,17 @@ export function HomePage() {
         <br className="lg:my-5 lg:py-5 m-4" />
         <Link
                   href="/deportes"
-                  className="text-neutral-800 bg-[#d3d0d0] rounded-lg py-2 px-3 mt-5 shadow-lg hover:scale-105 transition ease-in-out"
+                  className="py-4 px-6 bg-gray-100 dark:bg-[#171717] hover:fill-slate-100 hover:text-white dark:hover:bg-[#264A72] hover:bg-[#264A72] transition duration-300 ease-in-out text-gray-900 dark:text-slate-100 rounded font-bold text-lg leading-[14px]  text-center"
                 >
                   Ver todos
         </Link>
+        
+        <br className="lg:my-5 lg:py-5" />
+        <br className="lg:my-5 lg:py-5" />
+        <Donation visibleContributions={visibleContributions} />
+        {donate ? (
+          <Contributions visibleContributions={visibleContributions} />
+        ) : null}        
         <br className="lg:my-5 lg:py-5" />
         <hr className="lg:mt-5 lg:pt-5 border-gray-500" />
         <Publicity />
