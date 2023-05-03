@@ -14,12 +14,10 @@ export default function Login() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const response = await axios.post(
-      // 'https://club-agronomia-central-production.up.railway.app/api/auth/login',
-      'http://localhost:3001/api/auth/login',
-      credentials,
-      { withCredentials: true, credentials: 'include' }
-    );
+    const response = await axios.post('/auth/login', credentials, {
+      withCredentials: true,
+      credentials: 'include',
+    });
     if (response.status === 200) {
       router.push('/dashboard');
     }
@@ -110,6 +108,16 @@ export default function Login() {
         </button>
         {/* </Link> */}
       </form>
+
+      <span className="text-neutral-800 dark:text-slate-100">
+        ¿No sos administrador?
+        <Link
+          className="text-[#1b418a] dark:text-slate-100 hover:underline ml-1"
+          href="/"
+        >
+          Volvé a la página principal
+        </Link>
+      </span>
       {/* <span className="text-neutral-800 dark:text-slate-100">
         ¿Aún no tenés una cuenta?
         <Link
@@ -119,8 +127,8 @@ export default function Login() {
           Registrate
         </Link>
       </span> */}
-      <div className="relative h-px w-full my-9 bg-zinc-300 before:content-['O'] dark:before:bg-[#2d2c2d] dark:text-slate-100 before:absolute before:top-1/2 before:left-1/2 before:-translate-x-2/4 before:-translate-y-2/4 before:bg-white before:px-4"></div>
-      <GoogleButton title="Iniciar sesión con Google" />
+      {/* <div className="relative h-px w-full my-9 bg-zinc-300 before:content-['O'] dark:before:bg-[#2d2c2d] dark:text-slate-100 before:absolute before:top-1/2 before:left-1/2 before:-translate-x-2/4 before:-translate-y-2/4 before:bg-white before:px-4"></div>
+      <GoogleButton title="Iniciar sesión con Google" /> */}
     </AuthLayout>
   );
 }
