@@ -1,11 +1,24 @@
 import { NextResponse } from 'next/server';
+import { jwtVerify } from 'jose';
 
-export function middleware(request) {
+export async function middleware(request) {
   const token = request.cookies.get('authToken');
-  if (request.nextUrl.pathname.includes('/dashboard')) {
-    if (token === undefined) {
-      return NextResponse.redirect(new URL('/auth/login', request.url));
-    }
+
+  if (token === undefined) {
+    return NextResponse.redirect(new URL('/auth/login', request.url));
   }
-  return NextResponse.next();
+  try {
+    const { payload } = await jwtVerify(
+      token.value,
+      new TextEncoder().encode(process.env.NEXT_SECRETORPRIVATEKEY)
+    );
+    return NextResponse.next();
+  } catch (error) {
+    console.log('esoy en el error', error);
+    return NextResponse.redirect(new URL('/auth/login', request.url));
+  }
 }
+
+export const config = {
+  matcher: '/dashboard/:path*',
+};
