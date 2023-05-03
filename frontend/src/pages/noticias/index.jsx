@@ -105,8 +105,7 @@ export default function Posts({ posts }) {
 
 export async function getStaticProps() {
   const res = await fetch(
-    // 'https://club-agronomia-central-production.up.railway.app/api/posts'
-    'http://localhost:3001/api/posts'
+    'https://club-agronomia-central-production.up.railway.app/api/posts'
   );
   const posts = await res.json();
   return {
