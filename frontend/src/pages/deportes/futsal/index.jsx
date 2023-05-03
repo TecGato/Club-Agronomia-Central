@@ -1,6 +1,6 @@
 import { Layout } from '@/components/Page';
 import { MatchesInfo } from '@/components/Page/MatchesInfo';
-import insta from'../../../../public/contact-img/insta.svg'
+import insta from '../../../../public/contact-img/insta.svg';
 import Image from 'next/image';
 
 export default function FutSal({ data }) {
@@ -88,20 +88,15 @@ export default function FutSal({ data }) {
             className="md:rounded-full place-self-center px-5 md:p-0"
           />
           <div className="flex flex-row items-center justify-center mt-8 lg:mt-0">
-          <a
-            href="https://www.instagram.com/agronomiafutsal"
-            target="_blank"
-          >
+            <a href="https://www.instagram.com/agronomiafutsal" target="_blank">
               <Image
                 src={insta}
                 alt="Instagram"
                 className="w-8 invert dark:invert-0"
               />
-          </a>
-              <p className="pl-2">
-                Visita nuestro instagram para conocer más!!!
-              </p>
-            </div>
+            </a>
+            <p className="pl-2">Visita nuestro instagram para conocer más!!!</p>
+          </div>
         </div>
       </div>
       <MatchesInfo
@@ -117,12 +112,13 @@ export default function FutSal({ data }) {
 export async function getStaticProps() {
   try {
     const res = await fetch(
-      'http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/matches'
+      'https://club-agronomia-central-production.up.railway.app/api/matches'
     );
     const data = await res.json();
 
     return {
       props: { data: data },
+      revalidate: 3600,
     };
   } catch (error) {
     return { error: error.message };

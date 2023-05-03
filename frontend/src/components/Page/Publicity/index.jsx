@@ -13,7 +13,9 @@ export function Publicity() {
   const thirdNextItem = items[thirdNextIndex];
 
   const getAds = async () => {
-    const { data } = await axios.get('http://localhost:3001/api/ads');
+    const { data } = await axios.get(
+      'https://club-agronomia-central-production.up.railway.app/api/ads'
+    );
     setitems(data);
   };
   useEffect(() => {
@@ -27,7 +29,7 @@ export function Publicity() {
   }, [items]);
 
   return (
-    <div className="z-10 m-4 p-5 flex flex-wrap justify-center">
+    <div className="z-10 p-5 flex flex-wrap justify-center">
       <div className="shadow-lg justify-center md:my-5 mx-1 relative">
         <div className="w-56 h-36 overflow-hidden">
           <img

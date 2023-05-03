@@ -19,7 +19,8 @@ export function MatchesInfo(props) {
                       />
                     </div>
                     <div className="space-y-10">
-                      <div className="font-bold text-xl mb-2 mt-5">
+                      <div className="font-bold text-xl mb-2 ">
+                        {console.log(props.matches)}
                         {props.data[0].home_team}
                       </div>
                     </div>

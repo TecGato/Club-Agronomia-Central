@@ -5,32 +5,32 @@ const useStore = create((set, get) => ({
   reservas: [],
   directiva: [],
   dates: [],
-  matches:[],
+  matches: [],
 
   setAtletas: async () => {
     const { data } = await axios.get(
-      'http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/athletes'
+      'https://club-agronomia-central-production.up.railway.app/api/athletes'
     );
     set((state) => ({ ...state, atletas: data.reverse() }));
   },
   setReservas: async () => {
     try {
       const { data } = await axios.get(
-        'http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/events'
+        'https://club-agronomia-central-production.up.railway.app/api/events'
       );
       set((state) => ({ ...state, reservas: data }));
     } catch (error) {}
   },
   setDirectiva: async () => {
     const { data } = await axios.get(
-      'http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/directors'
+      'https://club-agronomia-central-production.up.railway.app/api/directors'
     );
     set((state) => ({ ...state, directiva: data }));
   },
   editDirectiva: async (props) => {
     try {
       const { data } = await axios.put(
-        `http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/directors/${props.id}`,
+        `https://club-agronomia-central-production.up.railway.app/api/directors/${props.id}`,
         props
       );
       get().setDirectiva();
@@ -46,7 +46,7 @@ const useStore = create((set, get) => ({
   setDates: async () => {
     try {
       const { data } = await axios.get(
-        'http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/dateevents'
+        'https://club-agronomia-central-production.up.railway.app/api/dateevents'
       );
       set((state) => ({ ...state, dates: data }));
     } catch (error) {}
@@ -54,7 +54,7 @@ const useStore = create((set, get) => ({
   addDate: async (date) => {
     try {
       const { data } = await axios.post(
-        'http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/events',
+        'https://club-agronomia-central-production.up.railway.app/api/events',
         date
       );
       get().setDates();
@@ -64,7 +64,7 @@ const useStore = create((set, get) => ({
   updateDate: async (date, id) => {
     try {
       const { data } = await axios.put(
-        `http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/events/${id}`,
+        `https://club-agronomia-central-production.up.railway.app/api/events/${id}`,
         date
       );
       get().setDates();
@@ -74,24 +74,25 @@ const useStore = create((set, get) => ({
   deleteDate: async (id) => {
     try {
       const { data } = await axios.delete(
-        `http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/events/${id}`
+        `https://club-agronomia-central-production.up.railway.app/api/events/${id}`
       );
       get().setDates();
       get().setReservas();
     } catch (error) {}
   },
   setMatches: async () => {
-    const { data } = await axios.get(
-      'http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/matches'
-    );
-    set((state) => ({ ...state, matches: data }));
+    try {
+      const { data } = await axios.get('http://localhost:3001/api/matches');
+      set((state) => ({ ...state, matches: data }));
+    } catch (error) {}
   },
-  modifyMatches: (data) =>
-  set((state) => ({
-    ...state,
-    matches: data,
-  })),
-
+  modifyMatches: (data) => {
+    set((state) => ({
+      ...state,
+      matches: data,
+    }));
+    // console.log(get().matches)
+  },
 }));
 
 export default useStore;

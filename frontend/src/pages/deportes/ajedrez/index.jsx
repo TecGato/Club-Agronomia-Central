@@ -125,7 +125,6 @@ export default function Chess({ data }) {
           'bg-indigo-100 dark:bg-[#2C2C2C]  w-full h-full flex items-center'
         }
       />
-
     </Layout>
   );
 }
@@ -133,12 +132,13 @@ export default function Chess({ data }) {
 export async function getStaticProps() {
   try {
     const res = await fetch(
-      'http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/matches'
+      'https://club-agronomia-central-production.up.railway.app/api/matches'
     );
     const data = await res.json();
 
     return {
       props: { data: data },
+      revalidate: 3600,
     };
   } catch (error) {
     return { error: error.message };

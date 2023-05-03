@@ -1,6 +1,6 @@
 import { Layout } from '@/components/Page';
 import Image from 'next/image';
-import insta from'../../../../public/contact-img/insta.svg'
+import insta from '../../../../public/contact-img/insta.svg';
 import { MatchesInfo } from '@/components/Page/MatchesInfo';
 export default function FutFem({ data }) {
   return (
@@ -81,7 +81,11 @@ export default function FutFem({ data }) {
           target="_blank"
         >
           <div className="flex flex-row items-center justify-center mt-8">
-              <Image src={insta} alt="Instagram" className="w-8 invert dark:invert-0" />
+            <Image
+              src={insta}
+              alt="Instagram"
+              className="w-8 invert dark:invert-0"
+            />
             <p className="pl-2">Visita nuestro instagram para conocer más!!!</p>
           </div>
         </a>
@@ -99,12 +103,13 @@ export default function FutFem({ data }) {
 export async function getStaticProps() {
   try {
     const res = await fetch(
-      'http://ec2-3-15-46-181.us-east-2.compute.amazonaws.com:3001/api/matches'
+      'https://club-agronomia-central-production.up.railway.app/api/matches'
     );
     const data = await res.json();
 
     return {
       props: { data: data },
+      revalidate: 3600,
     };
   } catch (error) {
     return { error: error.message };
