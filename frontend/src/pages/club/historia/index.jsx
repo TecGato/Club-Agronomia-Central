@@ -202,8 +202,8 @@ export default function History() {
                   </p>
                 </div>
                 <div className="md:grid md:grid-cols-2 gap-6 items-center dark:text-slate-100 text-gray-700">
-                  <Image src={HistoryPic1} alt="PicAlgoHitoria1" className="" />
-                  <Image src={HistoryPic2} alt="PicAlgoHitoria1" className="" />
+                  <Image src={HistoryPic1} alt="PicAlgoHitoria1" className="h-auto w-full object-contain" />
+                  <Image src={HistoryPic2} alt="PicAlgoHitoria1" className="lg:h-[326px]" />
                 </div>
               </div>
             )}
@@ -233,7 +233,7 @@ export default function History() {
             {/* <h1 className='text-lg underline'>Nuevas instalaciones:</h1> */}
             {clickedButton === '3' && (
               <div className="md:grid md:grid-cols-3 text-gray-700 gap-6 justify-items-center items-center m-1 p-2 md:p-4 md:items-center lg:p-6 xl:p-8">
-                <Image src={HistoryPic3} alt="PicNuevasInst" className="" />
+                <Image src={HistoryPic3} alt="PicNuevasInst" className="h-auto w-full object-contain" />
                 <p className="text-justify dark:text-slate-100 text-gray-700">
                   En cuanto a la construcción, habían preparado una gran terraza
                   que se utilizaba como buffet en los días cálidos y templados.
@@ -248,23 +248,23 @@ export default function History() {
                   colaboradores.
                 </p>
 
-                <Image src={HistoryPic6} alt="PicNuevasInst2" className="" />
+                <Image src={HistoryPic6} alt="PicNuevasInst2" className="h-auto w-full object-contain" />
               </div>
             )}
             {clickedButton === '4' && (
               <div className="md:grid grid-cols-2 gap-6 justify-items-center items-center m-1 p-2 md:p-4 md:items-center lg:p-6 xl:p-8">
-                <figure>
-                  <Image src={HistoryPic7} alt="PicEquipo" className="" />
-                  <figcaption className="text-justify dark:text-slate-100 text-gray-700">
+                <figure className='my-4'>
+                  <Image src={HistoryPic7} alt="PicEquipo" className="h-[316px]" />
+                  <figcaption className="text-justify dark:text-slate-100 text-gray-700 my-4">
                     A lo largo de los años, en el club, fueron desarrollándose
                     distintas disciplinas, entre las que se destacan dos en
                     especial: el básquet, donde el club llegó a jugar en la liga
                     de la capital, y el fútbol.
                   </figcaption>
                 </figure>
-                <figure>
-                  <Image src={HistoryPic8} alt="PicEquipo2" className="" />
-                  <figcaption className="text-justify dark:text-slate-100 text-gray-700">
+                <figure className='my-4 lg:translate-y-3'>
+                  <Image src={HistoryPic8} alt="PicEquipo2" className="h-[316px]" />
+                  <figcaption className="text-justify dark:text-slate-100 text-gray-700 my-4">
                     El club también se caracterizó por celebrar los carnavales
                     con distintas murgas de los barrios y sus famosos
                     campeonatos de baile. Además, se organizaban torneos de Papi
@@ -283,22 +283,22 @@ export default function History() {
                   dio inicio a lo que hoy continúa de manera ininterrumpida
                   después de 40 años.
                 </p>
-                <Image src={HistoryPic9} alt="PicBabyFutbol" />
+                <Image src={HistoryPic9} alt="PicBabyFutbol" className='h-auto w-full object-contain' />
               </div>
             )}
             {/* <h1 className='text-lg underline'>Obras y Tradiciones:</h1> */}
             {clickedButton === '6' && (
               <div className="md:grid grid-cols-2 gap-6 justify-items-center items-center m-1 p-2 md:p-4 md:items-center lg:p-6 xl:p-8">
                 <figure>
-                  <Image src={HistoryPic11} alt="PicObras" />
-                  <figcaption className="text-justify dark:text-slate-100 text-gray-700">
+                  <Image src={HistoryPic11} alt="PicObras" className='' />
+                  <figcaption className="text-justify dark:text-slate-100 text-gray-700 py-4">
                     Juntada de un vagón de ropa para los afectados por la
                     inundación en Santa Fe.
                   </figcaption>
                 </figure>
-                <figure>
-                  <Image src={HistoryPic13} alt="PicObras" />
-                  <figcaption className="text-justify dark:text-slate-100 text-gray-700">
+                <figure className='lg:-translate-y-3 '>
+                  <Image src={HistoryPic13} alt="PicObras" className='lg:h-[316px]' />
+                  <figcaption className="text-justify dark:text-slate-100 text-gray-700 py-4">
                     Tradición del partido de fin de año entre solteros y
                     casados.
                   </figcaption>

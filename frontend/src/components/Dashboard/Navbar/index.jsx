@@ -22,7 +22,7 @@ export const Navbar = ({ openNavbar }) => {
 
   return (
     <nav
-      className={`w-60 h-screen bg-neutral-900 flex flex-col justify-between items-center gap-1 py-7 px-4 z-50 ${
+      className={`w-60 h-screen bg-neutral-900 flex flex-col justify-between overflow-y-scroll lg:overflow-hidden items-center gap-1 py-7 px-4 z-50 ${
         openNavbar
           ? 'translate-x-0 pt-16 fixed top-0'
           : '-translate-x-full absolute'

@@ -51,35 +51,44 @@ export function HomePage() {
               </h2>
               <article className="flex flex-wrap justify-center gap-1 mt-2">
                 <div className="w-1/3 aspect-w-1 aspect-h-1 sm:w-[33%] sm:h-32 overflow-hidden rounded-lg relative shadow-lg">
-                  <div className="w-full h-full bg-gradient-to-r from-neutral-950 to-transparent absolute flex items-end p-2">
-                    <p className="sm:text-3xl text-white font-normal tracking-wide">Ajedrez</p>
-                  </div>
-                  <img
-                    src="https://img.freepik.com/fotos-premium/visualizacion-figurativa-idea-estrategia-empresarial-forma-juego-ajedrez_124507-32323.jpg?size=626&ext=jpg&ga=GA1.1.1228025790.1681327921&semt=sph"
-                    alt=""
-                  />
+                  <Link href={'/deportes/ajedrez'}>
+                    <div className="w-full h-full bg-gradient-to-r from-neutral-950 to-transparent absolute flex items-end p-2">
+                      <p className="sm:text-3xl text-white font-normal tracking-wide">
+                        Ajedrez
+                      </p>
+                    </div>
+                    <img
+                      src="https://img.freepik.com/fotos-premium/visualizacion-figurativa-idea-estrategia-empresarial-forma-juego-ajedrez_124507-32323.jpg?size=626&ext=jpg&ga=GA1.1.1228025790.1681327921&semt=sph"
+                      alt=""
+                    />
+                  </Link>
+                </div>
+                <div className="w-1/3 aspect-w-1 aspect-h-1 sm:w-[33%] sm:h-32 overflow-hidden rounded-lg relative shadow-lg">
+                  <Link href={'/deportes/futsal-femenino'}>
+                    <div className="w-full h-full bg-gradient-to-r from-neutral-950 to-transparent absolute flex items-end p-2">
+                      <p className="sm:text-3xl text-white font-normal">
+                        Futsal Femenino
+                      </p>
+                    </div>
+                    <img
+                      src="https://img.freepik.com/foto-gratis/piernas-cultivo-pateando-pelota-sobre-hierba_23-2147817394.jpg?size=626&ext=jpg&ga=GA1.1.1228025790.1681327921&semt=sph"
+                      alt=""
+                    />
+                  </Link>
                 </div>
 
                 <div className="w-1/3 aspect-w-1 aspect-h-1 sm:w-[33%] sm:h-32 overflow-hidden rounded-lg relative shadow-lg">
-                  <div className="w-full h-full bg-gradient-to-r from-neutral-950 to-transparent absolute flex items-end p-2">
-                    <p className="sm:text-3xl text-white font-normal">
-                      Futsal Femenino
-                    </p>
-                  </div>
-                  <img
-                    src="https://img.freepik.com/foto-gratis/piernas-cultivo-pateando-pelota-sobre-hierba_23-2147817394.jpg?size=626&ext=jpg&ga=GA1.1.1228025790.1681327921&semt=sph"
-                    alt=""
-                  />
-                </div>
-
-                <div className="w-1/3 aspect-w-1 aspect-h-1 sm:w-[33%] sm:h-32 overflow-hidden rounded-lg relative shadow-lg">
-                  <div className="w-full h-full bg-gradient-to-r from-neutral-950 to-transparent absolute flex items-end p-2">
-                    <p className="sm:text-3xl text-white font-normal">Taekwondo</p>
-                  </div>
-                  <img
-                    src="https://cdn.shopify.com/s/files/1/0646/4097/files/Reglas_del_Taekwondo_2048x2048.jpg?v=1657541457"
-                    alt=""
-                  />
+                  <Link href={'/deportes/taekwondo'}>
+                    <div className="w-full h-full bg-gradient-to-r from-neutral-950 to-transparent absolute flex items-end p-2">
+                      <p className="sm:text-3xl text-white font-normal">
+                        Taekwondo
+                      </p>
+                    </div>
+                    <img
+                      src="https://cdn.shopify.com/s/files/1/0646/4097/files/Reglas_del_Taekwondo_2048x2048.jpg?v=1657541457"
+                      alt=""
+                    />
+                  </Link>
                 </div>
               </article>
             </article>
@@ -115,18 +124,32 @@ export function HomePage() {
             </div>
           </section>
           <br className="lg:my-5 lg:py-5" />
-          <section className='flex gap-1'>
-            <article className='m-2'>
-              <h2 className="text-4xl text-center text-slate-100 font-bold mb-3">Nuestra Misión</h2>
-              <p className="text-slate-100">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas enim quod quasi consequatur, quam perferendis, commodi consequuntur perspiciatis adipisci totam nesciunt ex optio pariatur sed ratione voluptatibus debitis eaque dignissimos!</p>
+          <section className="flex gap-1">
+            <article className="m-2">
+              <h2 className="text-4xl text-center text-slate-100 font-bold mb-3">
+                Nuestra Misión
+              </h2>
+              <p className="text-slate-100">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
+                enim quod quasi consequatur, quam perferendis, commodi
+                consequuntur perspiciatis adipisci totam nesciunt ex optio
+                pariatur sed ratione voluptatibus debitis eaque dignissimos!
+              </p>
             </article>
-            <article className='m-2'>
-              <h2 className="text-4xl text-center text-slate-100 font-bold mb-3">Nuestra Visión</h2>
-              <p className="text-slate-100">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas enim quod quasi consequatur, quam perferendis, commodi consequuntur perspiciatis adipisci totam nesciunt ex optio pariatur sed ratione voluptatibus debitis eaque dignissimos!</p>
+            <article className="m-2">
+              <h2 className="text-4xl text-center text-slate-100 font-bold mb-3">
+                Nuestra Visión
+              </h2>
+              <p className="text-slate-100">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
+                enim quod quasi consequatur, quam perferendis, commodi
+                consequuntur perspiciatis adipisci totam nesciunt ex optio
+                pariatur sed ratione voluptatibus debitis eaque dignissimos!
+              </p>
             </article>
           </section>
           <br className="lg:my-5 lg:py-5" />
-        <hr className="lg:mt-5 lg:pt-5 border-gray-600" />
+          <hr className="lg:mt-5 lg:pt-5 border-gray-600" />
         </div>
         <Donation visibleContributions={visibleContributions} />
         {donate ? (
