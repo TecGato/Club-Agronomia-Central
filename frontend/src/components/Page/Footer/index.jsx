@@ -13,7 +13,7 @@ export function Footer() {
           href="/dashboard/auth/login"
           className="text-gray-400 font-bold text-base hover:text-[#3264c0]"
         >
-          Login
+          Iniciar Sesión
         </Link>
       </div>
     </footer>
