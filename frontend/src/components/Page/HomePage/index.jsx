@@ -142,14 +142,24 @@ export function HomePage() {
           <br className="lg:my-5 lg:py-5" />
         <hr className="lg:mt-5 lg:pt-5 border-gray-600" />
         </div>
-        <h2 className="text-4xl text-slate-100 font-bold">
-                Próximos encuentros deportivos
-        </h2>
+
         <br className="lg:my-5 lg:py-5" />
         <div className='overflow-y-auto'>
-        <MatchesTable
+        {
+        showMatches.length===0? <div className="flex flex-row items-center justify-center mt-8">
+                  <div></div>
+          </div>:
+          <>
+
+          <h2 className="text-4xl text-slate-100 font-bold">
+                Próximos encuentros deportivos
+        </h2>
+          <MatchesTable
           matches={showMatches}
         />
+         </>
+        }
+
         </div>
         <br className="lg:my-5 lg:py-5 m-4" />
         <Link
@@ -158,13 +168,13 @@ export function HomePage() {
                 >
                   Ver todos
         </Link>
-        
+
         <br className="lg:my-5 lg:py-5" />
         <br className="lg:my-5 lg:py-5" />
         <Donation visibleContributions={visibleContributions} />
         {donate ? (
           <Contributions visibleContributions={visibleContributions} />
-        ) : null}        
+        ) : null}
         <br className="lg:my-5 lg:py-5" />
         <hr className="lg:mt-5 lg:pt-5 border-gray-500" />
         <Publicity />
