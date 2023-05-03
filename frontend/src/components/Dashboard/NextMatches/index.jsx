@@ -1,20 +1,13 @@
 import { PreviewItem } from '..';
 import useStore from '@/store/globalstore';
+import Link from 'next/link';
+import { useDates } from '@/hooks';
 
 export const NextMatches = () => {
+  const { nextDates } = useDates();
   const matches = useStore((state) => state.matches);
-  const showMaches = matches
-    .sort((a, b) => {
-      // ordena las reservas por fecha
-      if (a.date > b.date) {
-        return 1;
-      }
-      if (a.date < b.date) {
-        return -1;
-      }
-      return 0;
-    })
-    .slice(0, 3);
+  const showMaches = nextDates(matches, 5);
+
   return (
     <div
       className="col-span-2 w-full h-full flex flex-col dark:bg-[#2C2C2C] dark:border-none
@@ -31,35 +24,20 @@ export const NextMatches = () => {
         <p>Fecha</p>
       </div>
       <section className="w-full h-auto flex flex-col gap-2 ">
-        <PreviewItem
-          columnOne={'matches'}
-          columnTwo={'Futsal'}
-          columnThree="2 de Mayo"
-        />
-        <PreviewItem
-          columnOne={'AgroVSjairo'}
-          columnTwo={'Futsal'}
-          columnThree="2 de Mayo"
-        />
-        <PreviewItem
-          columnOne={'AgroVSjairo'}
-          columnTwo={'Futsal'}
-          columnThree="2 de Mayo"
-        />
-        <PreviewItem
-          columnOne={'AgroVSjairo'}
-          columnTwo={'Futsal'}
-          columnThree="2 de Mayo"
-        />
-        <PreviewItem
-          columnOne={'AgroVSjairo'}
-          columnTwo={'Futsal'}
-          columnThree="2 de Mayo"
-        />
+        {showMaches.map((match) => (
+          <PreviewItem
+            columnOne={match.name}
+            columnTwo={match.discipline}
+            columnThree={match.date}
+          />
+        ))}
       </section>
-      <a className="mt-2 py-2 rounded-lg text-center text-white cursor-pointer transition-all duration-500 bg-[#1b418a] hover:bg-[#10306b]">
+      <Link
+        href="/dashboard/partidos"
+        className="mt-2 py-2 rounded-lg text-center text-white cursor-pointer transition-all duration-500 bg-[#1b418a] hover:bg-[#10306b]"
+      >
         Ver todas
-      </a>
+      </Link>
     </div>
   );
 };
