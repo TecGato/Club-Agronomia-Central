@@ -43,7 +43,7 @@ const login = async (req = request, res = response) => {
 
     return res.status(200).json({
       msg: 'succesfully logged',
-      authToken: JSON.stringify(serialized)
+      authToken: serialized
     });
   } catch (error) {
     return res.status(500).json({
