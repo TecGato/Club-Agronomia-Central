@@ -44,7 +44,7 @@ export default function Merchandising({ props }) {
 }
 export async function getStaticProps() {
   const res = await fetch(
-    'https://club-agronomia-central-production.up.railway.app/api/products'
+    'https://club-agronomia-central-production-0211.up.railway.app/api/products'
   );
   const props = await res.json();
   return {
