@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import { AuthLayout, GoogleButton, InputForm } from '@/components/Dashboard';
 import Link from 'next/link';
 import { setCookie } from "cookies-next";
+import { getCookie } from 'cookies-next';
 
 export default function Login() {
   const router = useRouter();
