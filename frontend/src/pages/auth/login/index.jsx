@@ -19,7 +19,7 @@ export default function Login() {
       credentials: 'include',
     });
     if (response.status === 200) {
-      document.cookie = response.data.serialized
+      // document.cookie = response.data.serialized
       router.push('/dashboard');
     }
   };
