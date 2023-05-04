@@ -8,7 +8,10 @@ const useStore = create((set, get) => ({
   matches: [],
 
   setAtletas: async () => {
-    const { data } = await axios.get('/athletes', { withCredentials: true });
+    const { data } = await axios.get('/athletes', {
+      withCredentials: true,
+      credentials: 'include',
+    });
     set((state) => ({ ...state, atletas: data.reverse() }));
   },
   setReservas: async () => {
