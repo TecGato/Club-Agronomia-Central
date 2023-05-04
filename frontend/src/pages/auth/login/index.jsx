@@ -3,25 +3,24 @@ import axios from 'axios';
 import { useRouter } from 'next/router';
 import { AuthLayout, GoogleButton, InputForm } from '@/components/Dashboard';
 import Link from 'next/link';
-import { setCookie } from "cookies-next";
 
 export default function Login() {
   const router = useRouter();
-  
+
   const [credentials, setCredentials] = useState({
     email: '',
     password: '',
   });
-  
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     const response = await axios.post('/auth/login', credentials, {
       withCredentials: true,
       credentials: 'include',
+      redirect: 'follow',
     });
 
     if (response.status === 200) {
-      setCookie(response.data.serialized)
       console.log(response);
       // document.cookie = response.data.serialized
       router.push('/dashboard');
