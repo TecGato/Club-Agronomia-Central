@@ -32,9 +32,9 @@ const login = async (req = request, res = response) => {
     const token = await generateJWT(user.id);
     console.log(req);
     const serialized = serialize('authToken', token, {
-      httpOnly: true,
+      httpOnly: false,
       secure: process.env.NODE_ENV === 'production',
-      sameSite: 'none',
+      sameSite: 'None',
       maxAge: 1000 * 60 * 60 * 4,
       path: '/',
     });
