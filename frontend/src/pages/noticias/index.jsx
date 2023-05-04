@@ -103,7 +103,7 @@ export default function Posts({ posts }) {
   );
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const res = await fetch(
     'https://club-agronomia-central-production-0211.up.railway.app/api/posts'
   );
@@ -112,6 +112,5 @@ export async function getStaticProps() {
     props: {
       posts,
     },
-    revalidate: 3600,
   };
 }
