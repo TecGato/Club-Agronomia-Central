@@ -14,8 +14,11 @@ export default function Posts({ posts }) {
   const mainNews = useMemo(
     () => currentItems[currentItems.length - 1],
     [currentItems]
-  );
-  const otherNews = useMemo(() => currentItems.slice(0, -1), [currentItems]);
+  ).reverse();
+  const otherNews = useMemo(
+    () => currentItems.slice(0, -1),
+    [currentItems]
+  ).reverse();
 
   return (
     <>
