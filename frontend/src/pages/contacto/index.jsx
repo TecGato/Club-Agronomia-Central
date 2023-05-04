@@ -58,7 +58,7 @@ export default function Contact() {
           </div>
         </div>
         <form
-          action="https://formsubmit.co/Luis.landaeta24@gmail.com"
+          action="https://formsubmit.co/d6198205b18e32174dc8fb15059c066a"
           method="POST"
           className="flex lg:w-[50%] flex-col gap-4 "
         >
