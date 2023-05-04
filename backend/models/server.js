@@ -61,6 +61,7 @@ class Server {
         'Access-Control-Allow-Methods',
         'GET, POST, OPTIONS, PUT, DELETE'
       );
+      next();
     });
   }
   routes() {
