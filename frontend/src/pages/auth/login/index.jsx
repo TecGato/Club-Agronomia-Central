@@ -22,7 +22,7 @@ export default function Login() {
     });
 
     if (response.status === 200) {
-      setCookie("authToken", JSON.parse(response.data.authToken));
+      setCookie("authToken", response.data.authToken);
       console.log(response);
       // document.cookie = response.data.serialized
       router.push('/dashboard');
