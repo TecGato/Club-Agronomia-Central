@@ -98,7 +98,7 @@ export default function Contact() {
           <input
             type="hidden"
             name="_next"
-            value="http://localhost:3000/contacto/sent"
+            value="https://club-agronomia-central.vercel.app/contacto/sent"
           ></input>
           <input
             type="hidden"
