@@ -16,9 +16,9 @@ const donation = async (req, res) => {
       ],
 
       back_urls: {
-        success: 'http://localhost:3000',
-        failure: 'http://localhost:3000',
-        pending: 'http://localhost:3000',
+        success: 'https://club-agronomia-central.vercel.app/',
+        failure: 'https://club-agronomia-central.vercel.app/',
+        pending: 'https://club-agronomia-central.vercel.app/',
       },
       auto_return: 'approved',
     };

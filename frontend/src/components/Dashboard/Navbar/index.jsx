@@ -9,7 +9,7 @@ export const Navbar = ({ openNavbar }) => {
 
   const logOut = async () => {
     try {
-      await axios.post('http://localhost:3001/api/auth/logout', null, {
+      await axios.post('/auth/logout', null, {
         withCredentials: true,
         credentials: 'include',
       });
