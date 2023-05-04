@@ -37,7 +37,6 @@ const login = async (req = request, res = response) => {
       sameSite: 'none',
       maxAge: 1000 * 60 * 60 * 4,
       path: '/',
-      domain: '.vercel.app',
     });
 
     res.cookie(serialized);
