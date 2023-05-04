@@ -34,18 +34,18 @@ const login = async (req = request, res = response) => {
     const serialized = serialize('authToken', token, {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
-      sameSite: 'strict',
+      SameSite: 'None',
       maxAge: 1000 * 60 * 60 * 4,
       path: '/',
     });
 
-    res.cookie('elvis', 123456798, {
+    res.cookie('authToken', token, {
       SameSite: 'None',
-      sameSite: 'none',
-      Domain: 'http://localhost:3000',
-      domain: 'http://localhost:3000',
-      httpOnly: true
+      // sameSite: 'none',
+      httpOnly: true,
     });
+
+    // res.cookie(serialized)
 
     return res.status(200).json({
       msg: 'succesfully logged',
