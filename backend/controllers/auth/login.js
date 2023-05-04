@@ -39,16 +39,11 @@ const login = async (req = request, res = response) => {
       path: '/',
     });
 
-    res.cookie('authToken', token, {
-      SameSite: 'None',
-      // sameSite: 'none',
-      httpOnly: true,
-    });
-
-    // res.cookie(serialized)
+    res.cookie(serialized)
 
     return res.status(200).json({
       msg: 'succesfully logged',
+      authToken: JSON.stringify(serialized)
     });
   } catch (error) {
     return res.status(500).json({

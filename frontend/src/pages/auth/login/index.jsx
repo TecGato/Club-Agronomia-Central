@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useRouter } from 'next/router';
 import { AuthLayout, GoogleButton, InputForm } from '@/components/Dashboard';
 import Link from 'next/link';
-// import { setCookie } from "cookies-next";
+import { setCookie } from "cookies-next";
 
 export default function Login() {
   const router = useRouter();
@@ -22,7 +22,7 @@ export default function Login() {
     });
 
     if (response.status === 200) {
-      // setCookie("authToken", response.data.authToken);
+      setCookie("authToken", JSON.parse(response.data.authToken));
       console.log(response);
       // document.cookie = response.data.serialized
       router.push('/dashboard');
