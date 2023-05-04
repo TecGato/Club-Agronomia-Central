@@ -5,7 +5,7 @@ const { validateJWT } = require('../middlewares/validate-jwt');
 
 const router = Router();
 
-router.get('/', validateJWT, getIncomes);
-router.delete('/:id', validateJWT, deleteById);
+router.get('/', getIncomes);
+router.delete('/:id', deleteById);
 
 module.exports = router;

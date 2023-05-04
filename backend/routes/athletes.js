@@ -7,10 +7,10 @@ const { validateJWT } = require('../middlewares/validate-jwt');
 
 const router = Router();
 
-router.get('/', validateJWT, getAthletes);
-router.get('/:id', validateJWT, getById);
-router.post('/', validateJWT, createAthlete);
-router.put('/:id', validateJWT, updateAthlete);
-router.delete('/:id', validateJWT, deleteById);
+router.get('/', getAthletes);
+router.get('/:id', getById);
+router.post('/', createAthlete);
+router.put('/:id', updateAthlete);
+router.delete('/:id', deleteById);
 
 module.exports = router;

@@ -13,7 +13,7 @@ const router = Router();
 router.get('/', getEvents);
 router.get('/:id', getById);
 router.post('/', [validateEventAvailability], createEvent);
-router.put('/:id', validateJWT, updateEvent);
-router.delete('/:id', validateJWT, deleteById);
+router.put('/:id', updateEvent);
+router.delete('/:id', deleteById);
 
 module.exports = router;

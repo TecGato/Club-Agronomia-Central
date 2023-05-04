@@ -18,8 +18,8 @@ const router = Router();
 
 router.get('/', getTestimonials);
 router.get('/:id', getById);
-router.post('/', validateJWT, createTestimonial);
-router.put('/:id', validateJWT, updateTestimonial);
-router.delete('/:id', validateJWT, deleteById);
+router.post('/', createTestimonial);
+router.put('/:id', updateTestimonial);
+router.delete('/:id', deleteById);
 
 module.exports = router;

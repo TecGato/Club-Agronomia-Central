@@ -8,8 +8,8 @@ const { validateJWT } = require('../middlewares/validate-jwt');
 const router = Router();
 
 router.get('/', getAds);
-router.post('/', validateJWT, createAd);
-router.put('/:id', validateJWT, updateAd);
-router.delete('/:id', validateJWT, deleteById);
+router.post('/', createAd);
+router.put('/:id', updateAd);
+router.delete('/:id', deleteById);
 
 module.exports = router;
