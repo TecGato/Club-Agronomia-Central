@@ -3,6 +3,7 @@ import { NavLink } from '../NavLink';
 import { routes } from './routes';
 import axios from 'axios';
 import { useRouter } from 'next/router';
+import { deleteCookie, setCookie } from 'cookies-next';
 
 export const Navbar = ({ openNavbar }) => {
   const router = useRouter();
