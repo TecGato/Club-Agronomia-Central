@@ -13,9 +13,7 @@ export function Publicity() {
   const thirdNextItem = items[thirdNextIndex];
 
   const getAds = async () => {
-    const { data } = await axios.get(
-      'https://club-agronomia-central-production.up.railway.app/api/ads'
-    );
+    const { data } = await axios.get('/ads');
     setitems(data);
   };
   useEffect(() => {
