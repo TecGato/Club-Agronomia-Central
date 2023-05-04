@@ -9,9 +9,14 @@ export const Navbar = ({ openNavbar }) => {
 
   const logOut = async () => {
     try {
-      await axios.post('/auth/logout', null, {
+      const response = await axios.post('/auth/logout', null, {
         withCredentials: true,
         credentials: 'include',
+      });
+      setCookie('authToken', response.data.authToken, {
+        secure: true,
+        sameSite: 'none',
+        maxAge: 0,
       });
       router.push('/');
     } catch (error) {

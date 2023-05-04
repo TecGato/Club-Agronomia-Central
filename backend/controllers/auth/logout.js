@@ -15,6 +15,7 @@ const logout = async (req = request, res = response) => {
 
     return res.status(200).json({
       msg: 'Logged out Successfully',
+      authToken: null,
     });
   } catch (error) {
     return res.status(401).json({
