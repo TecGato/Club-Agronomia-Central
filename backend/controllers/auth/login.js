@@ -43,7 +43,7 @@ const login = async (req = request, res = response) => {
     res.cookie(serialized);
 
     return res.status(200).json({
-      msg: 'Logged in Successfully',
+      serialized,
     });
   } catch (error) {
     return res.status(500).json({
