@@ -5,11 +5,8 @@ export function useMerchandising() {
   const { setShowMessageModal } = useContext(AppContext);
   const [products, setProducts] = useState();
   const getProducts = async () => {
-    const res = await fetch(
-      'https://club-agronomia-central-production.up.railway.app/api/products'
-    );
-    const products = await res.json();
-    return setProducts(products);
+    const { data } = await axios.get('/products');
+    return setProducts(data);
   };
   const handlerDelete = async (id) => {
     try {
