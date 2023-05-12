@@ -38,7 +38,7 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps({ params }) {
+export async function getServerSideProps({ params }) {
   const response = await fetch(
     `https://club-agronomia-central-production.up.railway.app/api/posts/${params.id}`
   );
