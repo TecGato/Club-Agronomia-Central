@@ -43,6 +43,7 @@ class Server {
           'http://club-agronomia-central.vercel.app',
           'http://localhost:3000',
         ],
+        methods: ['GET', 'POST', 'PUT', 'DELETE'],
       })
     );
 
