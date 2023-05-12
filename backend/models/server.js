@@ -46,7 +46,6 @@ class Server {
         methods: ['GET', 'POST', 'PUT', 'DELETE'],
       })
     );
-
     // Lectura y parseo del body
     this.app.use(express.json({ limit: '1024mb' }));
 
@@ -55,18 +54,6 @@ class Server {
 
     //Public dir
     this.app.use(express.static('public'));
-    this.app.use((req, res, next) => {
-      res.header('Access-Control-Allow-Credentials', 'true');
-      res.header(
-        'Access-Control-Allow-Headers',
-        'Origin, X-Requested-With, Content-Type, Accept'
-      );
-      res.header(
-        'Access-Control-Allow-Methods',
-        'GET, POST, OPTIONS, PUT, DELETE'
-      );
-      next();
-    });
   }
   routes() {
     this.app.use(this.authPath, require('../routes/auth'));
