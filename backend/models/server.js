@@ -40,7 +40,7 @@ class Server {
       cors({
         credentials: true,
         origin: [
-          'http://club-agronomia-central.vercel.app',
+          'https://club-agronomia-central.vercel.app',
           'http://localhost:3000',
         ],
         methods: ['GET', 'POST', 'PUT', 'DELETE'],
