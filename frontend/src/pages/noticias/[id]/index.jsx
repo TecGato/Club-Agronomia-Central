@@ -24,19 +24,19 @@ export default function Post({ post }) {
   );
 }
 
-export async function getStaticPaths() {
-  const response = await fetch(
-    'https://club-agronomia-central-production.up.railway.app/api/posts'
-  );
-  const posts = await response.json();
+// export async function getStaticPaths() {
+//   const response = await fetch(
+//     'https://club-agronomia-central-production.up.railway.app/api/posts'
+//   );
+//   const posts = await response.json();
 
-  const paths = posts.map((post) => ({ params: { id: post._id } }));
+//   const paths = posts.map((post) => ({ params: { id: post._id } }));
 
-  return {
-    paths,
-    fallback: false,
-  };
-}
+//   return {
+//     paths,
+//     fallback: false,
+//   };
+// }
 
 export async function getServerSideProps({ params }) {
   const response = await fetch(
