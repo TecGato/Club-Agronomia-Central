@@ -23,12 +23,11 @@ export default function Login() {
     });
 
     if (response.status === 200) {
-      setCookie('authToken', response.data.authToken, {
+      setCookie('authToken', response.data.token, {
         secure: true,
         sameSite: 'none',
         maxAge: 1000 * 60 * 60 * 4,
       });
-      // document.cookie = response.data.serialized
       router.push('/dashboard');
     }
   };
