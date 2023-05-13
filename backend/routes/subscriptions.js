@@ -13,7 +13,7 @@ const { validateJWT } = require('../middlewares/validate-jwt');
 const router = Router();
 
 router.get('/', getAllSubscriptions);
-router.post('/', createSubscription);
-router.put('/:id', updateSubscription);
+router.post('/', validateJWT, createSubscription);
+router.put('/:id', validateJWT, updateSubscription);
 
 module.exports = router;

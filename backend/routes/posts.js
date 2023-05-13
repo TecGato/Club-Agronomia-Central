@@ -9,8 +9,8 @@ const router = Router();
 
 router.get('/', getPosts);
 router.get('/:id', getById);
-router.post('/', createPost);
-router.put('/:id', updatePost);
-router.delete('/:id', deleteById);
+router.post('/', validateJWT, createPost);
+router.put('/:id', validateJWT, updatePost);
+router.delete('/:id', validateJWT, deleteById);
 
 module.exports = router;

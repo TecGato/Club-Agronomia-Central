@@ -11,9 +11,9 @@ const {
 const router = Router();
 
 router.get('/', getEvents);
-router.get('/:id', getById);
+router.get('/:id', validateJWT, getById);
 router.post('/', [validateEventAvailability], createEvent);
-router.put('/:id', updateEvent);
-router.delete('/:id', deleteById);
+router.put('/:id', validateJWT, updateEvent);
+router.delete('/:id', validateJWT, deleteById);
 
 module.exports = router;
