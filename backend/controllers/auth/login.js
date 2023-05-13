@@ -33,7 +33,7 @@ const login = async (req = request, res = response) => {
     const serialized = serialize('authToken', token, {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
-      sameSite: 'None',
+      sameSite: 'none',
       maxAge: 1000 * 60 * 60 * 4,
       path: '/',
     });
