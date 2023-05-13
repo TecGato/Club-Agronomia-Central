@@ -30,16 +30,16 @@ const login = async (req = request, res = response) => {
     }
     // Generate the JWT
     const token = await generateJWT(user.id);
-    const serialized = serialize('authToken', token, {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === 'production',
-      sameSite: 'none',
-      maxAge: 1000 * 60 * 60 * 4,
-      path: '/',
-    });
-    console.log(serialized);
-
-    res.cookie(serialized);
+    res.setHeader(
+      'Set-Cookie',
+      serialize('authToken', token, {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === 'production',
+        sameSite: 'none',
+        maxAge: 1000 * 60 * 60 * 4,
+        path: '/',
+      })
+    );
 
     return res.status(200).json({
       msg: 'succesfully logged',
