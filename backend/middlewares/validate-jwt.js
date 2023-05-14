@@ -12,7 +12,9 @@ const validateJWT = async (req, res, next) => {
 
   try {
     // Get uid of user with jwt
-    const { uid } = jwt.verify(token, process.env.SECRETORPRIVATEKEY);
+    const { uid } = jwt.verify(token, process.env.SECRETORPRIVATEKEY, {
+      ignoreExpiration: true,
+    });
 
     // Read the user corresponding to the uid
     const user = await User.findById(uid);
