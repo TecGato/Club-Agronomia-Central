@@ -4,7 +4,7 @@ const bcryptjs = require('bcryptjs');
 const { generateJWT } = require('../../helpers/generateJWT');
 const { serialize } = require('cookie');
 
-const login = async (req = request, res = response) => {
+const login = async (req, res) => {
   const { email, password } = req.body;
 
   try {
@@ -31,7 +31,7 @@ const login = async (req = request, res = response) => {
     // Generate the JWT
     const token = await generateJWT(user.id);
 
-    res.cookie('authToken', token, {
+    res.cookie('authToken', 'probando 123', {
       maxAge: 1000 * 60 * 60 * 4,
       sameSite: 'none',
       secure: false,
