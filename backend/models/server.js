@@ -39,6 +39,17 @@ class Server {
     // CORS
     this.app.use(
       cors({
+        allowedHeaders: [
+          'Content-Type',
+          'Authorization',
+          'Cookie',
+          'Set-Cookie',
+          'authToken',
+          'authToken=',
+          'origin',
+          'x-requested-with',
+          'accept',
+        ],
         credentials: true,
         origin: [
           'https://club-agronomia-central.vercel.app',
