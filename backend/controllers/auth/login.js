@@ -30,8 +30,7 @@ const login = async (req, res) => {
     }
     // Generate the JWT
     const token = await generateJWT(user.id);
-    console.log('estoy en login back', token);
-    res.cookie('authToken', 'probando 123', {
+    res.cookie('authToken', token, {
       maxAge: 1000 * 60 * 60 * 4,
       sameSite: 'none',
       secure: true,
