@@ -31,6 +31,12 @@ const login = async (req = request, res = response) => {
     // Generate the JWT
     const token = await generateJWT(user.id);
 
+    res.cookie('authToken', token, {
+      maxAge: 1000 * 60 * 60 * 4,
+      sameSite: 'none',
+      secure: false,
+    });
+
     return res.status(200).json({
       token,
     });

@@ -48,6 +48,7 @@ class Server {
         methods: ['GET', 'POST', 'PUT', 'DELETE'],
       })
     );
+    this.app.use(cookieParser());
     // Lectura y parseo del body
     this.app.use(express.json({ limit: '1024mb' }));
 
@@ -56,7 +57,6 @@ class Server {
 
     //Public dir
     this.app.use(express.static('public'));
-    this.app.use(cookieParser());
   }
   routes() {
     this.app.use(this.authPath, require('../routes/auth'));
