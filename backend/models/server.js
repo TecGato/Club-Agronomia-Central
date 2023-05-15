@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const { connectionDB } = require('../database/mongo');
+const cookieParser = require('cookie-parser');
 require('dotenv').config();
 const { CORS_ORIGIN } = process.env;
 
@@ -55,6 +56,7 @@ class Server {
 
     //Public dir
     this.app.use(express.static('public'));
+    this.app.use(cookieParser());
   }
   routes() {
     this.app.use(this.authPath, require('../routes/auth'));
