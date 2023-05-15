@@ -34,7 +34,7 @@ const login = async (req, res) => {
     res.cookie('authToken', 'probando 123', {
       maxAge: 1000 * 60 * 60 * 4,
       sameSite: 'none',
-      secure: false,
+      secure: true,
     });
 
     return res.status(200).json({
