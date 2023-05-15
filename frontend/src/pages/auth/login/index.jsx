@@ -21,6 +21,7 @@ export default function Login() {
       credentials: 'include',
       redirect: 'follow',
     });
+    console.log(response);
 
     if (response.status === 200) {
       // setCookie('authToken', response.data.token, {
