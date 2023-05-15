@@ -36,19 +36,15 @@ class Server {
   }
 
   middlewares() {
+    this.app.use(cookieParser());
     // CORS
     this.app.use(
       cors({
         allowedHeaders: [
+          'Origin',
+          'X-Requested-With',
           'Content-Type',
-          'Authorization',
-          'Cookie',
-          'Set-Cookie',
-          'authToken',
-          'authToken=',
-          'origin',
-          'x-requested-with',
-          'accept',
+          'Accept',
         ],
         credentials: true,
         origin: [
@@ -59,7 +55,7 @@ class Server {
         methods: ['GET', 'POST', 'PUT', 'DELETE'],
       })
     );
-    this.app.use(cookieParser());
+
     // Lectura y parseo del body
     this.app.use(express.json({ limit: '1024mb' }));
 
