@@ -50,7 +50,7 @@ class Server {
         origin: [
           'https://club-agronomia-central.vercel.app',
           'http://localhost:3000',
-          'https://club-agronomia-central-henna.vercel.app',
+          'https://www.agronomiacentral.com',
         ],
         methods: ['GET', 'POST', 'PUT', 'DELETE'],
       })

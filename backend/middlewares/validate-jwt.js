@@ -3,8 +3,6 @@ const User = require('../models/User');
 
 const validateJWT = async (req, res, next) => {
   const token = req.headers.cookie?.split('authToken=')[1];
-  console.log(req.headers.cookie);
-  console.log(req.cookies);
   if (!token) {
     return res.status(401).json({
       msg: 'The token is required',
